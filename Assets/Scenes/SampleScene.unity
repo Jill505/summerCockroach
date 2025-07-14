@@ -119,6 +119,59 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &199546431
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 199546432}
+  - component: {fileID: 199546433}
+  m_Layer: 0
+  m_Name: cockroachFootReferenceSpace
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &199546432
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 199546431}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.58823526, y: 1.3333334, z: 0.29585797}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1772389389}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &199546433
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 199546431}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.2, y: 0.59, z: 1.3}
+  m_Center: {x: 0, y: -0.3, z: 0}
 --- !u!1 &273600612
 GameObject:
   m_ObjectHideFlags: 0
@@ -149,6 +202,37 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &303797448
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 303797449}
+  m_Layer: 0
+  m_Name: lookingReferencePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &303797449
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 303797448}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1772389389}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &330585543
 GameObject:
@@ -559,7 +643,7 @@ Transform:
   m_GameObject: {fileID: 965637368}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.32, y: 4.09, z: 1.39}
+  m_LocalPosition: {x: -4.32, y: 3.26, z: 1.39}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -591,14 +675,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1073194379}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 4.53, z: -1.614}
+  m_LocalRotation: {x: 0.08004072, y: -0, z: -0, w: 0.9967916}
+  m_LocalPosition: {x: 0, y: 3.5500007, z: -5.88}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 330585546}
-  m_Father: {fileID: 1772389389}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Father: {fileID: 1229442375}
+  m_LocalEulerAnglesHint: {x: 9.182, y: 0, z: 0}
 --- !u!114 &1073194381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -626,10 +710,123 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cb6442f3cb9bc84785a4fa0b0458f44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myCManager: {fileID: 1772389391}
+  myCManager: {fileID: 1229442373}
   CameraDirect: 0
+  myCameraTrackerObject: {fileID: 1073194379}
+  myCockroachMeshObject: {fileID: 1772389385}
+  myCockroachManagerObject: {fileID: 1229442371}
   myTrackMode: 0
-  CameraOffset: {x: 0, y: 1.67, z: -4.63}
+  CameraOffset: {x: 0, y: 3.55, z: -5.88}
+  AutoCameraOffset: {x: 0, y: 4.44, z: -1.75}
+  PlayerCameraOffset: {x: 0, y: 1.67, z: -4.63}
+  nowCameraPosition: {x: 0, y: 0, z: 0}
+--- !u!1 &1229442371
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1229442375}
+  - component: {fileID: 1229442374}
+  - component: {fileID: 1229442373}
+  - component: {fileID: 1229442372}
+  m_Layer: 0
+  m_Name: 3DCockroach
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1229442372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1229442371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a6bd33834aa0524f9d3ce645982b33c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myCManager: {fileID: 1229442373}
+  myRb: {fileID: 1229442374}
+  mainObjectTransform: {fileID: 1229442375}
+  subObjectTransform: {fileID: 1772389389}
+  lookingReferencePoint: {fileID: 303797449}
+  myDirect: 0
+  myVelocity: 7
+  myMaxVelocity: 14
+  AutoAngleSpeed: 2
+  stopVelocity: 10
+  GravityForce: 0
+  GravityVector: {x: 0, y: 0, z: 0}
+  testVelocityDampValue: 0.2
+  testVelocityXZValue: 0.5
+  myMoveMode: 0
+--- !u!114 &1229442373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1229442371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a12f75b8e56f98046835e453d417e116, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myCockroachMove: {fileID: 1229442372}
+  myCameraLogic: {fileID: 1073194382}
+  Hp: 1
+  autoModeCameraFlu: 0.1
+  playerModeCameraFlu: 0.1
+--- !u!54 &1229442374
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1229442371}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
+--- !u!4 &1229442375
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1229442371}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.75, y: 4.94, z: 1.63}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1073194380}
+  - {fileID: 1772389389}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1253865242
 GameObject:
   m_ObjectHideFlags: 0
@@ -644,7 +841,7 @@ GameObject:
   - component: {fileID: 1253865243}
   m_Layer: 0
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: ClimbableObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -861,7 +1058,7 @@ GameObject:
   - component: {fileID: 1381860109}
   m_Layer: 0
   m_Name: Plane (1)
-  m_TagString: Untagged
+  m_TagString: ClimbableObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -956,6 +1153,77 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -16.186, y: 0, z: 0}
+--- !u!1 &1517385555
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1517385556}
+  - component: {fileID: 1517385558}
+  - component: {fileID: 1517385557}
+  m_Layer: 0
+  m_Name: cockroachGravityMaker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1517385556
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1517385555}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.58823526, y: 1.3333334, z: 0.29585797}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1772389389}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1517385557
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1517385555}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 0.42, z: 3.12}
+  m_Center: {x: 0, y: -0.33, z: 0}
+--- !u!114 &1517385558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1517385555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed06e314557f76242af3a2e59edaba95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cManager: {fileID: 1229442373}
+  cMover: {fileID: 1229442372}
+  cockroachGravityScale: 1
+  debugGravity: 0
+  fallMaxSpeed: 9.81
 --- !u!1 &1772389385
 GameObject:
   m_ObjectHideFlags: 0
@@ -967,13 +1235,9 @@ GameObject:
   - component: {fileID: 1772389389}
   - component: {fileID: 1772389388}
   - component: {fileID: 1772389387}
-  - component: {fileID: 1772389391}
-  - component: {fileID: 1772389390}
-  - component: {fileID: 1772389392}
   - component: {fileID: 1772389393}
-  - component: {fileID: 1772389394}
   m_Layer: 0
-  m_Name: 3DCockroach
+  m_Name: 3DCockroachMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1041,81 +1305,15 @@ Transform:
   m_GameObject: {fileID: 1772389385}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.24, z: -4.3635283}
-  m_LocalScale: {x: 1, y: 0.4844, z: 3.3967}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.7, y: 0.75, z: 3.38}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1073194380}
-  m_Father: {fileID: 0}
+  - {fileID: 303797449}
+  - {fileID: 199546432}
+  - {fileID: 1517385556}
+  m_Father: {fileID: 1229442375}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1772389390
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1772389385}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a6bd33834aa0524f9d3ce645982b33c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myCManager: {fileID: 1772389391}
-  myRb: {fileID: 1772389392}
-  myController: {fileID: 0}
-  myTransform: {fileID: 1772389389}
-  myDirect: 0
-  myVelocity: 7
-  myMaxVelocity: 14
-  AutoAngleSpeed: 2
-  stopVelocity: 10
-  testVelocityDampValue: 0.2
-  testVelocityXZValue: 0.5
-  myMoveMode: 0
---- !u!114 &1772389391
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1772389385}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a12f75b8e56f98046835e453d417e116, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myCockroachMove: {fileID: 1772389390}
-  myCameraLogic: {fileID: 1073194382}
-  Hp: 1
-  autoModeCameraFlu: 0
-  playerModeCameraFlu: 0
---- !u!54 &1772389392
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1772389385}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &1772389393
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1137,38 +1335,13 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 0.99999994, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!143 &1772389394
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1772389385}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Height: 0.99999994
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 410087041}
   - {fileID: 832575519}
-  - {fileID: 1772389389}
+  - {fileID: 1229442375}
   - {fileID: 1292650635}
   - {fileID: 965637372}
   - {fileID: 273600613}
