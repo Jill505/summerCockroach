@@ -7,7 +7,7 @@ using System.Security.Cryptography.X509Certificates;
 
 public class CockroachMove : MonoBehaviour
 {
-    [Header("²Õ¥ó")]
+    [Header("ï¿½Õ¥ï¿½")]
     public CockroachManager myCManager;
     public Rigidbody myRb;
 
@@ -15,7 +15,7 @@ public class CockroachMove : MonoBehaviour
     public Transform subObjectTransform;
     public Transform lookingReferencePoint;
 
-    [Header("­pºâ±`¶q")]
+    [Header("ï¿½pï¿½ï¿½`ï¿½q")]
     public float myDirect;
 
     public float myVelocity = 7f;
@@ -32,7 +32,7 @@ public class CockroachMove : MonoBehaviour
     public float GravityForce = 9.81f;
     public Vector3 GravityVector = new Vector3();
 
-    [Header("´ú¸ÕÅÜ¼Æ")]
+    [Header("ï¿½ï¿½ï¿½ï¿½ï¿½Ü¼ï¿½")]
     public float testVelocityDampValue = 0.2f;
     public float testVelocityXZValue = 0.5f;
     float savedDampValueZ;
@@ -135,10 +135,16 @@ public class CockroachMove : MonoBehaviour
             //Face cockroach direction.
 
         }
-        else if(myMoveMode == moveMode.PlayerCameraMove)
+        else if (myMoveMode == moveMode.PlayerCameraMove)
         {
             //Free move camera, mouse x move = camera direct move.
+        }
+        else if(myMoveMode == moveMode.twoDMove)
+        {
+            //2ddddddddddd
         }
     }
 
 }
+
+
