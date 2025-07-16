@@ -39,9 +39,9 @@ public class CockroachGravityMaker : MonoBehaviour
             }
         }
     }
-    /*
     private void OnCollisionStay(Collision collision)
     {
+        Debug.Log("Collision Working");
         if (collision.gameObject.tag == "ClimbableObject")
         {
             //no need to use gravity
@@ -53,5 +53,5 @@ public class CockroachGravityMaker : MonoBehaviour
             cMover.GravityVector += new Vector3(0, cockroachGravityScale, 0) * Time.deltaTime;
             Debug.Log("Cockroach is taking grvity");
         }
-    }*/
+    }
 }
