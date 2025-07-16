@@ -9,25 +9,15 @@ public class SwitchTrigger : MonoBehaviour
     {
         if (viewToggle.Is2D())
         {
-            Debug.Log("2D碰撞，切換為3D");
-            viewToggle.SwitchTo3D();
-        }
-        else
-        {
-            Debug.Log("2D碰撞，切換為2D（沒變）");
+            StartCoroutine(viewToggle.SwitchViewWithBlackout(false)); //切換到3d
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (viewToggle.Is2D())
+        if (!viewToggle.Is2D())
         {
-            Debug.Log("3D碰撞，切換為3D（沒變）");
-        }
-        else
-        {
-            Debug.Log("3D碰撞，切換為2D");
-            viewToggle.SwitchTo2D();
+            StartCoroutine(viewToggle.SwitchViewWithBlackout(true));//切換到2d
         }
     }
 }
