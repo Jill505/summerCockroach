@@ -15,7 +15,7 @@ public class CockroachMove : MonoBehaviour
     public Transform subObjectTransform;
     public Transform lookingReferencePoint;
 
-    [Header("計算變數")]
+    [Header("功能變數")]
     public float myDirect;
 
     public float myVelocity = 7f;
@@ -32,18 +32,15 @@ public class CockroachMove : MonoBehaviour
     public float GravityForce = 9.81f;
     public Vector3 GravityVector = new Vector3();
 
+    [Tooltip("滑鼠靈敏度")]
+    public float cameraSensitivity = 1f;
+    public float mouseInputLeast = 0.05f;
+
     [Header("測試變數")]
     public float testVelocityDampValue = 0.2f;
     public float testVelocityXZValue = 0.5f;
     float savedDampValueZ;
     bool dampClogZ;
-    public enum moveMode
-    {
-        AutoCameraMove,
-        PlayerCameraMove,
-
-        twoDMove
-    }
 
     public moveMode myMoveMode = moveMode.AutoCameraMove;
 
@@ -127,7 +124,7 @@ public class CockroachMove : MonoBehaviour
             AutoPlayerMove();
             if (myDirect != myCManager.myCameraLogic.CameraDirect)
             {
-                //TODO
+                //TODO: make the camera move smoother. 
                 //myDirect = Mathf.LerpAngle(myDirect,myCManager.myCameraLogic.CameraDirect, myCManager.autoModeCameraFlu);
             }
             //Face cockroach direction.
@@ -135,8 +132,18 @@ public class CockroachMove : MonoBehaviour
         }
         else if (myMoveMode == moveMode.PlayerCameraMove)
         {
+            //TODO: Let Player control the camera freely.
+            //TODO: there's a bug need to be fix.
+            float mouseXInput = Input.GetAxis("Mouse X");
+            if (mouseXInput > mouseInputLeast)
+            {
+                myDirect += mouseXInput * cameraSensitivity;
+            }
             //Free move camera, mouse x move = camera direct move.
+            //Sync myDirect to camera dir, multiply the 
         }
+
+
         else if(myMoveMode == moveMode.twoDMove)
         {
             //2ddddddddddd
@@ -145,12 +152,3 @@ public class CockroachMove : MonoBehaviour
 
 }
 
-
-
-public enum moveMode
-{
-    AutoCameraMove,
-    PlayerCameraMove,
-
-    twoDMove
-}

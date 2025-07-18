@@ -15,3 +15,12 @@ public class AllGameManager : MonoBehaviour
         
     }
 }
+
+
+public enum moveMode
+{
+    AutoCameraMove,
+    PlayerCameraMove,
+
+    twoDMove
+}

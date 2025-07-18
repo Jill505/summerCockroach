@@ -28,14 +28,14 @@ public class CockroachGravityMaker : MonoBehaviour
         {
             //no need to use gravity
             cMover.GravityVector = Vector3.zero + new Vector3(0, debugGravity, 0) * Time.deltaTime;
-            Debug.Log("Cockroach is on the ground");
+            //Debug.Log("Cockroach is on the ground");
         }
         else
         {
             if (cockroachGravityScale < fallMaxSpeed)
             {
                 cMover.GravityVector += new Vector3(0, -1 * cockroachGravityScale, 0) * Time.deltaTime;
-                Debug.Log("Cockroach is taking gravity");
+                //Debug.Log("Cockroach is taking gravity");
             }
         }
     }
@@ -46,12 +46,12 @@ public class CockroachGravityMaker : MonoBehaviour
         {
             //no need to use gravity
             cMover.GravityVector = Vector3.zero + new Vector3(0, debugGravity, 0);
-            Debug.Log("Cockroach is on the ground");
+            Debug.Log("Cockroach is on the ground / Col");
         }
         else
         {
             cMover.GravityVector += new Vector3(0, cockroachGravityScale, 0) * Time.deltaTime;
-            Debug.Log("Cockroach is taking grvity");
+            Debug.Log("Cockroach is taking gravity / Col");
         }
     }
 }

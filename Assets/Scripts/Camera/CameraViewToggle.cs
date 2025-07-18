@@ -69,7 +69,7 @@ public class CameraViewToggle : MonoBehaviour
         camera2D.orthographic = true;
         camera2D.orthographicSize = orthographicSize;
 
-        cockroachMove.myMoveMode = CockroachMove.moveMode.twoDMove;
+        cockroachMove.myMoveMode = moveMode.twoDMove;
     }
 
     public void SwitchTo3D()
@@ -81,7 +81,7 @@ public class CameraViewToggle : MonoBehaviour
         camera3D.orthographic = false;
         camera3D.fieldOfView = fieldOfView;
 
-        cockroachMove.myMoveMode = CockroachMove.moveMode.AutoCameraMove;
+        cockroachMove.myMoveMode = moveMode.AutoCameraMove;
     }
 
     public bool Is2D()
@@ -99,6 +99,6 @@ public class CameraViewToggle : MonoBehaviour
         camera3D.orthographic = false;
         camera3D.fieldOfView = fieldOfView;
 
-        cockroachMove.myMoveMode = CockroachMove.moveMode.AutoCameraMove;
+        cockroachMove.myMoveMode = moveMode.AutoCameraMove;
     }
 }

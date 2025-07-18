@@ -11,7 +11,7 @@ public class Cockroach2DMove : MonoBehaviour
     void Update()
     {
         // 只有在 moveMode 是 twoDMove 才允許動作
-        if (mainMoveScript == null || mainMoveScript.myMoveMode != CockroachMove.moveMode.twoDMove)
+        if (mainMoveScript == null || mainMoveScript.myMoveMode != moveMode.twoDMove)
             return;
 
         float moveX = 0f;
