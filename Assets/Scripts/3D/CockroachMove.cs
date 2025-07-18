@@ -1,4 +1,4 @@
-using JetBrains.Annotations;
+﻿using JetBrains.Annotations;
 using Unity.VisualScripting;
 using UnityEngine;
 using System.Collections;
@@ -7,7 +7,7 @@ using System.Security.Cryptography.X509Certificates;
 
 public class CockroachMove : MonoBehaviour
 {
-    [Header("�ե�")]
+    [Header("參考組件")]
     public CockroachManager myCManager;
     public Rigidbody myRb;
 
@@ -15,7 +15,7 @@ public class CockroachMove : MonoBehaviour
     public Transform subObjectTransform;
     public Transform lookingReferencePoint;
 
-    [Header("�p��`�q")]
+    [Header("計算變數")]
     public float myDirect;
 
     public float myVelocity = 7f;
@@ -32,12 +32,11 @@ public class CockroachMove : MonoBehaviour
     public float GravityForce = 9.81f;
     public Vector3 GravityVector = new Vector3();
 
-    [Header("�����ܼ�")]
+    [Header("測試變數")]
     public float testVelocityDampValue = 0.2f;
     public float testVelocityXZValue = 0.5f;
     float savedDampValueZ;
     bool dampClogZ;
-    
     public enum moveMode
     {
         AutoCameraMove,
@@ -45,7 +44,6 @@ public class CockroachMove : MonoBehaviour
 
         twoDMove
     }
-
 
     public moveMode myMoveMode = moveMode.AutoCameraMove;
 
@@ -148,3 +146,11 @@ public class CockroachMove : MonoBehaviour
 }
 
 
+
+public enum moveMode
+{
+    AutoCameraMove,
+    PlayerCameraMove,
+
+    twoDMove
+}
