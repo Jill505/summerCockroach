@@ -1590,13 +1590,13 @@ MonoBehaviour:
   my3DCameraReferencePoint: {fileID: 1600599022}
   CameraObject: {fileID: 330585543}
   autoAngleSpeed: 0.2
-  AutoCameraLookOffset: {x: 0, y: 0, z: 0}
+  AutoCameraLookOffset: {x: 0, y: 2.71, z: 0}
   mouseInputLeast: 0.05
   myDirect: 0
   cameraSensitivity: 1
   myTrackMode: 0
   CameraOffset: {x: 0, y: 3.55, z: -5.88}
-  AutoCameraOffset: {x: 0, y: 4.44, z: -1.75}
+  AutoCameraOffset: {x: 0, y: 4.19, z: -6}
   PlayerCameraOffset: {x: 0, y: 1.67, z: -4.63}
   nowCameraPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &1229442371
