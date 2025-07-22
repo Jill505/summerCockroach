@@ -581,6 +581,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MainObjectTransform: {fileID: 1229442375}
+  RotationSpeed: 7.39
+  targetRotation: {x: 0, y: 0, z: 0}
 --- !u!1 &273600612
 GameObject:
   m_ObjectHideFlags: 0
@@ -1589,7 +1591,7 @@ MonoBehaviour:
   myCockroachManagerObject: {fileID: 1229442371}
   my3DCameraReferencePoint: {fileID: 1600599022}
   CameraObject: {fileID: 330585543}
-  autoAngleSpeed: 0.2
+  autoAngleSpeed: 8.6
   AutoCameraLookOffset: {x: 0, y: 2.71, z: 0}
   mouseInputLeast: 0.05
   myDirect: 0

@@ -53,13 +53,14 @@ public class CameraLogic3D : MonoBehaviour
             Debug.Log(myCockroachMeshObject.transform.rotation.eulerAngles);
             my3DCameraReferencePoint.transform.position = myCockroachMeshObject.transform.position + RotationMatrixCal(AutoCameraOffset, myCockroachMeshObject.transform.rotation.eulerAngles);
 
+            /*
             CameraObject.transform.position = Vector3.Lerp(CameraObject.transform.position, my3DCameraReferencePoint.transform.position, autoAngleSpeed * Time.fixedDeltaTime);
 
             //transform.localPosition = CameraOffset;
             //CameraObject.transform.localScale = new Vector3(1, 1, 1);
             //transform.localPosition = AutoCameraOffset;
 
-            CameraObject.transform.LookAt(myCockroachMeshObject.transform.position + AutoCameraLookOffset);
+            CameraObject.transform.LookAt(myCockroachMeshObject.transform.position + AutoCameraLookOffset);*/
         }
         else if(myTrackMode == CameraTrackMode.playerCamera)
         {
@@ -69,6 +70,18 @@ public class CameraLogic3D : MonoBehaviour
 
             CameraObject.transform.localPosition = PlayerCameraOffset;//TODO: 底下功能寫好之後把這行刪掉
         }
+    }
+
+    private void LateUpdate()
+    {
+
+        CameraObject.transform.position = Vector3.Lerp(CameraObject.transform.position, my3DCameraReferencePoint.transform.position, autoAngleSpeed * Time.deltaTime);
+
+        //transform.localPosition = CameraOffset;
+        //CameraObject.transform.localScale = new Vector3(1, 1, 1);
+        //transform.localPosition = AutoCameraOffset;
+
+        CameraObject.transform.LookAt(myCockroachMeshObject.transform.position + AutoCameraLookOffset);
     }
     private void Update()
     {
