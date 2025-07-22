@@ -94,7 +94,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 20201, guid: 0000000000000000f000000000000000, type: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 2b10cc96478d1714db39afc717f6b5c3, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -698,7 +698,7 @@ Camera:
   m_GameObject: {fileID: 330585543}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 4
+  m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -748,12 +748,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.08004072, y: -0, z: -0, w: 0.9967916}
+  m_LocalPosition: {x: 0, y: 3.550003, z: -5.880001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1073194380}
+  m_Father: {fileID: 1229442375}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &330585547
 MonoBehaviour:
@@ -1552,7 +1552,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 330585546}
+  - {fileID: 1600599023}
   m_Father: {fileID: 1229442375}
   m_LocalEulerAnglesHint: {x: 9.182, y: 0, z: 0}
 --- !u!114 &1073194381
@@ -1587,6 +1587,10 @@ MonoBehaviour:
   myCameraTrackerObject: {fileID: 1073194379}
   myCockroachMeshObject: {fileID: 1772389385}
   myCockroachManagerObject: {fileID: 1229442371}
+  my3DCameraReferencePoint: {fileID: 1600599022}
+  CameraObject: {fileID: 330585543}
+  autoAngleSpeed: 0.2
+  AutoCameraLookOffset: {x: 0, y: 0, z: 0}
   mouseInputLeast: 0.05
   myDirect: 0
   cameraSensitivity: 1
@@ -1634,8 +1638,8 @@ MonoBehaviour:
   myDirect: 0
   myVelocity: 7
   myMaxVelocity: 14
-  AutoAngleSpeed: 2
-  stopVelocity: 10
+  AutoAngleSpeed: 0.8
+  stopVelocity: 80
   GravityForce: 0
   GravityVector: {x: 0, y: 0, z: 0}
   cameraSensitivity: 1
@@ -1700,6 +1704,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 330585546}
   - {fileID: 1073194380}
   - {fileID: 1772389389}
   m_Father: {fileID: 465408073}
@@ -2354,7 +2359,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1430456370
 Transform:
   m_ObjectHideFlags: 0
@@ -2580,9 +2585,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cManager: {fileID: 1229442373}
   cMover: {fileID: 1229442372}
-  cockroachGravityScale: 1
+  cockroachGravityScale: 9.81
   debugGravity: 0
-  fallMaxSpeed: 9.81
+  fallMaxSpeed: 25
+--- !u!1 &1600599022
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1600599023}
+  m_Layer: 0
+  m_Name: 3DCameraReferencePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1600599023
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600599022}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1073194380}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1646566478
 GameObject:
   m_ObjectHideFlags: 0
@@ -3374,8 +3410,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 0.03, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 12, z: 1}
+  m_Center: {x: 0, y: 4.2, z: 0}
 --- !u!33 &1900451797
 MeshFilter:
   m_ObjectHideFlags: 0

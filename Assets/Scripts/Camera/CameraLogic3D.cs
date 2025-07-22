@@ -9,7 +9,13 @@ public class CameraLogic3D : MonoBehaviour
     public GameObject myCameraTrackerObject;
     public GameObject myCockroachMeshObject;
     public GameObject myCockroachManagerObject;
+    public GameObject my3DCameraReferencePoint;
+    public GameObject CameraObject;
 
+    [Header("Auto Camera 參數")]
+    public float autoAngleSpeed = 0.2f;
+    public Vector3 AutoCameraLookOffset = Vector3.zero;
+    
     [Header("Player mouse setting")]
     public float mouseInputLeast = 0.05f;
     public float myDirect = 0f;
@@ -33,7 +39,7 @@ public class CameraLogic3D : MonoBehaviour
     private void Awake()
     {
         CockroachInitialize();
-        transform.localPosition = CameraOffset;
+        CameraObject.transform.localPosition = CameraOffset;
         nowCameraPosition = CameraOffset;
     }
 
@@ -42,18 +48,26 @@ public class CameraLogic3D : MonoBehaviour
     {
         if (myTrackMode == CameraTrackMode.autoCamera)
         {
-            myCameraTrackerObject.transform.SetParent(myCockroachMeshObject.transform, false);
+            //myCameraTrackerObject.transform.SetParent(myCockroachMeshObject.transform, false);
+            myCameraTrackerObject.transform.SetParent(myCockroachManagerObject.transform, false);
+            Debug.Log(myCockroachMeshObject.transform.rotation.eulerAngles);
+            my3DCameraReferencePoint.transform.position = myCockroachMeshObject.transform.position + RotationMatrixCal(AutoCameraOffset, myCockroachMeshObject.transform.rotation.eulerAngles);
+
+            CameraObject.transform.position = Vector3.Lerp(CameraObject.transform.position, my3DCameraReferencePoint.transform.position, autoAngleSpeed * Time.fixedDeltaTime);
+
             //transform.localPosition = CameraOffset;
-            transform.localScale = new Vector3(1, 1, 1);
-            transform.localPosition = AutoCameraOffset;
+            //CameraObject.transform.localScale = new Vector3(1, 1, 1);
+            //transform.localPosition = AutoCameraOffset;
+
+            CameraObject.transform.LookAt(myCockroachMeshObject.transform.position + AutoCameraLookOffset);
         }
         else if(myTrackMode == CameraTrackMode.playerCamera)
         {
             //CameraDirect = Mathf.LerpAngle(CameraDirect, myCManager.myCockroachMove.myDirect, myCManager.playerModeCameraFlu);
             myCameraTrackerObject.transform.SetParent(myCockroachManagerObject.transform, false);
-            transform.localScale = new Vector3(1, 1, 1);
+            CameraObject.transform.localScale = new Vector3(1, 1, 1);
 
-            transform.localPosition = PlayerCameraOffset;//TODO: 底下功能寫好之後把這行刪掉
+            CameraObject.transform.localPosition = PlayerCameraOffset;//TODO: 底下功能寫好之後把這行刪掉
         }
     }
     private void Update()
@@ -77,5 +91,16 @@ public class CameraLogic3D : MonoBehaviour
     public void CockroachInitialize()
     {
         
+    }
+
+    public static Vector3 RotationMatrixCal(Vector3 inputVector, Vector3 inputRotation)
+    {
+        // 把歐拉角 (degree) 轉換為 Quaternion
+        Quaternion rotation = Quaternion.Euler(inputRotation);
+
+        // 用旋轉四元數乘上向量，相當於應用旋轉矩陣
+        Vector3 rotatedVector = rotation * inputVector;
+        
+        return rotatedVector;
     }
 }
