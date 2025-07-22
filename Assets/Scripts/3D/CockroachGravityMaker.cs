@@ -22,7 +22,7 @@ public class CockroachGravityMaker : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        Debug.Log("touch name: " + other.gameObject.name    );
+        //Debug.Log("touch name: " + other.gameObject.name    );
 
         if (other.gameObject.tag == "ClimbableObject")
         {
