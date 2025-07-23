@@ -50,7 +50,7 @@ public class CameraLogic3D : MonoBehaviour
         {
             //myCameraTrackerObject.transform.SetParent(myCockroachMeshObject.transform, false);
             myCameraTrackerObject.transform.SetParent(myCockroachManagerObject.transform, false);
-            Debug.Log(myCockroachMeshObject.transform.rotation.eulerAngles);
+            //Debug.Log(myCockroachMeshObject.transform.rotation.eulerAngles);
             my3DCameraReferencePoint.transform.position = myCockroachMeshObject.transform.position + RotationMatrixCal(AutoCameraOffset, myCockroachMeshObject.transform.rotation.eulerAngles);
 
             /*
