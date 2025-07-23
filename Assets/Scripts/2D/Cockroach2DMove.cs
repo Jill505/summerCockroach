@@ -11,37 +11,44 @@ public class Cockroach2DMove : MonoBehaviour
     void Update()
     {
         // 只有在 moveMode 是 twoDMove 才允許動作
-        if (mainMoveScript == null || mainMoveScript.myMoveMode != moveMode.twoDMove)
-            return;
-
-        float moveX = 0f;
-
-        if (Input.GetKey(KeyCode.A))
+        if (mainMoveScript.myMoveMode == moveMode.twoDMove)
         {
-            moveX = -1f;
-        }
-        else if (Input.GetKey(KeyCode.D))
-        {
-            moveX = 1f;
-        }
+            float moveX = 0f;
 
-        Vector3 moveDir = new Vector3(moveX, 0, 0);
-        myRb.velocity = new Vector3(moveDir.x * moveSpeed, myRb.velocity.y, 0f);
-
-        // 角色左右翻轉（可選）
-        if (moveX != 0 && mainObjectTransform != null)
-        {
-            Vector3 scale = mainObjectTransform.localScale;
-
-            if (moveX > 0)
+            if (Input.GetKey(KeyCode.A))
             {
-                scale.x = 1;
+                moveX = -1f;
             }
-            else
+            else if (Input.GetKey(KeyCode.D))
             {
-                scale.x = -1;
+                moveX = 1f;
             }
-            mainObjectTransform.localScale = scale;
+
+            Vector3 moveDir = new Vector3(moveX, 0, 0);
+            myRb.velocity = new Vector3(moveDir.x * moveSpeed, myRb.velocity.y, 0f);
+
+            // 角色左右翻轉（可選）
+            if (moveX != 0 && mainObjectTransform != null)
+            {
+                Vector3 scale = mainObjectTransform.localScale;
+
+                if (moveX > 0)
+                {
+                    scale.x = 1;
+                }
+                else
+                {
+                    scale.x = -1;
+                }
+                mainObjectTransform.localScale = scale;
+            }
+
         }
+        else
+        {
+            myRb.velocity = new Vector2(0f, myRb.velocity.y);
+        }
+
+        
     }
 }

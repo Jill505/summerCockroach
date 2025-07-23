@@ -42,6 +42,10 @@ public class CockroachMove : MonoBehaviour
     float savedDampValueZ;
     bool dampClogZ;
 
+    [Header("延遲停止設定")]
+    public float delayStopTime = 0.5f;
+
+
     public moveMode myMoveMode = moveMode.AutoCameraMove;
 
     public void MakeGravity()
@@ -60,7 +64,7 @@ public class CockroachMove : MonoBehaviour
         if (Input.GetKey(KeyCode.W))
         {
             dampClogZ = true;
-            
+
             if (HorVelocity <= myMaxVelocity)
             {
                 //HorVelocity += myVelocity * Time.deltaTime;
@@ -70,11 +74,11 @@ public class CockroachMove : MonoBehaviour
         else if (Input.GetKey(KeyCode.S))
         {
             dampClogZ = true;
-            
+
             if (HorVelocity >= -1 * myMaxVelocity)
             {
                 //HorVelocity -= myVelocity * Time.deltaTime;
-                HorVelocity = Mathf.MoveTowards(HorVelocity, -1* myMaxVelocity, testVelocityXZValue);
+                HorVelocity = Mathf.MoveTowards(HorVelocity, -1 * myMaxVelocity, testVelocityXZValue);
             }
         }
         else
@@ -93,7 +97,7 @@ public class CockroachMove : MonoBehaviour
         {
             anglesY -= AutoAngleSpeed * Time.timeScale;
         }
-        else if(Input.GetKey(KeyCode.D))
+        else if (Input.GetKey(KeyCode.D))
         {
             anglesY += AutoAngleSpeed * Time.timeScale;
         }
@@ -101,7 +105,7 @@ public class CockroachMove : MonoBehaviour
         subObjectTransform.transform.localEulerAngles = new Vector3(0, anglesY, 0);
 
         //Vector3 lookingDirection = Quaternion.LookRotation(subObjectTransform.position, lookingReferencePoint.position).eulerAngles;
-        Vector3 lookingDirection = subObjectTransform.forward; 
+        Vector3 lookingDirection = subObjectTransform.forward;
         //lookingDirection.Normalize();
         //Debug.Log("Player facing: " + lookingDirection);
 
@@ -112,7 +116,7 @@ public class CockroachMove : MonoBehaviour
 
     void Start()
     {
-        
+
     }
 
     void Update()
@@ -144,11 +148,19 @@ public class CockroachMove : MonoBehaviour
         }
 
 
-        else if(myMoveMode == moveMode.twoDMove)
+        else if (myMoveMode == moveMode.ChangeSceneMoment)
         {
-            //2ddddddddddd
+            StartCoroutine(DelayedStop(delayStopTime));
         }
     }
+    
+    private IEnumerator DelayedStop(float delayStopTime)
+    {
+        yield return new WaitForSeconds(delayStopTime);
+
+        HorVelocity = 0;
+        myRb.linearVelocity = Vector3.zero;
+    }   
 
 }
 

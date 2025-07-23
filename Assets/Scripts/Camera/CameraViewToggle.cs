@@ -42,25 +42,31 @@ public class CameraViewToggle : MonoBehaviour
     public IEnumerator SwitchViewWithBlackout(bool to2D)
     {
         isSwitching = true;
+        cockroachMove.myMoveMode = moveMode.ChangeSceneMoment;
 
         // 播放黑幕遮蓋動畫
-        BlackScene.SetBool("LoadOut",true);
+        BlackScene.SetBool("LoadOut", true);
         yield return new WaitForSeconds(1.2f); // 根據動畫時間調整
 
-        // 切換視角
+        // 切攝影機
         if (to2D)
-            SwitchTo2D();
+            SetTo2DView_OnlyCamera();
         else
-            SwitchTo3D();
+            SetTo3DView_OnlyCamera();
 
-        // 黑幕淡出動畫（可加 LoadIn 觸發）
-        BlackScene.SetBool("LoadOut",false);
+        // 黑幕淡出動畫
+        BlackScene.SetBool("LoadOut", false);
+        yield return new WaitForSeconds(0.8f); // 等淡出完成再切換控制模式
 
-        yield return new WaitForSeconds(1.2f); // 保險的延遲
+        if (to2D)
+            cockroachMove.myMoveMode = moveMode.twoDMove;
+        else
+            cockroachMove.myMoveMode = moveMode.AutoCameraMove;
+
         isSwitching = false;
     }
 
-    public void SwitchTo2D()
+    private void SetTo2DView_OnlyCamera()
     {
         is2D = true;
         camera2D.gameObject.SetActive(true);
@@ -68,11 +74,9 @@ public class CameraViewToggle : MonoBehaviour
 
         camera2D.orthographic = true;
         camera2D.orthographicSize = orthographicSize;
-
-        cockroachMove.myMoveMode = moveMode.twoDMove;
     }
 
-    public void SwitchTo3D()
+    private void SetTo3DView_OnlyCamera()
     {
         is2D = false;
         camera2D.gameObject.SetActive(false);
@@ -80,8 +84,6 @@ public class CameraViewToggle : MonoBehaviour
 
         camera3D.orthographic = false;
         camera3D.fieldOfView = fieldOfView;
-
-        cockroachMove.myMoveMode = moveMode.AutoCameraMove;
     }
 
     public bool Is2D()

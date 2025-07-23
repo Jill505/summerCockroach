@@ -22,5 +22,6 @@ public enum moveMode
     AutoCameraMove,
     PlayerCameraMove,
 
-    twoDMove
+    twoDMove,
+    ChangeSceneMoment
 }
