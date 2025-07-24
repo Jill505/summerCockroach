@@ -18,12 +18,13 @@ public class CockroachMove : MonoBehaviour
     [Header("功能變數")]
     public float myDirect;
 
-    public float myVelocity0;
-    public float myVelocity1;
-    public float myVelocity2;
-    public float myVelocity3;
-
-
+    public float Hp6maxVelocity = 14f;
+    public float Hp5maxVelocity = 14f;
+    public float Hp4maxVelocity = 14f;
+    public float Hp3maxVelocity = 14f;
+    public float Hp2maxVelocity = 14f;
+    public float Hp1maxVelocity = 14f;
+    public float Hp0maxVelocity = 0f;
 
     public float myVelocity = 7f;
     public float myMaxVelocity = 14f;
