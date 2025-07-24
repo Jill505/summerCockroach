@@ -3502,22 +3502,20 @@ MonoBehaviour:
   Hp: 6
   autoModeCameraFlu: 0.1
   playerModeCameraFlu: 0.1
-  Hp6Mesh: {fileID: -8545447256379345787, guid: 8629c30b9521bb844905bb3e0bf23e20, type: 3}
+  Hp6Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
   Hp6Material:
-  - {fileID: 830258910468995235, guid: 8629c30b9521bb844905bb3e0bf23e20, type: 3}
-  - {fileID: -4372536172839912495, guid: 8629c30b9521bb844905bb3e0bf23e20, type: 3}
-  - {fileID: 7488959734034726970, guid: 8629c30b9521bb844905bb3e0bf23e20, type: 3}
+  - {fileID: -506269506361542419, guid: e54bda082e906e0428d40089ce3d838c, type: 3}
   debugScaleVectorHp6: {x: 0, y: 0, z: 0}
-  Hp5Mesh: {fileID: -8545447256379345787, guid: 8629c30b9521bb844905bb3e0bf23e20, type: 3}
+  Hp5Mesh: {fileID: 7535803439391131454, guid: c6a55ba99e9e99d41b7eef123e311a43, type: 3}
   Hp5Material:
   - {fileID: 830258910468995235, guid: 8629c30b9521bb844905bb3e0bf23e20, type: 3}
   - {fileID: -4372536172839912495, guid: 8629c30b9521bb844905bb3e0bf23e20, type: 3}
   - {fileID: 7488959734034726970, guid: 8629c30b9521bb844905bb3e0bf23e20, type: 3}
   debugScaleVectorHp5: {x: 0, y: 0, z: 0}
-  Hp4Mesh: {fileID: 0}
+  Hp4Mesh: {fileID: 7535803439391131454, guid: c6a55ba99e9e99d41b7eef123e311a43, type: 3}
   Hp4Material: []
   debugScaleVectorHp4: {x: 0, y: 0, z: 0}
-  Hp3Mesh: {fileID: 0}
+  Hp3Mesh: {fileID: -8545447256379345787, guid: 8629c30b9521bb844905bb3e0bf23e20, type: 3}
   Hp3Material: []
   debugScaleVectorHp3: {x: 0, y: 0, z: 0}
   Hp2Mesh: {fileID: 0}
