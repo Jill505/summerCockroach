@@ -90,6 +90,8 @@ public class CameraViewToggle : MonoBehaviour
 
         camera3D.orthographic = false;
         camera3D.fieldOfView = fieldOfView;
+
+        cockroach2DPos.transform.position = cockroach2DStartPoint.position;
     }
 
     public bool Is2D()
