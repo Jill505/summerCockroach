@@ -21,6 +21,10 @@ public class CameraViewToggle : MonoBehaviour
     [Header("黑幕動畫")]
     public Animator BlackScene;
 
+    [Header("切換視角時蟑螂的位置設定")]
+    public Transform cockroach2DPos;
+    public Transform cockroach2DStartPoint;
+
     private bool isSwitching = false; // 避免切換過程中重複觸發
 
     private void Start()
@@ -74,6 +78,8 @@ public class CameraViewToggle : MonoBehaviour
 
         camera2D.orthographic = true;
         camera2D.orthographicSize = orthographicSize;
+
+        cockroach2DPos.transform.position = cockroach2DStartPoint.position;
     }
 
     private void SetTo3DView_OnlyCamera()
