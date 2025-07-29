@@ -28,7 +28,7 @@ public class Cockroach2DMove : MonoBehaviour
             myRb.velocity = new Vector3(moveDir.x * moveSpeed, myRb.velocity.y, 0f);
 
             // 角色左右翻轉（可選）
-            if (moveX != 0 && mainObjectTransform != null)
+            if (moveX != 0)
             {
                 Vector3 scale = mainObjectTransform.localScale;
 
@@ -49,6 +49,6 @@ public class Cockroach2DMove : MonoBehaviour
             myRb.velocity = new Vector2(0f, myRb.velocity.y);
         }
 
-        
+
     }
 }

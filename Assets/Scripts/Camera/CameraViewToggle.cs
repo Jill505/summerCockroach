@@ -80,6 +80,7 @@ public class CameraViewToggle : MonoBehaviour
         camera2D.orthographicSize = orthographicSize;
 
         cockroach2DPos.transform.position = cockroach2DStartPoint.position;
+        camera2D.transform.position = cockroach2DStartPoint.position;
     }
 
     private void SetTo3DView_OnlyCamera()
@@ -92,6 +93,7 @@ public class CameraViewToggle : MonoBehaviour
         camera3D.fieldOfView = fieldOfView;
 
         cockroach2DPos.transform.position = cockroach2DStartPoint.position;
+        camera2D.transform.position = cockroach2DStartPoint.position;
     }
 
     public bool Is2D()

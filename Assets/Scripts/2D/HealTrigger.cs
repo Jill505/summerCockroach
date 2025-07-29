@@ -12,11 +12,7 @@ public class HealTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            cockroachManager.Hp += healAmount;
-
-            // 防止超過最大血量（假設最大血是3）
-            if (cockroachManager.Hp > 3)
-                cockroachManager.Hp = 3;
+            cockroachManager.CockroachHealing(healAmount);
 
             Debug.Log("回血了，目前血量: " + cockroachManager.Hp);
 
