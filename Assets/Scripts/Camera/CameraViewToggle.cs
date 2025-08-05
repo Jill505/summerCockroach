@@ -3,8 +3,6 @@ using UnityEngine;
 
 public class CameraViewToggle : MonoBehaviour
 {
-    private bool is2D = false;
-
     [Header("攝影機")]
     public Camera camera3D;
     public Camera camera2D;
@@ -18,61 +16,79 @@ public class CameraViewToggle : MonoBehaviour
     [Header("蟑螂控制腳本")]
     public CockroachMove cockroachMove;
 
-    [Header("黑幕動畫")]
-    public Animator BlackScene;
+    [Header("轉場設定")]
+    public GameObject transitionQuad3D;
+    public GameObject transitionQuad2D;
+    public Material transitionMaterial;
+
+    [Header("轉場動畫時間（秒）")]
+    public float transitionDuration = 1f;
+    public float scale = 30f;
 
     [Header("切換視角時蟑螂的位置設定")]
     public Transform cockroach2DPos;
     public Transform cockroach2DStartPoint;
 
-    private bool isSwitching = false; // 避免切換過程中重複觸發
+    private bool is2D = false;
+    private bool isSwitching = false;
 
     private void Start()
     {
-        SwitchTo3D_Immediate(); // 預設為 3D，不用動畫
+        if (transitionQuad3D != null) transitionQuad3D.SetActive(false);
+        if (transitionQuad2D != null) transitionQuad2D.SetActive(false);
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.J) && !isSwitching)
+        if (Input.GetKeyDown(KeyCode.J) && !isSwitching) //forTest
         {
-            if (is2D)
-                StartCoroutine(SwitchViewWithBlackout(false));
+            if (is2D == true)
+                StartCoroutine(StartViewSwitch(true));
             else
-                StartCoroutine(SwitchViewWithBlackout(true));
+                StartCoroutine(StartViewSwitch(false));
         }
     }
 
-    public IEnumerator SwitchViewWithBlackout(bool to2D)
+    public IEnumerator StartViewSwitch(bool is2D)
     {
         isSwitching = true;
         cockroachMove.myMoveMode = moveMode.ChangeSceneMoment;
 
-        // 播放黑幕遮蓋動畫
-        BlackScene.SetBool("LoadOut", true);
-        yield return new WaitForSeconds(1.2f); // 根據動畫時間調整
-
-        // 切攝影機
-        if (to2D)
-            SetTo2DView_OnlyCamera();
-        else
-            SetTo3DView_OnlyCamera();
-
-        // 黑幕淡出動畫
-        BlackScene.SetBool("LoadOut", false);
-        yield return new WaitForSeconds(0.8f); // 等淡出完成再切換控制模式
-
-        if (to2D)
-            cockroachMove.myMoveMode = moveMode.twoDMove;
-        else
-            cockroachMove.myMoveMode = moveMode.AutoCameraMove;
-
-        isSwitching = false;
+        if (is2D == true)
+        {
+            transitionQuad2D.SetActive(true);
+            yield return StartCoroutine(AnimateShaderScale(0f, scale, transitionDuration));
+            SetTo3DView();
+        }
+            
+        else if (is2D == false)
+        {
+            transitionQuad3D.SetActive(true);
+            yield return StartCoroutine(AnimateShaderScale(0f, scale, transitionDuration));
+            SetTo2DView();
+        }
     }
 
-    private void SetTo2DView_OnlyCamera()
+    private IEnumerator AnimateShaderScale(float start, float end, float duration)
+    {
+        float time = 0f;
+        while (time < duration)
+        {
+            float t = time / duration;
+            float value = Mathf.Lerp(start, end, t);
+            transitionMaterial.SetFloat("_Scale", value);
+            time += Time.deltaTime;
+            yield return null;
+        }
+
+        // 最後確保設到目標值
+        transitionMaterial.SetFloat("_Scale", end);
+    }
+
+    private void SetTo2DView()  
     {
         is2D = true;
+        transitionQuad3D.SetActive(false);
         camera2D.gameObject.SetActive(true);
         camera3D.gameObject.SetActive(false);
 
@@ -81,11 +97,16 @@ public class CameraViewToggle : MonoBehaviour
 
         cockroach2DPos.transform.position = cockroach2DStartPoint.position;
         camera2D.transform.position = cockroach2DStartPoint.position;
+
+        StartCoroutine(End2DViewTransition());
+
+
     }
 
-    private void SetTo3DView_OnlyCamera()
+    private void SetTo3DView()
     {
         is2D = false;
+        transitionQuad2D.SetActive(false);
         camera2D.gameObject.SetActive(false);
         camera3D.gameObject.SetActive(true);
 
@@ -94,23 +115,34 @@ public class CameraViewToggle : MonoBehaviour
 
         cockroach2DPos.transform.position = cockroach2DStartPoint.position;
         camera2D.transform.position = cockroach2DStartPoint.position;
+
+        StartCoroutine(End3DViewTransition());
     }
+
+    public IEnumerator End2DViewTransition()
+    {
+        transitionQuad2D.SetActive(true);
+        yield return StartCoroutine(AnimateShaderScale(scale, 0f, transitionDuration));
+        transitionQuad2D.SetActive(false);
+
+        cockroachMove.myMoveMode = moveMode.twoDMove;
+        isSwitching = false;
+    }
+
+    public IEnumerator End3DViewTransition()
+    {
+        transitionQuad3D.SetActive(true);
+        yield return StartCoroutine(AnimateShaderScale(scale, 0f, transitionDuration));
+        transitionQuad3D.SetActive(false);
+
+        cockroachMove.myMoveMode = moveMode.AutoCameraMove;
+        isSwitching = false;
+    }
+
 
     public bool Is2D()
     {
         return is2D;
     }
-
-    // 不播動畫的立即切換（初始用）
-    public void SwitchTo3D_Immediate()
-    {
-        is2D = false;
-        camera2D.gameObject.SetActive(false);
-        camera3D.gameObject.SetActive(true);
-
-        camera3D.orthographic = false;
-        camera3D.fieldOfView = fieldOfView;
-
-        cockroachMove.myMoveMode = moveMode.AutoCameraMove;
-    }
 }
+

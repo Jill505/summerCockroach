@@ -14,6 +14,10 @@ public class SwitchTrigger : MonoBehaviour
 
 
 
+    private bool isInTheTrigger = false;
+
+
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         SwitchTo3DAndHideSpider();
@@ -21,9 +25,10 @@ public class SwitchTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!viewToggle.Is2D())
+        if (other.CompareTag("Player") && !viewToggle.Is2D())
         {
-            StartCoroutine(viewToggle.SwitchViewWithBlackout(true)); //切換到2D
+            isInTheTrigger = true;
+            StartCoroutine(viewToggle.StartViewSwitch(false)); //切換到2D
 
             // 顯示蜘蛛（如果有勾選）
             if (enableSpider)
@@ -33,12 +38,20 @@ public class SwitchTrigger : MonoBehaviour
             }
         }
     }
-    
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player") && isInTheTrigger == true)
+        {
+            isInTheTrigger = false;
+        }
+    }
+
     public void SwitchTo3DAndHideSpider()
     {
         if (viewToggle.Is2D())
         {
-            StartCoroutine(viewToggle.SwitchViewWithBlackout(false)); // 切換到3D
+            StartCoroutine(viewToggle.StartViewSwitch(true)); // 切換到3D
             spiderObject.SetActive(false);
         }
     }

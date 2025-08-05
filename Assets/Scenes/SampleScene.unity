@@ -2373,7 +2373,7 @@ GameObject:
   - component: {fileID: 561281341}
   - component: {fileID: 561281340}
   m_Layer: 0
-  m_Name: Quad
+  m_Name: RadialBlur2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2413,7 +2413,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &561281341
@@ -5265,7 +5265,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -14.4, y: 194.2, z: 40.25}
-  m_LocalScale: {x: 1.9006753, y: 10.984374, z: 8.645473}
+  m_LocalScale: {x: 0.25589013, y: 10.984374, z: 8.645473}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 465408073}
@@ -6053,7 +6053,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1454821155
 Transform:
   m_ObjectHideFlags: 0
@@ -7397,7 +7397,10 @@ MonoBehaviour:
   orthographicSize: 5
   fieldOfView: 60
   cockroachMove: {fileID: 1229442372}
-  BlackScene: {fileID: 2085271578}
+  transitionQuad3D: {fileID: 2065172942}
+  transitionQuad2D: {fileID: 561281338}
+  transitionMaterial: {fileID: 2100000, guid: 46acc0bc0f3495a4cbb6d0ba5f336393, type: 2}
+  transitionDuration: 0.5
   cockroach2DPos: {fileID: 424919213}
   cockroach2DStartPoint: {fileID: 1991763280}
 --- !u!4 &1713386671
@@ -7445,7 +7448,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -14.4, y: 194.2, z: 56.83}
-  m_LocalScale: {x: 1.9006753, y: 10.984374, z: 8.645473}
+  m_LocalScale: {x: 0.32520372, y: 10.984374, z: 8.645473}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 465408073}
@@ -9391,7 +9394,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &2065172945
