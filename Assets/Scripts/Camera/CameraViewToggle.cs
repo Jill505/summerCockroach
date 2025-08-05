@@ -15,6 +15,7 @@ public class CameraViewToggle : MonoBehaviour
 
     [Header("蟑螂控制腳本")]
     public CockroachMove cockroachMove;
+    public CameraLogic2D cameraLogic2D;
 
     [Header("轉場設定")]
     public GameObject transitionQuad3D;
@@ -28,6 +29,8 @@ public class CameraViewToggle : MonoBehaviour
     [Header("切換視角時蟑螂的位置設定")]
     public Transform cockroach2DPos;
     public Transform cockroach2DStartPoint;
+
+    
 
     private bool is2D = false;
     private bool isSwitching = false;
@@ -47,6 +50,7 @@ public class CameraViewToggle : MonoBehaviour
             else
                 StartCoroutine(StartViewSwitch(false));
         }
+
     }
 
     public IEnumerator StartViewSwitch(bool is2D)
@@ -57,7 +61,9 @@ public class CameraViewToggle : MonoBehaviour
         if (is2D == true)
         {
             transitionQuad2D.SetActive(true);
+            cameraLogic2D.isFollowing = true;
             yield return StartCoroutine(AnimateShaderScale(0f, scale, transitionDuration));
+            cameraLogic2D.isFollowing = false;
             SetTo3DView();
         }
             
@@ -96,6 +102,7 @@ public class CameraViewToggle : MonoBehaviour
         camera2D.orthographicSize = orthographicSize;
 
         cockroach2DPos.transform.position = cockroach2DStartPoint.position;
+        cockroach2DPos.transform.localScale = new Vector3(1,1,1);
         camera2D.transform.position = cockroach2DStartPoint.position;
 
         StartCoroutine(End2DViewTransition());
@@ -114,6 +121,7 @@ public class CameraViewToggle : MonoBehaviour
         camera3D.fieldOfView = fieldOfView;
 
         cockroach2DPos.transform.position = cockroach2DStartPoint.position;
+        cockroach2DPos.transform.localScale = new Vector3(1, 1, 1);
         camera2D.transform.position = cockroach2DStartPoint.position;
 
         StartCoroutine(End3DViewTransition());
@@ -144,5 +152,7 @@ public class CameraViewToggle : MonoBehaviour
     {
         return is2D;
     }
+
+    
 }
 

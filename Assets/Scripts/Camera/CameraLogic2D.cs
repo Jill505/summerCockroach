@@ -1,24 +1,38 @@
+using UnityEditor.Rendering;
 using UnityEngine;
 
 public class CameraLogic2D : MonoBehaviour
 {
-    [Header("攝影機位置")]
+    [Header("Base")]
+    public Camera cam;
+    public GameObject player;
+    public Rigidbody2D playerRB;
+
+    [Header("Camera")]
     public Vector3 offset = new Vector3(0, 2, -10);
-    private Vector3 targetPos;
-    private float velocityX = 0f;
+    public float moveSpeed = 5f;
+    public float SetOrthographicSize = 5f;
+    public float acceleration = 10f;      // X軸加速度
+    public float maxSpeed = 20f;          // 最大速度
+    public float smoothTime = 0.3f;       // 平滑時間（與切換模式共用）
 
-    [Header("追蹤設定")]
-    public float acceleration = 10f;  // 加速度
-    public float maxSpeed = 20f;      // 最大追蹤速度
-
-    [Header("攝影機限制範圍")]
+    [Header("collider")]
     public BoxCollider2D cameraBounds;
     private float camHalfHeight;
     private float camHalfWidth;
 
-    public Camera cam;
-    public GameObject player;
-    public Rigidbody2D playerRB;
+    [Header("view")]
+    public bool isFollowing = false;
+    public Transform cockroach2DPos;
+    public CameraViewToggle viewToggle;
+
+    //  5. 內部計算用變數
+    private Vector3 targetPos;
+    private float velocityX = 0f;
+    private Vector3 moveVelocity;    // 給 SmoothDamp 使用
+    private float zoomVelocity = 0f; // 視角縮放用
+
+
 
     void Start()
     {
@@ -30,8 +44,16 @@ public class CameraLogic2D : MonoBehaviour
 
     void Update()
     {
-        UpdateCameraPosition();
+        if (isFollowing == false)
+        {
+            UpdateCameraPosition();
+        }
+        else
+        {
+            MoveTowardsTarget();
+        }
     }
+
 
     void UpdateCameraPosition()
     {
@@ -68,8 +90,20 @@ public class CameraLogic2D : MonoBehaviour
 
         newCamPos.x = Mathf.Clamp(newCamPos.x, minX, maxX);
         newCamPos.y = Mathf.Clamp(newCamPos.y, minY, maxY);
-        
+
 
         transform.position = newCamPos;
+    }
+
+    private void MoveTowardsTarget()
+    {
+        // 設定目標位置（保持Z軸不變）
+        Vector3 targetPosition = new Vector3(cockroach2DPos.position.x, cockroach2DPos.position.y, offset.z);
+
+        // 使用 SmoothDamp 平滑移動攝影機
+        transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref moveVelocity, smoothTime);
+
+        // 使用 SmoothDamp 平滑調整攝影機的 Orthographic Size（視野縮放）
+        cam.orthographicSize = Mathf.SmoothDamp(cam.orthographicSize, SetOrthographicSize, ref zoomVelocity, smoothTime);
     }
 }
