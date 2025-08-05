@@ -6194,7 +6194,9 @@ MonoBehaviour:
   SetOrthographicSize: 2
   acceleration: 10
   maxSpeed: 15
-  smoothTime: 0.3
+  smoothTime: 1
+  targetSize: 5
+  startSize: 2
   cameraBounds: {fileID: 611533743}
   isFollowing: 0
   cockroach2DPos: {fileID: 424919213}

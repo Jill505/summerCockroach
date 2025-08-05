@@ -99,13 +99,16 @@ public class CameraViewToggle : MonoBehaviour
         camera3D.gameObject.SetActive(false);
 
         camera2D.orthographic = true;
-        camera2D.orthographicSize = orthographicSize;
+        //camera2D.orthographicSize = orthographicSize;
 
         cockroach2DPos.transform.position = cockroach2DStartPoint.position;
         cockroach2DPos.transform.localScale = new Vector3(1,1,1);
-        camera2D.transform.position = cockroach2DStartPoint.position;
+        //camera2D.transform.position = cockroach2DStartPoint.position;
 
         StartCoroutine(End2DViewTransition());
+
+        cockroachMove.myMoveMode = moveMode.twoDMove;
+        isSwitching = false;
 
 
     }
@@ -122,19 +125,20 @@ public class CameraViewToggle : MonoBehaviour
 
         cockroach2DPos.transform.position = cockroach2DStartPoint.position;
         cockroach2DPos.transform.localScale = new Vector3(1, 1, 1);
-        camera2D.transform.position = cockroach2DStartPoint.position;
-
+        //camera2D.transform.position = cockroach2DStartPoint.position;
+        
         StartCoroutine(End3DViewTransition());
+
+        cockroachMove.myMoveMode = moveMode.AutoCameraMove;
+        isSwitching = false;
     }
 
     public IEnumerator End2DViewTransition()
     {
         transitionQuad2D.SetActive(true);
+        cameraLogic2D.StartSmoothZoom();
         yield return StartCoroutine(AnimateShaderScale(scale, 0f, transitionDuration));
         transitionQuad2D.SetActive(false);
-
-        cockroachMove.myMoveMode = moveMode.twoDMove;
-        isSwitching = false;
     }
 
     public IEnumerator End3DViewTransition()
@@ -142,9 +146,6 @@ public class CameraViewToggle : MonoBehaviour
         transitionQuad3D.SetActive(true);
         yield return StartCoroutine(AnimateShaderScale(scale, 0f, transitionDuration));
         transitionQuad3D.SetActive(false);
-
-        cockroachMove.myMoveMode = moveMode.AutoCameraMove;
-        isSwitching = false;
     }
 
 

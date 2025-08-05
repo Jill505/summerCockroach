@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEditor.Rendering;
 using UnityEngine;
 
@@ -16,25 +17,34 @@ public class CameraLogic2D : MonoBehaviour
     public float maxSpeed = 20f;          // 最大速度
     public float smoothTime = 0.3f;       // 平滑時間（與切換模式共用）
 
-    [Header("collider")]
+    public float targetSize = 5f;     // 目標 orthographicSize
+    public float startSize = 2f;
+
+    [Header("Collider")]
     public BoxCollider2D cameraBounds;
     private float camHalfHeight;
     private float camHalfWidth;
 
-    [Header("view")]
+    [Header("View")]
     public bool isFollowing = false;
     public Transform cockroach2DPos;
     public CameraViewToggle viewToggle;
 
+
     //  5. 內部計算用變數
     private Vector3 targetPos;
     private float velocityX = 0f;
+    private Vector3 smoothVelocity = Vector3.zero;
     private Vector3 moveVelocity;    // 給 SmoothDamp 使用
     private float zoomVelocity = 0f; // 視角縮放用
 
+    private float currentVelocity = 0f;
+    private bool isZooming = false;
+    private float timer = 0f;
 
 
-    void Start()
+
+    void Awake()
     {
         playerRB = player.GetComponent<Rigidbody2D>();
         // 計算攝影機視野的一半高度與寬度
@@ -44,43 +54,46 @@ public class CameraLogic2D : MonoBehaviour
 
     void Update()
     {
-        if (isFollowing == false)
+        if (isZooming)
         {
-            UpdateCameraPosition();
+            // 平滑調整 orthographicSize
+            cam.orthographicSize = Mathf.SmoothDamp(cam.orthographicSize, targetSize, ref currentVelocity, smoothTime);
+
+            // 更新經過時間
+            timer += Time.deltaTime;
+
+            // 當 smoothTime 過了，就停止 zoom
+            if (timer >= smoothTime)
+            {
+                cam.orthographicSize = targetSize;
+                isZooming = false;
+            }
         }
         else
         {
-            MoveTowardsTarget();
+            if (isFollowing == false)
+            {
+                UpdateCameraPosition();
+            }
+            else
+            {
+                MoveTowardsTarget();
+            }
         }
     }
 
 
+    
+
     void UpdateCameraPosition()
     {
+        // 計算目標位置
         targetPos = player.transform.position + offset;
 
-        // 橫向距離
-        float distanceX = targetPos.x - transform.position.x;
+        // 使用 SmoothDamp 平滑跟隨
+        Vector3 smoothPos = Vector3.SmoothDamp(transform.position, targetPos, ref smoothVelocity, smoothTime);
 
-        // 根據距離推進速度（加速）
-        float accelerationForce = acceleration * Time.deltaTime;
-
-        if (Mathf.Abs(distanceX) > 0.01f)
-        {
-            velocityX += Mathf.Sign(distanceX) * accelerationForce;
-        }
-        else
-        {
-            velocityX = 0f; // 幾乎貼齊就停止
-        }
-
-        // 限制最大速度
-        velocityX = Mathf.Clamp(velocityX, -maxSpeed, maxSpeed);
-
-        // 移動攝影機（只動X軸）
-        Vector3 newCamPos = new Vector3(transform.position.x + velocityX * Time.deltaTime, targetPos.y, targetPos.z);
-
-        // 限制範圍：從 BoxCollider2D 得到範圍
+        // 限制範圍
         Bounds bounds = cameraBounds.bounds;
 
         float minX = bounds.min.x + camHalfWidth;
@@ -88,11 +101,10 @@ public class CameraLogic2D : MonoBehaviour
         float minY = bounds.min.y + camHalfHeight;
         float maxY = bounds.max.y - camHalfHeight;
 
-        newCamPos.x = Mathf.Clamp(newCamPos.x, minX, maxX);
-        newCamPos.y = Mathf.Clamp(newCamPos.y, minY, maxY);
+        smoothPos.x = Mathf.Clamp(smoothPos.x, minX, maxX);
+        smoothPos.y = Mathf.Clamp(smoothPos.y, minY, maxY);
 
-
-        transform.position = newCamPos;
+        transform.position = smoothPos;
     }
 
     private void MoveTowardsTarget()
@@ -105,5 +117,18 @@ public class CameraLogic2D : MonoBehaviour
 
         // 使用 SmoothDamp 平滑調整攝影機的 Orthographic Size（視野縮放）
         cam.orthographicSize = Mathf.SmoothDamp(cam.orthographicSize, SetOrthographicSize, ref zoomVelocity, smoothTime);
+    }
+
+    public void StartSmoothZoom()
+    {
+        transform.position = new Vector3(cockroach2DPos.position.x, cockroach2DPos.position.y, transform.position.z);
+
+        // 初始視野大小
+        cam.orthographicSize = startSize;
+
+        // 啟動 zoom 過程
+        isZooming = true;
+        timer = 0f;
+        currentVelocity = 0f;
     }
 }
