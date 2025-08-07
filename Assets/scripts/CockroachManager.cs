@@ -20,34 +20,8 @@ public class CockroachManager : MonoBehaviour
     public float autoModeCameraFlu = 0.1f;
     public float playerModeCameraFlu = 0.1f;
 
-    public Mesh Hp6Mesh;
-    public Material[] Hp6Material;
-    public Vector3 debugScaleVectorHp6;
-
-    public Mesh Hp5Mesh;
-    public Material[] Hp5Material;
-    public Vector3 debugScaleVectorHp5;
-
-    public Mesh Hp4Mesh;
-    public Material[] Hp4Material;
-    public Vector3 debugScaleVectorHp4;
-
-    public Mesh Hp3Mesh;
-    public Material[] Hp3Material;
-    public Vector3 debugScaleVectorHp3;
-
-    public Mesh Hp2Mesh;
-    public Material[] Hp2Material;
-    public Vector3 debugScaleVectorHp2;
-
-    public Mesh Hp1Mesh;
-    public Material[] Hp1Material;
-    public Vector3 debugScaleVectorHp1;
-
-    public Mesh Hp0Mesh;
-    public Material[] Hp0Material;
-    public Vector3 debugScaleVectorHp0;
-
+    public GameObject[] cockroachModels = new GameObject[7];
+    
     [Header("¡≠Ω∏æﬁß@≈‹º∆")]
     public bool CockroachMoveable = false;
 
@@ -92,13 +66,32 @@ public class CockroachManager : MonoBehaviour
     } 
     public void CockroachBodyPartSwitch()
     {
+        myCockroachMove.HorVelocity = 0;
+        for (int i = 0; i < cockroachModels.Length; i++)
+        {
+            cockroachModels[i].SetActive(false);
+        }
+
+
+        if (Hp >= 6)
+        {
+            cockroachModels[6].SetActive(true);
+        }
+        else if (Hp <= 0)
+        {
+            cockroachModels[0].SetActive(true);
+        }
+        else
+        {
+            cockroachModels[Hp].SetActive(true);
+        }
+
+        /*
         switch (Hp)
         {
 
-            case 6:
-                myMeshFilter.mesh = Hp6Mesh;
-                myRenderer.materials = Hp6Material;
-                myCockroachMove.myMaxVelocity = myCockroachMove.Hp6maxVelocity;
+            case int n when Hp >= 6:
+
                 myCockroachMove.HorVelocity = 0;
                 break;
 
@@ -144,7 +137,7 @@ public class CockroachManager : MonoBehaviour
                 myCockroachMove.HorVelocity = 0;
                 CockroachDie();
                 break;
-        }
+        }*/
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
