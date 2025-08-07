@@ -15,6 +15,9 @@ public class CockroachMove : MonoBehaviour
     public Transform subObjectTransform;
     public Transform lookingReferencePoint;
 
+    [Header("調整係數")]
+    public float runSpeed = 1.4f;
+
     [Header("功能變數")]
     public float myDirect;
 
@@ -108,6 +111,11 @@ public class CockroachMove : MonoBehaviour
         else if (Input.GetKey(KeyCode.D))
         {
             anglesY += AutoAngleSpeed * Time.timeScale;
+        }
+
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            HorVelocity *= runSpeed;
         }
 
         subObjectTransform.transform.localEulerAngles = new Vector3(0, anglesY, 0);
