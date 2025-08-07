@@ -21,7 +21,7 @@ public class FemCockraochTracker : MonoBehaviour
     {
         SortRoachesByDistance();
         textShowcase.text = "";
-        textShowcase.text += "離你最進的母蟑螂有" + Vector3.Distance(playerPos.transform.position, sceneRoaches[0].gameObject.transform.position)+ "公尺遠！\n";
+        textShowcase.text += "離你最近的母蟑螂有" + Vector3.Distance(playerPos.transform.position, sceneRoaches[0].gameObject.transform.position)+ "公尺遠！\n";
         textShowcase.text += "蟑螂姓名：" + sceneRoaches[0].cockroachName + "\n";
         textShowcase.text += "蟑螂敘述：" + sceneRoaches[0].Disc;
     }

@@ -4,6 +4,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
+using UnityEngine.Rendering;
 
 public class CockroachMove : MonoBehaviour
 {
@@ -31,6 +32,7 @@ public class CockroachMove : MonoBehaviour
 
     public float myVelocity = 7f;
     public float myMaxVelocity = 14f;
+    public float myRealVelocity = 0f;
     float velocityX;
     float velocityY;
     //float velocityZ;
@@ -71,25 +73,24 @@ public class CockroachMove : MonoBehaviour
         float verAngleX = Mathf.Sin(swapAngle);
         float verAngleZ = Mathf.Cos(swapAngle);
 
-
         if (Input.GetKey(KeyCode.W))
         {
             dampClogZ = true;
 
-            if (HorVelocity <= myMaxVelocity)
+            if (HorVelocity <= myRealVelocity)
             {
                 //HorVelocity += myVelocity * Time.deltaTime;
-                HorVelocity = Mathf.MoveTowards(HorVelocity, myMaxVelocity, testVelocityXZValue);
+                HorVelocity = Mathf.MoveTowards(HorVelocity, myRealVelocity, testVelocityXZValue);
             }
         }
         else if (Input.GetKey(KeyCode.S))
         {
             dampClogZ = true;
 
-            if (HorVelocity >= -1 * myMaxVelocity)
+            if (HorVelocity >= -1 * myRealVelocity)
             {
                 //HorVelocity -= myVelocity * Time.deltaTime;
-                HorVelocity = Mathf.MoveTowards(HorVelocity, -1 * myMaxVelocity, testVelocityXZValue);
+                HorVelocity = Mathf.MoveTowards(HorVelocity, -1 * myRealVelocity, testVelocityXZValue);
             }
         }
         else
@@ -113,9 +114,19 @@ public class CockroachMove : MonoBehaviour
             anglesY += AutoAngleSpeed * Time.timeScale;
         }
 
+
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            HorVelocity *= runSpeed;
+            myRealVelocity = myMaxVelocity * runSpeed;
+        }
+        else
+        {
+            myRealVelocity = myMaxVelocity;
+
+            if (HorVelocity > myMaxVelocity)
+            {
+                HorVelocity -= myMaxVelocity;
+            }
         }
 
         subObjectTransform.transform.localEulerAngles = new Vector3(0, anglesY, 0);
