@@ -107,11 +107,11 @@ public class CockroachMove : MonoBehaviour
 
         if (Input.GetKey(KeyCode.A))
         {
-            anglesY -= AutoAngleSpeed * Time.timeScale;
+            anglesY -= AutoAngleSpeed * Time.deltaTime;
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            anglesY += AutoAngleSpeed * Time.timeScale;
+            anglesY += AutoAngleSpeed * Time.deltaTime;
         }
 
 

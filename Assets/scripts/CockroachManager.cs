@@ -74,7 +74,14 @@ public class CockroachManager : MonoBehaviour
     public void CockroachDie()
     {
         //開始死亡計算
-        allGameManger.GameFail();
+        if (allGameManger == null)
+        {
+            Debug.LogError("Ak Error: the all game manager is empty & null");
+        }
+        else
+        {
+            allGameManger.GameFail();
+        }
     }
 
     public void CockroachInjury(int injNum)
@@ -143,6 +150,10 @@ public class CockroachManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        if (allGameManger == null)
+        {
+            allGameManger = GameObject.Find("AllGameManager").GetComponent<AllGameManager>();
+        }
         GameStart();//AutoGameStart
 
     }

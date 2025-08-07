@@ -49,6 +49,6 @@ public class FemCockraochTracker : MonoBehaviour
             sceneRoaches[i] = filteredRoaches[i];
         }
 
-        Debug.Log("Roaches sorted by distance to player (excluding those already found).");
+        //Debug.Log("Roaches sorted by distance to player (excluding those already found).");
     }
 }

@@ -5535,6 +5535,7 @@ MonoBehaviour:
   mainObjectTransform: {fileID: 1229442375}
   subObjectTransform: {fileID: 1772389389}
   lookingReferencePoint: {fileID: 303797449}
+  runSpeed: 2.2
   myDirect: 0
   Hp6maxVelocity: 14
   Hp5maxVelocity: 14
@@ -5545,8 +5546,9 @@ MonoBehaviour:
   Hp0maxVelocity: 0
   myVelocity: 7
   myMaxVelocity: 14
+  myRealVelocity: 0
   HorVelocity: 0
-  AutoAngleSpeed: 0.8
+  AutoAngleSpeed: 85
   stopVelocity: 80
   GravityForce: 0
   GravityVector: {x: 0, y: 0, z: 0}
@@ -5576,26 +5578,33 @@ MonoBehaviour:
   Hp: 6
   autoModeCameraFlu: 0.1
   playerModeCameraFlu: 0.1
-  Hp6Mesh: {fileID: 0}
-  Hp6Material: []
+  Hp6Mesh: {fileID: -8545447256379345787, guid: 1379756ecdc1ecc4a9746801df3edff8, type: 3}
+  Hp6Material:
+  - {fileID: 239378781582670930, guid: 13807fa47aa075644b499565a7681b99, type: 3}
   debugScaleVectorHp6: {x: 0, y: 0, z: 0}
-  Hp5Mesh: {fileID: 0}
-  Hp5Material: []
+  Hp5Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  Hp5Material:
+  - {fileID: 2100000, guid: f56d4c9b7af79674ab855aa13775f07b, type: 2}
   debugScaleVectorHp5: {x: 0, y: 0, z: 0}
-  Hp4Mesh: {fileID: 0}
-  Hp4Material: []
+  Hp4Mesh: {fileID: -8545447256379345787, guid: 1379756ecdc1ecc4a9746801df3edff8, type: 3}
+  Hp4Material:
+  - {fileID: -876546973899608171, guid: 602894db725edd641a94833439673ce9, type: 3}
   debugScaleVectorHp4: {x: 0, y: 0, z: 0}
-  Hp3Mesh: {fileID: 0}
-  Hp3Material: []
+  Hp3Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  Hp3Material:
+  - {fileID: -3051733861741164343, guid: 3aae5678fa20dd244a28293a784c7fd7, type: 3}
   debugScaleVectorHp3: {x: 0, y: 0, z: 0}
-  Hp2Mesh: {fileID: 0}
-  Hp2Material: []
+  Hp2Mesh: {fileID: -8545447256379345787, guid: 1379756ecdc1ecc4a9746801df3edff8, type: 3}
+  Hp2Material:
+  - {fileID: 2100000, guid: d29ac0e5ec4328840bb5311e3a7adb13, type: 2}
   debugScaleVectorHp2: {x: 0, y: 0, z: 0}
-  Hp1Mesh: {fileID: 0}
-  Hp1Material: []
+  Hp1Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  Hp1Material:
+  - {fileID: -506269506361542419, guid: e54bda082e906e0428d40089ce3d838c, type: 3}
   debugScaleVectorHp1: {x: 0, y: 0, z: 0}
-  Hp0Mesh: {fileID: 0}
-  Hp0Material: []
+  Hp0Mesh: {fileID: -8545447256379345787, guid: 1379756ecdc1ecc4a9746801df3edff8, type: 3}
+  Hp0Material:
+  - {fileID: -1734466688874716094, guid: 1379756ecdc1ecc4a9746801df3edff8, type: 3}
   debugScaleVectorHp0: {x: 0, y: 0, z: 0}
   CockroachMoveable: 1
 --- !u!54 &1229442374
