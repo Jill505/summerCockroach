@@ -101,8 +101,8 @@ public class CameraViewToggle : MonoBehaviour
         camera2D.orthographic = true;
         //camera2D.orthographicSize = orthographicSize;
 
-        cockroach2DPos.transform.position = cockroach2DStartPoint.position;
-        cockroach2DPos.transform.localScale = new Vector3(1,1,1);
+        //cockroach2DPos.transform.position = cockroach2DStartPoint.position;
+        //cockroach2DPos.transform.localScale = new Vector3(1,1,1);
         //camera2D.transform.position = cockroach2DStartPoint.position;
 
         StartCoroutine(End2DViewTransition());
@@ -123,10 +123,10 @@ public class CameraViewToggle : MonoBehaviour
         camera3D.orthographic = false;
         camera3D.fieldOfView = fieldOfView;
 
-        cockroach2DPos.transform.position = cockroach2DStartPoint.position;
-        cockroach2DPos.transform.localScale = new Vector3(1, 1, 1);
+        //cockroach2DPos.transform.position = cockroach2DStartPoint.position;
+        //cockroach2DPos.transform.localScale = new Vector3(1, 1, 1);
         //camera2D.transform.position = cockroach2DStartPoint.position;
-        
+
         StartCoroutine(End3DViewTransition());
 
         cockroachMove.myMoveMode = moveMode.AutoCameraMove;
