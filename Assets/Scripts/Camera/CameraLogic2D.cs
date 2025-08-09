@@ -5,6 +5,7 @@ using UnityEngine;
 public class CameraLogic2D : MonoBehaviour
 {
     [Header("Base")]
+    public GameObject Camera;
     public Camera cam;
     public GameObject player;
     public Rigidbody2D playerRB;
