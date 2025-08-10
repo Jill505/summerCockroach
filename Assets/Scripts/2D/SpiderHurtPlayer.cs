@@ -8,7 +8,7 @@ public class SpiderHurtPlayer : MonoBehaviour
     public CameraViewToggle viewToggle;
 
     [Header("視角切換與蜘蛛控制腳本")]
-    public SwitchTrigger switchTrigger;
+    public OneHoleSwitchTrigger switchTrigger;
 
 
     private bool hasHurt = false;

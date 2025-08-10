@@ -22,7 +22,7 @@ public class CameraLogic2D : MonoBehaviour
     public float startSize = 2f;
 
     [Header("Collider")]
-    public BoxCollider2D cameraBounds;
+    private Bounds customBounds;
     private float camHalfHeight;
     private float camHalfWidth;
 
@@ -95,7 +95,7 @@ public class CameraLogic2D : MonoBehaviour
         Vector3 smoothPos = Vector3.SmoothDamp(transform.position, targetPos, ref smoothVelocity, smoothTime);
 
         // ­­¨î½d³ò
-        Bounds bounds = cameraBounds.bounds;
+        Bounds bounds = customBounds;
 
         float minX = bounds.min.x + camHalfWidth;
         float maxX = bounds.max.x - camHalfWidth;
@@ -131,5 +131,10 @@ public class CameraLogic2D : MonoBehaviour
         isZooming = true;
         timer = 0f;
         currentVelocity = 0f;
+    }
+
+    public void SetCustomBounds(Bounds bounds)
+    {
+        customBounds = bounds;
     }
 }

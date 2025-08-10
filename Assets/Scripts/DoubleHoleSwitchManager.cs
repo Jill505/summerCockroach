@@ -24,10 +24,14 @@ public class DoubleHoleSwitchManager : MonoBehaviour
 
     [Header("控制相機與角色的腳本")]
     public CameraViewToggle viewToggle;
+    public CameraLogic2D cameraLogic2D;
 
     [Header("蟑螂控制腳本")]
     public CockroachMove cockroachMove3D;
     public Cockroach2DMove cockroachMove2D;
+
+    [Header("攝影機限制範圍")]
+    public BoxCollider2D cameraBounds;
 
     private bool isInTheTrigger = false;
 
@@ -42,6 +46,7 @@ public class DoubleHoleSwitchManager : MonoBehaviour
 
     public void EnterHole(bool isLeft, bool from3D)
     {
+        cameraLogic2D.SetCustomBounds(cameraBounds.bounds);
         if (from3D && !viewToggle.Is2D())
         {
             // 3D → 2D
