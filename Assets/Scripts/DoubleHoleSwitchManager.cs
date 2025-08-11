@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class DoubleHoleSwitchManager : MonoBehaviour
 {
@@ -15,28 +16,44 @@ public class DoubleHoleSwitchManager : MonoBehaviour
     public HoleData leftHole;
     public HoleData rightHole;
 
-    [Header("蜘蛛的傷害腳本")]
-    public SpiderHurtPlayer spiderHurtPlayer;
 
-    [Header("蜘蛛相關設定")]
-    public bool enableSpider = false;
-    public GameObject spiderObject;
+    [Header("大便生成設定")]
+    public bool enableSpawn = false;                 // 是否啟用生成
+    public GameObject shit;
+
+    public int minCount = 1;
+    public int maxCount = 3;
+    private float spawnOffsetY = 0.5f;
+
+    [Header("蜘蛛生成設定")]
+    public bool enableSpider = false;                // 是否顯示蜘蛛
+    public GameObject spiderObject;                  // 被隱藏的蜘蛛物件    
+    public int SpiderMinCount = 1;
+    public int SpiderMaxCount = 3;
 
     [Header("控制相機與角色的腳本")]
-    public CameraViewToggle viewToggle;
+    private CameraViewToggle viewToggle;
     public CameraLogic2D cameraLogic2D;
 
     [Header("蟑螂控制腳本")]
-    public CockroachMove cockroachMove3D;
-    public Cockroach2DMove cockroachMove2D;
+    private CockroachMove cockroachMove3D;
+    private Cockroach2DMove cockroachMove2D;
 
-    [Header("攝影機限制範圍")]
+    [Header("限制範圍")]
     public BoxCollider2D cameraBounds;
+    public EdgeCollider2D spawnArea;                 // 生成範圍
 
     private bool isInTheTrigger = false;
+    private List<GameObject> spawnedShit = new List<GameObject>();
+    private List<GameObject> spawnedSpider = new List<GameObject>();
+
+
 
     private void Start()
     {
+        viewToggle = GameObject.Find("CameraManager").GetComponent<CameraViewToggle>();
+        cockroachMove3D = GameObject.Find("3DCockroach").GetComponent<CockroachMove>();
+        cockroachMove2D = GameObject.Find("2DCockroach").GetComponent<Cockroach2DMove>();
         // 綁定事件
         if (leftHole.holeTrigger3D != null) leftHole.holeTrigger3D.gameObject.AddComponent<HoleTriggerBinder>().Setup(this, true, true);
         if (rightHole.holeTrigger3D != null) rightHole.holeTrigger3D.gameObject.AddComponent<HoleTriggerBinder>().Setup(this, false, true);
@@ -54,8 +71,11 @@ public class DoubleHoleSwitchManager : MonoBehaviour
             StartCoroutine(viewToggle.StartViewSwitch(false)); // 切到 2D
             if (enableSpider)
             {
-                spiderObject.SetActive(true);
-                spiderHurtPlayer.ResetHurt();
+                SpawnRandomSpiderOnPath();
+            }
+            if (enableSpawn)
+            {
+                SpawnRandomShitOnPath();
             }
             // 傳送 2D 角色
             // twoDCockroach.transform.position = targetPos;
@@ -69,57 +89,135 @@ public class DoubleHoleSwitchManager : MonoBehaviour
             // 2D → 3D
             Vector3 targetPos = isLeft ? leftHole.exitPoint3D.position : rightHole.exitPoint3D.position;
             StartCoroutine(viewToggle.StartViewSwitch(true)); // 切到 3D
-            spiderObject.SetActive(false);
+            foreach (GameObject obj in spawnedShit)
+            {
+                if (obj != null)
+                {
+                    Destroy(obj);
+                }
+            }
+            spawnedShit.Clear();
+
+            foreach (GameObject obj in spawnedSpider)
+            {
+                if (obj != null)
+                {
+                    Destroy(obj);
+                }
+            }
+            spawnedSpider.Clear();
             // 傳送 3D 角色
             // threeDCockroach.transform.position = targetPos;
             cockroachMove3D.transform.position = targetPos;
             Debug.Log($"[傳送] 2D → 3D 從 {(isLeft ? "左" : "右")} 出，傳到 {targetPos}");
         }
     }
-}
-
-// 3D 觸發器
-public class HoleTriggerBinder : MonoBehaviour
-{
-    private DoubleHoleSwitchManager manager;
-    private bool isLeft;
-    private bool from3D;
-
-    public void Setup(DoubleHoleSwitchManager m, bool left, bool from3DWorld)
+    void SpawnRandomShitOnPath()
     {
-        manager = m;
-        isLeft = left;
-        from3D = from3DWorld;
-    }
+        Vector2[] points = spawnArea.points;
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
+        int spawnCount = Random.Range(minCount, maxCount + 1);
+
+        for (int i = 0; i < spawnCount; i++)
         {
-            manager.EnterHole(isLeft, from3D);
+            // 1. 隨機選擇一段線
+            int segmentIndex = Random.Range(0, points.Length - 1);
+
+            // 2. 該段線的起點與終點（轉世界座標）
+            Vector2 worldStart = spawnArea.transform.TransformPoint(points[segmentIndex]);
+            Vector2 worldEnd = spawnArea.transform.TransformPoint(points[segmentIndex + 1]);
+
+            // 3. 在這段線上隨機取一個位置
+            float t = Random.Range(0f, 1f);
+            Vector2 spawnPos2D = Vector2.Lerp(worldStart, worldEnd, t);
+
+            spawnPos2D.y += spawnOffsetY;
+
+            // 5. 組合成 3D 座標（固定 Z 軸）
+            Vector3 spawnPos3D = new Vector3(spawnPos2D.x, spawnPos2D.y, 303.8198f);
+
+            GameObject newObj = Instantiate(shit, spawnPos3D, Quaternion.identity);
+            spawnedShit.Add(newObj);
         }
     }
-}
 
-// 2D 觸發器
-public class HoleTriggerBinder2D : MonoBehaviour
-{
-    private DoubleHoleSwitchManager manager;
-    private bool isLeft;
-    private bool from3D;
-
-    public void Setup(DoubleHoleSwitchManager m, bool left, bool from3DWorld)
+    void SpawnRandomSpiderOnPath()
     {
-        manager = m;
-        isLeft = left;
-        from3D = from3DWorld;
+        Vector2[] points = spawnArea.points;
+
+        int spawnCount = Random.Range(SpiderMinCount, SpiderMaxCount + 1);
+
+        for (int i = 0; i < spawnCount; i++)
+        {
+            // 1. 隨機選擇一段線
+            int segmentIndex = Random.Range(0, points.Length - 1);
+
+            // 2. 該段線的起點與終點（轉世界座標）
+            Vector2 worldStart = spawnArea.transform.TransformPoint(points[segmentIndex]);
+            Vector2 worldEnd = spawnArea.transform.TransformPoint(points[segmentIndex + 1]);
+
+            // 3. 在這段線上隨機取一個位置
+            float t = Random.Range(0f, 1f);
+            Vector2 spawnPos2D = Vector2.Lerp(worldStart, worldEnd, t);
+
+            spawnPos2D.y += spawnOffsetY;
+
+            // 5. 組合成 3D 座標（固定 Z 軸）
+            Vector3 spawnPos3D = new Vector3(spawnPos2D.x, spawnPos2D.y, 303.8198f);
+
+            GameObject newObj = Instantiate(spiderObject, spawnPos3D, Quaternion.identity);
+            spawnedSpider.Add(newObj);
+            SpiderHurtPlayer spiderHurt = newObj.GetComponent<SpiderHurtPlayer>();
+            if (spiderHurt != null)
+            {
+                spiderHurt.ResetHurt();
+            }
+        }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    // 3D 觸發器
+    public class HoleTriggerBinder : MonoBehaviour
     {
-        if (other.CompareTag("Player"))
+        private DoubleHoleSwitchManager manager;
+        private bool isLeft;
+        private bool from3D;
+
+        public void Setup(DoubleHoleSwitchManager m, bool left, bool from3DWorld)
         {
-            manager.EnterHole(isLeft, from3D);
+            manager = m;
+            isLeft = left;
+            from3D = from3DWorld;
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.CompareTag("Player"))
+            {
+                manager.EnterHole(isLeft, from3D);
+            }
+        }
+    }
+
+    // 2D 觸發器
+    public class HoleTriggerBinder2D : MonoBehaviour
+    {
+        private DoubleHoleSwitchManager manager;
+        private bool isLeft;
+        private bool from3D;
+
+        public void Setup(DoubleHoleSwitchManager m, bool left, bool from3DWorld)
+        {
+            manager = m;
+            isLeft = left;
+            from3D = from3DWorld;
+        }
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.CompareTag("Player"))
+            {
+                manager.EnterHole(isLeft, from3D);
+            }
         }
     }
 }

@@ -3,15 +3,19 @@ using UnityEngine;
 public class SpiderHurtPlayer : MonoBehaviour
 {
     [Header("設定蟑螂管理腳本")]
-    public CockroachManager cockroachManager;
-    [Header("控制相機與角色的腳本")]
-    public CameraViewToggle viewToggle;
+    private CockroachManager cockroachManager;
 
     [Header("視角切換與蜘蛛控制腳本")]
-    public OneHoleSwitchTrigger switchTrigger;
+    private OneHoleSwitchTrigger OneHoleTrigger;
 
 
     private bool hasHurt = false;
+
+    private void Start()
+    {
+        cockroachManager = GameObject.Find("3DCockroach").GetComponent<CockroachManager>();
+        //OneHoleTrigger = GameObject.Find("OneHoleTrigger").GetComponent<OneHoleSwitchTrigger>();
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -22,7 +26,7 @@ public class SpiderHurtPlayer : MonoBehaviour
             cockroachManager.CockroachInjury(1);
             Debug.Log("扣血了，目前血量: " + cockroachManager.Hp);
             hasHurt = true;
-            switchTrigger.SwitchTo3DAndHideSpider();
+            Destroy(gameObject);
         }
     }
 

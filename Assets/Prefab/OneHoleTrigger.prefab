@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 2529541010772514002}
   - component: {fileID: 7106629286477846351}
   - component: {fileID: 894852528330781881}
-  - component: {fileID: 7480525049992240038}
+  - component: {fileID: 4155304596768806468}
   m_Layer: 0
   m_Name: OneHoleTrigger
   m_TagString: Untagged
@@ -141,7 +141,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7480525049992240038
+--- !u!114 &4155304596768806468
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -153,13 +153,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d50dd652102d9c47a280c9c72dc4330, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewToggle: {fileID: 0}
   cameraLogic2D: {fileID: 0}
-  spiderHurtPlayer: {fileID: 0}
-  enableSpider: 0
-  spiderObject: {fileID: 0}
-  cockroachMove3D: {fileID: 0}
-  cockroachMove2D: {fileID: 0}
+  enableSpawn: 1
+  shit: {fileID: 5170097277464503356, guid: 7c671cce55b21b842bd428ddbd464b13, type: 3}
+  spawnArea: {fileID: 0}
+  minCount: 2
+  maxCount: 3
+  enableSpider: 1
+  spiderObject: {fileID: 9054530707763474007, guid: 5b560ad472dc18542ab3046f7ce3cd28, type: 3}
+  SpiderMinCount: 1
+  SpiderMaxCount: 1
   StartPos2D: {fileID: 0}
-  StartPos3D: {fileID: 0}
+  StartPos3D: {fileID: 5604717185493993141}
   cameraBounds: {fileID: 0}

@@ -33,6 +33,26 @@ public class Cockroach2DMove : MonoBehaviour
             Vector2 rayOrigin = (Vector2)transform.position + Vector2.down * (myCol.size.y * 0.5f - 0.05f);
             RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.down, rayLength, groundLayer);
 
+            // 左右翻轉
+            Vector3 scale = mainObjectTransform.localScale;
+            if (moveX > 0)
+            {
+                scale.x = 1;
+                // 碰撞箱 offset 恢復正值
+                Vector2 offset = myCol.offset;
+                offset.x = Mathf.Abs(offset.x);
+                myCol.offset = offset;
+            }
+            else if (moveX < 0)
+            {
+                scale.x = -1;
+                // 碰撞箱 offset 取反，鏡像翻轉碰撞箱
+                Vector2 offset = myCol.offset;
+                offset.x = -Mathf.Abs(offset.x);
+                myCol.offset = offset;
+            }
+            mainObjectTransform.localScale = scale;
+
             if (hit.collider != null)
             {
                 Vector2 normal = hit.normal;
@@ -44,27 +64,7 @@ public class Cockroach2DMove : MonoBehaviour
 
                 // 計算角度，讓蟑螂跟地形傾斜對齊
                 float angle = Mathf.Atan2(normal.y, normal.x) * Mathf.Rad2Deg - 90f;
-                mainObjectTransform.rotation = Quaternion.Euler(0, 0, angle);
-
-                // 左右翻轉
-                Vector3 scale = mainObjectTransform.localScale;
-                if (moveX > 0)
-                {
-                    scale.x = 1;
-                    // 碰撞箱 offset 恢復正值
-                    Vector2 offset = myCol.offset;
-                    offset.x = Mathf.Abs(offset.x);
-                    myCol.offset = offset;
-                }
-                else if (moveX < 0)
-                {
-                    scale.x = -1;
-                    // 碰撞箱 offset 取反，鏡像翻轉碰撞箱
-                    Vector2 offset = myCol.offset;
-                    offset.x = -Mathf.Abs(offset.x);
-                    myCol.offset = offset;
-                }
-                mainObjectTransform.localScale = scale;
+                mainObjectTransform.rotation = Quaternion.Euler(0, 0, angle);                
             }
             else
             {
