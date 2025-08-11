@@ -38,6 +38,7 @@ public class DoubleHoleSwitchManager : MonoBehaviour
     [Header("蟑螂控制腳本")]
     private CockroachMove cockroachMove3D;
     private Cockroach2DMove cockroachMove2D;
+    private Transform Cockroach2DSprite;
 
     [Header("限制範圍")]
     public BoxCollider2D cameraBounds;
@@ -54,6 +55,7 @@ public class DoubleHoleSwitchManager : MonoBehaviour
         viewToggle = GameObject.Find("CameraManager").GetComponent<CameraViewToggle>();
         cockroachMove3D = GameObject.Find("3DCockroach").GetComponent<CockroachMove>();
         cockroachMove2D = GameObject.Find("2DCockroach").GetComponent<Cockroach2DMove>();
+        Cockroach2DSprite = GameObject.Find("Cockroach2DSprite").GetComponent<Transform>();
         // 綁定事件
         if (leftHole.holeTrigger3D != null) leftHole.holeTrigger3D.gameObject.AddComponent<HoleTriggerBinder>().Setup(this, true, true);
         if (rightHole.holeTrigger3D != null) rightHole.holeTrigger3D.gameObject.AddComponent<HoleTriggerBinder>().Setup(this, false, true);
@@ -67,7 +69,24 @@ public class DoubleHoleSwitchManager : MonoBehaviour
         if (from3D && !viewToggle.Is2D())
         {
             // 3D → 2D
-            Vector3 targetPos = isLeft ? leftHole.exitPoint2D.position : rightHole.exitPoint2D.position;
+            Vector3 targetPos;
+            Vector3 scale2D = Cockroach2DSprite.transform.localScale;
+            if (isLeft)
+            {
+                targetPos = leftHole.exitPoint2D.position;
+                if (scale2D.x < 0)
+                {
+                    scale2D.x = -scale2D.x;
+                }
+            }
+            else
+            {
+                targetPos = rightHole.exitPoint2D.position;
+                if (scale2D.x >0)
+                {
+                    scale2D.x = -scale2D.x;
+                }
+            }
             StartCoroutine(viewToggle.StartViewSwitch(false)); // 切到 2D
             if (enableSpider)
             {
@@ -78,8 +97,9 @@ public class DoubleHoleSwitchManager : MonoBehaviour
                 SpawnRandomShitOnPath();
             }
             // 傳送 2D 角色
-            // twoDCockroach.transform.position = targetPos;
             cockroachMove2D.transform.position = targetPos;
+            Cockroach2DSprite.transform.localScale = scale2D;
+
 
 
             Debug.Log($"[傳送] 3D → 2D 從 {(isLeft ? "左" : "右")} 進，傳到 {targetPos}");
@@ -87,7 +107,15 @@ public class DoubleHoleSwitchManager : MonoBehaviour
         else if (!from3D && viewToggle.Is2D())
         {
             // 2D → 3D
-            Vector3 targetPos = isLeft ? leftHole.exitPoint3D.position : rightHole.exitPoint3D.position;
+            Vector3 targetPos;
+            if (isLeft)
+            {
+                targetPos = leftHole.exitPoint3D.position;
+            }
+            else
+            {
+                targetPos = rightHole.exitPoint3D.position;
+            }
             StartCoroutine(viewToggle.StartViewSwitch(true)); // 切到 3D
             foreach (GameObject obj in spawnedShit)
             {
@@ -107,7 +135,6 @@ public class DoubleHoleSwitchManager : MonoBehaviour
             }
             spawnedSpider.Clear();
             // 傳送 3D 角色
-            // threeDCockroach.transform.position = targetPos;
             cockroachMove3D.transform.position = targetPos;
             Debug.Log($"[傳送] 2D → 3D 從 {(isLeft ? "左" : "右")} 出，傳到 {targetPos}");
         }
