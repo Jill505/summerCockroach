@@ -1,4 +1,6 @@
+using Mono.Cecil.Cil;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -16,23 +18,36 @@ public class AllGameManager : MonoBehaviour
     public GameObject gameEndCanvas;
     public GameObject gameFailCanvas;
 
+    public float pressTime = 2f;
+    float pressTimeCal = 0f;
+    public int nowLoadSceneSort = 0;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        nowLoadSceneSort = SceneManager.GetActiveScene().buildIndex;
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         cockroachCollectProcessShowcase.text = "母蟑螂收集進度：" + cockroachCollectNum + "/" + cockroachCollectTarget;
 
-        
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            pressTimeCal = 0f;
+        }
 
         if (GameFinished && Input.GetKeyDown(KeyCode.R))
         {
-            SceneManager.LoadScene(0);//重啟場景
+            SceneManager.LoadScene(nowLoadSceneSort);//重啟場景
+        }
+
+        if (Input.GetKey(KeyCode.R))
+        {
+            pressTimeCal += Time.deltaTime;
+            if (pressTimeCal >= pressTime)
+            {
+                SceneManager.LoadScene(nowLoadSceneSort);//重啟場景
+            }
         }
     }
 
