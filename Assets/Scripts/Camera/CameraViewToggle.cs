@@ -28,7 +28,7 @@ public class CameraViewToggle : MonoBehaviour
     public float scale = 30f;
 
     [Header("切換視角時蟑螂的位置設定")]
-    public Transform cockroach2DPos;
+    //public Transform cockroach2DPos;
     //public Transform cockroach2DStartPoint;
 
     

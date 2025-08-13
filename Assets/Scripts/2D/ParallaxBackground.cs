@@ -20,11 +20,11 @@ public class ParallaxBackground : MonoBehaviour
     public BackgroundGroup[] backgroundGroups;
 
     [Header("(0 = speed0, 1 = playerSpeed)")]
-    public float caveStonecolumnScale = 0.2f;
-    public float stoneCrevice2Scale = 0.4f;
-    public float caveStonecolumn2Scale = 0.25f;
-    public float stoneCrevice3Scale = 0.3f;
-    public float stoneCrevice4Scale = 0.5f;
+    public float caveStonecolumnScale = 0.5f;
+    public float stoneCrevice2Scale = 0.2f;
+    public float caveStonecolumn2Scale = 0.1f;
+    public float stoneCrevice3Scale = 0.1f;
+    public float stoneCrevice4Scale = 0.08f;
 
     private Vector3 previousPlayerPosition;
 
