@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 1143734452222652348}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 373.06003, y: -496.84, z: 303.8198}
+  m_LocalPosition: {x: 503.1, y: -505.1, z: 304}
   m_LocalScale: {x: 1.2460252, y: 8.6133, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -244,7 +244,7 @@ Transform:
   m_GameObject: {fileID: 3815457002697181622}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 309.22, y: -496.45, z: 303.81982}
+  m_LocalPosition: {x: 368.4, y: -508.6, z: 304}
   m_LocalScale: {x: 1.2563, y: 1.2563, z: 1.2563}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -331,7 +331,7 @@ Transform:
   m_GameObject: {fileID: 5625905856556028222}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 302.96002, y: -496.84, z: 303.8198}
+  m_LocalPosition: {x: 362.4, y: -505.1, z: 304}
   m_LocalScale: {x: 1.2460252, y: 8.6133, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -440,7 +440,7 @@ Transform:
   m_GameObject: {fileID: 5950892020289446883}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 369.94, y: -497.31, z: 303.81982}
+  m_LocalPosition: {x: 424.5, y: -507.8, z: 304}
   m_LocalScale: {x: 1.2563, y: 1.2563, z: 1.2563}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -561,12 +561,17 @@ MonoBehaviour:
     holeTrigger2D: {fileID: 7634909220779278705}
     exitPoint3D: {fileID: 6878857815575535932}
     exitPoint2D: {fileID: 8385928860874114863}
-  spiderHurtPlayer: {fileID: 0}
+  enableSpawn: 1
+  shit: {fileID: 5170097277464503356, guid: 7c671cce55b21b842bd428ddbd464b13, type: 3}
+  minCount: 1
+  maxCount: 3
   enableSpider: 0
-  spiderObject: {fileID: 0}
-  viewToggle: {fileID: 0}
-  cockroachMove3D: {fileID: 0}
-  cockroachMove2D: {fileID: 0}
+  spiderObject: {fileID: 9054530707763474007, guid: 5b560ad472dc18542ab3046f7ce3cd28, type: 3}
+  SpiderMinCount: 1
+  SpiderMaxCount: 3
+  cameraLogic2D: {fileID: 0}
+  cameraBounds: {fileID: 0}
+  spawnArea: {fileID: 0}
 --- !u!1 &6949393420090159995
 GameObject:
   m_ObjectHideFlags: 0

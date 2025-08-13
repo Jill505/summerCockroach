@@ -16,6 +16,7 @@ public class CameraViewToggle : MonoBehaviour
     [Header("蟑螂控制腳本")]
     public CockroachMove cockroachMove;
     public CameraLogic2D cameraLogic2D;
+    public ParallaxBackground parallaxBackground;
 
     [Header("轉場設定")]
     public GameObject transitionQuad3D;
@@ -28,7 +29,7 @@ public class CameraViewToggle : MonoBehaviour
 
     [Header("切換視角時蟑螂的位置設定")]
     public Transform cockroach2DPos;
-    public Transform cockroach2DStartPoint;
+    //public Transform cockroach2DStartPoint;
 
     
 
@@ -97,6 +98,7 @@ public class CameraViewToggle : MonoBehaviour
         transitionQuad3D.SetActive(false);
         camera2D.gameObject.SetActive(true);
         camera3D.gameObject.SetActive(false);
+        parallaxBackground.ResetBackgrounds();
 
         camera2D.orthographic = true;
         //camera2D.orthographicSize = orthographicSize;
@@ -119,6 +121,7 @@ public class CameraViewToggle : MonoBehaviour
         transitionQuad2D.SetActive(false);
         camera2D.gameObject.SetActive(false);
         camera3D.gameObject.SetActive(true);
+        parallaxBackground.ResetBackgrounds();
 
         camera3D.orthographic = false;
         camera3D.fieldOfView = fieldOfView;

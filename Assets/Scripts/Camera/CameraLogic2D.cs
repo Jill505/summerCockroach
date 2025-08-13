@@ -60,19 +60,36 @@ public class CameraLogic2D : MonoBehaviour
             // 平滑調整 orthographicSize
             cam.orthographicSize = Mathf.SmoothDamp(cam.orthographicSize, targetSize, ref currentVelocity, smoothTime);
 
+            // **重新計算半高半寬（因為 zoom 中會變）**
+            camHalfHeight = cam.orthographicSize;
+            camHalfWidth = cam.aspect * camHalfHeight;
+
+            // 限制範圍（使用 customBounds）
+            if (customBounds.size != Vector3.zero)
+            {
+                float minX = customBounds.min.x + camHalfWidth;
+                float maxX = customBounds.max.x - camHalfWidth;
+                float minY = customBounds.min.y + camHalfHeight;
+                float maxY = customBounds.max.y - camHalfHeight;
+
+                Vector3 clampedPos = transform.position;
+                clampedPos.x = Mathf.Clamp(clampedPos.x, minX, maxX);
+                clampedPos.y = Mathf.Clamp(clampedPos.y, minY, maxY);
+                transform.position = clampedPos;
+            }
+
             // 更新經過時間
             timer += Time.deltaTime;
 
             // 當 smoothTime 過了，就停止 zoom
             if (timer >= smoothTime)
             {
-                cam.orthographicSize = targetSize;
                 isZooming = false;
             }
         }
         else
         {
-            if (isFollowing == false)
+            if (!isFollowing)
             {
                 UpdateCameraPosition();
             }
