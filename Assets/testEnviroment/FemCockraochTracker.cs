@@ -1,4 +1,4 @@
-using JetBrains.Annotations;
+ï»¿using JetBrains.Annotations;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
@@ -21,9 +21,9 @@ public class FemCockraochTracker : MonoBehaviour
     {
         SortRoachesByDistance();
         textShowcase.text = "";
-        textShowcase.text += "Â÷§A³Ìªñªº¥ÀÁ­½¸¦³" + Vector3.Distance(playerPos.transform.position, sceneRoaches[0].gameObject.transform.position)+ "¤½¤Ø»·¡I\n";
-        textShowcase.text += "Á­½¸©m¦W¡G" + sceneRoaches[0].cockroachName + "\n";
-        textShowcase.text += "Á­½¸±Ô­z¡G" + sceneRoaches[0].Disc;
+        textShowcase.text += "é›¢ä½ æœ€è¿‘çš„æ¯èŸ‘è‚æœ‰" + Vector3.Distance(playerPos.transform.position, sceneRoaches[0].gameObject.transform.position)+ "å…¬å°ºé ï¼\n";
+        textShowcase.text += "èŸ‘è‚å§“åï¼š" + sceneRoaches[0].cockroachName + "\n";
+        textShowcase.text += "èŸ‘è‚æ•˜è¿°ï¼š" + sceneRoaches[0].Disc;
     }
 
 
@@ -37,13 +37,13 @@ public class FemCockraochTracker : MonoBehaviour
 
         Vector3 playerPosition = playerPos.transform.position;
 
-        // ¹LÂo±¼¤w³Q§ä¨ìªºÁ­½¸
+        // éæ¿¾æ‰å·²è¢«æ‰¾åˆ°çš„èŸ‘è‚
         var filteredRoaches = sceneRoaches
             .Where(r => r != null && !r.finded)
             .OrderBy(r => (r.gameObject.transform.position - playerPosition).sqrMagnitude)
             .ToArray();
 
-        // ±N±Æ§Ç«áªºµ²ªG©ñ¦^­ì°}¦C¶}ÀY¡A«O¯d­ì°}¦Cªø«×
+        // å°‡æ’åºå¾Œçš„çµæœæ”¾å›åŸé™£åˆ—é–‹é ­ï¼Œä¿ç•™åŸé™£åˆ—é•·åº¦
         for (int i = 0; i < filteredRoaches.Length; i++)
         {
             sceneRoaches[i] = filteredRoaches[i];

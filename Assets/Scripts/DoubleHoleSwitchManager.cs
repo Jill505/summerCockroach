@@ -44,9 +44,32 @@ public class DoubleHoleSwitchManager : MonoBehaviour
     public BoxCollider2D cameraBounds;
     public EdgeCollider2D spawnArea;                 // 生成範圍
 
-    private bool isInTheTrigger = false;
     private List<GameObject> spawnedShit = new List<GameObject>();
     private List<GameObject> spawnedSpider = new List<GameObject>();
+
+    [Header("母蟑螂生成設定")]
+    public bool enableFemaleCockroach = false;
+
+
+    [Header("RandomPos")]
+    public Transform position1;
+    public Transform position2;
+    public Transform position3;
+
+    public enum SpawnMode
+    {
+        Random,
+        Select
+    }
+
+    [Header("SpawnMode")]
+    public SpawnMode spawnMode;
+
+    [Header("SelectPos")]
+    public Transform selectedPosition;
+
+    [Header("Prefab")]
+    public GameObject prefab;
 
 
 
@@ -95,6 +118,10 @@ public class DoubleHoleSwitchManager : MonoBehaviour
             if (enableSpawn)
             {
                 SpawnRandomShitOnPath();
+            }
+            if (enableFemaleCockroach)
+            {
+                SpawnFemaleCockroach();
             }
             // 傳送 2D 角色
             cockroachMove2D.transform.position = targetPos;
@@ -199,6 +226,31 @@ public class DoubleHoleSwitchManager : MonoBehaviour
             {
                 spiderHurt.ResetHurt();
             }
+        }
+    }
+
+    public void SpawnFemaleCockroach()
+    {
+        Transform spawnPoint = null;
+
+        if (spawnMode == SpawnMode.Random)
+        {
+            Transform[] points = { position1, position2, position3 };
+            int index = Random.Range(0, points.Length);
+            spawnPoint = points[index];
+        }
+        else if (spawnMode == SpawnMode.Select)
+        {
+            spawnPoint = selectedPosition;
+        }
+
+        if (spawnPoint != null && prefab != null)
+        {
+            Instantiate(prefab, spawnPoint.position, spawnPoint.rotation);
+        }
+        else
+        {
+            Debug.LogWarning("Spawn 失敗：Prefab 或生成位置未設置");
         }
     }
 

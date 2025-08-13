@@ -1,24 +1,27 @@
-using JetBrains.Annotations;
+ï»¿using JetBrains.Annotations;
 //using Unity.Android.Gradle;
 using UnityEngine;
 
 public class testFemCockraoch : MonoBehaviour
 {
     public AllGameManager allGameManager;
+
+    [Header("3D")]
     public MeshRenderer subStatementShowcase;
     public Material getMat;
 
-    public string cockroachName = "ªüªá";
-    public string Disc = "¬O­Ó¤T¤K¡A¦í¦b¤ô´òÃä¤W¡A¸jµÛÄ|¤lªº¥i·R¤pÁ­½¸";
+
+    [Header("Information")]
+    public string cockroachName = "é˜¿èŠ±";
+    public string Disc = "æ˜¯å€‹ä¸‰å…«ï¼Œä½åœ¨æ°´æ¹–é‚Šä¸Šï¼Œç¶è‘—è¾®å­çš„å¯æ„›å°èŸ‘è‚";
 
     public bool finded = false;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         
@@ -31,6 +34,16 @@ public class testFemCockraoch : MonoBehaviour
             finded = true;
             allGameManager.femCockraochGet();
             subStatementShowcase.material = getMat;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player") && !finded)
+        {
+            finded = true;
+            allGameManager.femCockraochGet();
+            Debug.Log("2dæ¯èŸ‘è‚get");
         }
     }
 }

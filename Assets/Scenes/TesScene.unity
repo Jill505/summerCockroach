@@ -669,6 +669,13 @@ MonoBehaviour:
   StartPos3D: {fileID: 2127523405}
   cameraBounds: {fileID: 611533743}
   spawnArea: {fileID: 1822364737}
+  enableFemaleCockroach: 0
+  position1: {fileID: 0}
+  position2: {fileID: 0}
+  position3: {fileID: 0}
+  spawnMode: 0
+  selectedPosition: {fileID: 0}
+  prefab: {fileID: 0}
 --- !u!61 &143577905
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1734,6 +1741,9 @@ Transform:
   - {fileID: 1314677932}
   - {fileID: 1062738317}
   - {fileID: 1822364736}
+  - {fileID: 1580976182}
+  - {fileID: 994789628}
+  - {fileID: 363001220}
   m_Father: {fileID: 1430456370}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &329135445
@@ -2275,6 +2285,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.13, y: 0.29489654, z: 2.5975425}
   m_Center: {x: 0, y: 0.20257434, z: 0.79877216}
+--- !u!1 &363001219
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 363001220}
+  m_Layer: 0
+  m_Name: InsFemaleCockroach (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &363001220
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 363001219}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 476.2, y: -511, z: 304.93}
+  m_LocalScale: {x: 2.3380826, y: 2.3380826, z: 2.3380826}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 305303320}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &369042922
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5501,6 +5542,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 975092762}
   m_CullTransparentMesh: 1
+--- !u!1 &994789627
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 994789628}
+  m_Layer: 0
+  m_Name: InsFemaleCockroach (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &994789628
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 994789627}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 445.4, y: -511, z: 304.93}
+  m_LocalScale: {x: 2.3380826, y: 2.3380826, z: 2.3380826}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 305303320}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1021677370 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6139140196609793367, guid: 602894db725edd641a94833439673ce9, type: 3}
@@ -9110,6 +9182,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1580976181
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1580976182}
+  m_Layer: 0
+  m_Name: InsFemaleCockroach
+  m_TagString: Untagged
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1580976182
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1580976181}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 409.86, y: -511, z: 304.93}
+  m_LocalScale: {x: 2.3380826, y: 2.3380826, z: 2.3380826}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 305303320}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1581187331
 GameObject:
   m_ObjectHideFlags: 0
@@ -10266,7 +10369,6 @@ MonoBehaviour:
   transitionMaterial: {fileID: 2100000, guid: 46acc0bc0f3495a4cbb6d0ba5f336393, type: 2}
   transitionDuration: 1
   scale: 5
-  cockroach2DPos: {fileID: 424919213}
 --- !u!4 &1713386671
 Transform:
   m_ObjectHideFlags: 0
@@ -11400,7 +11502,7 @@ GameObject:
   - component: {fileID: 1822364736}
   - component: {fileID: 1822364737}
   m_Layer: 0
-  m_Name: InsObjRange
+  m_Name: InsSpiderShitRange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13311,6 +13413,22 @@ PrefabInstance:
     m_TransformParent: {fileID: 465408073}
     m_Modifications:
     - target: {fileID: 4155304596768806468, guid: 3fab30cfc6f0ac74dbee2b3dfe1eb7aa, type: 3}
+      propertyPath: prefab
+      value: 
+      objectReference: {fileID: 973532456048750420, guid: ff08aca856863b2489d1047fef289815, type: 3}
+    - target: {fileID: 4155304596768806468, guid: 3fab30cfc6f0ac74dbee2b3dfe1eb7aa, type: 3}
+      propertyPath: position1
+      value: 
+      objectReference: {fileID: 1580976182}
+    - target: {fileID: 4155304596768806468, guid: 3fab30cfc6f0ac74dbee2b3dfe1eb7aa, type: 3}
+      propertyPath: position2
+      value: 
+      objectReference: {fileID: 994789628}
+    - target: {fileID: 4155304596768806468, guid: 3fab30cfc6f0ac74dbee2b3dfe1eb7aa, type: 3}
+      propertyPath: position3
+      value: 
+      objectReference: {fileID: 363001220}
+    - target: {fileID: 4155304596768806468, guid: 3fab30cfc6f0ac74dbee2b3dfe1eb7aa, type: 3}
       propertyPath: spawnArea
       value: 
       objectReference: {fileID: 1962867074}
@@ -13330,6 +13448,10 @@ PrefabInstance:
       propertyPath: SpiderMaxCount
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 4155304596768806468, guid: 3fab30cfc6f0ac74dbee2b3dfe1eb7aa, type: 3}
+      propertyPath: selectedPosition
+      value: 
+      objectReference: {fileID: 994789628}
     - target: {fileID: 4855065611239586334, guid: 3fab30cfc6f0ac74dbee2b3dfe1eb7aa, type: 3}
       propertyPath: m_Name
       value: OneHoleTrigger
@@ -13787,6 +13909,22 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5487302694159046011, guid: de9f17f5809e724468a67550b4b74f6e, type: 3}
+      propertyPath: prefab
+      value: 
+      objectReference: {fileID: 973532456048750420, guid: ff08aca856863b2489d1047fef289815, type: 3}
+    - target: {fileID: 5487302694159046011, guid: de9f17f5809e724468a67550b4b74f6e, type: 3}
+      propertyPath: position1
+      value: 
+      objectReference: {fileID: 1580976182}
+    - target: {fileID: 5487302694159046011, guid: de9f17f5809e724468a67550b4b74f6e, type: 3}
+      propertyPath: position2
+      value: 
+      objectReference: {fileID: 994789628}
+    - target: {fileID: 5487302694159046011, guid: de9f17f5809e724468a67550b4b74f6e, type: 3}
+      propertyPath: position3
+      value: 
+      objectReference: {fileID: 363001220}
+    - target: {fileID: 5487302694159046011, guid: de9f17f5809e724468a67550b4b74f6e, type: 3}
       propertyPath: spawnArea
       value: 
       objectReference: {fileID: 1822364737}
@@ -13798,9 +13936,25 @@ PrefabInstance:
       propertyPath: cameraLogic2D
       value: 
       objectReference: {fileID: 1454821159}
+    - target: {fileID: 5487302694159046011, guid: de9f17f5809e724468a67550b4b74f6e, type: 3}
+      propertyPath: selectedPosition
+      value: 
+      objectReference: {fileID: 994789628}
+    - target: {fileID: 5487302694159046011, guid: de9f17f5809e724468a67550b4b74f6e, type: 3}
+      propertyPath: enableFemaleCockroach
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6242592763557817971, guid: de9f17f5809e724468a67550b4b74f6e, type: 3}
       propertyPath: m_Name
       value: DoubleHoleManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8385928860874114863, guid: de9f17f5809e724468a67550b4b74f6e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 497.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8385928860874114863, guid: de9f17f5809e724468a67550b4b74f6e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -507
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

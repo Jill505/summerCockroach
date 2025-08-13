@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using UnityEditor.Rendering;
 using UnityEngine;
 
@@ -14,11 +14,11 @@ public class CameraLogic2D : MonoBehaviour
     public Vector3 offset = new Vector3(0, 2, -10);
     public float moveSpeed = 5f;
     public float SetOrthographicSize = 5f;
-    public float acceleration = 10f;      // X¶b¥[³t«×
-    public float maxSpeed = 20f;          // ³Ì¤j³t«×
-    public float smoothTime = 0.3f;       // ¥­·Æ®É¶¡¡]»P¤Á´«¼Ò¦¡¦@¥Î¡^
+    public float acceleration = 10f;      // Xè»¸åŠ é€Ÿåº¦
+    public float maxSpeed = 20f;          // æœ€å¤§é€Ÿåº¦
+    public float smoothTime = 0.3f;       // å¹³æ»‘æ™‚é–“ï¼ˆèˆ‡åˆ‡æ›æ¨¡å¼å…±ç”¨ï¼‰
 
-    public float targetSize = 5f;     // ¥Ø¼Ğ orthographicSize
+    public float targetSize = 5f;     // ç›®æ¨™ orthographicSize
     public float startSize = 2f;
 
     [Header("Collider")]
@@ -32,12 +32,11 @@ public class CameraLogic2D : MonoBehaviour
     public CameraViewToggle viewToggle;
 
 
-    //  5. ¤º³¡­pºâ¥ÎÅÜ¼Æ
+    //  5. å…§éƒ¨è¨ˆç®—ç”¨è®Šæ•¸
     private Vector3 targetPos;
-    private float velocityX = 0f;
     private Vector3 smoothVelocity = Vector3.zero;
-    private Vector3 moveVelocity;    // µ¹ SmoothDamp ¨Ï¥Î
-    private float zoomVelocity = 0f; // µø¨¤ÁY©ñ¥Î
+    private Vector3 moveVelocity;    // çµ¦ SmoothDamp ä½¿ç”¨
+    private float zoomVelocity = 0f; // è¦–è§’ç¸®æ”¾ç”¨
 
     private float currentVelocity = 0f;
     private bool isZooming = false;
@@ -48,7 +47,7 @@ public class CameraLogic2D : MonoBehaviour
     void Awake()
     {
         playerRB = player.GetComponent<Rigidbody2D>();
-        // ­pºâÄá¼v¾÷µø³¥ªº¤@¥b°ª«×»P¼e«×
+        // è¨ˆç®—æ”å½±æ©Ÿè¦–é‡çš„ä¸€åŠé«˜åº¦èˆ‡å¯¬åº¦
         camHalfHeight = cam.orthographicSize;
         camHalfWidth = cam.aspect * camHalfHeight;
     }
@@ -57,14 +56,14 @@ public class CameraLogic2D : MonoBehaviour
     {
         if (isZooming)
         {
-            // ¥­·Æ½Õ¾ã orthographicSize
+            // å¹³æ»‘èª¿æ•´ orthographicSize
             cam.orthographicSize = Mathf.SmoothDamp(cam.orthographicSize, targetSize, ref currentVelocity, smoothTime);
 
-            // **­«·s­pºâ¥b°ª¥b¼e¡]¦]¬° zoom ¤¤·|ÅÜ¡^**
+            // **é‡æ–°è¨ˆç®—åŠé«˜åŠå¯¬ï¼ˆå› ç‚º zoom ä¸­æœƒè®Šï¼‰**
             camHalfHeight = cam.orthographicSize;
             camHalfWidth = cam.aspect * camHalfHeight;
 
-            // ­­¨î½d³ò¡]¨Ï¥Î customBounds¡^
+            // é™åˆ¶ç¯„åœï¼ˆä½¿ç”¨ customBoundsï¼‰
             if (customBounds.size != Vector3.zero)
             {
                 float minX = customBounds.min.x + camHalfWidth;
@@ -78,10 +77,10 @@ public class CameraLogic2D : MonoBehaviour
                 transform.position = clampedPos;
             }
 
-            // §ó·s¸g¹L®É¶¡
+            // æ›´æ–°ç¶“éæ™‚é–“
             timer += Time.deltaTime;
 
-            // ·í smoothTime ¹L¤F¡A´N°±¤î zoom
+            // ç•¶ smoothTime éäº†ï¼Œå°±åœæ­¢ zoom
             if (timer >= smoothTime)
             {
                 isZooming = false;
@@ -105,13 +104,13 @@ public class CameraLogic2D : MonoBehaviour
 
     void UpdateCameraPosition()
     {
-        // ­pºâ¥Ø¼Ğ¦ì¸m
+        // è¨ˆç®—ç›®æ¨™ä½ç½®
         targetPos = player.transform.position + offset;
 
-        // ¨Ï¥Î SmoothDamp ¥­·Æ¸òÀH
+        // ä½¿ç”¨ SmoothDamp å¹³æ»‘è·Ÿéš¨
         Vector3 smoothPos = Vector3.SmoothDamp(transform.position, targetPos, ref smoothVelocity, smoothTime);
 
-        // ­­¨î½d³ò
+        // é™åˆ¶ç¯„åœ
         Bounds bounds = customBounds;
 
         float minX = bounds.min.x + camHalfWidth;
@@ -127,13 +126,13 @@ public class CameraLogic2D : MonoBehaviour
 
     private void MoveTowardsTarget()
     {
-        // ³]©w¥Ø¼Ğ¦ì¸m¡]«O«ùZ¶b¤£ÅÜ¡^
+        // è¨­å®šç›®æ¨™ä½ç½®ï¼ˆä¿æŒZè»¸ä¸è®Šï¼‰
         Vector3 targetPosition = new Vector3(cockroach2DPos.position.x, cockroach2DPos.position.y, offset.z);
 
-        // ¨Ï¥Î SmoothDamp ¥­·Æ²¾°ÊÄá¼v¾÷
+        // ä½¿ç”¨ SmoothDamp å¹³æ»‘ç§»å‹•æ”å½±æ©Ÿ
         transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref moveVelocity, smoothTime);
 
-        // ¨Ï¥Î SmoothDamp ¥­·Æ½Õ¾ãÄá¼v¾÷ªº Orthographic Size¡]µø³¥ÁY©ñ¡^
+        // ä½¿ç”¨ SmoothDamp å¹³æ»‘èª¿æ•´æ”å½±æ©Ÿçš„ Orthographic Sizeï¼ˆè¦–é‡ç¸®æ”¾ï¼‰
         cam.orthographicSize = Mathf.SmoothDamp(cam.orthographicSize, SetOrthographicSize, ref zoomVelocity, smoothTime);
     }
 
@@ -141,10 +140,10 @@ public class CameraLogic2D : MonoBehaviour
     {
         transform.position = new Vector3(cockroach2DPos.position.x, cockroach2DPos.position.y, transform.position.z);
 
-        // ªì©lµø³¥¤j¤p
+        // åˆå§‹è¦–é‡å¤§å°
         cam.orthographicSize = startSize;
 
-        // ±Ò°Ê zoom ¹Lµ{
+        // å•Ÿå‹• zoom éç¨‹
         isZooming = true;
         timer = 0f;
         currentVelocity = 0f;
