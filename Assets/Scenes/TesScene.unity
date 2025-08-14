@@ -8442,8 +8442,6 @@ MonoBehaviour:
   player: {fileID: 424919209}
   playerRB: {fileID: 424919210}
   offset: {x: 0, y: 0, z: -10}
-  moveSpeed: 5
-  SetOrthographicSize: 2
   acceleration: 10
   maxSpeed: 15
   smoothTime: 1
@@ -13413,10 +13411,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 465408073}
     m_Modifications:
     - target: {fileID: 4155304596768806468, guid: 3fab30cfc6f0ac74dbee2b3dfe1eb7aa, type: 3}
-      propertyPath: prefab
-      value: 
-      objectReference: {fileID: 973532456048750420, guid: ff08aca856863b2489d1047fef289815, type: 3}
-    - target: {fileID: 4155304596768806468, guid: 3fab30cfc6f0ac74dbee2b3dfe1eb7aa, type: 3}
       propertyPath: position1
       value: 
       objectReference: {fileID: 1580976182}
@@ -13445,20 +13439,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1454821159}
     - target: {fileID: 4155304596768806468, guid: 3fab30cfc6f0ac74dbee2b3dfe1eb7aa, type: 3}
-      propertyPath: SpiderMaxCount
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4155304596768806468, guid: 3fab30cfc6f0ac74dbee2b3dfe1eb7aa, type: 3}
       propertyPath: selectedPosition
       value: 
       objectReference: {fileID: 994789628}
     - target: {fileID: 4855065611239586334, guid: 3fab30cfc6f0ac74dbee2b3dfe1eb7aa, type: 3}
       propertyPath: m_Name
       value: OneHoleTrigger
-      objectReference: {fileID: 0}
-    - target: {fileID: 4855065611239586334, guid: 3fab30cfc6f0ac74dbee2b3dfe1eb7aa, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5774655008028992473, guid: 3fab30cfc6f0ac74dbee2b3dfe1eb7aa, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13909,10 +13895,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5487302694159046011, guid: de9f17f5809e724468a67550b4b74f6e, type: 3}
-      propertyPath: prefab
-      value: 
-      objectReference: {fileID: 973532456048750420, guid: ff08aca856863b2489d1047fef289815, type: 3}
-    - target: {fileID: 5487302694159046011, guid: de9f17f5809e724468a67550b4b74f6e, type: 3}
       propertyPath: position1
       value: 
       objectReference: {fileID: 1580976182}
@@ -13933,6 +13915,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1062738318}
     - target: {fileID: 5487302694159046011, guid: de9f17f5809e724468a67550b4b74f6e, type: 3}
+      propertyPath: enableSpider
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5487302694159046011, guid: de9f17f5809e724468a67550b4b74f6e, type: 3}
       propertyPath: cameraLogic2D
       value: 
       objectReference: {fileID: 1454821159}
@@ -13940,21 +13926,9 @@ PrefabInstance:
       propertyPath: selectedPosition
       value: 
       objectReference: {fileID: 994789628}
-    - target: {fileID: 5487302694159046011, guid: de9f17f5809e724468a67550b4b74f6e, type: 3}
-      propertyPath: enableFemaleCockroach
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6242592763557817971, guid: de9f17f5809e724468a67550b4b74f6e, type: 3}
       propertyPath: m_Name
       value: DoubleHoleManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 8385928860874114863, guid: de9f17f5809e724468a67550b4b74f6e, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 497.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8385928860874114863, guid: de9f17f5809e724468a67550b4b74f6e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -507
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
