@@ -440,7 +440,7 @@ Transform:
   m_GameObject: {fileID: 5950892020289446883}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 424.5, y: -507.8, z: 304}
+  m_LocalPosition: {x: 497.3, y: -507, z: 304}
   m_LocalScale: {x: 1.2563, y: 1.2563, z: 1.2563}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -566,12 +566,19 @@ MonoBehaviour:
   minCount: 1
   maxCount: 3
   enableSpider: 0
-  spiderObject: {fileID: 9054530707763474007, guid: 5b560ad472dc18542ab3046f7ce3cd28, type: 3}
+  spiderObject: {fileID: 6367387676149219478, guid: c5b7f9050fe2dbc4090527da8c934ca3, type: 3}
   SpiderMinCount: 1
   SpiderMaxCount: 3
   cameraLogic2D: {fileID: 0}
   cameraBounds: {fileID: 0}
   spawnArea: {fileID: 0}
+  enableFemaleCockroach: 1
+  position1: {fileID: 0}
+  position2: {fileID: 0}
+  position3: {fileID: 0}
+  spawnMode: 0
+  selectedPosition: {fileID: 0}
+  prefab: {fileID: 973532456048750420, guid: ff08aca856863b2489d1047fef289815, type: 3}
 --- !u!1 &6949393420090159995
 GameObject:
   m_ObjectHideFlags: 0

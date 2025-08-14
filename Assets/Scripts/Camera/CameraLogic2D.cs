@@ -12,8 +12,6 @@ public class CameraLogic2D : MonoBehaviour
 
     [Header("Camera")]
     public Vector3 offset = new Vector3(0, 2, -10);
-    public float moveSpeed = 5f;
-    public float SetOrthographicSize = 5f;
     public float acceleration = 10f;      // X軸加速度
     public float maxSpeed = 20f;          // 最大速度
     public float smoothTime = 0.3f;       // 平滑時間（與切換模式共用）
@@ -133,7 +131,7 @@ public class CameraLogic2D : MonoBehaviour
         transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref moveVelocity, smoothTime);
 
         // 使用 SmoothDamp 平滑調整攝影機的 Orthographic Size（視野縮放）
-        cam.orthographicSize = Mathf.SmoothDamp(cam.orthographicSize, SetOrthographicSize, ref zoomVelocity, smoothTime);
+        cam.orthographicSize = Mathf.SmoothDamp(cam.orthographicSize, startSize, ref zoomVelocity, smoothTime);
     }
 
     public void StartSmoothZoom()
