@@ -98,7 +98,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 830258910468995235, guid: 8629c30b9521bb844905bb3e0bf23e20, type: 3}
+  - {fileID: 7555185752953191562, guid: a145b549a5344af4d979b58ea7003831, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -154,6 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraLogic2D: {fileID: 0}
+  StartPos3D: {fileID: 5604717185493993141}
   enableSpawn: 1
   shit: {fileID: 5170097277464503356, guid: 7c671cce55b21b842bd428ddbd464b13, type: 3}
   minCount: 2
@@ -162,14 +163,7 @@ MonoBehaviour:
   spiderObject: {fileID: 6367387676149219478, guid: c5b7f9050fe2dbc4090527da8c934ca3, type: 3}
   SpiderMinCount: 1
   SpiderMaxCount: 3
-  StartPos2D: {fileID: 0}
-  StartPos3D: {fileID: 5604717185493993141}
-  cameraBounds: {fileID: 0}
-  spawnArea: {fileID: 0}
   enableFemaleCockroach: 0
-  position1: {fileID: 0}
-  position2: {fileID: 0}
-  position3: {fileID: 0}
   spawnMode: 0
-  selectedPosition: {fileID: 0}
   prefab: {fileID: 973532456048750420, guid: ff08aca856863b2489d1047fef289815, type: 3}
+  selectedScene: 1

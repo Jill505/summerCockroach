@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class DoubleHoleSwitchManager : MonoBehaviour
@@ -9,12 +10,16 @@ public class DoubleHoleSwitchManager : MonoBehaviour
         public Collider holeTrigger3D;    // 3D 洞口的碰撞器
         public Collider2D holeTrigger2D;  // 2D 洞口的碰撞器
         public Transform exitPoint3D;     // 3D 出口位置
-        public Transform exitPoint2D;     // 2D 出口位置
+        public Transform startPoint2D;     // 2D 出口位置
     }
 
     [Header("左右洞口")]
     public HoleData leftHole;
     public HoleData rightHole;
+
+    [Header("控制相機與角色的腳本")]
+    private CameraViewToggle viewToggle;
+    public CameraLogic2D cameraLogic2D;
 
 
     [Header("大便生成設定")]
@@ -31,9 +36,7 @@ public class DoubleHoleSwitchManager : MonoBehaviour
     public int SpiderMinCount = 1;
     public int SpiderMaxCount = 3;
 
-    [Header("控制相機與角色的腳本")]
-    private CameraViewToggle viewToggle;
-    public CameraLogic2D cameraLogic2D;
+    
 
     [Header("蟑螂控制腳本")]
     private CockroachMove cockroachMove3D;
@@ -41,8 +44,8 @@ public class DoubleHoleSwitchManager : MonoBehaviour
     private Transform Cockroach2DSprite;
 
     [Header("限制範圍")]
-    public BoxCollider2D cameraBounds;
-    public EdgeCollider2D spawnArea;                 // 生成範圍
+    private BoxCollider2D cameraBounds;
+    private EdgeCollider2D spawnArea;                 // 生成範圍
 
     private List<GameObject> spawnedShit = new List<GameObject>();
     private List<GameObject> spawnedSpider = new List<GameObject>();
@@ -52,9 +55,9 @@ public class DoubleHoleSwitchManager : MonoBehaviour
 
 
     [Header("RandomPos")]
-    public Transform position1;
-    public Transform position2;
-    public Transform position3;
+    private Transform position1;
+    private Transform position2;
+    private Transform position3;
 
     public enum SpawnMode
     {
@@ -66,11 +69,21 @@ public class DoubleHoleSwitchManager : MonoBehaviour
     public SpawnMode spawnMode;
 
     [Header("SelectPos")]
-    public Transform selectedPosition;
+    private Transform selectedPosition;
 
     [Header("Prefab")]
     public GameObject prefab;
 
+   
+    public enum SelectedScene
+    {
+        //樹洞,
+        石洞,
+        舊場景
+    }
+    [Header("Scene")]
+    public SelectedScene selectedScene; // 在 Inspector 用下拉選
+    private string selectedSceneName;    // 顯示/保存字串名稱
 
 
     private void Start()
@@ -79,11 +92,29 @@ public class DoubleHoleSwitchManager : MonoBehaviour
         cockroachMove3D = GameObject.Find("3DCockroach").GetComponent<CockroachMove>();
         cockroachMove2D = GameObject.Find("2DCockroach").GetComponent<Cockroach2DMove>();
         Cockroach2DSprite = GameObject.Find("Cockroach2DSprite").GetComponent<Transform>();
+
         // 綁定事件
         if (leftHole.holeTrigger3D != null) leftHole.holeTrigger3D.gameObject.AddComponent<HoleTriggerBinder>().Setup(this, true, true);
         if (rightHole.holeTrigger3D != null) rightHole.holeTrigger3D.gameObject.AddComponent<HoleTriggerBinder>().Setup(this, false, true);
         if (leftHole.holeTrigger2D != null) leftHole.holeTrigger2D.gameObject.AddComponent<HoleTriggerBinder2D>().Setup(this, true, false);
         if (rightHole.holeTrigger2D != null) rightHole.holeTrigger2D.gameObject.AddComponent<HoleTriggerBinder2D>().Setup(this, false, false);
+
+        selectedSceneName = selectedScene.ToString();
+
+        if (Scene2DManager.Instance != null)
+        {
+            var sceneData = Scene2DManager.Instance.GetSceneByName(selectedSceneName);
+            if (sceneData != null)
+            {
+                Debug.Log("套用場景：" + sceneData.sceneName);
+                cameraBounds = sceneData.cameraBounds;
+                spawnArea = sceneData.spawnBounds;
+                position1 = sceneData.randomMotherCockroachRange1;
+                position2 = sceneData.randomMotherCockroachRange2;
+                position3 = sceneData.randomMotherCockroachRange3;
+                selectedPosition = sceneData.motherCockroachPoints;
+            }
+        }
     }
 
     public void EnterHole(bool isLeft, bool from3D)
@@ -96,7 +127,7 @@ public class DoubleHoleSwitchManager : MonoBehaviour
             Vector3 scale2D = Cockroach2DSprite.transform.localScale;
             if (isLeft)
             {
-                targetPos = leftHole.exitPoint2D.position;
+                targetPos = leftHole.startPoint2D.position;
                 if (scale2D.x < 0)
                 {
                     scale2D.x = -scale2D.x;
@@ -104,7 +135,7 @@ public class DoubleHoleSwitchManager : MonoBehaviour
             }
             else
             {
-                targetPos = rightHole.exitPoint2D.position;
+                targetPos = rightHole.startPoint2D.position;
                 if (scale2D.x >0)
                 {
                     scale2D.x = -scale2D.x;
@@ -254,6 +285,8 @@ public class DoubleHoleSwitchManager : MonoBehaviour
         }
     }
 
+
+
     // 3D 觸發器
     public class HoleTriggerBinder : MonoBehaviour
     {
@@ -300,3 +333,5 @@ public class DoubleHoleSwitchManager : MonoBehaviour
         }
     }
 }
+
+

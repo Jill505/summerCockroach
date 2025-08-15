@@ -348,8 +348,6 @@ MonoBehaviour:
   player: {fileID: 1856640737}
   playerRB: {fileID: 1856640738}
   offset: {x: 0, y: 0, z: -10}
-  moveSpeed: 5
-  SetOrthographicSize: 2
   acceleration: 10
   maxSpeed: 15
   smoothTime: 1
@@ -3734,6 +3732,7 @@ GameObject:
   - component: {fileID: 950558451}
   - component: {fileID: 950558450}
   - component: {fileID: 950558452}
+  - component: {fileID: 950558453}
   m_Layer: 0
   m_Name: AllGameManager
   m_TagString: Untagged
@@ -3795,6 +3794,33 @@ MonoBehaviour:
   caveStonecolumn2Scale: 0.1
   stoneCrevice3Scale: 0.1
   stoneCrevice4Scale: 0.08
+--- !u!114 &950558453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950558449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f691230571e9314f95087b644d3b43a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scenes:
+  - sceneName: "\u820A\u5834\u666F"
+    cameraBounds: {fileID: 0}
+    spawnBounds: {fileID: 0}
+    randomMotherCockroachRange1: {fileID: 0}
+    randomMotherCockroachRange2: {fileID: 0}
+    randomMotherCockroachRange3: {fileID: 0}
+    motherCockroachPoints: {fileID: 0}
+  - sceneName: "\u77F3\u6D1E"
+    cameraBounds: {fileID: 0}
+    spawnBounds: {fileID: 0}
+    randomMotherCockroachRange1: {fileID: 0}
+    randomMotherCockroachRange2: {fileID: 0}
+    randomMotherCockroachRange3: {fileID: 0}
+    motherCockroachPoints: {fileID: 0}
 --- !u!1 &953115097
 GameObject:
   m_ObjectHideFlags: 0
@@ -6849,7 +6875,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraLogic2D: {fileID: 53595007}
-  enableSpawn: 0
+  StartPos3D: {fileID: 0}
+  enableShit: 0
   shit: {fileID: 5170097277464503356, guid: 7c671cce55b21b842bd428ddbd464b13, type: 3}
   minCount: 1
   maxCount: 3
@@ -6857,10 +6884,10 @@ MonoBehaviour:
   spiderObject: {fileID: 9054530707763474007, guid: 5b560ad472dc18542ab3046f7ce3cd28, type: 3}
   SpiderMinCount: 1
   SpiderMaxCount: 3
-  StartPos2D: {fileID: 570358197}
-  StartPos3D: {fileID: 0}
-  cameraBounds: {fileID: 84396104}
-  spawnArea: {fileID: 775147922}
+  enableFemaleCockroach: 0
+  spawnMode: 0
+  prefab: {fileID: 0}
+  selectedScene: 0
 --- !u!61 &1324323015
 BoxCollider2D:
   m_ObjectHideFlags: 0

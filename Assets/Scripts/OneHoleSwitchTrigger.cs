@@ -9,8 +9,12 @@ public class OneHoleSwitchTrigger : MonoBehaviour
     private CockroachMove cockroachMove3D;
     private Cockroach2DMove cockroachMove2D;
 
+    [Header("傳送位置")]
+    private Transform StartPos2D;
+    public Transform StartPos3D;
+
     [Header("大便生成設定")]
-    public bool enableSpawn = false;                 // 是否啟用生成
+    public bool enableShit = false;                 // 是否啟用生成
     public GameObject shit;                     
     
     public int minCount = 1;
@@ -23,13 +27,11 @@ public class OneHoleSwitchTrigger : MonoBehaviour
     public int SpiderMinCount = 1;
     public int SpiderMaxCount = 3;
 
-    [Header("傳送位置")]
-    public Transform StartPos2D;
-    public Transform StartPos3D;
+    
 
     [Header("攝影機限制範圍")]
-    public BoxCollider2D cameraBounds;
-    public EdgeCollider2D spawnArea;                 // 生成範圍
+    private BoxCollider2D cameraBounds;
+    private EdgeCollider2D spawnArea;                 // 生成範圍
 
     private bool isInTheTrigger = false;
     private List<GameObject> spawnedShit = new List<GameObject>(); 
@@ -39,9 +41,9 @@ public class OneHoleSwitchTrigger : MonoBehaviour
     public bool enableFemaleCockroach = false;
 
     [Header("RandomPos")]
-    public Transform position1;
-    public Transform position2;
-    public Transform position3;
+    private Transform position1;
+    private Transform position2;
+    private Transform position3;
 
     public enum SpawnMode
     {
@@ -53,16 +55,44 @@ public class OneHoleSwitchTrigger : MonoBehaviour
     public SpawnMode spawnMode;
 
     [Header("SelectPos")]
-    public Transform selectedPosition;
+    private Transform selectedPosition;
 
     [Header("Prefab")]
     public GameObject prefab;
+
+    public enum SelectedScene
+    {
+        //樹洞,
+        石洞,
+        舊場景
+    }
+    [Header("Scene")]
+    public SelectedScene selectedScene; // 在 Inspector 用下拉選
+    private string selectedSceneName;    // 顯示/保存字串名稱
 
     private void Start()
     {
         viewToggle = GameObject.Find("CameraManager").GetComponent<CameraViewToggle>();
         cockroachMove3D = GameObject.Find("3DCockroach").GetComponent<CockroachMove>();
         cockroachMove2D = GameObject.Find("2DCockroach").GetComponent<Cockroach2DMove>();
+        StartPos2D = GameObject.Find("StartPos2D").transform;
+
+        selectedSceneName = selectedScene.ToString();
+
+        if (Scene2DManager.Instance != null)
+        {
+            var sceneData = Scene2DManager.Instance.GetSceneByName(selectedSceneName);
+            if (sceneData != null)
+            {
+                Debug.Log("套用場景：" + sceneData.sceneName);
+                cameraBounds = sceneData.cameraBounds;
+                spawnArea = sceneData.spawnBounds;
+                position1 = sceneData.randomMotherCockroachRange1;
+                position2 = sceneData.randomMotherCockroachRange2;
+                position3 = sceneData.randomMotherCockroachRange3;
+                selectedPosition = sceneData.motherCockroachPoints;
+            }
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -83,7 +113,7 @@ public class OneHoleSwitchTrigger : MonoBehaviour
             {
                 SpawnRandomSpiderOnPath();
             }
-            if (enableSpawn)
+            if (enableShit)
             {
                 SpawnRandomShitOnPath();
             }
