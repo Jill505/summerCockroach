@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
 using UnityEngine.Rendering;
+using UnityEngine.UI;
 
 public class CockroachMove : MonoBehaviour
 {
@@ -16,8 +17,15 @@ public class CockroachMove : MonoBehaviour
     public Transform subObjectTransform;
     public Transform lookingReferencePoint;
 
+    public Image myRunAmount;
+
     [Header("調整係數")]
     public float runSpeed = 1.4f;
+    public float runAbleTime = 4f;
+    public float runAbleTimeCal = 4f;
+    public float runRecoverPerSec = 2f;
+    public float runNotCD = 1f;
+    public float runNotCDCal = 1f;
 
     [Header("功能變數")]
     public float myDirect;
@@ -60,6 +68,11 @@ public class CockroachMove : MonoBehaviour
 
 
     public moveMode myMoveMode = moveMode.AutoCameraMove;
+
+    public void UISync()
+    {
+        myRunAmount.fillAmount = runAbleTimeCal / runAbleTime;
+    }
 
     public void MakeGravity()
     {
@@ -115,9 +128,11 @@ public class CockroachMove : MonoBehaviour
         }
 
 
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.LeftShift) && runAbleTimeCal > 0)
         {
             myRealVelocity = myMaxVelocity * runSpeed;
+            runNotCDCal = runNotCD;
+            runAbleTimeCal -= Time.deltaTime;
         }
         else
         {
@@ -126,6 +141,15 @@ public class CockroachMove : MonoBehaviour
             if (HorVelocity > myMaxVelocity)
             {
                 HorVelocity -= myMaxVelocity;
+            }
+            runNotCDCal -= Time.deltaTime;
+            if (runNotCDCal < 0)
+            {
+                runAbleTimeCal += runRecoverPerSec * Time.deltaTime;
+                if (runAbleTimeCal > runAbleTime)
+                {
+                    runAbleTimeCal = runAbleTime;
+                }
             }
         }
 
@@ -179,6 +203,7 @@ public class CockroachMove : MonoBehaviour
         {
             StartCoroutine(DelayedStop(delayStopTime));
         }
+        UISync();
     }
     
     private IEnumerator DelayedStop(float delayStopTime)

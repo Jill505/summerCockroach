@@ -21,7 +21,7 @@ public class CockroachManager : MonoBehaviour
     public float playerModeCameraFlu = 0.1f;
 
     public GameObject[] cockroachModels = new GameObject[7];
-    
+
     [Header("Á­½¸¾Þ§@ÅÜ¼Æ")]
     public bool CockroachMoveable = false;
 
@@ -63,7 +63,7 @@ public class CockroachManager : MonoBehaviour
         Debug.Log("K inj");
         Hp -= injNum;
         CockroachBodyPartSwitch();
-    } 
+    }
     public void CockroachBodyPartSwitch()
     {
         myCockroachMove.HorVelocity = 0;
@@ -86,81 +86,68 @@ public class CockroachManager : MonoBehaviour
             cockroachModels[Hp].SetActive(true);
         }
 
-        /*
         switch (Hp)
         {
 
             case int n when Hp >= 6:
-
+                myCockroachMove.myMaxVelocity = myCockroachMove.Hp6maxVelocity;
                 myCockroachMove.HorVelocity = 0;
                 break;
 
             case 5:
-                myMeshFilter.mesh = Hp5Mesh;
-                myRenderer.materials = Hp5Material;
                 myCockroachMove.myMaxVelocity = myCockroachMove.Hp5maxVelocity;
                 myCockroachMove.HorVelocity = 0;
                 break;
 
             case 4:
-                myMeshFilter.mesh = Hp4Mesh;
-                myRenderer.materials = Hp4Material;
                 myCockroachMove.myMaxVelocity = myCockroachMove.Hp4maxVelocity;
                 myCockroachMove.HorVelocity = 0;
                 break;
 
             case 3:
-                myMeshFilter.mesh = Hp3Mesh;
-                myRenderer.materials = Hp3Material;
                 myCockroachMove.myMaxVelocity = myCockroachMove.Hp3maxVelocity;
                 myCockroachMove.HorVelocity = 0;
                 break;
 
             case 2:
-                myMeshFilter.mesh = Hp2Mesh;
-                myRenderer.materials = Hp2Material;
                 myCockroachMove.myMaxVelocity = myCockroachMove.Hp2maxVelocity;
                 myCockroachMove.HorVelocity = 0;
                 break;
 
             case 1:
-                myMeshFilter.mesh = Hp1Mesh;
-                myRenderer.materials = Hp1Material;
                 myCockroachMove.myMaxVelocity = myCockroachMove.Hp1maxVelocity;
                 myCockroachMove.HorVelocity = 0;
                 break;
 
             default:
-                myMeshFilter.mesh = Hp0Mesh;
-                myRenderer.materials = Hp0Material;
                 myCockroachMove.myMaxVelocity = myCockroachMove.Hp0maxVelocity;
                 myCockroachMove.HorVelocity = 0;
                 CockroachDie();
                 break;
-        }*/
-    }
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        if (allGameManger == null)
-        {
-            allGameManger = GameObject.Find("AllGameManager").GetComponent<AllGameManager>();
         }
-        GameStart();//AutoGameStart
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.K))
+        // Start is called once before the first execution of Update after the MonoBehaviour is created
+        void Start()
         {
-            CockroachInjury(1);
+            if (allGameManger == null)
+            {
+                allGameManger = GameObject.Find("AllGameManager").GetComponent<AllGameManager>();
+            }
+            GameStart();//AutoGameStart
+
         }
-        if (Input.GetKeyDown(KeyCode.L))
+
+        // Update is called once per frame
+        void Update()
         {
-            CockroachHealing(1);
+            if (Input.GetKeyDown(KeyCode.K))
+            {
+                CockroachInjury(1);
+            }
+            if (Input.GetKeyDown(KeyCode.L))
+            {
+                CockroachHealing(1);
+            }
         }
     }
 }
