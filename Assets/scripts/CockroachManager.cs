@@ -50,7 +50,9 @@ public class CockroachManager : MonoBehaviour
         //開始死亡計算
         if (allGameManger == null)
         {
-            Debug.LogError("Ak Error: the all game manager is empty & null");
+            allGameManger = GameObject.Find("AllGameManager").GetComponent<AllGameManager>();
+
+            //Debug.LogError("Ak Error: the all game manager is empty & null");
         }
         else
         {
