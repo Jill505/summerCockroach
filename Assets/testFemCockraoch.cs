@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class testFemCockraoch : MonoBehaviour
 {
-    public AllGameManager allGameManager;
+    private AllGameManager allGameManager;
 
     [Header("3D")]
     public MeshRenderer subStatementShowcase;
@@ -15,10 +15,15 @@ public class testFemCockraoch : MonoBehaviour
     public string Disc = "是個三八，住在水湖邊上，綁著辮子的可愛小蟑螂";
 
     public bool finded = false;
+    private void Start()
+    {
+        allGameManager = GameObject.Find("AllGameManager").GetComponent<AllGameManager>();
+    }
+    
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player" && !finded && this.gameObject.tag == "FemaleCockroach")
+        if (other.gameObject.tag == "Player" && !finded )
         {
             finded = true;
             allGameManager.femCockraochGet();
@@ -28,7 +33,7 @@ public class testFemCockraoch : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player") && !finded && this.gameObject.tag == "FemaleCockroach")
+        if (other.CompareTag("Player") && !finded )
         {
             finded = true;
             allGameManager.femCockraochGet();
