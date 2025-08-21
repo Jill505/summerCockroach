@@ -9,7 +9,7 @@ public class ParallaxBackground : MonoBehaviour
         public Transform CaveStonecolumn;
         public Transform StoneCrevice2;
         public Transform CaveStonecolumn2;
-        public Transform StoneCrevice3;
+        public Transform StoneCrevice1;
         public Transform StoneCrevice4;
     }
 
@@ -21,8 +21,8 @@ public class ParallaxBackground : MonoBehaviour
 
     [Header("(0 = speed0, 1 = playerSpeed)")]
     public float caveStonecolumnScale = 0.5f;
-    public float stoneCrevice2Scale = 0.2f;
-    public float caveStonecolumn2Scale = 0.1f;
+    public float stoneCrevice2Scale = 0.05f;
+    public float caveStonecolumn2Scale = 0.05f;
     public float stoneCrevice3Scale = 0.1f;
     public float stoneCrevice4Scale = 0.08f;
 
@@ -41,7 +41,7 @@ public class ParallaxBackground : MonoBehaviour
             initialPositions[i, 0] = GetPosition(backgroundGroups[i].CaveStonecolumn);
             initialPositions[i, 1] = GetPosition(backgroundGroups[i].StoneCrevice2);
             initialPositions[i, 2] = GetPosition(backgroundGroups[i].CaveStonecolumn2);
-            initialPositions[i, 3] = GetPosition(backgroundGroups[i].StoneCrevice3);
+            initialPositions[i, 3] = GetPosition(backgroundGroups[i].StoneCrevice1);
             initialPositions[i, 4] = GetPosition(backgroundGroups[i].StoneCrevice4);
         }
     }
@@ -55,7 +55,7 @@ public class ParallaxBackground : MonoBehaviour
             MoveBackground(group.CaveStonecolumn, playerDelta, caveStonecolumnScale);
             MoveBackground(group.StoneCrevice2, playerDelta, stoneCrevice2Scale);
             MoveBackground(group.CaveStonecolumn2, playerDelta, caveStonecolumn2Scale);
-            MoveBackground(group.StoneCrevice3, playerDelta, stoneCrevice3Scale);
+            MoveBackground(group.StoneCrevice1, playerDelta, stoneCrevice3Scale);
             MoveBackground(group.StoneCrevice4, playerDelta, stoneCrevice4Scale);
         }
 
@@ -69,7 +69,7 @@ public class ParallaxBackground : MonoBehaviour
             SetPosition(backgroundGroups[i].CaveStonecolumn, initialPositions[i, 0]);
             SetPosition(backgroundGroups[i].StoneCrevice2, initialPositions[i, 1]);
             SetPosition(backgroundGroups[i].CaveStonecolumn2, initialPositions[i, 2]);
-            SetPosition(backgroundGroups[i].StoneCrevice3, initialPositions[i, 3]);
+            SetPosition(backgroundGroups[i].StoneCrevice1, initialPositions[i, 3]);
             SetPosition(backgroundGroups[i].StoneCrevice4, initialPositions[i, 4]);
         }
     }
