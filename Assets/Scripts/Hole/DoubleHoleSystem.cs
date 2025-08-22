@@ -36,6 +36,7 @@ public class DoubleHolePair
     [Header("母蟑螂生成設定")]
     public bool enableFemaleCockroach = false;
     public GameObject femaleCockroach;
+
     public SpawnMode spawnMode;
     public enum SpawnMode
     {
@@ -59,9 +60,10 @@ public class DoubleHolePair
         selectedSceneName = selectedScene.ToString();
     }
 
-    
-
-    
+    [Header("Information")]
+    public string cockroachName;
+    public string Disc;
+    [HideInInspector]public bool finded;
 }
 
 // 單獨管理 2D 洞穴內的 Trigger 與生成點（不分組）
@@ -113,9 +115,10 @@ public class DoubleHoleSystem : MonoBehaviour
     private bool isInTheTrigger = false;
     private List<GameObject> spawnedShit = new List<GameObject>();
     private List<GameObject> spawnedSpider = new List<GameObject>();
+    private List<GameObject> spawnedFemCockroach = new List<GameObject>();
 
 
-    
+
 
     private void Awake()
     {
@@ -155,9 +158,46 @@ public class DoubleHoleSystem : MonoBehaviour
                 }
             }
         }
+
     }
 
-    
+    void Start()
+    {
+        foreach (var pair in pairs)
+        {
+            if (pair.enableFemaleCockroach)
+            {
+                EnableFemaleForPair(pair);
+            }
+        }
+    }
+
+    void EnableFemaleForPair(DoubleHolePair pair)
+    {
+        if (pair.leftHoleTrigger3D != null)
+        {
+            var femaleInfo = pair.leftHoleTrigger3D.GetComponent<FemaleCockroachInfo>();
+            if (femaleInfo != null)
+            {
+                femaleInfo.enabled = true; // 啟用腳本
+                femaleInfo.cockroachName = pair.cockroachName;
+                femaleInfo.Disc = pair.Disc;
+            }
+        }
+
+        if (pair.rightHoleTrigger3D != null)
+        {
+            var femaleInfo = pair.rightHoleTrigger3D.GetComponent<FemaleCockroachInfo>();
+            if (femaleInfo != null)
+            {
+                femaleInfo.enabled = true; // 啟用腳本
+                femaleInfo.cockroachName = pair.cockroachName;
+                femaleInfo.Disc = pair.Disc;
+            }
+        }
+    }
+
+
 
     // —— 3D → 2D：外部洞口觸發時呼叫 ——
     public void EnterFrom3D(int pairIndex, HoleSide side)
@@ -192,6 +232,7 @@ public class DoubleHoleSystem : MonoBehaviour
             spawn = hole2D.rightInsideSpawn2D;
 
         if (spawn == null) return;
+        DesObj();
 
         cameraLogic2D.SetCustomBounds(cameraBounds.bounds);
         StartCoroutine(viewToggle.StartViewSwitch(false));
@@ -205,7 +246,7 @@ public class DoubleHoleSystem : MonoBehaviour
         if (pair.enableSpider)
             SpawnRandomSpiderOnPath(pair);
 
-        if (pair.enableFemaleCockroach)
+        if (pair.enableFemaleCockroach &&  pair.finded == false)
             SpawnFemaleCockroach(pair);
     }
 
@@ -234,6 +275,35 @@ public class DoubleHoleSystem : MonoBehaviour
         return pairs != null && index >= 0 && index < pairs.Length;
     }
 
+    void DesObj()
+    {
+        foreach (GameObject obj in spawnedShit)
+        {
+            if (obj != null)
+            {
+                Destroy(obj);
+            }
+        }
+        spawnedShit.Clear();
+
+        foreach (GameObject obj in spawnedSpider)
+        {
+            if (obj != null)
+            {
+                Destroy(obj);
+            }
+        }
+        spawnedSpider.Clear();
+
+        foreach (GameObject obj in spawnedFemCockroach)
+        {
+            if (obj != null)
+            {
+                Destroy(obj);
+            }
+        }
+        spawnedFemCockroach.Clear();
+    }
 
     void SpawnRandomShitOnPath(DoubleHolePair pair)
     {
@@ -294,9 +364,19 @@ public class DoubleHoleSystem : MonoBehaviour
         }
 
         if (spawnPoint != null && pair.femaleCockroach != null)
-            Instantiate(pair.femaleCockroach, spawnPoint.position, spawnPoint.rotation);
+        {
+            GameObject FemaleCockroach2D = Instantiate(pair.femaleCockroach, spawnPoint.position, spawnPoint.rotation);
+            spawnedFemCockroach.Add(FemaleCockroach2D);
+            FemaleCockroachInfo2D CockroachFemaleInfo2D = FemaleCockroach2D.GetComponent<FemaleCockroachInfo2D>();
+            CockroachFemaleInfo2D.cockroachName = pair.cockroachName;
+            CockroachFemaleInfo2D.Disc = pair.Disc;
+            CockroachFemaleInfo2D.generatorScript2 = pair;
+        }
         else
+        {
             Debug.LogWarning("Spawn 失敗：Prefab 或生成位置未設置");
+        }
+            
     }
 
 #if UNITY_EDITOR

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class OneHoleSwitchTrigger : MonoBehaviour
@@ -8,6 +9,7 @@ public class OneHoleSwitchTrigger : MonoBehaviour
     public CameraLogic2D cameraLogic2D;
     private CockroachMove cockroachMove3D;
     private Cockroach2DMove cockroachMove2D;
+    private FemaleCockroachInfo femaleCockroachInfo;
 
     [Header("傳送位置")]
     private Transform StartPos2D;
@@ -36,29 +38,26 @@ public class OneHoleSwitchTrigger : MonoBehaviour
     private bool isInTheTrigger = false;
     private List<GameObject> spawnedShit = new List<GameObject>(); 
     private List<GameObject> spawnedSpider = new List<GameObject>();
+    private List<GameObject> spawnedFemCockroach = new List<GameObject>();
 
     [Header("母蟑螂生成設定")]
     public bool enableFemaleCockroach = false;
+    public GameObject FemaleCockroachObj;
+    public SpawnMode spawnMode;
+
+    public enum SpawnMode
+    {
+        Random,
+        Select
+    }    
 
     [Header("RandomPos")]
     private Transform position1;
     private Transform position2;
     private Transform position3;
 
-    public enum SpawnMode
-    {
-        Random,
-        Select
-    }
-
-    [Header("SpawnMode")]
-    public SpawnMode spawnMode;
-
     [Header("SelectPos")]
     private Transform selectedPosition;
-
-    [Header("Prefab")]
-    public GameObject prefab;
 
     public enum SelectedScene
     {
@@ -70,6 +69,28 @@ public class OneHoleSwitchTrigger : MonoBehaviour
     public SelectedScene selectedScene; // 在 Inspector 用下拉選
     private string selectedSceneName;    // 顯示/保存字串名稱
 
+
+    private void Awake()
+    {
+        femaleCockroachInfo = GetComponent<FemaleCockroachInfo>();
+
+        if (enableFemaleCockroach)
+        {
+            // 如果啟用母蟑螂，確保 FemaleCockroachInfo 是啟用的
+            if (femaleCockroachInfo != null)
+            {
+                femaleCockroachInfo.enabled = true;
+            }
+        }
+        else
+        {
+            // 如果不啟用母蟑螂，就停用 FemaleCockroachInfo
+            if (femaleCockroachInfo != null)
+            {
+                femaleCockroachInfo.enabled = false;
+            }
+        }
+    }
     private void Start()
     {
         viewToggle = GameObject.Find("CameraManager").GetComponent<CameraViewToggle>();
@@ -97,13 +118,14 @@ public class OneHoleSwitchTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        SwitchTo3DAndDesObj();
+        SwitchTo3D();
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") && !viewToggle.Is2D())
         {
+            DesObj();
             isInTheTrigger = true;
             cameraLogic2D.SetCustomBounds(cameraBounds.bounds);
             StartCoroutine(viewToggle.StartViewSwitch(false)); //切換到2D
@@ -117,7 +139,7 @@ public class OneHoleSwitchTrigger : MonoBehaviour
             {
                 SpawnRandomShitOnPath();
             }
-            if (enableFemaleCockroach)
+            if (enableFemaleCockroach && femaleCockroachInfo.finded == false)
             {
                 SpawnFemaleCockroach();
             }
@@ -133,31 +155,43 @@ public class OneHoleSwitchTrigger : MonoBehaviour
         }
     }
 
-    public void SwitchTo3DAndDesObj()
+    public void SwitchTo3D()
     {
         if (viewToggle.Is2D())
         {
             StartCoroutine(viewToggle.StartViewSwitch(true)); // 切換到3D
             cockroachMove3D.transform.position = StartPos3D.position;
-
-            foreach (GameObject obj in spawnedShit)
-            {
-                if (obj != null)
-                {
-                    Destroy(obj);
-                }
-            }
-            spawnedShit.Clear();
-
-            foreach (GameObject obj in spawnedSpider)
-            {
-                if (obj != null)
-                {
-                    Destroy(obj);
-                }
-            }
-            spawnedSpider.Clear();
         }
+    }
+
+    void DesObj()
+    {
+        foreach (GameObject obj in spawnedShit)
+        {
+            if (obj != null)
+            {
+                Destroy(obj);
+            }
+        }
+        spawnedShit.Clear();
+
+        foreach (GameObject obj in spawnedSpider)
+        {
+            if (obj != null)
+            {
+                Destroy(obj);
+            }
+        }
+        spawnedSpider.Clear();
+
+        foreach (GameObject obj in spawnedFemCockroach)
+        {
+            if (obj != null)
+            {
+                Destroy(obj);
+            }
+        }
+        spawnedFemCockroach.Clear();
     }
 
     void SpawnRandomShitOnPath()
@@ -237,14 +271,24 @@ public class OneHoleSwitchTrigger : MonoBehaviour
             spawnPoint = selectedPosition;
         }
 
-        if (spawnPoint != null && prefab != null)
+        if (spawnPoint != null && FemaleCockroachObj != null)
         {
-            Instantiate(prefab, spawnPoint.position, spawnPoint.rotation);
+            GameObject FemaleCockroach2D = Instantiate(FemaleCockroachObj, spawnPoint.position, spawnPoint.rotation);
+            spawnedFemCockroach.Add(FemaleCockroach2D);
+            FemaleCockroachInfo2D CockroachFemaleInfo2D = FemaleCockroach2D.GetComponent<FemaleCockroachInfo2D>();
+            CockroachFemaleInfo2D.cockroachName = femaleCockroachInfo.cockroachName;
+            CockroachFemaleInfo2D.Disc = femaleCockroachInfo.Disc;
+            CockroachFemaleInfo2D.generatorScript = this;
         }
         else
         {
             Debug.LogWarning("Spawn 失敗：Prefab 或生成位置未設置");
         }
+    }
+
+    public void FemCockroach2DFindOut()
+    {
+        femaleCockroachInfo.finded = true;
     }
 }
 

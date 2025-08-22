@@ -6,7 +6,6 @@ TagManager:
   tags:
   - CinemachineTarget
   - ClimbableObject
-  - FemaleCockroach
   layers:
   - Default
   - TransparentFX

@@ -42,18 +42,6 @@ public class CameraViewToggle : MonoBehaviour
         if (transitionQuad2D != null) transitionQuad2D.SetActive(false);
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.J) && !isSwitching) //forTest
-        {
-            if (is2D == true)
-                StartCoroutine(StartViewSwitch(true));
-            else
-                StartCoroutine(StartViewSwitch(false));
-        }
-
-    }
-
     public IEnumerator StartViewSwitch(bool is2D)
     {
         isSwitching = true;

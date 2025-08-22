@@ -6,49 +6,137 @@ using UnityEngine.UI;
 public class FemCockraochTracker : MonoBehaviour
 {
     public Text textShowcase;
+    private CameraViewToggle viewToggle;
 
-    public testFemCockraoch[] sceneRoaches;
-    public GameObject playerPos;
+    private FemaleCockroachInfo[] sceneRoaches3D;
+    private FemaleCockroachInfo2D[] sceneRoaches2D;
+    private GameObject playerPos3D;
+    private GameObject playerPos2D;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [System.Obsolete]
+    void Awake()
     {
-        
+        viewToggle = GameObject.Find("CameraManager").GetComponent<CameraViewToggle>();
+        playerPos3D = GameObject.Find("3DCockroach");
+        playerPos2D = GameObject.Find("2DCockroach");
     }
-
-    // Update is called once per frame
+    private void Start()
+    {
+        FindSceneRoaches(true);
+    }
     void Update()
     {
-        SortRoachesByDistance();
-        textShowcase.text = "";
-        textShowcase.text += "離你最近的母蟑螂有" + Vector3.Distance(playerPos.transform.position, sceneRoaches[0].gameObject.transform.position)+ "公尺遠！\n";
-        textShowcase.text += "蟑螂姓名：" + sceneRoaches[0].cockroachName + "\n";
-        textShowcase.text += "蟑螂敘述：" + sceneRoaches[0].Disc;
+        SortRoaches3DByDistance();
+        SortRoaches2DByDistance();
+        if (!viewToggle.Is2D())
+        {
+            TextShowcase3D();
+        }
+        else
+        {
+            FindSceneRoaches(false);
+            TextShowcase2D();
+        }
+    }
+
+    void  FindSceneRoaches(bool find3D)
+    {
+        if(find3D)
+        {
+            sceneRoaches3D = FindObjectsOfType<FemaleCockroachInfo>();
+            if (sceneRoaches3D.Length == 0)
+            {
+                Debug.LogWarning("場景中沒有找到任何 FemaleCockroachInfo！");
+            }
+        }
+        else
+        {
+            sceneRoaches2D = FindObjectsOfType<FemaleCockroachInfo2D>();
+            if (sceneRoaches2D.Length == 0)
+            {
+                Debug.LogWarning("場景中沒有找到任何 FemaleCockroachInfo2D！");
+            }
+        }
+    }
+    void TextShowcase3D()
+    {
+        var aliveRoaches = sceneRoaches3D.Where(r => r != null && !r.finded).ToArray();
+        if (aliveRoaches.Length > 0)
+        {
+            textShowcase.text = "";
+            textShowcase.text += "離你最近的母蟑螂有" + Vector3.Distance(playerPos3D.transform.position, sceneRoaches3D[0].gameObject.transform.position) + "公尺遠！\n";
+            textShowcase.text += "蟑螂姓名：" + sceneRoaches3D[0].cockroachName + "\n";
+            textShowcase.text += "蟑螂敘述：" + sceneRoaches3D[0].Disc;
+        }
+        else
+        {
+            textShowcase.text = "沒有母蟑螂囉!";
+        }
+    }
+    void TextShowcase2D()
+    {
+        var aliveRoaches = sceneRoaches2D.Where(r => r != null && !r.finded).ToArray();
+
+        if (aliveRoaches.Length > 0)
+        {
+            textShowcase.text = "";
+            textShowcase.text += "洞穴裡離你最近的母蟑螂有" + Vector3.Distance(playerPos2D.transform.position, sceneRoaches2D[0].gameObject.transform.position) + "公尺遠！\n";
+            textShowcase.text += "蟑螂姓名：" + sceneRoaches2D[0].cockroachName + "\n";
+            textShowcase.text += "蟑螂敘述：" + sceneRoaches2D[0].Disc;
+        }
+        else
+        {
+            textShowcase.text = "2D洞洞沒有母蟑螂囉!";
+        }
     }
 
 
-    void SortRoachesByDistance()
+
+    void SortRoaches3DByDistance()
     {
-        if (sceneRoaches == null || playerPos == null)
+        if (sceneRoaches3D == null || playerPos3D == null)
         {
             Debug.LogError("sceneRoaches or playerPos is not assigned.");
             return;
         }
 
-        Vector3 playerPosition = playerPos.transform.position;
+        Vector3 playerPosition = playerPos3D.transform.position;
 
         // 過濾掉已被找到的蟑螂
-        var filteredRoaches = sceneRoaches
-            .Where(r => r != null && !r.finded)
+        var filteredRoaches = sceneRoaches3D
+            .Where(r => r != null && !r.finded && r.enabled)
             .OrderBy(r => (r.gameObject.transform.position - playerPosition).sqrMagnitude)
             .ToArray();
 
         // 將排序後的結果放回原陣列開頭，保留原陣列長度
         for (int i = 0; i < filteredRoaches.Length; i++)
         {
-            sceneRoaches[i] = filteredRoaches[i];
+            sceneRoaches3D[i] = filteredRoaches[i];
         }
 
         //Debug.Log("Roaches sorted by distance to player (excluding those already found).");
+    }
+
+    void SortRoaches2DByDistance()
+    {
+        if (sceneRoaches2D != null)
+        {
+            Vector3 playerPosition = playerPos2D.transform.position;
+
+            // 過濾掉已被找到的蟑螂
+            var filteredRoaches = sceneRoaches2D
+                .Where(r => r != null && !r.finded)
+                .OrderBy(r => (r.gameObject.transform.position - playerPosition).sqrMagnitude)
+                .ToArray();
+
+            // 將排序後的結果放回原陣列開頭，保留原陣列長度
+            for (int i = 0; i < filteredRoaches.Length; i++)
+            {
+                sceneRoaches2D[i] = filteredRoaches[i];
+            }
+        }
+
+        
+
     }
 }
