@@ -1551,6 +1551,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1379756ecdc1ecc4a9746801df3edff8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1884968306}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1379756ecdc1ecc4a9746801df3edff8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1884968311}
   m_SourcePrefab: {fileID: 100100000, guid: 1379756ecdc1ecc4a9746801df3edff8, type: 3}
 --- !u!1001 &398773882
 PrefabInstance:
@@ -2225,12 +2228,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6250c956b96b4aa4fa92700a48f73309, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allGameManager: {fileID: 950558450}
   subStatementShowcase: {fileID: 916746480}
   getMat: {fileID: 2100000, guid: f56d4c9b7af79674ab855aa13775f07b, type: 2}
-  cockroachName: "\u963F\u62C9"
-  Disc: "\u662F\u500B\u738B\u516B\uFF0C\u4F4F\u5728\u8349\u6E56\u908A\u4E0A\uFF0C\u7D81\u8457\u6C96\u5929\u70AE\u7684\u9AD8\u51B7\u6BCD\u87D1\u8782"
-  finded: 0
 --- !u!65 &557117549
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2257,6 +2256,21 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1379756ecdc1ecc4a9746801df3edff8, type: 3}
   m_PrefabInstance: {fileID: 774077766}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &557117553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557117547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fee62e3ef65c1f640a75ecc2e166fb63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cockroachName: "\u963F\u82B1"
+  Disc: "\u662F\u500B\u4E09\u516B\uFF0C\u4F4F\u5728\u6C34\u6E56\u908A\u4E0A\uFF0C\u7D81\u8457\u8FAE\u5B50\u7684\u53EF\u611B\u5C0F\u87D1\u8782"
+  finded: 0
 --- !u!1 &577744046
 GameObject:
   m_ObjectHideFlags: 0
@@ -3064,6 +3078,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1379756ecdc1ecc4a9746801df3edff8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 557117548}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1379756ecdc1ecc4a9746801df3edff8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 557117553}
   m_SourcePrefab: {fileID: 100100000, guid: 1379756ecdc1ecc4a9746801df3edff8, type: 3}
 --- !u!1001 &790589468
 PrefabInstance:
@@ -3181,6 +3198,68 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &833443286
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 833443287}
+  m_Layer: 0
+  m_Name: OldInsFemaleCockroach
+  m_TagString: Untagged
+  m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &833443287
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 833443286}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -53.679993, y: 4.20401, z: 7.849243}
+  m_LocalScale: {x: 1.24603, y: 8.613299, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1809441185}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &835051135
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 835051136}
+  m_Layer: 0
+  m_Name: OldInsFemaleCockroach (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &835051136
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 835051135}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -47.990005, y: 3.8099976, z: 7.849243}
+  m_LocalScale: {x: 1.24603, y: 8.613299, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1809441185}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &835182508
 PrefabInstance:
@@ -5783,11 +5862,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textShowcase: {fileID: 1162364798}
-  sceneRoaches:
-  - {fileID: 1357420022}
-  - {fileID: 1884968306}
-  - {fileID: 557117548}
-  playerPos: {fileID: 1772389385}
 --- !u!1 &1229442371
 GameObject:
   m_ObjectHideFlags: 0
@@ -6476,12 +6550,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6250c956b96b4aa4fa92700a48f73309, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allGameManager: {fileID: 950558450}
   subStatementShowcase: {fileID: 1066704497}
   getMat: {fileID: 2100000, guid: f56d4c9b7af79674ab855aa13775f07b, type: 2}
-  cockroachName: "\u963F\u82B1"
-  Disc: "\u662F\u500B\u4E09\u516B\uFF0C\u4F4F\u5728\u6C34\u6E56\u908A\u4E0A\uFF0C\u7D81\u8457\u8FAE\u5B50\u7684\u53EF\u611B\u6BCD\u87D1\u8782"
-  finded: 0
 --- !u!1 &1405049626
 GameObject:
   m_ObjectHideFlags: 0
@@ -6592,6 +6662,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1445069633}
   m_CullTransparentMesh: 1
+--- !u!1 &1489945634
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1489945635}
+  m_Layer: 0
+  m_Name: OldInsFemaleCockroach (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1489945635
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1489945634}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -40.059998, y: 1.5, z: 7.849243}
+  m_LocalScale: {x: 1.24603, y: 8.613299, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1809441185}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1500762643
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8377,8 +8478,8 @@ MonoBehaviour:
   SpiderMinCount: 1
   SpiderMaxCount: 3
   enableFemaleCockroach: 0
+  FemaleCockroachObj: {fileID: 0}
   spawnMode: 0
-  prefab: {fileID: 0}
   selectedScene: 1
 --- !u!61 &1744157700
 BoxCollider2D:
@@ -8725,6 +8826,9 @@ Transform:
   - {fileID: 1086733565}
   - {fileID: 2138517984}
   - {fileID: 1726350766}
+  - {fileID: 833443287}
+  - {fileID: 835051136}
+  - {fileID: 1489945635}
   m_Father: {fileID: 2050011171}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1822108685
@@ -8914,12 +9018,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6250c956b96b4aa4fa92700a48f73309, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allGameManager: {fileID: 950558450}
   subStatementShowcase: {fileID: 1064028429}
   getMat: {fileID: 2100000, guid: f56d4c9b7af79674ab855aa13775f07b, type: 2}
-  cockroachName: "\u963F\u7F8E"
-  Disc: "\u662F\u500B\u4E09\u516B\uFF0C\u4F4F\u5728\u6C34\u6E56\u908A\u4E0A\uFF0C\u7D81\u8457\u99AC\u5C3E\u7684\u6027\u611F\u6BCD\u87D1\u8782"
-  finded: 0
 --- !u!65 &1884968307
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8946,6 +9046,21 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1379756ecdc1ecc4a9746801df3edff8, type: 3}
   m_PrefabInstance: {fileID: 369042922}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1884968311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1884968305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fee62e3ef65c1f640a75ecc2e166fb63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cockroachName: "\u963F\u82B1"
+  Disc: "\u662F\u500B\u4E09\u516B\uFF0C\u4F4F\u5728\u6C34\u6E56\u908A\u4E0A\uFF0C\u7D81\u8457\u8FAE\u5B50\u7684\u53EF\u611B\u5C0F\u87D1\u8782"
+  finded: 0
 --- !u!1 &1900451793
 GameObject:
   m_ObjectHideFlags: 0

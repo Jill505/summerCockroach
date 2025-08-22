@@ -781,6 +781,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 132363128}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &176704270
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 176704271}
+  m_Layer: 0
+  m_Name: OldInsFemaleCockroach
+  m_TagString: Untagged
+  m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &176704271
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 176704270}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -53.679993, y: 4.20401, z: 7.849243}
+  m_LocalScale: {x: 1.24603, y: 8.613299, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 623426616}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &178383794
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2418,6 +2449,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &437647383
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 437647384}
+  m_Layer: 0
+  m_Name: OldInsFemaleCockroach (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &437647384
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 437647383}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -47.990005, y: 3.8099976, z: 7.849243}
+  m_LocalScale: {x: 1.24603, y: 8.613299, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 623426616}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &464762096
 GameObject:
   m_ObjectHideFlags: 0
@@ -3134,12 +3196,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6250c956b96b4aa4fa92700a48f73309, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allGameManager: {fileID: 950558450}
   subStatementShowcase: {fileID: 916746480}
   getMat: {fileID: 2100000, guid: f56d4c9b7af79674ab855aa13775f07b, type: 2}
-  cockroachName: "\u963F\u62C9"
-  Disc: "\u662F\u500B\u738B\u516B\uFF0C\u4F4F\u5728\u8349\u6E56\u908A\u4E0A\uFF0C\u7D81\u8457\u6C96\u5929\u70AE\u7684\u9AD8\u51B7\u6BCD\u87D1\u8782"
-  finded: 0
 --- !u!65 &557117549
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3319,6 +3377,9 @@ Transform:
   - {fileID: 1499471946}
   - {fileID: 2068554751}
   - {fileID: 604220165}
+  - {fileID: 176704271}
+  - {fileID: 437647384}
+  - {fileID: 1510402512}
   m_Father: {fileID: 1151651364}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &643084031
@@ -3445,8 +3506,6 @@ MonoBehaviour:
   player: {fileID: 1498027060}
   playerRB: {fileID: 1498027061}
   offset: {x: 0, y: 0, z: -10}
-  moveSpeed: 5
-  SetOrthographicSize: 2
   acceleration: 10
   maxSpeed: 15
   smoothTime: 1
@@ -4851,6 +4910,7 @@ GameObject:
   - component: {fileID: 950558451}
   - component: {fileID: 950558450}
   - component: {fileID: 950558452}
+  - component: {fileID: 950558453}
   m_Layer: 0
   m_Name: AllGameManager
   m_TagString: Untagged
@@ -4912,6 +4972,33 @@ MonoBehaviour:
   caveStonecolumn2Scale: 0.1
   stoneCrevice3Scale: 0.1
   stoneCrevice4Scale: 0.08
+--- !u!114 &950558453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950558449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f691230571e9314f95087b644d3b43a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scenes:
+  - sceneName: "\u820A\u5834\u666F"
+    cameraBounds: {fileID: 0}
+    spawnBounds: {fileID: 0}
+    randomMotherCockroachRange1: {fileID: 0}
+    randomMotherCockroachRange2: {fileID: 0}
+    randomMotherCockroachRange3: {fileID: 0}
+    motherCockroachPoints: {fileID: 0}
+  - sceneName: "\u77F3\u6D1E"
+    cameraBounds: {fileID: 0}
+    spawnBounds: {fileID: 0}
+    randomMotherCockroachRange1: {fileID: 0}
+    randomMotherCockroachRange2: {fileID: 0}
+    randomMotherCockroachRange3: {fileID: 0}
+    motherCockroachPoints: {fileID: 0}
 --- !u!1 &975092762
 GameObject:
   m_ObjectHideFlags: 0
@@ -6682,11 +6769,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textShowcase: {fileID: 1162364798}
-  sceneRoaches:
-  - {fileID: 1357420022}
-  - {fileID: 1884968306}
-  - {fileID: 557117548}
-  playerPos: {fileID: 1772389385}
 --- !u!1 &1229442371
 GameObject:
   m_ObjectHideFlags: 0
@@ -6723,7 +6805,13 @@ MonoBehaviour:
   mainObjectTransform: {fileID: 1229442375}
   subObjectTransform: {fileID: 1772389389}
   lookingReferencePoint: {fileID: 303797449}
+  myRunAmount: {fileID: 0}
   runSpeed: 2.2
+  runAbleTime: 4
+  runAbleTimeCal: 4
+  runRecoverPerSec: 2
+  runNotCD: 1
+  runNotCDCal: 1
   myDirect: 0
   Hp6maxVelocity: 14
   Hp5maxVelocity: 14
@@ -7177,12 +7265,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6250c956b96b4aa4fa92700a48f73309, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allGameManager: {fileID: 950558450}
   subStatementShowcase: {fileID: 1066704497}
   getMat: {fileID: 2100000, guid: f56d4c9b7af79674ab855aa13775f07b, type: 2}
-  cockroachName: "\u963F\u82B1"
-  Disc: "\u662F\u500B\u4E09\u516B\uFF0C\u4F4F\u5728\u6C34\u6E56\u908A\u4E0A\uFF0C\u7D81\u8457\u8FAE\u5B50\u7684\u53EF\u611B\u6BCD\u87D1\u8782"
-  finded: 0
 --- !u!1 &1402617056
 GameObject:
   m_ObjectHideFlags: 0
@@ -7894,6 +7978,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 924f3aa1cf4569c48bca322bc5d011af, type: 3}
+--- !u!1 &1510402511
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1510402512}
+  m_Layer: 0
+  m_Name: OldInsFemaleCockroach (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1510402512
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1510402511}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -40.059998, y: 1.5, z: 7.849243}
+  m_LocalScale: {x: 1.24603, y: 8.613299, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 623426616}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1517303958
 GameObject:
   m_ObjectHideFlags: 0
@@ -8409,7 +8524,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraLogic2D: {fileID: 654445927}
-  enableSpawn: 0
+  StartPos3D: {fileID: 0}
+  enableShit: 0
   shit: {fileID: 5170097277464503356, guid: 7c671cce55b21b842bd428ddbd464b13, type: 3}
   minCount: 1
   maxCount: 3
@@ -8417,10 +8533,10 @@ MonoBehaviour:
   spiderObject: {fileID: 9054530707763474007, guid: 5b560ad472dc18542ab3046f7ce3cd28, type: 3}
   SpiderMinCount: 1
   SpiderMaxCount: 3
-  StartPos2D: {fileID: 2068554751}
-  StartPos3D: {fileID: 0}
-  cameraBounds: {fileID: 1499471947}
-  spawnArea: {fileID: 1450044311}
+  enableFemaleCockroach: 0
+  FemaleCockroachObj: {fileID: 0}
+  spawnMode: 0
+  selectedScene: 0
 --- !u!61 &1621674161
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9314,12 +9430,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6250c956b96b4aa4fa92700a48f73309, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allGameManager: {fileID: 950558450}
   subStatementShowcase: {fileID: 1064028429}
   getMat: {fileID: 2100000, guid: f56d4c9b7af79674ab855aa13775f07b, type: 2}
-  cockroachName: "\u963F\u7F8E"
-  Disc: "\u662F\u500B\u4E09\u516B\uFF0C\u4F4F\u5728\u6C34\u6E56\u908A\u4E0A\uFF0C\u7D81\u8457\u99AC\u5C3E\u7684\u6027\u611F\u6BCD\u87D1\u8782"
-  finded: 0
 --- !u!65 &1884968307
 BoxCollider:
   m_ObjectHideFlags: 0
