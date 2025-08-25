@@ -46,9 +46,8 @@ public class DoubleHolePair
 
     public enum SelectedScene
     {
-        //樹洞,
         石洞,
-        舊場景
+        新石洞
     }
     [Header("Scene")]
     public SelectedScene selectedScene; // 在 Inspector 用下拉選
@@ -66,26 +65,11 @@ public class DoubleHolePair
     [HideInInspector]public bool finded;
 }
 
-// 單獨管理 2D 洞穴內的 Trigger 與生成點（不分組）
-[System.Serializable]
-public class Single2DHole
-{
-    [Header("2D 洞穴內洞口 Trigger（左右）")]
-    public Collider2D leftHoleTrigger2D;
-    public Collider2D rightHoleTrigger2D;
-
-    [Header("2D 洞穴內生成點（從3D進入時的出現位置）")]
-    public Transform leftInsideSpawn2D;
-    public Transform rightInsideSpawn2D;
-}
 
 public class DoubleHoleSystem : MonoBehaviour
 {
     [Header("多組 3D 洞口")]
     public DoubleHolePair[] pairs;
-
-    [Header("單一 2D 洞穴")]
-    public Single2DHole hole2D;
 
     [Header("玩家物件")]
     private CockroachMove cockroachMove3D;
@@ -96,9 +80,10 @@ public class DoubleHoleSystem : MonoBehaviour
     // 記錄目前是從哪一組洞進入洞穴（-1 表示未在洞穴流程中）
     private int currentPairIndex = -1;
 
-    
+    [Header("2D 洞穴內生成點（從3D進入時的出現位置）")]
+    private Transform leftInsideSpawn2D;
+    private Transform rightInsideSpawn2D;
 
-    
 
     [Header("RandomPos")]
     private Transform position1;
@@ -222,14 +207,16 @@ public class DoubleHoleSystem : MonoBehaviour
                 position2 = sceneData.randomMotherCockroachRange2;
                 position3 = sceneData.randomMotherCockroachRange3;
                 selectedPosition = sceneData.motherCockroachPoints;
+                leftInsideSpawn2D = sceneData.insPos1;
+                rightInsideSpawn2D = sceneData.insPos2;
             }
         }
 
         Transform spawn = null;
         if (side == HoleSide.Left)
-            spawn = hole2D.leftInsideSpawn2D;
+            spawn = leftInsideSpawn2D;
         else
-            spawn = hole2D.rightInsideSpawn2D;
+            spawn = rightInsideSpawn2D;
 
         if (spawn == null) return;
         DesObj();

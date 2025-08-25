@@ -12,6 +12,8 @@ public class Scene2DManager : MonoBehaviour
         public Transform randomMotherCockroachRange2; // 隨機生成母蟑螂位置範圍
         public Transform randomMotherCockroachRange3; // 隨機生成母蟑螂位置範圍
         public Transform motherCockroachPoints;  // 固定生成位置
+        public Transform insPos1;
+        public Transform insPos2;
     }
     public static Scene2DManager Instance;
 

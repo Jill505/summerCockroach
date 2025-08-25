@@ -13,7 +13,7 @@ public class OneHoleSwitchTrigger : MonoBehaviour
 
     [Header("傳送位置")]
     private Transform StartPos2D;
-    public Transform StartPos3D;
+    private static Transform StartPos3D;
 
     [Header("大便生成設定")]
     public bool enableShit = false;                 // 是否啟用生成
@@ -61,8 +61,7 @@ public class OneHoleSwitchTrigger : MonoBehaviour
 
     public enum SelectedScene
     {
-        //樹洞,
-        石洞,
+        樹洞,
         舊場景
     }
     [Header("Scene")]
@@ -96,7 +95,6 @@ public class OneHoleSwitchTrigger : MonoBehaviour
         viewToggle = GameObject.Find("CameraManager").GetComponent<CameraViewToggle>();
         cockroachMove3D = GameObject.Find("3DCockroach").GetComponent<CockroachMove>();
         cockroachMove2D = GameObject.Find("2DCockroach").GetComponent<Cockroach2DMove>();
-        StartPos2D = GameObject.Find("StartPos2D").transform;
 
         selectedSceneName = selectedScene.ToString();
 
@@ -112,6 +110,7 @@ public class OneHoleSwitchTrigger : MonoBehaviour
                 position2 = sceneData.randomMotherCockroachRange2;
                 position3 = sceneData.randomMotherCockroachRange3;
                 selectedPosition = sceneData.motherCockroachPoints;
+                StartPos2D = sceneData.insPos1;
             }
         }
     }
@@ -128,6 +127,7 @@ public class OneHoleSwitchTrigger : MonoBehaviour
             DesObj();
             isInTheTrigger = true;
             cameraLogic2D.SetCustomBounds(cameraBounds.bounds);
+            StartPos3D = transform.GetChild(0);
             StartCoroutine(viewToggle.StartViewSwitch(false)); //切換到2D
 
             // 顯示蜘蛛（如果有勾選）
