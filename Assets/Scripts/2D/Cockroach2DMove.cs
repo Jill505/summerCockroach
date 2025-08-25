@@ -13,7 +13,8 @@ public class Cockroach2DMove : MonoBehaviour
     public Animator animator;
 
     [Header("移動設定")]
-    public float moveSpeed = 7f;
+    public float moveSpeed = 4f;
+    public float runSpeed = 2f;
     public float rayLength = 1.2f;
     public LayerMask groundLayer;
 
@@ -28,6 +29,28 @@ public class Cockroach2DMove : MonoBehaviour
             float moveX = 0f;
             if (Input.GetKey(KeyCode.A)) moveX = -1f;
             else if (Input.GetKey(KeyCode.D)) moveX = 1f;
+
+            // ======= 左鍵衝刺功能沿用 =======
+            float currentSpeed = moveSpeed;
+            if (Input.GetKey(KeyCode.LeftShift) && mainMoveScript.runAbleTimeCal > 0)
+            {
+                currentSpeed = moveSpeed * runSpeed;
+                mainMoveScript.runNotCDCal = mainMoveScript.runNotCD;
+                mainMoveScript.runAbleTimeCal -= Time.deltaTime;
+            }
+            else
+            {
+                mainMoveScript.runNotCDCal -= Time.deltaTime;
+                if (mainMoveScript.runNotCDCal < 0)
+                {
+                    mainMoveScript.runAbleTimeCal += mainMoveScript.runRecoverPerSec * Time.deltaTime;
+                    if (mainMoveScript.runAbleTimeCal > mainMoveScript.runAbleTime)
+                    {
+                        mainMoveScript.runAbleTimeCal = mainMoveScript.runAbleTime;
+                    }
+                }
+            }
+
 
             // Raycast 偵測地面
             Vector2 rayOrigin = (Vector2)transform.position + Vector2.down * (myCol.size.y * 0.5f - 0.05f);
@@ -59,7 +82,7 @@ public class Cockroach2DMove : MonoBehaviour
                 Vector2 tangent = new Vector2(normal.y, -normal.x);
 
                 // 沿切線方向移動
-                Vector2 targetVelocity = tangent.normalized * moveX * moveSpeed;
+                Vector2 targetVelocity = tangent.normalized * moveX * currentSpeed;
                 myRb.velocity = new Vector2(targetVelocity.x, myRb.velocity.y);
 
                 // 計算角度，讓蟑螂跟地形傾斜對齊
@@ -69,7 +92,7 @@ public class Cockroach2DMove : MonoBehaviour
             else
             {
                 // 無地面時直接水平移動，角度回正
-                myRb.velocity = new Vector2(moveX * moveSpeed, myRb.velocity.y);
+                myRb.velocity = new Vector2(moveX * currentSpeed, myRb.velocity.y);
                 mainObjectTransform.rotation = Quaternion.identity;
             }
 
