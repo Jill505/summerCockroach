@@ -7191,6 +7191,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 950558451}
+  - component: {fileID: 950558454}
   - component: {fileID: 950558450}
   - component: {fileID: 950558452}
   - component: {fileID: 950558453}
@@ -7243,12 +7244,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 950558449}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67c3aba950a8207458278cbcc3e4d422, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 1229442375}
   backgroundGroups:
   - CaveStonecolumn: {fileID: 0}
     StoneCrevice2: {fileID: 0}
@@ -7370,6 +7371,18 @@ MonoBehaviour:
     motherCockroachPoints: {fileID: 0}
     insPos1: {fileID: 0}
     insPos2: {fileID: 0}
+--- !u!114 &950558454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950558449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3354d1a052d0e2745800aa133a80714e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &963293459
 GameObject:
   m_ObjectHideFlags: 0
@@ -7428,13 +7441,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7977a713bc487b4b84f03edd325b267, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cockroachManager: {fileID: 0}
-  mainMoveScript: {fileID: 0}
+  cockroachManager: {fileID: 1229442373}
+  mainMoveScript: {fileID: 1229442372}
   myRb: {fileID: 963293460}
   myCol: {fileID: 963293462}
   mainObjectTransform: {fileID: 41963819}
   animator: {fileID: 41963817}
   moveSpeed: 7
+  runSpeed: 2
   rayLength: 1
   groundLayer:
     serializedVersion: 2
@@ -9371,6 +9385,75 @@ Transform:
   - {fileID: 370300217}
   m_Father: {fileID: 1172993398}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1131251604
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4788779308555671535, guid: d2c694c26126b984195760c35cf9ce34, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4788779308555671535, guid: d2c694c26126b984195760c35cf9ce34, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4788779308555671535, guid: d2c694c26126b984195760c35cf9ce34, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.675783
+      objectReference: {fileID: 0}
+    - target: {fileID: 4788779308555671535, guid: d2c694c26126b984195760c35cf9ce34, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 4788779308555671535, guid: d2c694c26126b984195760c35cf9ce34, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.1057117
+      objectReference: {fileID: 0}
+    - target: {fileID: 4788779308555671535, guid: d2c694c26126b984195760c35cf9ce34, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4788779308555671535, guid: d2c694c26126b984195760c35cf9ce34, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4788779308555671535, guid: d2c694c26126b984195760c35cf9ce34, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4788779308555671535, guid: d2c694c26126b984195760c35cf9ce34, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4788779308555671535, guid: d2c694c26126b984195760c35cf9ce34, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4788779308555671535, guid: d2c694c26126b984195760c35cf9ce34, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4788779308555671535, guid: d2c694c26126b984195760c35cf9ce34, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5277930434079214933, guid: d2c694c26126b984195760c35cf9ce34, type: 3}
+      propertyPath: m_Name
+      value: 3DObj_Grassland_V3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5277930434079214933, guid: d2c694c26126b984195760c35cf9ce34, type: 3}
+      propertyPath: m_TagString
+      value: ClimbableObject
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d2c694c26126b984195760c35cf9ce34, type: 3}
 --- !u!1 &1152500958
 GameObject:
   m_ObjectHideFlags: 0
@@ -10865,7 +10948,7 @@ MonoBehaviour:
   mainObjectTransform: {fileID: 1229442375}
   subObjectTransform: {fileID: 1772389389}
   lookingReferencePoint: {fileID: 303797449}
-  myRunAmount: {fileID: 0}
+  myRunAmount: {fileID: 975092764}
   runSpeed: 2.2
   runAbleTime: 4
   runAbleTimeCal: 4
@@ -10906,7 +10989,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a12f75b8e56f98046835e453d417e116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allGameManger: {fileID: 0}
+  allGameManger: {fileID: 950558450}
   myCockroachMove: {fileID: 1229442372}
   myCameraLogic: {fileID: 1073194382}
   myMeshFilter: {fileID: 1772389388}
@@ -12516,7 +12599,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraLogic2D: {fileID: 1127373609}
-  StartPos3D: {fileID: 0}
   enableShit: 0
   shit: {fileID: 5170097277464503356, guid: 7c671cce55b21b842bd428ddbd464b13, type: 3}
   minCount: 1
@@ -15849,7 +15931,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraLogic2D: {fileID: 1127373609}
-  StartPos3D: {fileID: 0}
   enableShit: 0
   shit: {fileID: 5170097277464503356, guid: 7c671cce55b21b842bd428ddbd464b13, type: 3}
   minCount: 1
@@ -19892,3 +19973,4 @@ SceneRoots:
   - {fileID: 7617643}
   - {fileID: 132363128}
   - {fileID: 1303213584871173656}
+  - {fileID: 1131251604}
