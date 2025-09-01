@@ -71,7 +71,8 @@ public class CockroachMove : MonoBehaviour
 
     public void UISync()
     {
-        myRunAmount.fillAmount = runAbleTimeCal / runAbleTime;
+        if (myRunAmount != null) myRunAmount.fillAmount = runAbleTimeCal / runAbleTime;
+        else Debug.LogError("NO FILL AMOUNT SHOW UI PICTURE");
     }
 
     public void MakeGravity()
