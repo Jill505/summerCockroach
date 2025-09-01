@@ -23,6 +23,7 @@ public class CockroachClimb : MonoBehaviour
         if (other.gameObject.tag == "ClimbableObject")
         {
             targetRotation = other.gameObject.transform.rotation.eulerAngles;
+            Debug.Log("Trigger rotation is:" + other.gameObject.transform.rotation.eulerAngles);
             //MainObjectTransform.rotation = Quaternion.Euler(other.gameObject.transform.rotation.eulerAngles);
         }
     }
