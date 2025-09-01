@@ -86,7 +86,7 @@ public class FemCockraochTracker : MonoBehaviour
         }
         else
         {
-            textShowcase.text = "2D洞洞沒有母蟑螂囉!";
+            textShowcase.text = "2D洞洞沒有母蟑螂喔!";
         }
     }
 

@@ -9892,6 +9892,7 @@ GameObject:
   - component: {fileID: 950558450}
   - component: {fileID: 950558452}
   - component: {fileID: 950558453}
+  - component: {fileID: 950558454}
   m_Layer: 0
   m_Name: AllGameManager
   m_TagString: Untagged
@@ -10068,6 +10069,20 @@ MonoBehaviour:
     motherCockroachPoints: {fileID: 2052392921}
     insPos1: {fileID: 1116136525}
     insPos2: {fileID: 4399717}
+--- !u!114 &950558454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950558449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0c080abdfeb0ba40ace61b1171acf26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eraInterval: 5
+  mode: 1
 --- !u!1001 &961429313
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17917,6 +17932,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1454821159}
     - target: {fileID: 5487302694159046011, guid: de9f17f5809e724468a67550b4b74f6e, type: 3}
+      propertyPath: pairs.Array.data[0].enableSpider
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5487302694159046011, guid: de9f17f5809e724468a67550b4b74f6e, type: 3}
       propertyPath: pairs.Array.data[0].leftHoleExit3D
       value: 
       objectReference: {fileID: 344673592}
@@ -17948,6 +17967,10 @@ PrefabInstance:
       propertyPath: pairs.Array.data[1].rightHoleTrigger3D
       value: 
       objectReference: {fileID: 1314478551}
+    - target: {fileID: 5487302694159046011, guid: de9f17f5809e724468a67550b4b74f6e, type: 3}
+      propertyPath: pairs.Array.data[0].enableFemaleCockroach
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6242592763557817971, guid: de9f17f5809e724468a67550b4b74f6e, type: 3}
       propertyPath: m_Name
       value: DoubleHoleManager
