@@ -3,8 +3,8 @@ using UnityEngine;
 public class Cockroach2DMove : MonoBehaviour
 {
     [Header("設定蟑螂管理腳本")]
-    public CockroachManager cockroachManager;
-    public CockroachMove mainMoveScript;
+    private CockroachManager cockroachManager;
+    private CockroachMove mainMoveScript;
 
     [Header("元件")]
     public Rigidbody2D myRb;
@@ -17,6 +17,12 @@ public class Cockroach2DMove : MonoBehaviour
     public float runSpeed = 2f;
     public float rayLength = 1.2f;
     public LayerMask groundLayer;
+
+    private void Start()
+    {
+        cockroachManager = GameObject.Find("3DCockroach").GetComponent<CockroachManager>();
+        mainMoveScript = GameObject.Find("3DCockroach").GetComponent<CockroachMove>();
+    }
 
     [System.Obsolete]
     void Update()

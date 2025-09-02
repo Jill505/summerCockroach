@@ -154,8 +154,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraLogic2D: {fileID: 0}
-  enableFood: 0
-  food: {fileID: 688736246529860039, guid: 94f1794a97c994c40b18f27310b8429c, type: 3}
+  enableFood: 1
+  food: {fileID: 8715384147198252459, guid: 55a1915929fd53949a90c9818b24756c, type: 3}
   minCount: 2
   maxCount: 3
   selectedScene: 0

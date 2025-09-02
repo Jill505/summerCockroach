@@ -49,42 +49,22 @@ MonoBehaviour:
     rightHoleTrigger3D: {fileID: 0}
     leftHoleExit3D: {fileID: 0}
     rightHoleExit3D: {fileID: 0}
-    enableSpawn: 0
-    shit: {fileID: 5170097277464503356, guid: 7c671cce55b21b842bd428ddbd464b13, type: 3}
-    minCount: 1
-    maxCount: 3
+    enableFood: 0
+    food: {fileID: 8715384147198252459, guid: 55a1915929fd53949a90c9818b24756c, type: 3}
+    selectedFoodAmount: 0
     spawnOffsetY: 0.5
-    enableSpider: 0
+    enableSpider: 1
     spiderObject: {fileID: 6367387676149219478, guid: c5b7f9050fe2dbc4090527da8c934ca3, type: 3}
-    SpiderMinCount: 1
-    SpiderMaxCount: 3
-    enableFemaleCockroach: 1
-    femaleCockroach: {fileID: 973532456048750420, guid: ff08aca856863b2489d1047fef289815, type: 3}
-    spawnMode: 0
     selectedScene: 1
-    selectedSceneName: 
-    cockroachName: "\u96D9\u6D1E1"
-    Disc: 123123
-    finded: 0
   - leftHoleTrigger3D: {fileID: 0}
     rightHoleTrigger3D: {fileID: 0}
     leftHoleExit3D: {fileID: 0}
     rightHoleExit3D: {fileID: 0}
-    enableSpawn: 0
-    shit: {fileID: 5170097277464503356, guid: 7c671cce55b21b842bd428ddbd464b13, type: 3}
-    minCount: 0
-    maxCount: 0
-    spawnOffsetY: 0
+    enableFood: 0
+    food: {fileID: 0}
+    selectedFoodAmount: 0
+    spawnOffsetY: 0.5
     enableSpider: 0
     spiderObject: {fileID: 6367387676149219478, guid: c5b7f9050fe2dbc4090527da8c934ca3, type: 3}
-    SpiderMinCount: 0
-    SpiderMaxCount: 0
-    enableFemaleCockroach: 1
-    femaleCockroach: {fileID: 973532456048750420, guid: ff08aca856863b2489d1047fef289815, type: 3}
-    spawnMode: 0
     selectedScene: 0
-    selectedSceneName: 
-    cockroachName: "\u96D9\u6D1E"
-    Disc: 321321
-    finded: 0
   cameraLogic2D: {fileID: 0}
