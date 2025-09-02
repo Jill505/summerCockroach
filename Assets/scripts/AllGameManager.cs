@@ -15,16 +15,30 @@ public class AllGameManager : MonoBehaviour
 
     public bool GameFinished = false;
     
-    public GameObject gameEndCanvas;
-    public GameObject gameFailCanvas;
+    
 
     public float pressTime = 2f;
     float pressTimeCal = 0f;
     public int nowLoadSceneSort = 0;
 
+    [Header("UI 設定")]
+    public Text timerText; // 顯示時間的 UI Text
+
+    [Header("計時設定")]
+    public float gameMinutes = 3f; // 可以在 Inspector 設定幾分鐘
+    private float timeRemaining;   
+    private bool isTimerRunning = true;
+
+    [Header("結算畫面")]
+    public GameObject gameEndCanvas;
+    public GameObject gameFailCanvas;
+    public GameObject DemoResultCanvas;
+
     void Start()
     {
         nowLoadSceneSort = SceneManager.GetActiveScene().buildIndex;
+
+        timeRemaining = gameMinutes * 60f;
     }
     
     void Update()
@@ -49,6 +63,25 @@ public class AllGameManager : MonoBehaviour
                 SceneManager.LoadScene(nowLoadSceneSort);//重啟場景
             }
         }
+
+        if (isTimerRunning)
+        {
+            if (timeRemaining > 0)
+            {
+                // 遞減時間
+                timeRemaining -= Time.deltaTime;
+
+                // 更新 UI
+                UpdateTimerDisplay(timeRemaining);
+            }
+            else
+            {
+                // 時間到
+                timeRemaining = 0;
+                isTimerRunning = false;
+                TimeUp();
+            }
+        }
     }
 
     public void femCockraochGet()
@@ -67,6 +100,29 @@ public class AllGameManager : MonoBehaviour
     {
         GameFinished = true;
         gameFailCanvas.SetActive(true);  
+    }
+
+    void UpdateTimerDisplay(float timeToDisplay)
+    {
+        if (timeToDisplay < 0)
+            timeToDisplay = 0;
+
+        int minutes = Mathf.FloorToInt(timeToDisplay / 60);
+        int seconds = Mathf.FloorToInt(timeToDisplay % 60);
+
+        // 顯示成 mm:ss 格式
+        timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+    }
+
+    void TimeUp()
+    {
+        Debug.Log("時間到！");
+
+        // 顯示結算畫面
+        if (DemoResultCanvas != null)
+        {
+            DemoResultCanvas.SetActive(true);
+        }
     }
 }
 
