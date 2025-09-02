@@ -19,50 +19,41 @@ public class DoubleHolePair
     [HideInInspector] public Transform leftHoleExit3D;
     [HideInInspector] public Transform rightHoleExit3D;
 
-    [Header("大便生成設定")]
-    public bool enableSpawn = false;                 // 是否啟用生成
-    public GameObject shit;
-
-    public int minCount = 1;
-    public int maxCount = 3;
+    [Header("食物生成設定")]
+    public bool enableFood = false;                 // 是否啟用生成
+    public GameObject food;
+    public enum FoodAmount
+    {
+        少量, // 3 個
+        大量  // 5 個
+    }
+    [Tooltip("選擇食物生成數量")]
+    public FoodAmount selectedFoodAmount = FoodAmount.少量;
     [HideInInspector]public float spawnOffsetY = 0.5f;
 
     [Header("蜘蛛生成設定")]
     public bool enableSpider = false;                // 是否顯示蜘蛛
     public GameObject spiderObject;                  // 被隱藏的蜘蛛物件    
-    public int SpiderMinCount = 1;
-    public int SpiderMaxCount = 3;
 
-    [Header("母蟑螂生成設定")]
-    public bool enableFemaleCockroach = false;
-    public GameObject femaleCockroach;
-
-    public SpawnMode spawnMode;
-    public enum SpawnMode
-    {
-        Random,
-        Select
-    }    
-
-    public enum SelectedScene
-    {
-        石洞,
-        新石洞
-    }
-    [Header("Scene")]
-    public SelectedScene selectedScene; // 在 Inspector 用下拉選
-    [HideInInspector]public string selectedSceneName;    // 顯示/保存字串名稱
+    [HideInInspector] public Scene2DDoubleHole selectedScene;
 
     // 初始化方法：把 enum 轉成字串
     public void InitSelectedScene()
     {
-        selectedSceneName = selectedScene.ToString();
+        if (enableSpider)
+        {
+            selectedScene = Scene2DDoubleHole.Cave;
+        }
+        else
+        {
+            // 隨機選 HalfCave01 或 HalfCave02
+            int rand = Random.Range(0, 2); // 0 或 1
+            if (rand == 0)
+                selectedScene = Scene2DDoubleHole.HalfCave01;
+            else
+                selectedScene = Scene2DDoubleHole.HalfCave02;
+        }
     }
-
-    [Header("Information")]
-    public string cockroachName;
-    public string Disc;
-    [HideInInspector]public bool finded;
 }
 
 
@@ -85,22 +76,12 @@ public class DoubleHoleSystem : MonoBehaviour
     private Transform rightInsideSpawn2D;
 
 
-    [Header("RandomPos")]
-    private Transform position1;
-    private Transform position2;
-    private Transform position3;
-
-    [Header("SelectPos")]
-    private Transform selectedPosition;
-
     [Header("攝影機限制範圍")]
     private BoxCollider2D cameraBounds;
     private EdgeCollider2D spawnArea;                 // 生成範圍
 
-    private bool isInTheTrigger = false;
-    private List<GameObject> spawnedShit = new List<GameObject>();
+    private List<GameObject> spawnedFood = new List<GameObject>();
     private List<GameObject> spawnedSpider = new List<GameObject>();
-    private List<GameObject> spawnedFemCockroach = new List<GameObject>();
 
 
 
@@ -146,41 +127,6 @@ public class DoubleHoleSystem : MonoBehaviour
 
     }
 
-    void Start()
-    {
-        foreach (var pair in pairs)
-        {
-            if (pair.enableFemaleCockroach)
-            {
-                EnableFemaleForPair(pair);
-            }
-        }
-    }
-
-    void EnableFemaleForPair(DoubleHolePair pair)
-    {
-        if (pair.leftHoleTrigger3D != null)
-        {
-            var femaleInfo = pair.leftHoleTrigger3D.GetComponent<FemaleCockroachInfo>();
-            if (femaleInfo != null)
-            {
-                femaleInfo.enabled = true; // 啟用腳本
-                femaleInfo.cockroachName = pair.cockroachName;
-                femaleInfo.Disc = pair.Disc;
-            }
-        }
-
-        if (pair.rightHoleTrigger3D != null)
-        {
-            var femaleInfo = pair.rightHoleTrigger3D.GetComponent<FemaleCockroachInfo>();
-            if (femaleInfo != null)
-            {
-                femaleInfo.enabled = true; // 啟用腳本
-                femaleInfo.cockroachName = pair.cockroachName;
-                femaleInfo.Disc = pair.Disc;
-            }
-        }
-    }
 
 
 
@@ -197,16 +143,11 @@ public class DoubleHoleSystem : MonoBehaviour
 
         if (Scene2DManager.Instance != null)
         {
-            var sceneData = Scene2DManager.Instance.GetSceneByName(pair.selectedSceneName);
+            var sceneData = Scene2DManager.Instance.GetScene(pair.selectedScene);
             if (sceneData != null)
             {
-                Debug.Log("套用場景：" + sceneData.sceneName);
                 cameraBounds = sceneData.cameraBounds;
                 spawnArea = sceneData.spawnBounds;
-                position1 = sceneData.randomMotherCockroachRange1;
-                position2 = sceneData.randomMotherCockroachRange2;
-                position3 = sceneData.randomMotherCockroachRange3;
-                selectedPosition = sceneData.motherCockroachPoints;
                 leftInsideSpawn2D = sceneData.insPos1;
                 rightInsideSpawn2D = sceneData.insPos2;
             }
@@ -227,14 +168,12 @@ public class DoubleHoleSystem : MonoBehaviour
         cockroachMove2D.transform.position = spawn.position;
         currentPairIndex = pairIndex;
 
-        if (pair.enableSpawn)
-            SpawnRandomShitOnPath(pair); // 傳入該 Pair 的資料
+        if (pair.enableFood)
+            SpawnRandomFoodOnPath(pair); // 傳入該 Pair 的資料
 
         if (pair.enableSpider)
             SpawnRandomSpiderOnPath(pair);
 
-        if (pair.enableFemaleCockroach &&  pair.finded == false)
-            SpawnFemaleCockroach(pair);
     }
 
     // —— 2D → 3D —— 
@@ -264,14 +203,14 @@ public class DoubleHoleSystem : MonoBehaviour
 
     void DesObj()
     {
-        foreach (GameObject obj in spawnedShit)
+        foreach (GameObject obj in spawnedFood)
         {
             if (obj != null)
             {
                 Destroy(obj);
             }
         }
-        spawnedShit.Clear();
+        spawnedFood.Clear();
 
         foreach (GameObject obj in spawnedSpider)
         {
@@ -281,21 +220,21 @@ public class DoubleHoleSystem : MonoBehaviour
             }
         }
         spawnedSpider.Clear();
-
-        foreach (GameObject obj in spawnedFemCockroach)
-        {
-            if (obj != null)
-            {
-                Destroy(obj);
-            }
-        }
-        spawnedFemCockroach.Clear();
     }
 
-    void SpawnRandomShitOnPath(DoubleHolePair pair)
+    void SpawnRandomFoodOnPath(DoubleHolePair pair)
     {
         Vector2[] points = spawnArea.points;
-        int spawnCount = Random.Range(pair.minCount, pair.maxCount + 1);
+        int spawnCount = 0;
+
+        if (pair.selectedFoodAmount == DoubleHolePair.FoodAmount.少量)
+        {
+            spawnCount = 3;
+        }
+        else if (pair.selectedFoodAmount == DoubleHolePair.FoodAmount.大量)
+        {
+            spawnCount = 5;
+        }
 
         for (int i = 0; i < spawnCount; i++)
         {
@@ -307,63 +246,31 @@ public class DoubleHoleSystem : MonoBehaviour
             spawnPos2D.y += pair.spawnOffsetY;
 
             Vector3 spawnPos3D = new Vector3(spawnPos2D.x, spawnPos2D.y, 303.8198f);
-            GameObject newObj = Instantiate(pair.shit, spawnPos3D, Quaternion.identity);
-            spawnedShit.Add(newObj);
+            GameObject newObj = Instantiate(pair.food, spawnPos3D, Quaternion.identity);
+            spawnedFood.Add(newObj);
         }
     }
 
     void SpawnRandomSpiderOnPath(DoubleHolePair pair)
     {
+        if (pair.spiderObject == null) return;
+
         Vector2[] points = spawnArea.points;
-        int spawnCount = Random.Range(pair.SpiderMinCount, pair.SpiderMaxCount + 1);
 
-        for (int i = 0; i < spawnCount; i++)
-        {
-            int segmentIndex = Random.Range(0, points.Length - 1);
-            Vector2 worldStart = spawnArea.transform.TransformPoint(points[segmentIndex]);
-            Vector2 worldEnd = spawnArea.transform.TransformPoint(points[segmentIndex + 1]);
-            float t = Random.Range(0f, 1f);
-            Vector2 spawnPos2D = Vector2.Lerp(worldStart, worldEnd, t);
-            spawnPos2D.y += pair.spawnOffsetY;
+        // 固定生成 1 隻
+        int segmentIndex = Random.Range(0, points.Length - 1);
+        Vector2 worldStart = spawnArea.transform.TransformPoint(points[segmentIndex]);
+        Vector2 worldEnd = spawnArea.transform.TransformPoint(points[segmentIndex + 1]);
+        float t = Random.Range(0f, 1f);
+        Vector2 spawnPos2D = Vector2.Lerp(worldStart, worldEnd, t);
+        spawnPos2D.y += pair.spawnOffsetY;
 
-            Vector3 spawnPos3D = new Vector3(spawnPos2D.x, spawnPos2D.y, 303.8198f);
-            GameObject newObj = Instantiate(pair.spiderObject, spawnPos3D, Quaternion.identity);
-            spawnedSpider.Add(newObj);
+        Vector3 spawnPos3D = new Vector3(spawnPos2D.x, spawnPos2D.y, 303.8198f);
+        GameObject newObj = Instantiate(pair.spiderObject, spawnPos3D, Quaternion.identity);
+        spawnedSpider.Add(newObj);
 
-            var spiderHurt = newObj.GetComponent<SpiderHurtPlayer>();
-            if (spiderHurt != null) spiderHurt.ResetHurt();
-        }
-    }
-
-    void SpawnFemaleCockroach(DoubleHolePair pair)
-    {
-        Transform spawnPoint = null;
-
-        if (pair.spawnMode == DoubleHolePair.SpawnMode.Random)
-        {
-            Transform[] points = { position1, position2, position3 };
-            int index = Random.Range(0, points.Length);
-            spawnPoint = points[index];
-        }
-        else if (pair.spawnMode == DoubleHolePair.SpawnMode.Select)
-        {
-            spawnPoint = selectedPosition;
-        }
-
-        if (spawnPoint != null && pair.femaleCockroach != null)
-        {
-            GameObject FemaleCockroach2D = Instantiate(pair.femaleCockroach, spawnPoint.position, spawnPoint.rotation);
-            spawnedFemCockroach.Add(FemaleCockroach2D);
-            FemaleCockroachInfo2D CockroachFemaleInfo2D = FemaleCockroach2D.GetComponent<FemaleCockroachInfo2D>();
-            CockroachFemaleInfo2D.cockroachName = pair.cockroachName;
-            CockroachFemaleInfo2D.Disc = pair.Disc;
-            CockroachFemaleInfo2D.generatorScript2 = pair;
-        }
-        else
-        {
-            Debug.LogWarning("Spawn 失敗：Prefab 或生成位置未設置");
-        }
-            
+        var spiderHurt = newObj.GetComponent<SpiderHurtPlayer>();
+        if (spiderHurt != null) spiderHurt.ResetHurt();
     }
 
 #if UNITY_EDITOR

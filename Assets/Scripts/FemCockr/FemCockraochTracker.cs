@@ -9,16 +9,13 @@ public class FemCockraochTracker : MonoBehaviour
     private CameraViewToggle viewToggle;
 
     private FemaleCockroachInfo[] sceneRoaches3D;
-    private FemaleCockroachInfo2D[] sceneRoaches2D;
     private GameObject playerPos3D;
-    private GameObject playerPos2D;
 
     [System.Obsolete]
     void Awake()
     {
         viewToggle = GameObject.Find("CameraManager").GetComponent<CameraViewToggle>();
         playerPos3D = GameObject.Find("3DCockroach");
-        playerPos2D = GameObject.Find("2DCockroach");
     }
     private void Start()
     {
@@ -27,7 +24,6 @@ public class FemCockraochTracker : MonoBehaviour
     void Update()
     {
         SortRoaches3DByDistance();
-        SortRoaches2DByDistance();
         if (!viewToggle.Is2D())
         {
             TextShowcase3D();
@@ -49,14 +45,6 @@ public class FemCockraochTracker : MonoBehaviour
                 Debug.LogWarning("場景中沒有找到任何 FemaleCockroachInfo！");
             }
         }
-        else
-        {
-            sceneRoaches2D = FindObjectsOfType<FemaleCockroachInfo2D>();
-            if (sceneRoaches2D.Length == 0)
-            {
-                Debug.LogWarning("場景中沒有找到任何 FemaleCockroachInfo2D！");
-            }
-        }
     }
     void TextShowcase3D()
     {
@@ -75,19 +63,7 @@ public class FemCockraochTracker : MonoBehaviour
     }
     void TextShowcase2D()
     {
-        var aliveRoaches = sceneRoaches2D.Where(r => r != null && !r.finded).ToArray();
-
-        if (aliveRoaches.Length > 0)
-        {
-            textShowcase.text = "";
-            textShowcase.text += "洞穴裡離你最近的母蟑螂有" + Vector3.Distance(playerPos2D.transform.position, sceneRoaches2D[0].gameObject.transform.position) + "公尺遠！\n";
-            textShowcase.text += "蟑螂姓名：" + sceneRoaches2D[0].cockroachName + "\n";
-            textShowcase.text += "蟑螂敘述：" + sceneRoaches2D[0].Disc;
-        }
-        else
-        {
-            textShowcase.text = "2D洞洞沒有母蟑螂喔!";
-        }
+        textShowcase.text = "2D洞洞沒有母蟑螂喔!";
     }
 
 
@@ -115,28 +91,5 @@ public class FemCockraochTracker : MonoBehaviour
         }
 
         //Debug.Log("Roaches sorted by distance to player (excluding those already found).");
-    }
-
-    void SortRoaches2DByDistance()
-    {
-        if (sceneRoaches2D != null)
-        {
-            Vector3 playerPosition = playerPos2D.transform.position;
-
-            // 過濾掉已被找到的蟑螂
-            var filteredRoaches = sceneRoaches2D
-                .Where(r => r != null && !r.finded)
-                .OrderBy(r => (r.gameObject.transform.position - playerPosition).sqrMagnitude)
-                .ToArray();
-
-            // 將排序後的結果放回原陣列開頭，保留原陣列長度
-            for (int i = 0; i < filteredRoaches.Length; i++)
-            {
-                sceneRoaches2D[i] = filteredRoaches[i];
-            }
-        }
-
-        
-
     }
 }

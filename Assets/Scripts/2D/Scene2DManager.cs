@@ -1,38 +1,87 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
+
+public enum Scene2DOneHole
+{
+    TreeHole,  //æ¨¹æ´
+}
+public enum Scene2DDoubleHole
+{
+    Cave,    //å¤§ç¸«
+    HalfCave01, //ç åŠç¸«01
+    HalfCave02  //ç åŠç¸«02
+}
 public class Scene2DManager : MonoBehaviour
 {
     [System.Serializable]
     public class Scene2D
     {
-        public string sceneName;          // 2D ³õ´º¦WºÙ
-        public BoxCollider2D cameraBounds;       // Äá¼v¾÷½d³ò
-        public EdgeCollider2D spawnBounds;        // ª«¥ó¥Í¦¨½d³ò
-        public Transform randomMotherCockroachRange1; // ÀH¾÷¥Í¦¨¥ÀÁ­½¸¦ì¸m½d³ò
-        public Transform randomMotherCockroachRange2; // ÀH¾÷¥Í¦¨¥ÀÁ­½¸¦ì¸m½d³ò
-        public Transform randomMotherCockroachRange3; // ÀH¾÷¥Í¦¨¥ÀÁ­½¸¦ì¸m½d³ò
-        public Transform motherCockroachPoints;  // ©T©w¥Í¦¨¦ì¸m
-        public Transform insPos1;
-        public Transform insPos2;
+        public Transform parent;
+
+        [HideInInspector] public BoxCollider2D cameraBounds; // æ”å½±æ©Ÿç¯„åœ
+        [HideInInspector] public EdgeCollider2D spawnBounds; // ç‰©ä»¶ç”Ÿæˆç¯„åœ
+        [HideInInspector] public Transform insPos1;
+        [HideInInspector] public Transform insPos2;
+        public void Initialize()
+        {
+            if (parent == null)
+            {
+                Debug.LogWarning("Scene2D çš„ parent æ²’æœ‰æŒ‡å®šï¼");
+                return;
+            }
+            cameraBounds = parent.Find("cameraBounds")?.GetComponent<BoxCollider2D>();
+            spawnBounds = parent.Find("spawnBounds")?.GetComponent<EdgeCollider2D>();
+            insPos1 = parent.Find("insPos1");
+            insPos2 = parent.Find("insPos2");
+
+            if (cameraBounds == null) Debug.LogWarning(parent.name + " ç¼ºå°‘ cameraBounds");
+            if (spawnBounds == null) Debug.LogWarning(parent.name + " ç¼ºå°‘ spawnBounds");
+            if (insPos1 == null) Debug.LogWarning(parent.name + " ç¼ºå°‘ insPos1");
+        }
     }
     public static Scene2DManager Instance;
 
-    public Scene2D[] scenes; // ©Ò¦³³õ´º¸ê®Æ
+    public Scene2D TreeHole;
+    public Scene2D Cave;
+    public Scene2D HalfCave01;
+    public Scene2D HalfCave02;
 
     private void Awake()
     {
         Instance = this;
+
+        TreeHole?.Initialize();
+        Cave?.Initialize();
+        HalfCave01?.Initialize();
+        HalfCave02?.Initialize();
     }
 
-    // ¨ú±o³õ´º¸ê®Æ
-    public Scene2D GetSceneByName(string name)
+    // å–å¾—å ´æ™¯è³‡æ–™
+    public Scene2D GetScene(Scene2DOneHole scene)
     {
-        foreach (var scene in scenes)
+        switch (scene)
         {
-            if (scene.sceneName == name)
-                return scene;
+            case Scene2DOneHole.TreeHole:
+                return TreeHole;
         }
-        Debug.LogWarning("§ä¤£¨ì³õ´º¦WºÙ¡G" + name);
+        Debug.LogWarning("æ‰¾ä¸åˆ°å–®æ´å ´æ™¯ï¼š" + scene);
+        return null;
+    }
+
+    public Scene2D GetScene(Scene2DDoubleHole scene)
+    {
+        switch (scene)
+        {
+            case Scene2DDoubleHole.Cave:
+                return Cave;
+            case Scene2DDoubleHole.HalfCave01:
+                return HalfCave01;
+            case Scene2DDoubleHole.HalfCave02:
+                return HalfCave02;
+        }
+        Debug.LogWarning("æ‰¾ä¸åˆ°é›™æ´å ´æ™¯ï¼š" + scene);
         return null;
     }
 }
+
+

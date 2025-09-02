@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &973532456048750420
+--- !u!1 &8715384147198252459
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,40 +8,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4848213710835532078}
-  - component: {fileID: 5001636941114758778}
-  - component: {fileID: 6003634374547604562}
-  - component: {fileID: -6573644448549893898}
-  - component: {fileID: -6156623821884766813}
+  - component: {fileID: 1961894907002578175}
+  - component: {fileID: 1730920446334916511}
+  - component: {fileID: 7627326420515457967}
+  - component: {fileID: 7766348640513114680}
   m_Layer: 0
-  m_Name: Lady_K
+  m_Name: Food2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4848213710835532078
+--- !u!4 &1961894907002578175
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 973532456048750420}
+  m_GameObject: {fileID: 8715384147198252459}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 423.27, y: -507.42, z: 0}
+  m_LocalPosition: {x: 86.67141, y: 192.6726, z: 22.06165}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &5001636941114758778
+--- !u!212 &1730920446334916511
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 973532456048750420}
+  m_GameObject: {fileID: 8715384147198252459}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -79,24 +78,37 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9798bfe36e3952243895fc84b8f28c76, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 333c6c53aa85ef545ace5e92b357bd50, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 3.6, y: 2.44}
+  m_Size: {x: 2.22, y: 2.27}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &6003634374547604562
+--- !u!114 &7627326420515457967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8715384147198252459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 234b83443d9f4d44ba4303acffea6739, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healAmount: 1
+--- !u!61 &7766348640513114680
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 973532456048750420}
+  m_GameObject: {fileID: 8715384147198252459}
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
@@ -128,39 +140,11 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.6, y: 2.44}
-    newSize: {x: 3.6, y: 2.44}
+    oldSize: {x: 2.22, y: 2.27}
+    newSize: {x: 2.22, y: 2.27}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 3.6, y: 2.44}
+  m_Size: {x: 2.22, y: 2.27}
   m_EdgeRadius: 0
---- !u!114 &-6573644448549893898
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 973532456048750420}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a3e6a179476c0345b1fc852b5207175, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cockroachName: 
-  Disc: 
-  finded: 0
-  generatorScript: {fileID: 0}
---- !u!114 &-6156623821884766813
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 973532456048750420}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c27ea99603085b4fb235b65587cf974, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

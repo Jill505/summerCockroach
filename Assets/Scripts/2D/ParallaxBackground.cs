@@ -1,36 +1,58 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 public class ParallaxBackground : MonoBehaviour
 {
     [System.Serializable]
     public class DoubleHoleBGGroup
     {
-        [Header("DoubleHoleBG")]
-        public Transform CaveStonecolumn;
-        public Transform StoneCrevice2;
-        public Transform CaveStonecolumn2;
-        public Transform StoneCrevice1;
-        public Transform StoneCrevice4;
+        public Transform parent;
+        [HideInInspector] public Transform CaveStonecolumn;
+        [HideInInspector] public Transform StoneCrevice2;
+        [HideInInspector] public Transform CaveStonecolumn2;
+        [HideInInspector] public Transform StoneCrevice1;
+        [HideInInspector] public Transform StoneCrevice4;
+
+        public void Initialize()
+        {
+            if (parent == null) return;
+
+            CaveStonecolumn = parent.Find("CaveStonecolumn");
+            StoneCrevice2 = parent.Find("StoneCrevice2");
+            CaveStonecolumn2 = parent.Find("CaveStonecolumn2");
+            StoneCrevice1 = parent.Find("StoneCrevice1");
+            StoneCrevice4 = parent.Find("StoneCrevice4");
+        }
     }
 
     [System.Serializable]
     public class OneHoleBGGroup
     {
-        [Header("OneHoleBGGroup")]
-        public Transform trunk1;
-        public Transform trunk2;
-        public Transform trunk3;
-        public Transform TreeHole1;
-        public Transform TreeHole3;
+        public Transform parent;
+        [HideInInspector] public Transform trunk1;
+        [HideInInspector] public Transform trunk2;
+        [HideInInspector] public Transform trunk3;
+        [HideInInspector] public Transform treeHole1;
+        [HideInInspector] public Transform treeHole3;
+
+        public void Initialize()
+        {
+            if (parent == null) return;
+
+            trunk1 = parent.Find("trunk1");
+            trunk2 = parent.Find("trunk2");
+            trunk3 = parent.Find("trunk3");
+            treeHole1 = parent.Find("treeHole1");
+            treeHole3 = parent.Find("treeHole3");
+        }
     }
 
 
 
-    [Header("ª±®a Transform")]
+    [Header("ç©å®¶ Transform")]
     public Transform player;
 
-    [Header("­I´º²Õ³]©w")]
-    public DoubleHoleBGGroup[] backgroundGroups;
+    [Header("èƒŒæ™¯çµ„è¨­å®š")]
+    public DoubleHoleBGGroup[] doubleHoleBGGroups;
     public OneHoleBGGroup[] oneHoleBGGroup;
 
     [Header("(0 = speed0, 1 = playerSpeed)")]
@@ -50,7 +72,7 @@ public class ParallaxBackground : MonoBehaviour
 
     private Vector3 previousPlayerPosition;
 
-    // ¬ö¿ı¨C­Ó­I´ºªºªì©l¦ì¸m
+    // ç´€éŒ„æ¯å€‹èƒŒæ™¯çš„åˆå§‹ä½ç½®
     private Vector3[,] initialPositions;
     private Vector3[,] initialTreeHolePositions;
 
@@ -58,14 +80,16 @@ public class ParallaxBackground : MonoBehaviour
     {
         previousPlayerPosition = player.position;
 
-        initialPositions = new Vector3[backgroundGroups.Length, 5];
-        for (int i = 0; i < backgroundGroups.Length; i++)
+        foreach (var group in doubleHoleBGGroups) group.Initialize();
+        foreach (var group in oneHoleBGGroup) group.Initialize();
+
+        initialPositions = new Vector3[doubleHoleBGGroups.Length, 5];
+        for (int i = 0; i < doubleHoleBGGroups.Length; i++)
         {
-            initialPositions[i, 0] = GetPosition(backgroundGroups[i].CaveStonecolumn);
-            initialPositions[i, 1] = GetPosition(backgroundGroups[i].StoneCrevice2);
-            initialPositions[i, 2] = GetPosition(backgroundGroups[i].CaveStonecolumn2);
-            initialPositions[i, 3] = GetPosition(backgroundGroups[i].StoneCrevice1);
-            initialPositions[i, 4] = GetPosition(backgroundGroups[i].StoneCrevice4);
+            initialPositions[i, 1] = GetPosition(doubleHoleBGGroups[i].StoneCrevice2);
+            initialPositions[i, 2] = doubleHoleBGGroups[i].CaveStonecolumn2 != null ? GetPosition(doubleHoleBGGroups[i].CaveStonecolumn2) : Vector3.zero; // å¯ç‚ºé›¶
+            initialPositions[i, 3] = GetPosition(doubleHoleBGGroups[i].StoneCrevice1);
+            initialPositions[i, 4] = GetPosition(doubleHoleBGGroups[i].StoneCrevice4);
         }
         initialTreeHolePositions = new Vector3[oneHoleBGGroup.Length, 5];
         for (int i = 0; i < oneHoleBGGroup.Length; i++)
@@ -73,8 +97,8 @@ public class ParallaxBackground : MonoBehaviour
             initialTreeHolePositions[i, 0] = GetPosition(oneHoleBGGroup[i].trunk1);
             initialTreeHolePositions[i, 1] = GetPosition(oneHoleBGGroup[i].trunk2);
             initialTreeHolePositions[i, 2] = GetPosition(oneHoleBGGroup[i].trunk3);
-            initialTreeHolePositions[i, 3] = GetPosition(oneHoleBGGroup[i].TreeHole1);
-            initialTreeHolePositions[i, 4] = GetPosition(oneHoleBGGroup[i].TreeHole3);
+            initialTreeHolePositions[i, 3] = GetPosition(oneHoleBGGroup[i].treeHole1);
+            initialTreeHolePositions[i, 4] = GetPosition(oneHoleBGGroup[i].treeHole3);
         }
     }
 
@@ -82,7 +106,7 @@ public class ParallaxBackground : MonoBehaviour
     {
         Vector3 playerDelta = player.position - previousPlayerPosition;
 
-        foreach (var group in backgroundGroups)
+        foreach (var group in doubleHoleBGGroups)
         {
             MoveBackground(group.CaveStonecolumn, playerDelta, caveStonecolumnScale);
             MoveBackground(group.StoneCrevice2, playerDelta, stoneCrevice2Scale);
@@ -95,8 +119,8 @@ public class ParallaxBackground : MonoBehaviour
             MoveBackground(group.trunk1, playerDelta, trunk1Scale);
             MoveBackground(group.trunk2, playerDelta, trunk2Scale);
             MoveBackground(group.trunk3, playerDelta, trunk3Scale);
-            MoveBackground(group.TreeHole1, playerDelta, TreeHole1Scale);
-            MoveBackground(group.TreeHole3, playerDelta, TreeHole3Scale);
+            MoveBackground(group.treeHole1, playerDelta, TreeHole1Scale);
+            MoveBackground(group.treeHole3, playerDelta, TreeHole3Scale);
         }
 
         previousPlayerPosition = player.position;
@@ -104,21 +128,22 @@ public class ParallaxBackground : MonoBehaviour
 
     public void ResetBackgrounds()
     {
-        for (int i = 0; i < backgroundGroups.Length; i++)
+        for (int i = 0; i < doubleHoleBGGroups.Length; i++)
         {
-            SetPosition(backgroundGroups[i].CaveStonecolumn, initialPositions[i, 0]);
-            SetPosition(backgroundGroups[i].StoneCrevice2, initialPositions[i, 1]);
-            SetPosition(backgroundGroups[i].CaveStonecolumn2, initialPositions[i, 2]);
-            SetPosition(backgroundGroups[i].StoneCrevice1, initialPositions[i, 3]);
-            SetPosition(backgroundGroups[i].StoneCrevice4, initialPositions[i, 4]);
+            SetPosition(doubleHoleBGGroups[i].CaveStonecolumn, initialPositions[i, 0]);
+            SetPosition(doubleHoleBGGroups[i].StoneCrevice2, initialPositions[i, 1]);
+            if (doubleHoleBGGroups[i].CaveStonecolumn2 != null)
+                SetPosition(doubleHoleBGGroups[i].CaveStonecolumn2, initialPositions[i, 2]);
+            SetPosition(doubleHoleBGGroups[i].StoneCrevice1, initialPositions[i, 3]);
+            SetPosition(doubleHoleBGGroups[i].StoneCrevice4, initialPositions[i, 4]);
         }
         for (int i = 0; i < oneHoleBGGroup.Length; i++)
         {
             SetPosition(oneHoleBGGroup[i].trunk1, initialTreeHolePositions[i, 0]);
             SetPosition(oneHoleBGGroup[i].trunk2, initialTreeHolePositions[i, 1]);
             SetPosition(oneHoleBGGroup[i].trunk3, initialTreeHolePositions[i, 2]);
-            SetPosition(oneHoleBGGroup[i].TreeHole1, initialTreeHolePositions[i, 3]);
-            SetPosition(oneHoleBGGroup[i].TreeHole3, initialTreeHolePositions[i, 4]);
+            SetPosition(oneHoleBGGroup[i].treeHole1, initialTreeHolePositions[i, 3]);
+            SetPosition(oneHoleBGGroup[i].treeHole3, initialTreeHolePositions[i, 4]);
         }
     }
 

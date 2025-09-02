@@ -44,7 +44,6 @@ GameObject:
   - component: {fileID: 7106629286477846351}
   - component: {fileID: 894852528330781881}
   - component: {fileID: 4155304596768806468}
-  - component: {fileID: -2357369957233937780}
   m_Layer: 0
   m_Name: OneHoleTrigger
   m_TagString: Untagged
@@ -155,31 +154,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraLogic2D: {fileID: 0}
-  StartPos3D: {fileID: 5604717185493993141}
-  enableShit: 0
-  shit: {fileID: 5170097277464503356, guid: 7c671cce55b21b842bd428ddbd464b13, type: 3}
+  enableFood: 0
+  food: {fileID: 688736246529860039, guid: 94f1794a97c994c40b18f27310b8429c, type: 3}
   minCount: 2
   maxCount: 3
-  enableSpider: 1
-  spiderObject: {fileID: 6367387676149219478, guid: c5b7f9050fe2dbc4090527da8c934ca3, type: 3}
-  SpiderMinCount: 1
-  SpiderMaxCount: 3
-  enableFemaleCockroach: 1
-  FemaleCockroachObj: {fileID: 973532456048750420, guid: ff08aca856863b2489d1047fef289815, type: 3}
-  spawnMode: 0
-  selectedScene: 1
---- !u!114 &-2357369957233937780
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4855065611239586334}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fee62e3ef65c1f640a75ecc2e166fb63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cockroachName: "\u55AE\u6D1E"
-  Disc: "\u662F\u500B\u6D1E\uFF0C\u4F4F\u5728\u6C34\u6E56\u908A\u4E0A\uFF0C\u7D81\u8457\u8FAE\u5B50\u7684\u53EF\u611B\u5C0F\u87D1\u8782"
-  finded: 0
+  selectedScene: 0
