@@ -1,8 +1,10 @@
-using JetBrains.Annotations;
+﻿using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.UIElements;
 using UnityEngine.UIElements.Experimental;
+using UnityEngine.UI;
+
 
 public class CockroachManager : MonoBehaviour
 {
@@ -22,8 +24,17 @@ public class CockroachManager : MonoBehaviour
 
     public GameObject[] cockroachModels = new GameObject[7];
 
-    [Header("�����ާ@�ܼ�")]
+    [Header("蟑螂操作變數")]
     public bool CockroachMoveable = false;
+
+    [Header("Hungry Value")]
+    private float maxHunger = 100f;     // 飢餓最大值
+    private float currentHunger = 100f;
+    public float hungerDuration = 60f; // 從滿值到0所需時間（秒）
+
+    public UnityEngine.UI.Image myHungryAmount;
+    private float hungerDecayRate;
+
 
     public void GameStart()
     {
@@ -44,10 +55,16 @@ public class CockroachManager : MonoBehaviour
         if (Hp > 6) Hp = 6;
         CockroachBodyPartSwitch();
 
+        currentHunger += healNum;
+        if (currentHunger > maxHunger)
+        {
+            currentHunger = maxHunger;
+        }
+
     }
     public void CockroachDie()
     {
-        //�}�l���`�p��
+        //開始死亡計算
         if (allGameManger == null)
         {
             allGameManger = GameObject.Find("AllGameManager").GetComponent<AllGameManager>();
@@ -127,29 +144,45 @@ public class CockroachManager : MonoBehaviour
                 CockroachDie();
                 break;
         }
+    }
 
-        // Start is called once before the first execution of Update after the MonoBehaviour is created
-        void Start()
+    public void UISync()
+    {
+        if (myHungryAmount != null) myHungryAmount.fillAmount = currentHunger / maxHunger;
+        else Debug.LogError("NO FILL AMOUNT SHOW UI PICTURE");
+    }
+    void Start()
+    {
+        if (allGameManger == null)
         {
-            if (allGameManger == null)
-            {
-                allGameManger = GameObject.Find("AllGameManager").GetComponent<AllGameManager>();
-            }
-            GameStart();//AutoGameStart
-
+            allGameManger = GameObject.Find("AllGameManager").GetComponent<AllGameManager>();
         }
+        GameStart();//AutoGameStart
 
-        // Update is called once per frame
-        void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.K))
-            {
-                CockroachInjury(1);
-            }
-            if (Input.GetKeyDown(KeyCode.L))
-            {
-                CockroachHealing(1);
-            }
-        }
+        hungerDecayRate = maxHunger / hungerDuration;
+
+    }
+
+    void Update()
+    {
+       if (Input.GetKeyDown(KeyCode.K))
+       {
+          CockroachInjury(1);
+       }
+       if (Input.GetKeyDown(KeyCode.L))
+       {
+          CockroachHealing(1);
+       }
+
+       // 每秒衰減飢餓值
+       currentHunger -= hungerDecayRate * Time.deltaTime;
+
+        UISync();
+        // 避免飢餓值小於0
+        if (currentHunger < 0f)
+       {
+          CockroachDie();
+       }
     }
 }
+

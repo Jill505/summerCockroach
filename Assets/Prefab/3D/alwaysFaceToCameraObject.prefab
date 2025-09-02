@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8536602237876587152}
   - component: {fileID: 8280551769348654783}
   - component: {fileID: -2285278684299492424}
+  - component: {fileID: 281563888127101383}
   m_Layer: 0
   m_Name: alwaysFaceToCameraObject
   m_TagString: Untagged
@@ -113,4 +114,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 234b83443d9f4d44ba4303acffea6739, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healAmount: 1
+  healAmount: 20
+--- !u!65 &281563888127101383
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 688736246529860039}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.22, y: 2.27, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
