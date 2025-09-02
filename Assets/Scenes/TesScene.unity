@@ -5256,7 +5256,7 @@ MonoBehaviour:
   myCol: {fileID: 424919217}
   mainObjectTransform: {fileID: 1681068580}
   animator: {fileID: 1681068581}
-  moveSpeed: 4
+  moveSpeed: 6
   runSpeed: 2
   rayLength: 1
   groundLayer:
@@ -12088,7 +12088,7 @@ MonoBehaviour:
   pressTime: 2
   nowLoadSceneSort: 0
   timerText: {fileID: 926411171}
-  gameMinutes: 5
+  gameMinutes: 1
   gameEndCanvas: {fileID: 48446024}
   gameFailCanvas: {fileID: 1581187331}
   DemoResultCanvas: {fileID: 486465091}

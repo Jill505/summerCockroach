@@ -20047,7 +20047,7 @@ MonoBehaviour:
   myCol: {fileID: 1764134567}
   mainObjectTransform: {fileID: 1998514631}
   animator: {fileID: 1998514629}
-  moveSpeed: 4
+  moveSpeed: 6
   runSpeed: 2
   rayLength: 1
   groundLayer:
