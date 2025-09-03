@@ -160,7 +160,7 @@ public class EraManager : MonoBehaviour
         }
     }
 
-    private void ClearEraObjects()
+    public void ClearEraObjects()
     {
         // 清除恐龍腳
         ClearAllDyna();

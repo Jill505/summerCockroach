@@ -44,10 +44,13 @@ public class AllGameManager : MonoBehaviour
     public Text surTimeShowcase;
     public Text femCockroachCollectShowcase;
     public Text foodCollectShowcase;
-    
+
+    private EraManager eraManager;
+
 
     void Start()
     {
+        eraManager = GetComponent<EraManager>();
         nowLoadSceneSort = SceneManager.GetActiveScene().buildIndex;
 
         timeRemaining = gameMinutes * 60f;
@@ -64,6 +67,7 @@ public class AllGameManager : MonoBehaviour
 
         if (GameFinished && Input.GetKeyDown(KeyCode.R))
         {
+            eraManager.ClearEraObjects();
             SceneManager.LoadScene(nowLoadSceneSort);//重啟場景
         }
 
@@ -72,6 +76,7 @@ public class AllGameManager : MonoBehaviour
             pressTimeCal += Time.deltaTime;
             if (pressTimeCal >= pressTime)
             {
+                eraManager.ClearEraObjects();
                 SceneManager.LoadScene(nowLoadSceneSort);//重啟場景
             }
         }
@@ -138,15 +143,17 @@ public class AllGameManager : MonoBehaviour
 
         // 顯示結算畫面
         ShowGameResult();
+        DemoResult();
 
-        if (DemoResultCanvas != null)
-        {
-            DemoResultCanvas.SetActive(true);
-            demoResultShowcase.text = gameMinutes + "分鐘測試Demo結束!!!";
-            demoResultShowcase.text += "感謝試玩!!!";
-        }
+
     }
     
+    void DemoResult()
+    {
+        DemoResultCanvas.SetActive(true);
+        demoResultShowcase.text = gameMinutes + "分鐘測試Demo結束!!!";
+        demoResultShowcase.text += "感謝試玩!!!";
+    }
     public void ShowGameResult()
     {
         if (showGameResultCanvas != null)

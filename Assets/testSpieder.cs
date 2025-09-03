@@ -24,7 +24,7 @@ public class testSpieder : MonoBehaviour
         {
             if (countDown <= 0)
             {
-                cManager.CockroachInjury(damage);
+                cManager.CockroachDie();
                 countDown = damageCoolDown;
             }
             else
