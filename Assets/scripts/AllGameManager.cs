@@ -1,8 +1,8 @@
-using Mono.Cecil.Cil;
+
 using UnityEngine;
-using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.UIElements.Experimental;
 
 public class AllGameManager : MonoBehaviour
 {
@@ -10,11 +10,13 @@ public class AllGameManager : MonoBehaviour
 
     public Text cockroachCollectProcessShowcase;
 
+    [Header("統計")]
     public int cockroachCollectTarget = 3;
     public int cockroachCollectNum = 0;
 
     public bool GameFinished = false;
-    
+
+    public int foodCollect = 0 ;
     
 
     public float pressTime = 2f;
@@ -28,11 +30,19 @@ public class AllGameManager : MonoBehaviour
     public float gameMinutes = 3f; // 可以在 Inspector 設定幾分鐘
     private float timeRemaining;   
     private bool isTimerRunning = true;
+    public float gameProcessTime = 0;
 
     [Header("結算畫面")]
     public GameObject gameEndCanvas;
     public GameObject gameFailCanvas;
     public GameObject DemoResultCanvas;
+    public GameObject showGameResultCanvas;
+
+    [Header("Trackers")]
+    public Text surTimeShowcase;
+    public Text femCockroachCollectShowcase;
+    public Text foodCollectShowcase;
+    
 
     void Start()
     {
@@ -70,6 +80,7 @@ public class AllGameManager : MonoBehaviour
             {
                 // 遞減時間
                 timeRemaining -= Time.deltaTime;
+                gameProcessTime += Time.deltaTime;
 
                 // 更新 UI
                 UpdateTimerDisplay(timeRemaining);
@@ -99,7 +110,8 @@ public class AllGameManager : MonoBehaviour
     public void GameFail()
     {
         GameFinished = true;
-        gameFailCanvas.SetActive(true);  
+        ShowGameResult();
+        //gameFailCanvas.SetActive(true);  
     }
 
     void UpdateTimerDisplay(float timeToDisplay)
@@ -119,10 +131,37 @@ public class AllGameManager : MonoBehaviour
         Debug.Log("時間到！");
 
         // 顯示結算畫面
+        ShowGameResult();
+
         if (DemoResultCanvas != null)
         {
             DemoResultCanvas.SetActive(true);
         }
+    }
+    
+    public void ShowGameResult()
+    {
+        if (showGameResultCanvas != null)
+        {
+            SyncInformationResultCanvas();
+            showGameResultCanvas.SetActive(true);
+        }
+    }
+    public void SyncInformationResultCanvas()
+    {
+        surTimeShowcase.text = "存活時間\n" + string.Format("{0:00}:{1:00}", gameProcessTime /60, gameProcessTime%60);
+        femCockroachCollectShowcase.text += "母蟑螂收集數\n" + cockroachCollectNum;
+        foodCollectShowcase.text += "食物收集數\n" + foodCollect;
+    }
+
+    public void ResetGame()
+    {
+        SceneManager.LoadScene(nowLoadSceneSort);
+    }
+
+    public void BackToStartScreen()
+    {
+        SceneManager.LoadScene(0);
     }
 }
 
