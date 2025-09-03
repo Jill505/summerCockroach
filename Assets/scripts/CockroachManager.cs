@@ -55,6 +55,9 @@ public class CockroachManager : MonoBehaviour
         if (Hp > 6) Hp = 6;
         CockroachBodyPartSwitch();
 
+        //Collect Food Stats
+        allGameManger.foodCollect++;
+
         currentHunger += healNum;
         if (currentHunger > maxHunger)
         {

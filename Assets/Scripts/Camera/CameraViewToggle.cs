@@ -145,6 +145,10 @@ public class CameraViewToggle : MonoBehaviour
         return is2D;
     }
 
+    public IEnumerator Camera3DShakeFunction()
+    {
+        yield return null;
+    }
     
 }
 

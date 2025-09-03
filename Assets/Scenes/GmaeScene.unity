@@ -2555,6 +2555,7 @@ GameObject:
   - component: {fileID: 199546432}
   - component: {fileID: 199546433}
   - component: {fileID: 199546434}
+  - component: {fileID: 199546435}
   m_Layer: 0
   m_Name: cockroachFootReferenceSpace
   m_TagString: Untagged
@@ -2613,6 +2614,32 @@ MonoBehaviour:
   MainObjectTransform: {fileID: 1229442375}
   RotationSpeed: 7.39
   targetRotation: {x: 0, y: 0, z: 0}
+--- !u!114 &199546435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 199546431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 613a5ae914a57994482e1f8dcf8cbcbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cockRoachClimb: {fileID: 199546434}
+  isTouchingGround: 0
+  rotateJudgeValve: 0
+  groundRotation: {x: 0, y: 0, z: 0, w: 0}
+  rotationThreshold: 1
+  nowMyFootTransform: {fileID: 0}
+  myFrontTransform: {fileID: 0}
+  myFrontTransformFar: {fileID: 0}
+  footDisc: 5
+  myDirectDisc: 10
+  climbableMask:
+    serializedVersion: 2
+    m_Bits: 0
+  useLayerMask: 0
 --- !u!1 &199554166
 GameObject:
   m_ObjectHideFlags: 0
@@ -8394,7 +8421,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &840909413
 MonoBehaviour:
   m_ObjectHideFlags: 0

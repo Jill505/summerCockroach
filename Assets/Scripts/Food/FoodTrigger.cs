@@ -1,34 +1,53 @@
 ﻿using UnityEngine;
-using UnityEngine.SubsystemsImplementation;
 
 public class FoodTrigger : MonoBehaviour
 {
     [Header("設定蟑螂管理腳本")]
     private CockroachManager cManager;
+    public FoodGenManger foodGenManager;
+
+    [Header("Com Ref")]
+    public GameObject myFather;
+
+    [Header("Track variable")]
+    public int mySort;
 
     [Header("回血量")]
     public int healAmount = 1;
     private void Start()
     {
         cManager = GameObject.Find("3DCockroach").GetComponent<CockroachManager>();
+        foodGenManager = Object.FindFirstObjectByType<FoodGenManger>();
+
+        foodGenManager.Foods.Add(myFather);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            cManager.CockroachHealing(healAmount);
-            Debug.Log("回血了，目前血量: " + cManager.Hp);
-            Destroy(gameObject); 
+            heal();
         }
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
+            heal();
+        }
+    }
+    public void heal()
+    {
+        {
             cManager.CockroachHealing(healAmount);
             Debug.Log("回血了，目前血量: " + cManager.Hp);
             Destroy(gameObject);
         }
     }
+    void OnDestroy()
+    {
+        foodGenManager.Foods.Remove(myFather);
+        foodGenManager.hasFoodSpawn[mySort] = false;
+    }
+
 }
