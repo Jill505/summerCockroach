@@ -6472,7 +6472,7 @@ Transform:
   m_GameObject: {fileID: 384691210}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.8, y: 4.5, z: 0}
+  m_LocalPosition: {x: -12.8, y: 13, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13546,7 +13546,7 @@ MonoBehaviour:
   - {fileID: 384691210}
   - {fileID: 1129952922}
   - {fileID: 1769475032}
-  dynaPrefab: {fileID: 8841291091811731393, guid: 5ae930230d7d57d498375a93fc3bf9fc, type: 3}
+  dynaPrefab: {fileID: 5337515126892634216, guid: 4ed3fb0f3dbb4f04aa0f2560ad257112, type: 3}
 --- !u!1 &955352146
 GameObject:
   m_ObjectHideFlags: 0
@@ -16550,7 +16550,7 @@ Transform:
   m_GameObject: {fileID: 1129952922}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.8, y: 4.5, z: 29.07}
+  m_LocalPosition: {x: -12.8, y: 13, z: 29.07}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -26668,7 +26668,7 @@ Transform:
   m_GameObject: {fileID: 1769475032}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.61, y: 4.5, z: 29.07}
+  m_LocalPosition: {x: 8.61, y: 13, z: 29.07}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

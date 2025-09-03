@@ -12663,6 +12663,7 @@ GameObject:
   - component: {fileID: 950558450}
   - component: {fileID: 950558452}
   - component: {fileID: 950558453}
+  - component: {fileID: 950558454}
   m_Layer: 0
   m_Name: AllGameManager
   m_TagString: Untagged
@@ -12860,6 +12861,27 @@ MonoBehaviour:
     spawnBounds: {fileID: 0}
     insPos1: {fileID: 0}
     insPos2: {fileID: 0}
+--- !u!114 &950558454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950558449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0c080abdfeb0ba40ace61b1171acf26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eraValue:
+    eraInterval: 20
+    mode: 1
+    PEFood: 10
+    hungerDuration: 12
+    DEFood: 5
+  eras: 
+  dynaSpawnPt: []
+  dynaPrefab: {fileID: 5337515126892634216, guid: 4ed3fb0f3dbb4f04aa0f2560ad257112, type: 3}
 --- !u!1 &955358474
 GameObject:
   m_ObjectHideFlags: 0
