@@ -164,7 +164,7 @@ public class CockroachManager : MonoBehaviour
         }
         GameStart();//AutoGameStart
 
-        hungerDecayRate = maxHunger / hungerDuration;
+        SetHungerDuration(hungerDuration); 
 
     }
 
@@ -188,6 +188,20 @@ public class CockroachManager : MonoBehaviour
        {
           CockroachDie();
        }
+    }
+
+    public void SetHungerDuration(float newDuration)
+    {
+        if (newDuration > 0)
+        {
+            hungerDuration = newDuration;
+            hungerDecayRate = maxHunger / hungerDuration;
+            Debug.Log($"飢餓耗盡時間已設定為: {hungerDuration} 秒");
+        }
+        else
+        {
+            Debug.LogWarning("SetHungerDuration: 輸入值必須大於 0");
+        }
     }
 }
 

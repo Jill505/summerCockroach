@@ -4,7 +4,7 @@ public class FoodTrigger : MonoBehaviour
 {
     [Header("設定蟑螂管理腳本")]
     private CockroachManager cManager;
-    public FoodGenManger foodGenManager;
+    [HideInInspector]public FoodGenManger foodGenManager;
 
     [Header("Com Ref")]
     public GameObject myFather;
@@ -13,7 +13,7 @@ public class FoodTrigger : MonoBehaviour
     public int mySort;
 
     [Header("回血量")]
-    public int healAmount = 1;
+    public int healAmount =55;
     private void Start()
     {
         cManager = GameObject.Find("3DCockroach").GetComponent<CockroachManager>();
@@ -40,6 +40,7 @@ public class FoodTrigger : MonoBehaviour
     {
             cManager.CockroachHealing(healAmount);
             Debug.Log("回血了，目前血量: " + cManager.Hp);
+            OnDestroy();
             Destroy(gameObject);
     }
     void OnDestroy()

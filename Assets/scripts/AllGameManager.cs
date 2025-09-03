@@ -1,4 +1,4 @@
-
+ï»¿
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -10,7 +10,7 @@ public class AllGameManager : MonoBehaviour
 
     public Text cockroachCollectProcessShowcase;
 
-    [Header("²Î­p")]
+    [Header("çµ±è¨ˆ")]
     public int cockroachCollectTarget = 3;
     public int cockroachCollectNum = 0;
 
@@ -23,22 +23,24 @@ public class AllGameManager : MonoBehaviour
     float pressTimeCal = 0f;
     public int nowLoadSceneSort = 0;
 
-    [Header("UI ³]©w")]
-    public Text timerText; // Åã¥Ü®É¶¡ªº UI Text
+    [Header("UI è¨­å®š")]
+    public Text timerText; // é¡¯ç¤ºæ™‚é–“çš„ UI Text
+    public Text demoResultShowcase;// é¡¯ç¤ºdemoçµæŸçš„æ™‚é–“çš„Text
 
-    [Header("­p®É³]©w")]
-    public float gameMinutes = 3f; // ¥i¥H¦b Inspector ³]©w´X¤ÀÄÁ
+    [Header("è¨ˆæ™‚è¨­å®š")]
+    public float gameMinutes = 3f; // å¯ä»¥åœ¨ Inspector è¨­å®šå¹¾åˆ†é˜
     private float timeRemaining;   
     private bool isTimerRunning = true;
     public float gameProcessTime = 0;
 
-    [Header("µ²ºâµe­±")]
+    [Header("çµç®—ç•«é¢")]
     public GameObject gameEndCanvas;
     public GameObject gameFailCanvas;
     public GameObject DemoResultCanvas;
     public GameObject showGameResultCanvas;
 
     [Header("Trackers")]
+    
     public Text surTimeShowcase;
     public Text femCockroachCollectShowcase;
     public Text foodCollectShowcase;
@@ -53,7 +55,7 @@ public class AllGameManager : MonoBehaviour
     
     void Update()
     {
-        cockroachCollectProcessShowcase.text = "¥ÀÁ­½¸¦¬¶°¶i«×¡G" + cockroachCollectNum + "/" + cockroachCollectTarget;
+        cockroachCollectProcessShowcase.text = "æ¯èŸ‘è‚æ”¶é›†é€²åº¦ï¼š" + cockroachCollectNum + "/" + cockroachCollectTarget;
 
         if (Input.GetKeyDown(KeyCode.R))
         {
@@ -62,7 +64,7 @@ public class AllGameManager : MonoBehaviour
 
         if (GameFinished && Input.GetKeyDown(KeyCode.R))
         {
-            SceneManager.LoadScene(nowLoadSceneSort);//­«±Ò³õ´º
+            SceneManager.LoadScene(nowLoadSceneSort);//é‡å•Ÿå ´æ™¯
         }
 
         if (Input.GetKey(KeyCode.R))
@@ -70,29 +72,10 @@ public class AllGameManager : MonoBehaviour
             pressTimeCal += Time.deltaTime;
             if (pressTimeCal >= pressTime)
             {
-                SceneManager.LoadScene(nowLoadSceneSort);//­«±Ò³õ´º
+                SceneManager.LoadScene(nowLoadSceneSort);//é‡å•Ÿå ´æ™¯
             }
         }
-
-        if (isTimerRunning)
-        {
-            if (timeRemaining > 0)
-            {
-                // »¼´î®É¶¡
-                timeRemaining -= Time.deltaTime;
-                gameProcessTime += Time.deltaTime;
-
-                // §ó·s UI
-                UpdateTimerDisplay(timeRemaining);
-            }
-            else
-            {
-                // ®É¶¡¨ì
-                timeRemaining = 0;
-                isTimerRunning = false;
-                TimeUp();
-            }
-        }
+        GameTimer();
     }
 
     public void femCockraochGet()
@@ -101,7 +84,7 @@ public class AllGameManager : MonoBehaviour
 
         if (cockroachCollectNum >= cockroachCollectTarget)
         {
-            //¹LÃö
+            //éé—œ
             GameFinished = true;
             gameEndCanvas.SetActive(true);
         }
@@ -114,6 +97,29 @@ public class AllGameManager : MonoBehaviour
         //gameFailCanvas.SetActive(true);  
     }
 
+
+    void GameTimer()
+    {
+        if (isTimerRunning)
+        {
+            if (timeRemaining > 0)
+            {
+                // éæ¸›æ™‚é–“
+                timeRemaining -= Time.deltaTime;
+                gameProcessTime += Time.deltaTime;
+
+                // æ›´æ–° UI
+                UpdateTimerDisplay(timeRemaining);
+            }
+            else
+            {
+                // æ™‚é–“åˆ°
+                timeRemaining = 0;
+                isTimerRunning = false;
+                TimeUp();
+            }
+        }
+    }
     void UpdateTimerDisplay(float timeToDisplay)
     {
         if (timeToDisplay < 0)
@@ -122,20 +128,22 @@ public class AllGameManager : MonoBehaviour
         int minutes = Mathf.FloorToInt(timeToDisplay / 60);
         int seconds = Mathf.FloorToInt(timeToDisplay % 60);
 
-        // Åã¥Ü¦¨ mm:ss ®æ¦¡
+        // é¡¯ç¤ºæˆ mm:ss æ ¼å¼
         timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 
     void TimeUp()
     {
-        Debug.Log("®É¶¡¨ì¡I");
+        Debug.Log("æ™‚é–“åˆ°ï¼");
 
-        // Åã¥Üµ²ºâµe­±
+        // é¡¯ç¤ºçµç®—ç•«é¢
         ShowGameResult();
 
         if (DemoResultCanvas != null)
         {
             DemoResultCanvas.SetActive(true);
+            demoResultShowcase.text = gameMinutes + "åˆ†é˜æ¸¬è©¦DemoçµæŸ!!!";
+            demoResultShowcase.text += "æ„Ÿè¬è©¦ç©!!!";
         }
     }
     
@@ -149,9 +157,9 @@ public class AllGameManager : MonoBehaviour
     }
     public void SyncInformationResultCanvas()
     {
-        surTimeShowcase.text = "¦s¬¡®É¶¡\n" + string.Format("{0:00}:{1:00}", gameProcessTime /60, gameProcessTime%60);
-        femCockroachCollectShowcase.text += "¥ÀÁ­½¸¦¬¶°¼Æ\n" + cockroachCollectNum;
-        foodCollectShowcase.text += "­¹ª«¦¬¶°¼Æ\n" + foodCollect;
+        surTimeShowcase.text = "å­˜æ´»æ™‚é–“\n" + string.Format("{0:00}:{1:00}", gameProcessTime /60, gameProcessTime%60);
+        femCockroachCollectShowcase.text += "æ¯èŸ‘è‚æ”¶é›†æ•¸\n" + cockroachCollectNum;
+        foodCollectShowcase.text += "é£Ÿç‰©æ”¶é›†æ•¸\n" + foodCollect;
     }
 
     public void ResetGame()

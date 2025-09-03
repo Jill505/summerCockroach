@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using JetBrains.Annotations;
@@ -18,13 +18,11 @@ public class FoodGenManger : MonoBehaviour
 
     [Header("Cal Variable")]
     public int GenFoodCount;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         hasFoodSpawn = new bool[FoodPos.Count];
     }
 
-    // Update is called once per frame
     void Update()
     {
         while (GenFoodCount > 0)
@@ -62,7 +60,42 @@ public class FoodGenManger : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("ak error: �����\�ͦ��A�ˬd�e���j�p");
+            Debug.LogWarning("ak error: 未成功生成，檢查容器大小");
         }
+    }
+
+    public void SetGenFoodCount(int count)
+    {
+        if (count > 0)
+        {
+            GenFoodCount += count;
+        }
+        else
+        {
+            Debug.LogWarning("SetGenFoodCount: 輸入值必須大於 0");
+        }
+    }
+
+    public void ClearAllFoods()
+    {
+        // 刪除場景中所有食物物件
+        foreach (GameObject food in Foods)
+        {
+            if (food != null)
+            {
+                Destroy(food);
+            }
+        }
+
+        // 清空清單
+        Foods.Clear();
+
+        // 重置所有生成點狀態
+        for (int i = 0; i < hasFoodSpawn.Length; i++)
+        {
+            hasFoodSpawn[i] = false;
+        }
+
+        Debug.Log("所有食物已清除");
     }
 }
