@@ -812,7 +812,7 @@ GameObject:
   - component: {fileID: 24852013}
   - component: {fileID: 24852012}
   - component: {fileID: 24852011}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (3)
   m_TagString: ClimbableObject
   m_Icon: {fileID: 0}
@@ -1198,7 +1198,7 @@ GameObject:
   - component: {fileID: 67157688}
   - component: {fileID: 67157687}
   - component: {fileID: 67157686}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (8)
   m_TagString: ClimbableObject
   m_Icon: {fileID: 0}
@@ -2807,11 +2807,16 @@ MonoBehaviour:
   isTouchingGround: 0
   rotateJudgeValve: 0
   groundRotation: {x: 0, y: 0, z: 0, w: 0}
+  rotationThreshold: 1
   nowMyFootTransform: {fileID: 2035996631}
   myFrontTransform: {fileID: 901191994}
   myFrontTransformFar: {fileID: 1545294676}
   footDisc: 0.7
   myDirectDisc: 0.7
+  climbableMask:
+    serializedVersion: 2
+    m_Bits: 64
+  useLayerMask: 0
 --- !u!1001 &206733816
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2881,7 +2886,7 @@ GameObject:
   - component: {fileID: 224139511}
   - component: {fileID: 224139510}
   - component: {fileID: 224139509}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (11)
   m_TagString: ClimbableObject
   m_Icon: {fileID: 0}
@@ -8529,7 +8534,7 @@ GameObject:
   - component: {fileID: 707366535}
   - component: {fileID: 707366534}
   - component: {fileID: 707366533}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (2)
   m_TagString: ClimbableObject
   m_Icon: {fileID: 0}
@@ -9560,7 +9565,7 @@ GameObject:
   - component: {fileID: 731980065}
   - component: {fileID: 731980064}
   - component: {fileID: 731980063}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (6)
   m_TagString: ClimbableObject
   m_Icon: {fileID: 0}
@@ -12191,13 +12196,19 @@ MonoBehaviour:
   cockroachCollectTarget: 3
   cockroachCollectNum: 0
   GameFinished: 0
+  foodCollect: 0
   pressTime: 2
   nowLoadSceneSort: 0
   timerText: {fileID: 926411171}
   gameMinutes: 1
+  gameProcessTime: 0
   gameEndCanvas: {fileID: 48446024}
   gameFailCanvas: {fileID: 1581187331}
   DemoResultCanvas: {fileID: 486465091}
+  showGameResultCanvas: {fileID: 0}
+  surTimeShowcase: {fileID: 0}
+  femCockroachCollectShowcase: {fileID: 0}
+  foodCollectShowcase: {fileID: 0}
 --- !u!4 &950558451
 Transform:
   m_ObjectHideFlags: 0
@@ -17043,7 +17054,7 @@ GameObject:
   - component: {fileID: 1287926010}
   - component: {fileID: 1287926009}
   - component: {fileID: 1287926008}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (7)
   m_TagString: ClimbableObject
   m_Icon: {fileID: 0}
@@ -21155,7 +21166,7 @@ GameObject:
   - component: {fileID: 1646566481}
   - component: {fileID: 1646566480}
   - component: {fileID: 1646566479}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (10)
   m_TagString: ClimbableObject
   m_Icon: {fileID: 0}
@@ -23751,7 +23762,7 @@ GameObject:
   - component: {fileID: 1771164286}
   - component: {fileID: 1771164285}
   - component: {fileID: 1771164284}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (9)
   m_TagString: ClimbableObject
   m_Icon: {fileID: 0}
@@ -24559,7 +24570,7 @@ GameObject:
   - component: {fileID: 1825956050}
   - component: {fileID: 1825956049}
   - component: {fileID: 1825956048}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (4)
   m_TagString: ClimbableObject
   m_Icon: {fileID: 0}
@@ -24735,7 +24746,7 @@ GameObject:
   - component: {fileID: 1830887115}
   - component: {fileID: 1830887114}
   - component: {fileID: 1830887113}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (5)
   m_TagString: ClimbableObject
   m_Icon: {fileID: 0}

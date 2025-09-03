@@ -118,14 +118,14 @@ public class CockroachMove : MonoBehaviour
             HorVelocity = Mathf.MoveTowards(HorVelocity, 0, stopVelocity * Time.deltaTime);
             //velocityZ = Mathf.SmoothDamp(savedDampValueZ, 0, ref velocityZ, testVelocityDampValue);
         }
-
+        anglesY = 0;
         if (Input.GetKey(KeyCode.A))
         {
-            anglesY -= AutoAngleSpeed * Time.deltaTime;
+            anglesY = -1 *AutoAngleSpeed * Time.deltaTime;
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            anglesY += AutoAngleSpeed * Time.deltaTime;
+            anglesY = AutoAngleSpeed * Time.deltaTime;
         }
 
 
@@ -154,7 +154,7 @@ public class CockroachMove : MonoBehaviour
             }
         }
 
-        subObjectTransform.transform.localEulerAngles = new Vector3(0, anglesY, 0);
+        subObjectTransform.transform.localEulerAngles += new Vector3(0, anglesY, 0);
 
         //Vector3 lookingDirection = Quaternion.LookRotation(subObjectTransform.position, lookingReferencePoint.position).eulerAngles;
         Vector3 lookingDirection = subObjectTransform.forward;

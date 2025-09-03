@@ -10,13 +10,19 @@ public class CockroachClimbRay : MonoBehaviour
     public bool rotateJudgeValve = false;
     public Quaternion groundRotation;
 
-    [Header("Cal target")]
-    public Transform nowMyFootTransform;   // 腳下目標
-    public Transform myFrontTransform;      // 前方目標
-    public Transform myFrontTransformFar;      // 前方2目標
-    public float footDisc = 5f;            // 腳下射線距離
-    public float myDirectDisc = 10f;       // 前方射線距離
+    [Header("idk lah don't care variable")]
+    public float rotationThreshold = 1f; // 1度以內視為不動
 
+    [Header("Cal target")]
+    public Transform nowMyFootTransform;
+    public Transform myFrontTransform; 
+    public Transform myFrontTransformFar;
+    public float footDisc = 5f; 
+    public float myDirectDisc = 10f; 
+
+    [Header("Optional")]
+    public LayerMask climbableMask;
+    public bool useLayerMask = false;
     void Update()
     {
         Vector3 dirToFoot = (nowMyFootTransform.position - transform.position).normalized;
@@ -29,57 +35,73 @@ public class CockroachClimbRay : MonoBehaviour
 
         Debug.DrawRay(transform.position, dirToFoot * footDisc, Color.green);
         Debug.DrawRay(transform.position, dirToFront * myDirectDisc, Color.red);
-        Debug.DrawRay(transform.position, dirToFrontFar * myDirectDisc, Color.cyan); ;
+        Debug.DrawRay(transform.position, dirToFrontFar * myDirectDisc, Color.cyan);
 
-        bool _touching = false;
-        
-        // 可選：物理檢測
-        if (Physics.Raycast(footRay, out RaycastHit hit1, footDisc))
+        bool gotNearHit = false;
+        bool gotFarHit = false;
+
+        RaycastHit hitFoot, hitNear, hitFar;
+
+        if (Cast(footRay, out hitFoot, footDisc))
         {
-            //Debug.Log("Hit Foot Target: " + hit1.collider.name);
-            //Do Gravity;
         }
-        if (Physics.Raycast(frontRay, out RaycastHit hit2, myDirectDisc))
+
+        if (Cast(frontRay, out hitNear, myDirectDisc) && IsClimbable(hitNear.collider))
         {
-            //Debug.Log("Hit Front Target: " + hit2.collider.name);
-            if (hit2.collider.CompareTag("ClimbableObject"))
+            gotNearHit = true;
+        }
+
+        if (Cast(frontRayFar, out hitFar, myDirectDisc) && IsClimbable(hitFar.collider))
+        {
+            gotFarHit = true;
+        }
+
+        if (gotNearHit || gotFarHit)
+        {
+            Vector3 surfaceNormal;
+            if (gotNearHit && gotFarHit)
+                surfaceNormal = (hitNear.normal + hitFar.normal).normalized;
+            else
+                surfaceNormal = gotNearHit ? hitNear.normal : hitFar.normal;
+
+            Vector3 up = surfaceNormal;
+
+            Vector3 desiredForward = transform.forward;
+
+            Vector3 forwardOnSurface = Vector3.ProjectOnPlane(desiredForward, up).normalized;
+
+            if (forwardOnSurface.sqrMagnitude < 1e-6f)
             {
-                _touching = true;
+                forwardOnSurface = Vector3.Cross(up, transform.right).normalized;
             }
 
-        }
-        if (Physics.Raycast(frontRayFar, out RaycastHit hit3, myDirectDisc))
-        {
-            if (hit3.collider.CompareTag("ClimbableObject"))
+            Quaternion desiredRotation = Quaternion.LookRotation(forwardOnSurface, up);
+
+            // 計算新舊旋轉的角度差
+            float angleDiff = Quaternion.Angle(Quaternion.Euler(cockRoachClimb.targetRotation), desiredRotation);
+
+            // 只有當角度差超過閾值時才更新
+            if (angleDiff > rotationThreshold)
             {
-                if (_touching)
-                {
-                    //TriggerCal
-                    groundRotation = GetRotationBetweenPoints(hit2.point, hit3.point);
-                    cockRoachClimb.targetRotation = groundRotation.eulerAngles;
-                    cockRoachClimb.targetRotation = new Vector3(cockRoachClimb.targetRotation.x, 0, cockRoachClimb.targetRotation.z);
-                    Debug.Log("Ground Rotation is:" + cockRoachClimb.targetRotation);
-                }
+                groundRotation = desiredRotation;
+                cockRoachClimb.targetRotation = groundRotation.eulerAngles;
             }
+            // transform.rotation = Quaternion.Slerp(transform.rotation, groundRotation, rotateSpeed * Time.deltaTime);
         }
-
-
     }
 
-    public Quaternion GetRotationBetweenPoints(Vector3 a, Vector3 b)
+    bool Cast(Ray ray, out RaycastHit hit, float dist)
     {
-        if ((a.y) > (b.y))
-        {
-            Vector3 tmp = a;
-            a = b;
-            b = tmp;
-        }
+        if (useLayerMask)
+            return Physics.Raycast(ray, out hit, dist, climbableMask, QueryTriggerInteraction.Ignore);
 
+        return Physics.Raycast(ray, out hit, dist, ~0, QueryTriggerInteraction.Ignore);
+    }
 
-        Vector3 direction = b - a;
-        if (direction.sqrMagnitude < 1e-8f) return Quaternion.identity; // 避免零向量
-
-        return Quaternion.LookRotation(direction.normalized, Vector3.up);
+    bool IsClimbable(Collider col)
+    {
+        if (useLayerMask) return true;
+        return col != null && col.CompareTag("ClimbableObject");
     }
 
 }
