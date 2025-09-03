@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public enum Era
 {
@@ -26,6 +27,10 @@ public class EraManager : MonoBehaviour
     private Era[] eras;
     private Coroutine eraCoroutine;
 
+    [Header("恐龍時代變數")]
+    public GameObject[] dynaSpawnPt;
+    public GameObject dynaPrefab;
+
     private void Start()
     {
         eras = (Era[])System.Enum.GetValues(typeof(Era));
@@ -48,6 +53,13 @@ public class EraManager : MonoBehaviour
         else if (currentEra == Era.MassExtinctionEra)
         {
             Debug.Log("現在是大滅絕時代");
+        }
+    }
+    public void spawnDyna()
+    {
+        for (int i = 0; i < dynaSpawnPt.Length; i++)
+        {
+            Instantiate(dynaPrefab, dynaSpawnPt[i].transform.position, Quaternion.identity);
         }
     }
 

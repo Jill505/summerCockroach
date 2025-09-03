@@ -27,12 +27,10 @@ public class FoodGenManger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GenFoodCount > 0)
+        while (GenFoodCount > 0)
         {
-            for (int i = 0; i < GenFoodCount; GenFoodCount--)
-            {
-                RandomSpawnFood();
-            }
+            RandomSpawnFood();
+            GenFoodCount--;
         }
     }
 
@@ -40,7 +38,7 @@ public class FoodGenManger : MonoBehaviour
     public void RandomSpawnFood()
     {
         //List all pos allow spawn
-        Debug.Log(hasFoodSpawn.Length);
+        //Debug.Log(hasFoodSpawn.Length);
         List<int> readySpawnPosSort = new List<int>();
         for (int i = 0; i < FoodPos.Count; i++)
         {
@@ -55,8 +53,8 @@ public class FoodGenManger : MonoBehaviour
         {
             //Do ran spawn
             int ranIndex= Random.Range(0, readySpawnPosSort.Count);
-            Debug.Log(FoodPos[readySpawnPosSort[ranIndex]]);
-            Debug.Log(FoodPos[readySpawnPosSort[ranIndex]].transform.position);
+            //Debug.Log(FoodPos[readySpawnPosSort[ranIndex]]);
+            //Debug.Log(FoodPos[readySpawnPosSort[ranIndex]].transform.position);
             GameObject obj =Instantiate(FoodPrefab, FoodPos[readySpawnPosSort[ranIndex]].transform.position, Quaternion.identity);
             hasFoodSpawn[ranIndex] = true;
             obj.transform.GetChild(0).gameObject.GetComponent<FoodTrigger>().mySort = readySpawnPosSort[ranIndex];
