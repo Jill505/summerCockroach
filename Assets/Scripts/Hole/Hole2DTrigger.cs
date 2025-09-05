@@ -6,6 +6,10 @@ public class Hole2DTrigger : MonoBehaviour
     public DoubleHoleSystem system;
     public HoleSide side;
 
+    private void Start()
+    {
+        system = GameObject.Find("DoubleHoleManager").GetComponent<DoubleHoleSystem>();
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.GetComponent<Cockroach2DMove>() != null)
