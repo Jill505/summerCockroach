@@ -111,11 +111,36 @@ PrefabInstance:
       propertyPath: m_Name
       value: Food2D
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -5572262348756927093, guid: 55a1915929fd53949a90c9818b24756c, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8715384147198252459, guid: 55a1915929fd53949a90c9818b24756c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5777779826815590570}
   m_SourcePrefab: {fileID: 100100000, guid: 55a1915929fd53949a90c9818b24756c, type: 3}
+--- !u!1 &2276938652275565421 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8715384147198252459, guid: 55a1915929fd53949a90c9818b24756c, type: 3}
+  m_PrefabInstance: {fileID: 7451781827820222150}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5777779826815590570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2276938652275565421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 234b83443d9f4d44ba4303acffea6739, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  foodGenManager: {fileID: 0}
+  myFather: {fileID: 0}
+  mySort: 0
+  healAmount: 55
 --- !u!4 &8957660838553326137 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1961894907002578175, guid: 55a1915929fd53949a90c9818b24756c, type: 3}

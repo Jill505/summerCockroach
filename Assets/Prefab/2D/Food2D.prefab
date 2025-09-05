@@ -10,9 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1961894907002578175}
   - component: {fileID: 1730920446334916511}
-  - component: {fileID: 7627326420515457967}
-  - component: {fileID: 7820804202805145619}
-  - component: {fileID: 980919391732761853}
+  - component: {fileID: 2824159732788262061}
+  - component: {fileID: -5572262348756927093}
   m_Layer: 0
   m_Name: Food2D
   m_TagString: Food
@@ -91,41 +90,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7627326420515457967
-MonoBehaviour:
+--- !u!61 &2824159732788262061
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8715384147198252459}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 234b83443d9f4d44ba4303acffea6739, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  foodGenManager: {fileID: 0}
-  myFather: {fileID: 0}
-  mySort: 0
-  healAmount: 55
---- !u!114 &7820804202805145619
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8715384147198252459}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06fddd996a0485844b7aee1eafffaf2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!65 &980919391732761853
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8715384147198252459}
+  serializedVersion: 3
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -134,12 +108,47 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 1
-  m_ProvidesContacts: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.8181819, y: 1.8181819}
+    newSize: {x: 2.22, y: 2.27}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1.8181819, y: 1.8181819}
+  m_EdgeRadius: 0
+--- !u!114 &-5572262348756927093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8715384147198252459}
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.8181819, y: 10, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b60e7c5dc268c140af4e325b8584339, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healAmount: 55
 --- !u!1 &9022094073454315743
 GameObject:
   m_ObjectHideFlags: 0
