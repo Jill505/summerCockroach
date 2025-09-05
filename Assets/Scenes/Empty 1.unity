@@ -18776,7 +18776,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eraValue:
-    eraInterval: 20
+    eraInterval: 60
+    intervalPEToDE: 60
+    intervalDEToME: 90
+    intervalMEToPE: 150
     mode: 1
     PEFood: 20
     hungerDuration: 12

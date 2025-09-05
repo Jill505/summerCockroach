@@ -19,8 +19,14 @@ public enum EraMode
 [System.Serializable]
 public class EraValue
 {
-    [Header("時代切換設定")]
+    [Header("隨機輪替間隔設定")]
     public float eraInterval = 20f; // 玩家可設定的時間 a 秒
+
+    [Header("依序輪替間隔設定")]
+    public float intervalPEToDE = 20f; // 史前 -> 恐龍
+    public float intervalDEToME = 30f; // 恐龍 -> 大滅絕
+    public float intervalMEToPE = 25f; // 大滅絕 -> 史前（可選）
+
     public EraMode mode = EraMode.依序輪替;
 
     [Header("史前時代")]
@@ -70,7 +76,25 @@ public class EraManager : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(eraValue.eraInterval);
+            float waitTime = eraValue.eraInterval; // 預設用隨機輪替的時間
+
+            if (eraValue.mode == EraMode.依序輪替)
+            {
+                if (currentEra == Era.PrehistoricEra)
+                {
+                    waitTime = eraValue.intervalPEToDE;
+                }
+                else if (currentEra == Era.DinosaurEra)
+                {
+                    waitTime = eraValue.intervalDEToME;
+                }
+                else if (currentEra == Era.MassExtinctionEra)
+                {
+                    waitTime = eraValue.intervalMEToPE;
+                }
+            }
+
+            yield return new WaitForSeconds(waitTime);
 
             if (eraValue.mode == EraMode.隨機輪替)
             {
