@@ -19,6 +19,7 @@ public class FoodTrigger : MonoBehaviour
         cManager = GameObject.Find("3DCockroach").GetComponent<CockroachManager>();
         foodGenManager = Object.FindFirstObjectByType<FoodGenManger>();
 
+        myFather = transform.parent != null ? transform.parent.gameObject : null;
         foodGenManager.Foods.Add(myFather);
     }
 

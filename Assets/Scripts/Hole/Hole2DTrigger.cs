@@ -6,6 +6,18 @@ public class Hole2DTrigger : MonoBehaviour
     public DoubleHoleSystem system;
     public HoleSide side;
 
+    private void Start()
+    {
+        if (GameObject.Find("DoubleHoleManager") != null)
+        {
+            system = GameObject.Find("DoubleHoleManager").GetComponent<DoubleHoleSystem>();
+        }
+        else
+        {
+            Debug.LogWarning("Double Hole System不存在");
+        }
+        //system = GameObject.Find("DoubleHoleManager").GetComponent<DoubleHoleSystem>();
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.GetComponent<Cockroach2DMove>() != null)
