@@ -8,7 +8,15 @@ public class Hole2DTrigger : MonoBehaviour
 
     private void Start()
     {
-        system = GameObject.Find("DoubleHoleManager").GetComponent<DoubleHoleSystem>();
+        if (GameObject.Find("DoubleHoleManager") != null)
+        {
+            system = GameObject.Find("DoubleHoleManager").GetComponent<DoubleHoleSystem>();
+        }
+        else
+        {
+            Debug.LogWarning("Double Hole System不存在");
+        }
+        //system = GameObject.Find("DoubleHoleManager").GetComponent<DoubleHoleSystem>();
     }
     private void OnTriggerEnter2D(Collider2D other)
     {

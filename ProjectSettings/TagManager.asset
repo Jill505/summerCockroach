@@ -8,6 +8,7 @@ TagManager:
   - ClimbableObject
   - FemRoach
   - Food
+  - NPCRoach
   layers:
   - Default
   - TransparentFX

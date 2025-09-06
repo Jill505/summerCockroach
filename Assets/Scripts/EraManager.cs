@@ -35,9 +35,6 @@ public class EraValue
 
     [Header("恐龍時代")]
     public int DEFood = 5;
-
-    //[Header("大滅絕時代")]
-
 }
 
 public class EraManager : MonoBehaviour
@@ -56,6 +53,11 @@ public class EraManager : MonoBehaviour
 
     private List<GameObject> spawnedDynas = new List<GameObject>();
 
+    [Header("大滅絕時代變數")]
+    MeteoriteManager meteoriteManager;
+    public int hitPlayerChanceVar = 4;
+    public float spawnMeteoriteDur = 6f;
+
 
     [Header("引用腳本")]
     private FoodGenManger foodGenManger;
@@ -65,6 +67,7 @@ public class EraManager : MonoBehaviour
     {
         foodGenManger = GameObject.Find("FoodGenManager").GetComponent<FoodGenManger>();
         cockroachManager = GameObject.Find("3DCockroach").GetComponent<CockroachManager>();
+        meteoriteManager = FindFirstObjectByType<MeteoriteManager>();
         eras = (Era[])System.Enum.GetValues(typeof(Era));
         currentEra = eras[0];
 
@@ -152,7 +155,8 @@ public class EraManager : MonoBehaviour
 
     void MEEvent()
     {
-        spawnDyna();
+        cycleCallMeteorite();
+        //spawnDyna();
     }
 
     public void spawnDyna()
@@ -225,6 +229,14 @@ public class EraManager : MonoBehaviour
         eraCoroutine = StartCoroutine(EraRoutine());
     }
 
-   
+   public void cycleCallMeteorite()
+    {
+        int hitPlayerChance = Random.Range(0, hitPlayerChanceVar);
+        bool isAim = false;
+        if (hitPlayerChance == 0) isAim= true;
+        meteoriteManager.SpawnMeteorite(isAim);
+
+        Invoke("cycleCallMeteorite", spawnMeteoriteDur);
+    }
 
 }
