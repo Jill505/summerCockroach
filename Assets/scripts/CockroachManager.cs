@@ -52,7 +52,7 @@ public class CockroachManager : MonoBehaviour
     }
     public void CockroachHealing(int healNum)
     {
-        Debug.Log("L heal");
+        Debug.Log(" heal");
         Hp += healNum;
         if (Hp > 6) Hp = 6;
         CockroachBodyPartSwitch();

@@ -41,6 +41,7 @@ public class EraValue
     [Header("ME")]
     public int hitPlayerChanceVar = 4;      //砸向玩家的機會
     public float spawnMeteoriteDur = 6f;    //每隔幾秒生成隕石
+    public float hotMaxTime = 5f;
 }
 
 public class EraManager : MonoBehaviour
@@ -52,6 +53,8 @@ public class EraManager : MonoBehaviour
     private int currentIndex = 0; // 依序輪替用
     [HideInInspector] public Era[] eras;
     [HideInInspector] public Coroutine eraCoroutine;
+    private Coroutine meColorCoroutine;
+    private Coroutine meMonitorCoroutine;
 
     [Header("恐龍時代變數")]
    
@@ -62,16 +65,18 @@ public class EraManager : MonoBehaviour
     MeteoriteManager meteoriteManager;
     public GameObject hotSprite;          // 指向UI物件
     private Image hotImage;               // hotSprite 的 Image
-    private float currentMETime = 0f;     // 計時用
+    private float StayInTime = 0f;     // 計時用
 
 
 
     [Header("引用腳本")]
     private FoodGenManger foodGenManger;
     private CockroachManager cockroachManager;
+    private CameraViewToggle viewToggle;
 
     private void Start()
     {
+        viewToggle = GameObject.Find("CameraManager").GetComponent<CameraViewToggle>();
         foodGenManger = GameObject.Find("FoodGenManager").GetComponent<FoodGenManger>();
         cockroachManager = GameObject.Find("3DCockroach").GetComponent<CockroachManager>();
         meteoriteManager = FindFirstObjectByType<MeteoriteManager>();
@@ -171,14 +176,12 @@ public class EraManager : MonoBehaviour
         cycleCallMeteorite();
         spawnDyna();
 
-        if (hotSprite != null)
-        {
-            hotSprite.SetActive(true);
-            currentMETime = 0f;
-            StopCoroutine("MEColorRoutine");
-            StartCoroutine("MEColorRoutine");
-        }
+        // 開始持續監控視角
+        if (meMonitorCoroutine != null) StopCoroutine(meMonitorCoroutine);
+        meMonitorCoroutine = StartCoroutine(MEMonitorRoutine());
     }
+
+    
 
     public void spawnDyna()
     {
@@ -224,15 +227,48 @@ public class EraManager : MonoBehaviour
     }
 
 
+    IEnumerator MEMonitorRoutine()
+    {
+        while (currentEra == Era.MassExtinctionEra)
+        {
+            if (hotSprite != null)
+            {
+                if (viewToggle.Is2D())
+                {
+                    hotSprite.SetActive(true);
+
+                    // 開啟顏色/透明度 Coroutine（如果尚未開啟）
+                    if (meColorCoroutine == null)
+                        meColorCoroutine = StartCoroutine(MEColorRoutine());
+
+                    if (StayInTime >= eraValue.hotMaxTime)
+                    {
+                        cockroachManager.CockroachDie();
+                        StayInTime = 0f; // 可選：死亡後重置時間
+                    }
+                }
+                else
+                {
+                    ResetME();
+                }
+            }
+
+            yield return null; // 每幀偵測
+        }
+
+        // 離開大滅絕時代後，確保重置
+        ResetME();
+    }
+
     IEnumerator MEColorRoutine()
     {
-        float duration = eraValue.intervalMEToPE;
-        currentMETime = 0f;
+        float duration = eraValue.hotMaxTime;
+        StayInTime = 0f;
 
-        while (currentMETime < duration)
+        while (StayInTime < duration)
         {
-            currentMETime += Time.deltaTime;
-            float t = currentMETime / duration;
+            StayInTime += Time.deltaTime;
+            float t = StayInTime / duration;
 
             if (hotImage != null)
             {
@@ -240,31 +276,38 @@ public class EraManager : MonoBehaviour
                 // 顏色從白到紅
                 c.g = Mathf.Lerp(1f, 0f, t);
                 c.b = Mathf.Lerp(1f, 0f, t);
-                // 透明度從 0 到 7/255
+                // 透明度從 0 到 30/255
                 c.a = Mathf.Lerp(0f, 30f / 255f, t);
 
                 hotImage.color = c;
             }
             yield return null;
         }
+
+        meColorCoroutine = null; // Coroutine 結束後清空追蹤
     }
 
     public void ResetME()
     {
-        currentMETime = 0f;
+        StayInTime = 0f;
+
         if (hotImage != null)
         {
             Color c = hotImage.color;
             c.g = 1f;
             c.b = 1f;
-            c.a = 0f; // 從透明開始
+            c.a = 0f;
             hotImage.color = c;
         }
+
         if (hotSprite != null)
-        {
             hotSprite.SetActive(false);
+
+        if (meColorCoroutine != null)
+        {
+            StopCoroutine(meColorCoroutine);
+            meColorCoroutine = null;
         }
-        StopCoroutine("MEColorRoutine");
     }
 
 

@@ -23,7 +23,6 @@ public class FoodTrigger2D : MonoBehaviour
     public void heal()
     {
         cManager.CockroachHealing(healAmount);
-        Debug.Log("回血了，目前血量: " + cManager.Hp);
         Destroy(gameObject);
     }
 }
