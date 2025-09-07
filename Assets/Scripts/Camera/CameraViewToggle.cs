@@ -34,7 +34,6 @@ public class CameraViewToggle : MonoBehaviour
     
 
     private bool is2D = false;
-    private bool isSwitching = false;
 
     private void Start()
     {
@@ -44,7 +43,6 @@ public class CameraViewToggle : MonoBehaviour
 
     public IEnumerator StartViewSwitch(bool is2D)
     {
-        isSwitching = true;
         cockroachMove.myMoveMode = moveMode.ChangeSceneMoment;
 
         if (is2D == true)
@@ -98,7 +96,6 @@ public class CameraViewToggle : MonoBehaviour
         StartCoroutine(End2DViewTransition());
 
         cockroachMove.myMoveMode = moveMode.twoDMove;
-        isSwitching = false;
 
 
     }
@@ -121,7 +118,6 @@ public class CameraViewToggle : MonoBehaviour
         StartCoroutine(End3DViewTransition());
 
         cockroachMove.myMoveMode = moveMode.AutoCameraMove;
-        isSwitching = false;
     }
 
     public IEnumerator End2DViewTransition()

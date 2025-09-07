@@ -29,12 +29,17 @@ public class EraValue
 
     public EraMode mode = EraMode.依序輪替;
 
-    [Header("史前時代")]
+    [Header("PE")]
     public int PEFood = 10;
     public float hungerDuration = 12f;
 
-    [Header("恐龍時代")]
+    [Header("DE")]
     public int DEFood = 5;
+    public GameObject[] dynaSpawnPt;
+
+    [Header("ME")]
+    public int hitPlayerChanceVar = 4;      //砸向玩家的機會
+    public float spawnMeteoriteDur = 6f;    //每隔幾秒生成隕石
 }
 
 public class EraManager : MonoBehaviour
@@ -48,15 +53,13 @@ public class EraManager : MonoBehaviour
     [HideInInspector] public Coroutine eraCoroutine;
 
     [Header("恐龍時代變數")]
-    public GameObject[] dynaSpawnPt;
+   
     public GameObject dynaPrefab;
-
     private List<GameObject> spawnedDynas = new List<GameObject>();
 
     [Header("大滅絕時代變數")]
     MeteoriteManager meteoriteManager;
-    public int hitPlayerChanceVar = 4;
-    public float spawnMeteoriteDur = 6f;
+    
 
 
     [Header("引用腳本")]
@@ -161,9 +164,9 @@ public class EraManager : MonoBehaviour
 
     public void spawnDyna()
     {
-        for (int i = 0; i < dynaSpawnPt.Length; i++)
+        for (int i = 0; i < eraValue.dynaSpawnPt.Length; i++)
         {
-            GameObject newDyna = Instantiate(dynaPrefab, dynaSpawnPt[i].transform.position, Quaternion.identity);
+            GameObject newDyna = Instantiate(dynaPrefab, eraValue.dynaSpawnPt[i].transform.position, Quaternion.identity);
             spawnedDynas.Add(newDyna); 
         }
     }
@@ -231,12 +234,13 @@ public class EraManager : MonoBehaviour
 
    public void cycleCallMeteorite()
     {
-        int hitPlayerChance = Random.Range(0, hitPlayerChanceVar);
+        if (currentEra != Era.MassExtinctionEra) return;
+        int hitPlayerChance = Random.Range(0, eraValue.hitPlayerChanceVar);
         bool isAim = false;
         if (hitPlayerChance == 0) isAim= true;
         meteoriteManager.SpawnMeteorite(isAim);
 
-        Invoke("cycleCallMeteorite", spawnMeteoriteDur);
+        Invoke("cycleCallMeteorite", eraValue.spawnMeteoriteDur);
     }
 
 }
