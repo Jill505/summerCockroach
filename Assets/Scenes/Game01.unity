@@ -2203,7 +2203,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraLogic2D: {fileID: 1972852013}
   enableFood: 0
-  food: {fileID: 0}
   minCount: 1
   maxCount: 3
   selectedScene: 0
@@ -4721,7 +4720,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraLogic2D: {fileID: 1972852013}
   enableFood: 0
-  food: {fileID: 0}
   minCount: 1
   maxCount: 3
   selectedScene: 1
@@ -13977,6 +13975,7 @@ GameObject:
   - component: {fileID: 950558450}
   - component: {fileID: 950558452}
   - component: {fileID: 950558453}
+  - component: {fileID: 950558454}
   m_Layer: 0
   m_Name: AllGameManager
   m_TagString: Untagged
@@ -14174,6 +14173,34 @@ MonoBehaviour:
     spawnBounds: {fileID: 0}
     insPos1: {fileID: 0}
     insPos2: {fileID: 0}
+  Food2D: {fileID: 8715384147198252459, guid: 55a1915929fd53949a90c9818b24756c, type: 3}
+  Spider2D: {fileID: 6367387676149219478, guid: c5b7f9050fe2dbc4090527da8c934ca3, type: 3}
+--- !u!114 &950558454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950558449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0c080abdfeb0ba40ace61b1171acf26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eraValue:
+    eraInterval: 20
+    intervalPEToDE: 20
+    intervalDEToME: 30
+    intervalMEToPE: 25
+    mode: 1
+    PEFood: 10
+    hungerDuration: 12
+    DEFood: 5
+  eras: 
+  dynaSpawnPt: []
+  dynaPrefab: {fileID: 8841291091811731393, guid: 5ae930230d7d57d498375a93fc3bf9fc, type: 3}
+  hitPlayerChanceVar: 4
+  spawnMeteoriteDur: 6
 --- !u!1 &957484258
 GameObject:
   m_ObjectHideFlags: 0

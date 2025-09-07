@@ -46,6 +46,10 @@ public class Scene2DManager : MonoBehaviour
     public Scene2D HalfCave01;
     public Scene2D HalfCave02;
 
+    [Header("2DScenePrefab")]
+    public GameObject Food2D;
+    public GameObject Spider2D;
+
     private void Awake()
     {
         Instance = this;

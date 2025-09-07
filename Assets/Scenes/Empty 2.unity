@@ -13712,79 +13712,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 783d049b7a8a06a499932c6fca6abd99, type: 3}
   m_PrefabInstance: {fileID: 599069857}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &607556952
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1961894907002578175, guid: 55a1915929fd53949a90c9818b24756c, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1961894907002578175, guid: 55a1915929fd53949a90c9818b24756c, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1961894907002578175, guid: 55a1915929fd53949a90c9818b24756c, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1961894907002578175, guid: 55a1915929fd53949a90c9818b24756c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 131.47963
-      objectReference: {fileID: 0}
-    - target: {fileID: 1961894907002578175, guid: 55a1915929fd53949a90c9818b24756c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 8.81781
-      objectReference: {fileID: 0}
-    - target: {fileID: 1961894907002578175, guid: 55a1915929fd53949a90c9818b24756c, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -100.11385
-      objectReference: {fileID: 0}
-    - target: {fileID: 1961894907002578175, guid: 55a1915929fd53949a90c9818b24756c, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1961894907002578175, guid: 55a1915929fd53949a90c9818b24756c, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1961894907002578175, guid: 55a1915929fd53949a90c9818b24756c, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1961894907002578175, guid: 55a1915929fd53949a90c9818b24756c, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1961894907002578175, guid: 55a1915929fd53949a90c9818b24756c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1961894907002578175, guid: 55a1915929fd53949a90c9818b24756c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1961894907002578175, guid: 55a1915929fd53949a90c9818b24756c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1961894907002578175, guid: 55a1915929fd53949a90c9818b24756c, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8715384147198252459, guid: 55a1915929fd53949a90c9818b24756c, type: 3}
-      propertyPath: m_Name
-      value: Food2D
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 55a1915929fd53949a90c9818b24756c, type: 3}
 --- !u!1 &610512296
 GameObject:
   m_ObjectHideFlags: 0
@@ -14940,7 +14867,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraLogic2D: {fileID: 944304784}
   enableFood: 0
-  food: {fileID: 0}
   minCount: 1
   maxCount: 3
   selectedScene: 1
@@ -23093,6 +23019,8 @@ MonoBehaviour:
     spawnBounds: {fileID: 0}
     insPos1: {fileID: 0}
     insPos2: {fileID: 0}
+  Food2D: {fileID: 8715384147198252459, guid: 55a1915929fd53949a90c9818b24756c, type: 3}
+  Spider2D: {fileID: 6367387676149219478, guid: c5b7f9050fe2dbc4090527da8c934ca3, type: 3}
 --- !u!114 &950558454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23107,6 +23035,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eraValue:
     eraInterval: 20
+    intervalPEToDE: 20
+    intervalDEToME: 30
+    intervalMEToPE: 25
     mode: 1
     PEFood: 10
     hungerDuration: 12
@@ -23118,6 +23049,8 @@ MonoBehaviour:
   - {fileID: 2071272037}
   - {fileID: 273789757}
   dynaPrefab: {fileID: 5337515126892634216, guid: 4ed3fb0f3dbb4f04aa0f2560ad257112, type: 3}
+  hitPlayerChanceVar: 4
+  spawnMeteoriteDur: 6
 --- !u!1 &954049959
 GameObject:
   m_ObjectHideFlags: 0
@@ -23241,79 +23174,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 615cab5a0b494c24789c11b55c995d6c, type: 3}
   m_PrefabInstance: {fileID: 375523236}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &964211544
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1961894907002578175, guid: 55a1915929fd53949a90c9818b24756c, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1961894907002578175, guid: 55a1915929fd53949a90c9818b24756c, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1961894907002578175, guid: 55a1915929fd53949a90c9818b24756c, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1961894907002578175, guid: 55a1915929fd53949a90c9818b24756c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -65.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1961894907002578175, guid: 55a1915929fd53949a90c9818b24756c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 8.81781
-      objectReference: {fileID: 0}
-    - target: {fileID: 1961894907002578175, guid: 55a1915929fd53949a90c9818b24756c, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -194.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1961894907002578175, guid: 55a1915929fd53949a90c9818b24756c, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1961894907002578175, guid: 55a1915929fd53949a90c9818b24756c, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1961894907002578175, guid: 55a1915929fd53949a90c9818b24756c, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1961894907002578175, guid: 55a1915929fd53949a90c9818b24756c, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1961894907002578175, guid: 55a1915929fd53949a90c9818b24756c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1961894907002578175, guid: 55a1915929fd53949a90c9818b24756c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1961894907002578175, guid: 55a1915929fd53949a90c9818b24756c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1961894907002578175, guid: 55a1915929fd53949a90c9818b24756c, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8715384147198252459, guid: 55a1915929fd53949a90c9818b24756c, type: 3}
-      propertyPath: m_Name
-      value: Food2D (1)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 55a1915929fd53949a90c9818b24756c, type: 3}
 --- !u!1 &970144369
 GameObject:
   m_ObjectHideFlags: 0
@@ -41409,7 +41269,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraLogic2D: {fileID: 944304784}
   enableFood: 0
-  food: {fileID: 0}
   minCount: 1
   maxCount: 3
   selectedScene: 0
@@ -50885,8 +50744,6 @@ SceneRoots:
   - {fileID: 1105915653}
   - {fileID: 675238316}
   - {fileID: 2107619104}
-  - {fileID: 607556952}
-  - {fileID: 964211544}
   - {fileID: 1131550411}
   - {fileID: 1427401244}
   - {fileID: 1734584571}

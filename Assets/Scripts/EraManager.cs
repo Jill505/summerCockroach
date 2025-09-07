@@ -156,7 +156,7 @@ public class EraManager : MonoBehaviour
     void MEEvent()
     {
         cycleCallMeteorite();
-        //spawnDyna();
+        spawnDyna();
     }
 
     public void spawnDyna()

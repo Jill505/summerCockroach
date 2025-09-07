@@ -15,7 +15,7 @@ public class OneHoleSwitchTrigger : MonoBehaviour
 
     [Header("食物生成設定")]
     public bool enableFood = false;                 // 是否啟用生成
-    public GameObject food;                     
+    private GameObject food;                     
     
     public int minCount = 1;
     public int maxCount = 3;
@@ -35,6 +35,7 @@ public class OneHoleSwitchTrigger : MonoBehaviour
 
     private void Start()
     {
+        food = GameObject.Find("AllGameManager").GetComponent<Scene2DManager>().Food2D;
         selectedScene = Scene2DOneHole.TreeHole;
         viewToggle = GameObject.Find("CameraManager").GetComponent<CameraViewToggle>();
         cockroachMove3D = GameObject.Find("3DCockroach").GetComponent<CockroachMove>();

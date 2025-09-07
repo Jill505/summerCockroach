@@ -692,7 +692,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraLogic2D: {fileID: 50217555}
   enableFood: 0
-  food: {fileID: 0}
   minCount: 1
   maxCount: 3
   selectedScene: 0
@@ -13576,6 +13575,8 @@ MonoBehaviour:
     spawnBounds: {fileID: 0}
     insPos1: {fileID: 0}
     insPos2: {fileID: 0}
+  Food2D: {fileID: 8715384147198252459, guid: 55a1915929fd53949a90c9818b24756c, type: 3}
+  Spider2D: {fileID: 6367387676149219478, guid: c5b7f9050fe2dbc4090527da8c934ca3, type: 3}
 --- !u!114 &950558454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28227,7 +28228,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraLogic2D: {fileID: 50217555}
   enableFood: 0
-  food: {fileID: 0}
   minCount: 1
   maxCount: 3
   selectedScene: 1

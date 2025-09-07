@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.UIElements;
 
 public enum HoleSide
@@ -21,7 +22,6 @@ public class DoubleHolePair
 
     [Header("食物生成設定")]
     public bool enableFood = false;                 // 是否啟用生成
-    public GameObject food;
     public enum FoodAmount
     {
         少量, // 3 個
@@ -32,14 +32,15 @@ public class DoubleHolePair
     [HideInInspector]public float spawnOffsetY = 0.5f;
 
     [Header("蜘蛛生成設定")]
-    public bool enableSpider = false;                // 是否顯示蜘蛛
-    public GameObject spiderObject;                  // 被隱藏的蜘蛛物件    
+    [HideInInspector] public bool enableSpider = false;                // 是否顯示蜘蛛
+    
 
     [HideInInspector] public Scene2DDoubleHole selectedScene;
 
     // 初始化方法：把 enum 轉成字串
     public void InitSelectedScene()
     {
+        enableSpider = Random.Range(0, 2) == 0;
         if (enableSpider)
         {
             selectedScene = Scene2DDoubleHole.Cave;
@@ -83,11 +84,14 @@ public class DoubleHoleSystem : MonoBehaviour
     private List<GameObject> spawnedFood = new List<GameObject>();
     private List<GameObject> spawnedSpider = new List<GameObject>();
 
-
+    private GameObject food;
+    private GameObject spider;                  // 被隱藏的蜘蛛物件    
 
 
     private void Awake()
     {
+        food = GameObject.Find("AllGameManager").GetComponent<Scene2DManager>().Food2D;
+        spider = GameObject.Find("AllGameManager").GetComponent<Scene2DManager>().Spider2D;
         viewToggle = GameObject.Find("CameraManager").GetComponent<CameraViewToggle>();
         cockroachMove3D = GameObject.Find("3DCockroach").GetComponent<CockroachMove>();
         cockroachMove2D = GameObject.Find("2DCockroach").GetComponent<Cockroach2DMove>();
@@ -246,14 +250,14 @@ public class DoubleHoleSystem : MonoBehaviour
             spawnPos2D.y += pair.spawnOffsetY;
 
             Vector3 spawnPos3D = new Vector3(spawnPos2D.x, spawnPos2D.y, 303.8198f);
-            GameObject newObj = Instantiate(pair.food, spawnPos3D, Quaternion.identity);
+            GameObject newObj = Instantiate(food, spawnPos3D, Quaternion.identity);
             spawnedFood.Add(newObj);
         }
     }
 
     void SpawnRandomSpiderOnPath(DoubleHolePair pair)
     {
-        if (pair.spiderObject == null) return;
+        if (spider == null) return;
 
         Vector2[] points = spawnArea.points;
 
@@ -266,7 +270,7 @@ public class DoubleHoleSystem : MonoBehaviour
         spawnPos2D.y += pair.spawnOffsetY;
 
         Vector3 spawnPos3D = new Vector3(spawnPos2D.x, spawnPos2D.y, 303.8198f);
-        GameObject newObj = Instantiate(pair.spiderObject, spawnPos3D, Quaternion.identity);
+        GameObject newObj = Instantiate(spider, spawnPos3D, Quaternion.identity);
         spawnedSpider.Add(newObj);
 
         var spiderHurt = newObj.GetComponent<SpiderHurtPlayer>();
