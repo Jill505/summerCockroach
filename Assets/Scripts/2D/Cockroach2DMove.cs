@@ -3,7 +3,6 @@ using UnityEngine;
 public class Cockroach2DMove : MonoBehaviour
 {
     [Header("設定蟑螂管理腳本")]
-    private CockroachManager cockroachManager;
     private CockroachMove mainMoveScript;
 
     [Header("元件")]
@@ -20,15 +19,12 @@ public class Cockroach2DMove : MonoBehaviour
 
     private void Start()
     {
-        cockroachManager = GameObject.Find("3DCockroach").GetComponent<CockroachManager>();
         mainMoveScript = GameObject.Find("3DCockroach").GetComponent<CockroachMove>();
     }
 
     [System.Obsolete]
     void Update()
     {
-        // 更新血量動畫參數
-        animator.SetInteger("Hp", cockroachManager.Hp);
 
         if (mainMoveScript.myMoveMode == moveMode.twoDMove)
         {

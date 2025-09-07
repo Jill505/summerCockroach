@@ -17,7 +17,7 @@ public class CockroachManager : MonoBehaviour
     public MeshRenderer myRenderer;
 
     [Header("Cockroach Values")]
-    public int Hp = 6;
+    public int Hp = 1;
 
     public float autoModeCameraFlu = 0.1f;
     public float playerModeCameraFlu = 0.1f;
@@ -41,7 +41,7 @@ public class CockroachManager : MonoBehaviour
     public void GameStart()
     {
         CockroachMoveable = true;
-        Hp = 6;
+        Hp = 1;
     }
     public void JudgeCockroachDie()
     {
@@ -91,24 +91,24 @@ public class CockroachManager : MonoBehaviour
     public void CockroachBodyPartSwitch()
     {
         myCockroachMove.HorVelocity = 0;
-        for (int i = 0; i < cockroachModels.Length; i++)
-        {
-            cockroachModels[i].SetActive(false);
-        }
+        //for (int i = 0; i < cockroachModels.Length; i++)
+        //{
+        //    cockroachModels[i].SetActive(false);
+        //}
 
 
-        if (Hp >= 6)
-        {
-            cockroachModels[6].SetActive(true);
-        }
-        else if (Hp <= 0)
-        {
-            cockroachModels[0].SetActive(true);
-        }
-        else
-        {
-            cockroachModels[Hp].SetActive(true);
-        }
+        //if (Hp >= 6)
+        //{
+        //    cockroachModels[6].SetActive(true);
+        //}
+        //else if (Hp <= 0)
+        //{
+        //    cockroachModels[0].SetActive(true);
+        //}
+        //else
+        //{
+        //    cockroachModels[Hp].SetActive(true);
+        //}
 
         switch (Hp)
         {
