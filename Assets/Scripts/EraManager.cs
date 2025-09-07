@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Rendering;
 
 public enum Era
@@ -59,7 +60,10 @@ public class EraManager : MonoBehaviour
 
     [Header("大滅絕時代變數")]
     MeteoriteManager meteoriteManager;
-    
+    public GameObject hotSprite;          // 指向UI物件
+    private Image hotImage;               // hotSprite 的 Image
+    private float currentMETime = 0f;     // 計時用
+
 
 
     [Header("引用腳本")]
@@ -76,6 +80,12 @@ public class EraManager : MonoBehaviour
 
         // 開始定時切換
         eraCoroutine = StartCoroutine(EraRoutine());
+
+        if (hotSprite != null)
+        {
+            hotImage = hotSprite.GetComponent<Image>();
+            hotSprite.SetActive(false);
+        }
     }
 
     private IEnumerator EraRoutine()
@@ -160,6 +170,14 @@ public class EraManager : MonoBehaviour
     {
         cycleCallMeteorite();
         spawnDyna();
+
+        if (hotSprite != null)
+        {
+            hotSprite.SetActive(true);
+            currentMETime = 0f;
+            StopCoroutine("MEColorRoutine");
+            StartCoroutine("MEColorRoutine");
+        }
     }
 
     public void spawnDyna()
@@ -201,10 +219,55 @@ public class EraManager : MonoBehaviour
 
         // 重設飢餓值
         cockroachManager.SetHungerDuration(cockroachManager.hungerDuration);
+
+        ResetME();
     }
 
 
-    
+    IEnumerator MEColorRoutine()
+    {
+        float duration = eraValue.intervalMEToPE;
+        currentMETime = 0f;
+
+        while (currentMETime < duration)
+        {
+            currentMETime += Time.deltaTime;
+            float t = currentMETime / duration;
+
+            if (hotImage != null)
+            {
+                Color c = hotImage.color;
+                // 顏色從白到紅
+                c.g = Mathf.Lerp(1f, 0f, t);
+                c.b = Mathf.Lerp(1f, 0f, t);
+                // 透明度從 0 到 7/255
+                c.a = Mathf.Lerp(0f, 30f / 255f, t);
+
+                hotImage.color = c;
+            }
+            yield return null;
+        }
+    }
+
+    public void ResetME()
+    {
+        currentMETime = 0f;
+        if (hotImage != null)
+        {
+            Color c = hotImage.color;
+            c.g = 1f;
+            c.b = 1f;
+            c.a = 0f; // 從透明開始
+            hotImage.color = c;
+        }
+        if (hotSprite != null)
+        {
+            hotSprite.SetActive(false);
+        }
+        StopCoroutine("MEColorRoutine");
+    }
+
+
 
     // 公開給外部手動呼叫
     public void ChangeEra(Era newEra)
