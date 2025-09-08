@@ -47,6 +47,10 @@ public class AllGameManager : MonoBehaviour
 
     private EraManager eraManager;
 
+    [Header("Evolution")]
+    public int DNA = 0;
+    public GameObject CockroachEvolutionCanvas;
+
 
     void Start()
     {
@@ -177,6 +181,17 @@ public class AllGameManager : MonoBehaviour
     public void BackToStartScreen()
     {
         SceneManager.LoadScene(0);
+    }
+
+    public void OpenDNASelect()
+    {
+        CockroachEvolutionCanvas.SetActive(true);
+        Time.timeScale = 0.0000001f;
+    }
+
+    public void CloseDNASelect()
+    {
+        Time.timeScale = 1;
     }
 }
 
