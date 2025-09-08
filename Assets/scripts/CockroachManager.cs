@@ -4,7 +4,7 @@ using UnityEngine.Rendering;
 using UnityEngine.UIElements;
 using UnityEngine.UIElements.Experimental;
 using UnityEngine.UI;
-
+using UnityEngine.Rendering.Universal;
 
 public class CockroachManager : MonoBehaviour
 {
@@ -36,6 +36,17 @@ public class CockroachManager : MonoBehaviour
 
     public UnityEngine.UI.Image myHungryAmount;
     private float hungerDecayRate;
+
+    [Header("Buffs")]
+    public int dashLevel = 0;
+    public int dashLevelMax = 3;
+    public int dashRecoverLevel = 0;
+    public int dashRecoverLevelMax = 3;
+    public int basicSpeedLevel = 0;
+    public int basicSpeedLevelMax = 3;
+    public int hungerLevel = 0;
+    public int hungerLevelMax =3;
+    public int shield = 0;
 
 
     public void GameStart()
