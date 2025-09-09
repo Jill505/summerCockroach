@@ -229,10 +229,15 @@ public class CockroachManager : MonoBehaviour
     {
         //reset all the Image to gray;
         resetAllTheImage(dashLevelImage);
+        setState(dashLevelImage, dashLevel, dashLevelButt);
         resetAllTheImage(dashRecoverLevelImage);
+        setState(dashRecoverLevelImage, dashRecoverLevel, dashRecoverLevelButt);
         resetAllTheImage(basicSpeedLevelImage);
+        setState(basicSpeedLevelImage, basicSpeedLevel, basicSpeedLevelButt);
         resetAllTheImage(hungerLevelImage);
+        setState(hungerLevelImage, hungerLevel, hungerLevelButt);
         resetAllTheImage(shieldImage);
+        setState(shieldImage, shield, shieldButt);
     }
     void resetAllTheImage(Image[] images)
     {
@@ -241,10 +246,53 @@ public class CockroachManager : MonoBehaviour
             images[i].sprite = lightOff;
         }
     }
-
-    public void ApplyBuff(int sort)
+    void setState(Image[] images, int currentValue, Button tarButton)
     {
+        for (int i = 0; i < images.Length && i< currentValue; i++)
+        {
+            images[i].sprite = lightOn;
+        }
+        if ((currentValue < images.Length))
+        {
+            tarButton.interactable = true;   
+        }
+        else
+        {
+            tarButton.interactable = false;
+        }
+    }
 
+    public void AddBuff(int sort)
+    {
+        switch (sort)
+        {
+
+            //dash level
+            case 0:
+                dashLevel++;
+                break;
+
+            //dash recover level
+            case 1:
+                dashRecoverLevel++;
+                break;
+
+            //basic Speed Level
+            case 2:
+                basicSpeedLevel++;
+                break;
+
+            //hunger level
+            case 3:
+                hungerLevel++;
+                break;
+
+            //shield
+            case 4:
+                shield++;
+                break;
+        }
+        allGameManger.CloseDNASelect();
     }
 }
 

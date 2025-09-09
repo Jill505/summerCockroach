@@ -1,4 +1,5 @@
 ﻿
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -6,6 +7,9 @@ using UnityEngine.UIElements.Experimental;
 
 public class AllGameManager : MonoBehaviour
 {
+    [Header("Ref component")]
+    public CockroachManager cManager;
+
     static public float GravityVariable = 9.81f;
 
     public Text cockroachCollectProcessShowcase;
@@ -56,6 +60,7 @@ public class AllGameManager : MonoBehaviour
     {
         eraManager = GetComponent<EraManager>();
         nowLoadSceneSort = SceneManager.GetActiveScene().buildIndex;
+        cManager = FindFirstObjectByType<CockroachManager>();
 
         timeRemaining = gameMinutes * 60f;
     }
@@ -183,14 +188,11 @@ public class AllGameManager : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
-    public void RenderPlayerBuffs()
-    {
-
-    }
 
     public void OpenDNASelect()
     {
         CockroachEvolutionCanvas.SetActive(true);
+        cManager.RenderPlayerBuffs();
         Time.timeScale = 0.0000001f;
     }
 

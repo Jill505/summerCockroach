@@ -1,6 +1,4 @@
-﻿using JetBrains.Annotations;
-//using Unity.Android.Gradle;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class FemCockraochTrigger3D : MonoBehaviour
 {
@@ -17,6 +15,10 @@ public class FemCockraochTrigger3D : MonoBehaviour
 
     public bool getDNAAlready = false;
     public bool allowBreed;
+
+    [Header("Cockroach egg")]
+    public int leftNumber;
+    public Transform myEggPos;
 
 
     private void Start()
@@ -47,6 +49,7 @@ public class FemCockraochTrigger3D : MonoBehaviour
             getDNAAlready = true;
 
             //open dna pattern.
+            allGameManager.OpenDNASelect();
         }
         if (other.CompareTag("Player") && coolDownCal < 0)
         {
@@ -55,6 +58,7 @@ public class FemCockraochTrigger3D : MonoBehaviour
             //subStatementShowcase.material = getMat;
 
             //TODO: Cockroach Egg plate
+            leftNumber++;
             coolDownCal = coolDownTime;
         }
         if (other.CompareTag("NPCRoach"))
