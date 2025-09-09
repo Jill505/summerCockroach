@@ -1,10 +1,6 @@
 ﻿using JetBrains.Annotations;
 using UnityEngine;
-using UnityEngine.Rendering;
-using UnityEngine.UIElements;
-using UnityEngine.UIElements.Experimental;
 using UnityEngine.UI;
-using UnityEngine.Rendering.Universal;
 
 public class CockroachManager : MonoBehaviour
 {
@@ -213,6 +209,42 @@ public class CockroachManager : MonoBehaviour
         {
             Debug.LogWarning("SetHungerDuration: 輸入值必須大於 0");
         }
+    }
+    [Header("UI系統")]
+    public Button dashLevelButt;
+    public Button dashRecoverLevelButt;
+    public Button basicSpeedLevelButt;
+    public Button hungerLevelButt;
+    public Button shieldButt;
+
+    public Image[] dashLevelImage = new Image[3];
+    public Image[] dashRecoverLevelImage = new Image[3];
+    public Image[] basicSpeedLevelImage = new Image[3];
+    public Image[] hungerLevelImage = new Image[3];
+    public Image[] shieldImage = new Image[1];
+
+    public Sprite lightOff;
+    public Sprite lightOn;
+    public void RenderPlayerBuffs()
+    {
+        //reset all the Image to gray;
+        resetAllTheImage(dashLevelImage);
+        resetAllTheImage(dashRecoverLevelImage);
+        resetAllTheImage(basicSpeedLevelImage);
+        resetAllTheImage(hungerLevelImage);
+        resetAllTheImage(shieldImage);
+    }
+    void resetAllTheImage(Image[] images)
+    {
+        for (int i = 0; i < images.Length; i++)
+        {
+            images[i].sprite = lightOff;
+        }
+    }
+
+    public void ApplyBuff(int sort)
+    {
+
     }
 }
 

@@ -183,6 +183,11 @@ public class AllGameManager : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
+    public void RenderPlayerBuffs()
+    {
+
+    }
+
     public void OpenDNASelect()
     {
         CockroachEvolutionCanvas.SetActive(true);
@@ -191,6 +196,7 @@ public class AllGameManager : MonoBehaviour
 
     public void CloseDNASelect()
     {
+        CockroachEvolutionCanvas.SetActive(false);
         Time.timeScale = 1;
     }
 }
