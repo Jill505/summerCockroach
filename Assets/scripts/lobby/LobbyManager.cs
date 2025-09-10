@@ -1,6 +1,8 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class LobbyManager : MonoBehaviour
 {
@@ -18,21 +20,51 @@ public class LobbyManager : MonoBehaviour
     public Achievement[] achievements;
     public GameObject Prefab_achievements;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [Header("轉場設定")]
+    public GameObject transitionUI;
+    public Material transitionMaterial;
 
-    // Update is called once per frame
-    void Update()
+    [Header("動畫")]
+    public Animator animator;
+
+
+
+    private void Start()
     {
-        
+        if (transitionUI != null) transitionUI.SetActive(false);
     }
 
     public void LoadLevelInfo(int levelSort)
     {
-        SceneManager.LoadScene(levelSort);
+        StartCoroutine(TransitionAndLoad(levelSort));
+    }
+
+    private IEnumerator TransitionAndLoad(int levelSort)
+    {
+        if (transitionUI != null) transitionUI.SetActive(true);
+
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(levelSort);
+        asyncLoad.allowSceneActivation = false;
+
+        float value = 0f;
+
+        float duration = 2.5f;
+        float targetInitialScale = 800f; // 最初放大的目標值
+        float speed = 320f;
+
+        animator.SetBool("Transtion", true);
+
+        while (value < targetInitialScale)
+        {
+            value += speed * Time.deltaTime;
+            if (value > targetInitialScale) value = targetInitialScale;
+
+            transitionMaterial.SetFloat("_Scale", value);
+            yield return null;
+        }
+
+        // 切換到新場景
+        asyncLoad.allowSceneActivation = true;
     }
 
     public void ExitGame()
@@ -74,7 +106,7 @@ public class LobbyManager : MonoBehaviour
             //obj.transform.GetChild(0);
 
             //Sprite
-            obj.transform.GetChild(1).gameObject.GetComponent<Image>().sprite = achievements[i].mySprite;
+            obj.transform.GetChild(1).gameObject.GetComponent<UnityEngine.UI.Image>().sprite = achievements[i].mySprite;
 
             //Name
             obj.transform.GetChild(2).gameObject.GetComponent<Text>().text = achievements[i].name;

@@ -9829,6 +9829,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   subStatementShowcase: {fileID: 916746480}
   getMat: {fileID: 2100000, guid: f56d4c9b7af79674ab855aa13775f07b, type: 2}
+  coolDownTime: 60
+  coolDownCal: 0
+  getDNAAlready: 0
+  allowBreed: 0
+  leftNumber: 0
+  myEggPos: {fileID: 0}
 --- !u!65 &557117549
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16354,6 +16360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcba026559451a64689ef55bc5c3b2cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cManager: {fileID: 1229442373}
   cockroachCollectProcessShowcase: {fileID: 1106530057}
   cockroachCollectTarget: 3
   cockroachCollectNum: 0
@@ -16372,6 +16379,8 @@ MonoBehaviour:
   surTimeShowcase: {fileID: 0}
   femCockroachCollectShowcase: {fileID: 0}
   foodCollectShowcase: {fileID: 0}
+  DNA: 0
+  CockroachEvolutionCanvas: {fileID: 0}
 --- !u!4 &950558451
 Transform:
   m_ObjectHideFlags: 0
@@ -21749,6 +21758,40 @@ MonoBehaviour:
   CockroachMoveable: 1
   hungerDuration: 15
   myHungryAmount: {fileID: 798185460}
+  dashLevel: 0
+  dashLevelMax: 3
+  dashRecoverLevel: 0
+  dashRecoverLevelMax: 3
+  basicSpeedLevel: 0
+  basicSpeedLevelMax: 3
+  hungerLevel: 0
+  hungerLevelMax: 3
+  shield: 0
+  dashLevelButt: {fileID: 0}
+  dashRecoverLevelButt: {fileID: 0}
+  basicSpeedLevelButt: {fileID: 0}
+  hungerLevelButt: {fileID: 0}
+  shieldButt: {fileID: 0}
+  dashLevelImage:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  dashRecoverLevelImage:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  basicSpeedLevelImage:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  hungerLevelImage:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  shieldImage:
+  - {fileID: 0}
+  lightOff: {fileID: 0}
+  lightOn: {fileID: 0}
 --- !u!54 &1229442374
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -33643,6 +33686,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   subStatementShowcase: {fileID: 1064028429}
   getMat: {fileID: 2100000, guid: f56d4c9b7af79674ab855aa13775f07b, type: 2}
+  coolDownTime: 60
+  coolDownCal: 0
+  getDNAAlready: 0
+  allowBreed: 0
+  leftNumber: 0
+  myEggPos: {fileID: 0}
 --- !u!65 &1884968307
 BoxCollider:
   m_ObjectHideFlags: 0

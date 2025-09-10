@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CameraViewToggle : MonoBehaviour
 {
@@ -35,10 +36,22 @@ public class CameraViewToggle : MonoBehaviour
 
     private bool is2D = false;
 
-    private void Start()
+    private void Awake()
     {
         if (transitionQuad3D != null) transitionQuad3D.SetActive(false);
         if (transitionQuad2D != null) transitionQuad2D.SetActive(false);
+    }
+
+    private void Start()
+    {
+        StartCoroutine(Transition());
+    }
+
+    private IEnumerator Transition()
+    {
+        transitionQuad3D.SetActive(true);
+        yield return StartCoroutine(AnimateShaderScale(45f, 0f, 0.6f));
+        transitionQuad3D.SetActive(false);
     }
 
     public IEnumerator StartViewSwitch(bool is2D)
