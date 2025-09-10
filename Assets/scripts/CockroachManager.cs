@@ -1,5 +1,6 @@
 ﻿using JetBrains.Annotations;
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -90,6 +91,7 @@ public class CockroachManager : MonoBehaviour
     public IEnumerator CockroachDieCoroutine()
     {
         onDieImm = true;
+        allGameManger.isTimerRunning = true;  
         //wait animation play ready
 
         //Play life -- animation
@@ -110,6 +112,7 @@ public class CockroachManager : MonoBehaviour
 
         yield return null;
         onDieImm = false;
+        allGameManger.isTimerRunning = false;
     }
 
     public void CockroachInjury(int injNum)
