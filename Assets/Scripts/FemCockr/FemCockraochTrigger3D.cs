@@ -17,14 +17,16 @@ public class FemCockraochTrigger3D : MonoBehaviour
     public bool allowBreed;
 
     [Header("Cockroach egg")]
-    public int leftNumber;
+    public int eggNumber;
     public Transform myEggPos;
+    public GameObject myEgg;
 
 
     private void Start()
     {
         allGameManager = GameObject.Find("AllGameManager").GetComponent<AllGameManager>();
         femaleCockroachInfo = GetComponent<FemaleCockroachInfo>();
+        allGameManager.femCockroachTrackList.Add(this);
     }
     private void Update()
     {
@@ -37,6 +39,15 @@ public class FemCockraochTrigger3D : MonoBehaviour
         else
         {
             allowBreed = true;
+        }
+
+        if (eggNumber > 0)
+        {
+            myEgg.SetActive(true);
+        }
+        else
+        {
+            myEgg.SetActive(false);
         }
     }
 
@@ -58,7 +69,7 @@ public class FemCockraochTrigger3D : MonoBehaviour
             //subStatementShowcase.material = getMat;
 
             //TODO: Cockroach Egg plate
-            leftNumber++;
+            eggNumber++;
             coolDownCal = coolDownTime;
         }
         if (other.CompareTag("NPCRoach"))

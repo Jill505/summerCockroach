@@ -1,4 +1,5 @@
 ﻿using JetBrains.Annotations;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -24,6 +25,7 @@ public class CockroachManager : MonoBehaviour
 
     [Header("蟑螂操作變數")]
     public bool CockroachMoveable = false;
+    public bool onDieImm = false;
 
     [Header("Hungry Value")]
     private float maxHunger = 100f;     // 飢餓最大值
@@ -76,17 +78,38 @@ public class CockroachManager : MonoBehaviour
     }
     public void CockroachDie()
     {
-        //開始死亡計算
-        if (allGameManger == null)
+        if (allGameManger.allLifeCount > 0)
         {
-            allGameManger = GameObject.Find("AllGameManager").GetComponent<AllGameManager>();
-
-            //Debug.LogError("Ak Error: the all game manager is empty & null");
+            StartCoroutine(CockroachDieCoroutine());
         }
         else
         {
             allGameManger.GameFail();
         }
+    }
+    public IEnumerator CockroachDieCoroutine()
+    {
+        onDieImm = true;
+        //wait animation play ready
+
+        //Play life -- animation
+        allGameManger.allLifeCount--;
+
+        yield return new WaitForSeconds(1);
+
+        if (allGameManger.allLifeCount > 0)
+        {
+            //rev
+            //track all the fem roach and return the closest one
+            //rev at the current pos.
+        }
+        else
+        {
+            allGameManger.GameFail();
+        }
+
+        yield return null;
+        onDieImm = false;
     }
 
     public void CockroachInjury(int injNum)
@@ -192,9 +215,10 @@ public class CockroachManager : MonoBehaviour
         UISync();
         // 避免飢餓值小於0
         if (currentHunger < 0f)
-       {
-          CockroachDie();
-       }
+        {
+            //TODO: update system
+            CockroachDie();
+        }
     }
 
     public void SetHungerDuration(float newDuration)

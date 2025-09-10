@@ -1,9 +1,8 @@
 ﻿
-using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using UnityEngine.UIElements.Experimental;
+using System.Collections.Generic;
 
 public class AllGameManager : MonoBehaviour
 {
@@ -55,6 +54,10 @@ public class AllGameManager : MonoBehaviour
     public int DNA = 0;
     public GameObject CockroachEvolutionCanvas;
 
+    [Header("Fem Cockroach")]
+    public int allLifeCount = 0;
+    public List<FemCockraochTrigger3D> femCockroachTrackList;
+
 
     void Start()
     {
@@ -90,6 +93,13 @@ public class AllGameManager : MonoBehaviour
             }
         }
         GameTimer();
+
+        allLifeCount = 0;
+        for (int i = 0; i < femCockroachTrackList.Count; i++)
+        {
+            allLifeCount += femCockroachTrackList[i].eggNumber;
+        }
+        //Sync all life complete
     }
 
     public void femCockraochGet()
