@@ -21,7 +21,7 @@ public class DoubleHolePair
     [HideInInspector] public Transform rightHoleExit3D;
 
     [Header("食物生成設定")]
-    public bool enableFood = false;                 // 是否啟用生成
+    public bool enableFood = true;                 // 是否啟用生成
     public enum FoodAmount
     {
         少量, // 3 個

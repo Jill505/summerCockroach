@@ -34,7 +34,7 @@ public class AllGameManager : MonoBehaviour
     [Header("計時設定")]
     public float gameMinutes = 3f; // 可以在 Inspector 設定幾分鐘
     private float timeRemaining;   
-    private bool isTimerRunning = true;
+    public bool isTimerRunning = true;
     public float gameProcessTime = 0;
 
     [Header("結算畫面")]
@@ -114,25 +114,25 @@ public class AllGameManager : MonoBehaviour
 
     void GameTimer()
     {
-        if (isTimerRunning)
-        {
-            if (timeRemaining > 0)
-            {
-                // 遞減時間
-                timeRemaining -= Time.deltaTime;
-                gameProcessTime += Time.deltaTime;
+        if (!isTimerRunning) return; // 暫停時不計時
 
-                // 更新 UI
-                UpdateTimerDisplay(timeRemaining);
-            }
-            else
-            {
-                // 時間到
-                timeRemaining = 0;
-                isTimerRunning = false;
-                TimeUp();
-            }
+        if (timeRemaining > 0)
+        {
+            // 遞減時間
+            timeRemaining -= Time.deltaTime;
+            gameProcessTime += Time.deltaTime;
+
+            // 更新 UI
+            UpdateTimerDisplay(timeRemaining);
         }
+        else
+        {
+            // 時間到
+            timeRemaining = 0;
+            isTimerRunning = false;
+            TimeUp();
+        }
+
     }
     void UpdateTimerDisplay(float timeToDisplay)
     {

@@ -73,12 +73,14 @@ public class EraManager : MonoBehaviour
     private FoodGenManger foodGenManger;
     private CockroachManager cockroachManager;
     private CameraViewToggle viewToggle;
+    private AllGameManager allGameManager;
 
     private void Start()
     {
         viewToggle = GameObject.Find("CameraManager").GetComponent<CameraViewToggle>();
         foodGenManger = GameObject.Find("FoodGenManager").GetComponent<FoodGenManger>();
         cockroachManager = GameObject.Find("3DCockroach").GetComponent<CockroachManager>();
+        allGameManager = GameObject.Find("AllGameManager").GetComponent<AllGameManager>();
         meteoriteManager = FindFirstObjectByType<MeteoriteManager>();
         eras = (Era[])System.Enum.GetValues(typeof(Era));
         currentEra = eras[0];
@@ -97,6 +99,8 @@ public class EraManager : MonoBehaviour
     {
         while (true)
         {
+            while (!allGameManager.isTimerRunning)
+                yield return null;
             float waitTime = eraValue.eraInterval; // 預設用隨機輪替的時間
 
             if (eraValue.mode == EraMode.依序輪替)
@@ -115,7 +119,15 @@ public class EraManager : MonoBehaviour
                 }
             }
 
-            yield return new WaitForSeconds(waitTime);
+            float timer = 0f;
+            while (timer < waitTime)
+            {
+                while (!allGameManager.isTimerRunning)
+                    yield return null;
+
+                timer += Time.deltaTime;
+                yield return null;
+            }
 
             if (eraValue.mode == EraMode.隨機輪替)
             {
@@ -231,6 +243,8 @@ public class EraManager : MonoBehaviour
     {
         while (currentEra == Era.MassExtinctionEra)
         {
+            while (!allGameManager.isTimerRunning)
+                yield return null;
             if (hotSprite != null)
             {
                 if (viewToggle.Is2D())
