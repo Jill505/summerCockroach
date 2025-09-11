@@ -9,6 +9,7 @@ TagManager:
   - FemRoach
   - Food
   - NPCRoach
+  - deadBody
   layers:
   - Default
   - TransparentFX

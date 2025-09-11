@@ -1,7 +1,6 @@
-﻿using JetBrains.Annotations;
-using System.Collections;
-using Unity.VisualScripting;
+﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 public class CockroachManager : MonoBehaviour
@@ -22,7 +21,7 @@ public class CockroachManager : MonoBehaviour
 
     public GameObject[] cockroachModels = new GameObject[7];
 
-    public bool dashing = false;    
+    public bool dashing = false;
 
     [Header("蟑螂操作變數")]
     public bool CockroachMoveable = false;
@@ -44,8 +43,16 @@ public class CockroachManager : MonoBehaviour
     public int basicSpeedLevel = 0;
     public int basicSpeedLevelMax = 3;
     public int hungerLevel = 0;
-    public int hungerLevelMax =3;
+    public int hungerLevelMax = 3;
     public int shield = 0;
+
+    [Header("Dead Variable")]
+    public GameObject deadBody;
+    public Animator deadCanvasAnimator;
+    public Text leftHealthText;
+    public GameObject[] deadCanvasFadeHideGroupe;
+    public GameObject deadCanvas;
+    public Coroutine cDCoroutine;
 
 
     public void GameStart()
@@ -64,7 +71,7 @@ public class CockroachManager : MonoBehaviour
     {
         Debug.Log(" heal");
         Hp += healNum;
-        if (Hp > 6) Hp = 6;
+        if (Hp > 2) Hp = 2;
         CockroachBodyPartSwitch();
 
         //Collect Food Stats
@@ -79,40 +86,142 @@ public class CockroachManager : MonoBehaviour
     }
     public void CockroachDie()
     {
+        if (cDCoroutine == null)
+        {
+            cDCoroutine = StartCoroutine(CockroachDieCoroutine());
+        }
+        else
+        {
+            Debug.Log("dead coroutine on clog");
+        }
+        /*
         if (allGameManger.allLifeCount > 0)
         {
-            StartCoroutine(CockroachDieCoroutine());
+            if (cDCoroutine == null)
+            {
+                cDCoroutine = StartCoroutine(CockroachDieCoroutine());
+            }
+        else
+        {
+            Debug.Log("dead coroutine on clog");
+        }
         }
         else
         {
             allGameManger.GameFail();
-        }
+        }*/
     }
     public IEnumerator CockroachDieCoroutine()
     {
         onDieImm = true;
-        allGameManger.isTimerRunning = true;  
-        //wait animation play ready
+        allGameManger.isTimerRunning = true;
+        deadCanvas.SetActive(true);
+        for (int i = 0; i < deadCanvasFadeHideGroupe.Length; i++)
+        {
+            deadCanvasFadeHideGroupe[i].SetActive(true);
+        }
+        //play sound effect
 
+        yield return new WaitForSeconds(0);
+
+
+        //wait animation play ready
+        deadCanvasAnimator.SetTrigger("nextAct");
+
+        leftHealthText.text = "剩餘子代  x" + (allGameManger.allLifeCount);
+        Debug.Log(allGameManger.allLifeCount + "bef");
+        yield return new WaitForSeconds(0.85f);
         //Play life -- animation
         allGameManger.allLifeCount--;
+        leftHealthText.text = "剩餘子代  x" + allGameManger.allLifeCount;
+
+        bool _shouldDie = false;
+        if (allGameManger.allLifeCount < 0)
+        { 
+            leftHealthText.color = Color.red;
+            _shouldDie = true;
+        }
+            Debug.Log(allGameManger.allLifeCount + "aft");
 
         yield return new WaitForSeconds(1);
 
-        if (allGameManger.allLifeCount > 0)
+        if (_shouldDie)
         {
-            //rev
-            //track all the fem roach and return the closest one
-            //rev at the current pos.
+
+            allGameManger.GameFail();
+
+            StopCoroutine(cDCoroutine);
         }
         else
         {
-            allGameManger.GameFail();
+            //glow
+            deadCanvasAnimator.SetTrigger("nextAct");
+        }
+        yield return new WaitForSeconds(1);
+
+        bool _revB = false;
+
+        //執行復活
+        if (allGameManger.allLifeCount < 0)
+        {
+        }
+        else
+        {
+            //rev
+            //track all the fem roach and return the closest one
+            float d = Vector3.Distance(transform.position, allGameManger.femCockroachTrackList[0].gameObject.transform.position);
+            int t = 0;
+            for (int i = 1; i < allGameManger.femCockroachTrackList.Count; i++)
+            {
+                if (allGameManger.femCockroachTrackList[i].eggNumber > 0)
+                {
+                    float nD = Vector3.Distance(transform.position, allGameManger.femCockroachTrackList[i].gameObject.transform.position);
+                    if (d > nD)
+                    {
+                        d = nD;
+                        t = i;
+                    }
+                }
+            }
+            //rev at the current pos.
+            Vector3 debugUpper = new Vector3(0, 4, 2);
+            if (allGameManger.femCockroachTrackList[t].coolDownCal < 15)
+            {
+                allGameManger.femCockroachTrackList[t].coolDownCal = 15f;
+                //已防落地馬上有蛋
+            }
+            transform.position = allGameManger.femCockroachTrackList[t].myEggPos.position + debugUpper;
+            allGameManger.femCockroachTrackList[t].eggNumber -= 1;
+
+
+            deadCanvasAnimator.SetTrigger("nextAct");
+            //fade
+            for (int i = 0; i < deadCanvasFadeHideGroupe.Length; i++)
+            {
+                deadCanvasFadeHideGroupe[i].SetActive(false);
+            }
+            yield return new WaitForSeconds(1f);
+            _revB = true;
         }
 
-        yield return null;
+        if (_revB)
+        {
+            Debug.Log("Rev B");
+            deadCanvas.SetActive(false);
+        }
         onDieImm = false;
         allGameManger.isTimerRunning = false;
+
+        deadCanvas.SetActive(false);
+
+        cDCoroutine = null;
+        StopAllCoroutines();
+        yield return null;
+    }
+
+    public void insDeadBody()
+    {
+
     }
 
     public void CockroachInjury(int injNum)
@@ -197,23 +306,23 @@ public class CockroachManager : MonoBehaviour
         }
         GameStart();//AutoGameStart
 
-        SetHungerDuration(hungerDuration); 
+        SetHungerDuration(hungerDuration);
 
     }
 
     void Update()
     {
-       if (Input.GetKeyDown(KeyCode.K))
-       {
-          CockroachInjury(1);
-       }
-       if (Input.GetKeyDown(KeyCode.L))
-       {
-          CockroachHealing(1);
-       }
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            CockroachInjury(1);
+        }
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            CockroachHealing(1);
+        }
 
-       // 每秒衰減飢餓值
-       currentHunger -= hungerDecayRate * Time.deltaTime;
+        // 每秒衰減飢餓值
+        currentHunger -= hungerDecayRate * Time.deltaTime;
 
         UISync();
         // 避免飢餓值小於0
@@ -275,13 +384,13 @@ public class CockroachManager : MonoBehaviour
     }
     void setState(Image[] images, int currentValue, Button tarButton)
     {
-        for (int i = 0; i < images.Length && i< currentValue; i++)
+        for (int i = 0; i < images.Length && i < currentValue; i++)
         {
             images[i].sprite = lightOn;
         }
         if ((currentValue < images.Length))
         {
-            tarButton.interactable = true;   
+            tarButton.interactable = true;
         }
         else
         {
