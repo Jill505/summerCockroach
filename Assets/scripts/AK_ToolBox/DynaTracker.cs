@@ -6,8 +6,14 @@ public class DynaTracker : MonoBehaviour
     public bool allowTracking;
     public List<GameObject> trackTargetRoach;
     public Rigidbody myRb;
+    private CockroachMove mainMoveScript;
 
     public float mySpeed = 6f;
+
+    private void Start()
+    {
+        mainMoveScript = GameObject.Find("3DCockroach").GetComponent<CockroachMove>();
+    }
 
     void Update()
     {
@@ -36,11 +42,28 @@ public class DynaTracker : MonoBehaviour
         {
             myRb.linearVelocity = Vector3.zero;
         }
+        if (mainMoveScript.isInTheHole == true)
+        {
+            GameObject playerObj = GameObject.FindWithTag("Player");
+            if (playerObj != null)
+            {
+                trackTargetRoach.Remove(playerObj);
+            }
+        }
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("NPCRoach") || other.CompareTag("Player"))
+        if (other.CompareTag("NPCRoach") )
+        {
+            if (!trackTargetRoach.Contains(other.gameObject))
+            {
+                //register it into the obj zone
+                trackTargetRoach.Add(other.gameObject);
+            }
+        }
+
+        if (other.CompareTag("Player") && mainMoveScript.isInTheHole == false)
         {
             if (!trackTargetRoach.Contains(other.gameObject))
             {
@@ -51,7 +74,7 @@ public class DynaTracker : MonoBehaviour
     }
 
     private void OnTriggerExit(Collider other)
-    {
+    {        
         trackTargetRoach.Remove(other.gameObject);
     }
 }

@@ -22,6 +22,8 @@ public class Scene2DManager : MonoBehaviour
         [HideInInspector] public EdgeCollider2D spawnBounds; // 物件生成範圍
         [HideInInspector] public Transform insPos1;
         [HideInInspector] public Transform insPos2;
+        [HideInInspector] public EdgeCollider2D spawnSpiderAreaL;
+        [HideInInspector] public EdgeCollider2D spawnSpiderAreaR;
         public void Initialize()
         {
             if (parent == null)
@@ -33,6 +35,10 @@ public class Scene2DManager : MonoBehaviour
             spawnBounds = parent.Find("spawnBounds")?.GetComponent<EdgeCollider2D>();
             insPos1 = parent.Find("insPos1");
             insPos2 = parent.Find("insPos2");
+            spawnSpiderAreaL = parent.Find("spawnSpiderAreaL")?.GetComponent<EdgeCollider2D>();
+            spawnSpiderAreaR = parent.Find("spawnSpiderAreaR")?.GetComponent<EdgeCollider2D>();
+
+
 
             if (cameraBounds == null) Debug.LogWarning(parent.name + " 缺少 cameraBounds");
             if (spawnBounds == null) Debug.LogWarning(parent.name + " 缺少 spawnBounds");
@@ -49,6 +55,7 @@ public class Scene2DManager : MonoBehaviour
     [Header("2DScenePrefab")]
     public GameObject Food2D;
     public GameObject Spider2D;
+    public GameObject Spider2DTrigger;
 
     private void Awake()
     {

@@ -69,6 +69,8 @@ public class CockroachMove : MonoBehaviour
 
     public moveMode myMoveMode = moveMode.AutoCameraMove;
 
+    public bool isInTheHole;
+
     public void UISync()
     {
         if (myRunAmount != null) myRunAmount.fillAmount = runAbleTimeCal / runAbleTime;
@@ -179,6 +181,7 @@ public class CockroachMove : MonoBehaviour
 
         if (myMoveMode == moveMode.AutoCameraMove)
         {
+            isInTheHole = false;
             AutoPlayerMove();
             if (myDirect != myCManager.myCameraLogic.CameraDirect)
             {
@@ -192,6 +195,7 @@ public class CockroachMove : MonoBehaviour
         {
             //TODO: Let Player control the camera freely.
             //TODO: there's a bug need to be fix.
+            isInTheHole = false;
             float mouseXInput = Input.GetAxis("Mouse X");
             if (mouseXInput > mouseInputLeast)
             {
@@ -206,7 +210,14 @@ public class CockroachMove : MonoBehaviour
         {
             StartCoroutine(DelayedStop(delayStopTime));
         }
+        
+        else
+        {
+            isInTheHole = true;
+        }
+
         UISync();
+
     }
     
     private IEnumerator DelayedStop(float delayStopTime)

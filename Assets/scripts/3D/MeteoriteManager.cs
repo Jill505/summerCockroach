@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MeteoriteManager : MonoBehaviour
 {
+    private CockroachMove mainMoveScript;
     public GameObject Meteorite;
     public GameObject Player;
 
@@ -15,7 +16,7 @@ public class MeteoriteManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        mainMoveScript = GameObject.Find("3DCockroach").GetComponent<CockroachMove>();
     }
 
     // Update is called once per frame
@@ -41,7 +42,7 @@ public class MeteoriteManager : MonoBehaviour
         Vector3 RanSpawn = new Vector3(Random.Range(SpawnXmZm.position.x, SpawnXpZp.position.x), SpawnXpZp.position.y, Random.Range(SpawnXmZm.position.z, SpawnXpZp.position.z));
         Vector3 RanTo = new Vector3(Random.Range(LandXmZm.position.x, LandXpZp.position.x), LandXpZp.position.y, Random.Range(LandXmZm.position.z, LandXpZp.position.z));
 
-        if (isAimPlayer)
+        if (isAimPlayer && mainMoveScript.isInTheHole == false)
         {
             GameObject obj = Instantiate(Meteorite, RanSpawn, Quaternion.identity);
             obj.GetComponent<Meteorite>().from = RanSpawn;

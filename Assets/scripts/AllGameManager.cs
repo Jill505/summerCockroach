@@ -218,7 +218,7 @@ public enum moveMode
 {
     AutoCameraMove,
     PlayerCameraMove,
-
+    SpiderEvent,
     twoDMove,
     ChangeSceneMoment
 }

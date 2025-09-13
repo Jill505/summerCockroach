@@ -22,6 +22,7 @@ public class CockroachManager : MonoBehaviour
     public GameObject[] cockroachModels = new GameObject[7];
 
     public bool dashing = false;
+    
 
     [Header("蟑螂操作變數")]
     public bool CockroachMoveable = false;

@@ -85,13 +85,15 @@ public class DoubleHoleSystem : MonoBehaviour
     private List<GameObject> spawnedSpider = new List<GameObject>();
 
     private GameObject food;
-    private GameObject spider;                  // 被隱藏的蜘蛛物件    
+    private GameObject spider;                  // 被隱藏的蜘蛛物件
+                                                // 
+    public HoleSide lastEnterSide { get; private set; } // 紀錄玩家是從哪邊進來的
 
 
     private void Awake()
     {
         food = GameObject.Find("AllGameManager").GetComponent<Scene2DManager>().Food2D;
-        spider = GameObject.Find("AllGameManager").GetComponent<Scene2DManager>().Spider2D;
+        spider = GameObject.Find("AllGameManager").GetComponent<Scene2DManager>().Spider2DTrigger;
         viewToggle = GameObject.Find("CameraManager").GetComponent<CameraViewToggle>();
         cockroachMove3D = GameObject.Find("3DCockroach").GetComponent<CockroachMove>();
         cockroachMove2D = GameObject.Find("2DCockroach").GetComponent<Cockroach2DMove>();
@@ -141,9 +143,13 @@ public class DoubleHoleSystem : MonoBehaviour
         if (cockroachMove2D == null) return;
         if (viewToggle.Is2D()) return;
 
+        lastEnterSide = side; // ✅ 紀錄進來的方向
+
         // 取得對應 Pair 的場景名稱
         var pair = pairs[pairIndex];
         if (pair == null) return;
+
+        pair.InitSelectedScene();
 
         if (Scene2DManager.Instance != null)
         {
@@ -198,6 +204,7 @@ public class DoubleHoleSystem : MonoBehaviour
         StartCoroutine(viewToggle.StartViewSwitch(true));
         cockroachMove3D.transform.position = exitPoint.position;
         currentPairIndex = -1;
+        DesObj();
     }
 
     private bool IsValidPair(int index)
@@ -205,7 +212,7 @@ public class DoubleHoleSystem : MonoBehaviour
         return pairs != null && index >= 0 && index < pairs.Length;
     }
 
-    void DesObj()
+    public void DesObj()
     {
         foreach (GameObject obj in spawnedFood)
         {
@@ -259,12 +266,29 @@ public class DoubleHoleSystem : MonoBehaviour
     {
         if (spider == null) return;
 
-        Vector2[] points = spawnArea.points;
+        EdgeCollider2D spiderArea = null;
+
+        // 依照玩家進洞方向決定生成區域
+        if (Scene2DManager.Instance != null)
+        {
+            var sceneData = Scene2DManager.Instance.GetScene(pair.selectedScene);
+            if (sceneData != null)
+            {
+                if (lastEnterSide == HoleSide.Left)
+                    spiderArea = sceneData.spawnSpiderAreaL;
+                else
+                    spiderArea = sceneData.spawnSpiderAreaR;
+            }
+        }
+
+        if (spiderArea == null) return;
+
+        Vector2[] points = spiderArea.points;
 
         // 固定生成 1 隻
         int segmentIndex = Random.Range(0, points.Length - 1);
-        Vector2 worldStart = spawnArea.transform.TransformPoint(points[segmentIndex]);
-        Vector2 worldEnd = spawnArea.transform.TransformPoint(points[segmentIndex + 1]);
+        Vector2 worldStart = spiderArea.transform.TransformPoint(points[segmentIndex]);
+        Vector2 worldEnd = spiderArea.transform.TransformPoint(points[segmentIndex + 1]);
         float t = Random.Range(0f, 1f);
         Vector2 spawnPos2D = Vector2.Lerp(worldStart, worldEnd, t);
         spawnPos2D.y += pair.spawnOffsetY;
@@ -273,8 +297,6 @@ public class DoubleHoleSystem : MonoBehaviour
         GameObject newObj = Instantiate(spider, spawnPos3D, Quaternion.identity);
         spawnedSpider.Add(newObj);
 
-        var spiderHurt = newObj.GetComponent<SpiderHurtPlayer>();
-        if (spiderHurt != null) spiderHurt.ResetHurt();
     }
 
 #if UNITY_EDITOR
