@@ -27,6 +27,7 @@ public class FemCockraochTrigger3D : MonoBehaviour
         allGameManager = GameObject.Find("AllGameManager").GetComponent<AllGameManager>();
         femaleCockroachInfo = GetComponent<FemaleCockroachInfo>();
         allGameManager.femCockroachTrackList.Add(this);
+        myEgg = transform.GetChild(0).gameObject;
     }
     private void Update()
     {
