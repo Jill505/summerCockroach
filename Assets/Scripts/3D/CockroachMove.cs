@@ -221,8 +221,8 @@ public class CockroachMove : MonoBehaviour
 
         UISync();
 
-        runSpeed = _spp + (myCManager.dashLevel * 2.5f);    
-        myRealVelocity = _fpp + (myCManager.dashLevel * 2);
+        //runSpeed = _spp + (myCManager.dashLevel * 2.5f);    
+        //myRealVelocity = _fpp + (myCManager.dashLevel * 2);
     }
 
     private IEnumerator DelayedStop(float delayStopTime)
