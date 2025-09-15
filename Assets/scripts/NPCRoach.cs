@@ -38,6 +38,9 @@ public class NPCRoach : MonoBehaviour
 
     public GameObject myMesh;
 
+    public float femRoachAdditional = 1.2f;
+    public float foodRoachAdditional = 1.2f;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -95,17 +98,26 @@ public class NPCRoach : MonoBehaviour
     public void goTarget()
     {
         transform.LookAt(nextPos);
+        Vector3 rot3 = transform.localEulerAngles;
+        rot3 = new Vector3(0, rot3.y, 0);
+        transform.localEulerAngles = rot3;
         myRb.linearVelocity = transform.forward * moveSpeed;
     }
     public void goFem()
     {
         transform.LookAt(targetFemPos);
-        myRb.linearVelocity = transform.forward * moveSpeed * 4;
+        Vector3 rot3 = transform.localEulerAngles;
+        rot3 = new Vector3(0, rot3.y, 0);
+        transform.localEulerAngles = rot3;
+        myRb.linearVelocity = transform.forward * moveSpeed * femRoachAdditional;
     }
     public void goFood()
     {
         transform.LookAt(targetFoodPos);
-        myRb.linearVelocity = transform.forward * moveSpeed * 2;
+        Vector3 rot3 = transform.localEulerAngles;
+        rot3 = new Vector3(0, rot3.y, 0);
+        transform.localEulerAngles = rot3;
+        myRb.linearVelocity = transform.forward * moveSpeed * foodRoachAdditional;
     }
 
     public void rollTarget()
