@@ -27,7 +27,7 @@ public class testSpieder : MonoBehaviour
             if (countDown <= 0 && !viewToggle.Is2D())
             {
                 //cManager.CockroachDie();
-                cManager.CockroachInjury(1);
+                cManager.CockroachInjury(damage);
                 cManager.shield = 0;
                 countDown = damageCoolDown;
             }

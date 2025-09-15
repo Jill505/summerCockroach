@@ -200,8 +200,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chaseSpeed: 8
   isChasing: 0
-  burstSpeed: 15
-  burstInterval: 1.5
+  burstSpeed: 16
+  burstInterval: 1
   burstDuration: 3
 --- !u!70 &2309636123998265911
 CapsuleCollider2D:

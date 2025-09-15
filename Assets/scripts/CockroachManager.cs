@@ -164,6 +164,8 @@ public class CockroachManager : MonoBehaviour
         {
             //glow
             deadCanvasAnimator.SetTrigger("nextAct");
+            CameraViewToggle cameraViewToggle = GameObject.Find("CameraManager").GetComponent<CameraViewToggle>(); ;
+            cameraViewToggle.SetTo3DView();
         }
         yield return new WaitForSeconds(1);
 

@@ -73,7 +73,7 @@ public class SpiderEventTrigger : MonoBehaviour
             // ¬Û¾÷·Æ¦V»jµï¡A1¬í·Æ°Ê¡A°±¯d2¬í
             cameraLogic2D = GameObject.Find("2DCamera").GetComponent<CameraLogic2D>();
             cameraLogic2D.SetSpiderTrigger(this);
-            cameraLogic2D.MoveCameraToTarget(spider, 3f, 1f);
+            cameraLogic2D.MoveCameraToTarget(spider, 3f, 0.7f);
         }
 
     }

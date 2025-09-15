@@ -1649,7 +1649,7 @@ Transform:
   m_GameObject: {fileID: 74350738}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1025.2, y: -509.97, z: 304.93}
+  m_LocalPosition: {x: 1008.81, y: -509.97, z: 304.93}
   m_LocalScale: {x: 2.3380826, y: 2.3380826, z: 2.3380826}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1692,8 +1692,13 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -15.369105, y: -0.18149354}
-  - {x: -12.62922, y: 0.50634146}
+  - {x: -17.891611, y: 2.579179}
+  - {x: -16.658705, y: 2.27376}
+  - {x: -15.788867, y: 2.3287632}
+  - {x: -15.39458, y: 2.196751}
+  - {x: -15.015069, y: 1.8343515}
+  - {x: -14.588698, y: 1.7054068}
+  - {x: -14.450838, y: 1.6573015}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
@@ -4078,7 +4083,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1229442373}
         m_TargetAssemblyTypeName: CockroachManager, Assembly-CSharp
         m_MethodName: AddBuff
         m_Mode: 3
@@ -5128,11 +5133,13 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -1.2374341, y: -0.2743091}
-  - {x: -0.30340967, y: -0.29326716}
-  - {x: 0.56658465, y: 0.090629876}
-  - {x: 0.95645964, y: 0.53233594}
-  - {x: 1.6565988, y: 0.6456628}
+  - {x: 0.43906757, y: -0.08446199}
+  - {x: 0.848438, y: 0.1653156}
+  - {x: 1.1207111, y: 0.46982804}
+  - {x: 1.5494299, y: 0.56295687}
+  - {x: 2.0305152, y: 0.54531}
+  - {x: 2.624451, y: 0.36346406}
+  - {x: 3.5428002, y: 0.5462688}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
@@ -8371,7 +8378,7 @@ MonoBehaviour:
   myCol: {fileID: 424919215}
   mainObjectTransform: {fileID: 1681068580}
   animator: {fileID: 1681068581}
-  moveSpeed: 6
+  moveSpeed: 10
   runSpeed: 2
   rayLength: 1
   groundLayer:
@@ -10974,7 +10981,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1229442373}
         m_TargetAssemblyTypeName: CockroachManager, Assembly-CSharp
         m_MethodName: AddBuff
         m_Mode: 3
@@ -18000,10 +18007,10 @@ MonoBehaviour:
   gameEndCanvas: {fileID: 48446024}
   gameFailCanvas: {fileID: 1581187331}
   DemoResultCanvas: {fileID: 486465091}
-  showGameResultCanvas: {fileID: 0}
-  surTimeShowcase: {fileID: 0}
-  femCockroachCollectShowcase: {fileID: 0}
-  foodCollectShowcase: {fileID: 0}
+  showGameResultCanvas: {fileID: 826986642}
+  surTimeShowcase: {fileID: 998937068}
+  femCockroachCollectShowcase: {fileID: 1554187438}
+  foodCollectShowcase: {fileID: 1491906106}
   DNA: 0
   CockroachEvolutionCanvas: {fileID: 2068503621}
   allLifeCount: 0
@@ -18210,6 +18217,8 @@ MonoBehaviour:
   eras: 
   dynaPrefab: {fileID: 8841291091811731393, guid: 5ae930230d7d57d498375a93fc3bf9fc, type: 3}
   hotSprite: {fileID: 1610518389}
+  FoodGenNum: 7
+  FoodGenDur: 3
 --- !u!1001 &961429313
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21170,7 +21179,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1229442373}
         m_TargetAssemblyTypeName: CockroachManager, Assembly-CSharp
         m_MethodName: AddBuff
         m_Mode: 3
@@ -26060,7 +26069,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1229442373}
         m_TargetAssemblyTypeName: CockroachManager, Assembly-CSharp
         m_MethodName: AddBuff
         m_Mode: 3
@@ -38356,7 +38365,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1229442373}
         m_TargetAssemblyTypeName: CockroachManager, Assembly-CSharp
         m_MethodName: AddBuff
         m_Mode: 3
