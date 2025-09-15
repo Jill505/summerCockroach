@@ -151,6 +151,8 @@ public class CockroachManager : MonoBehaviour
         }
             Debug.Log(allGameManger.allLifeCount + "aft");
 
+        
+
         yield return new WaitForSeconds(1);
 
         if (_shouldDie)
@@ -164,6 +166,8 @@ public class CockroachManager : MonoBehaviour
         {
             //glow
             deadCanvasAnimator.SetTrigger("nextAct");
+            CameraViewToggle cameraViewToggle = GameObject.Find("CameraManager").GetComponent<CameraViewToggle>(); ;
+            cameraViewToggle.SetTo3DView();
         }
         yield return new WaitForSeconds(1);
 

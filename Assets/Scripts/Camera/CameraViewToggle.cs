@@ -113,7 +113,7 @@ public class CameraViewToggle : MonoBehaviour
 
     }
 
-    private void SetTo3DView()
+    public void SetTo3DView()
     {
         is2D = false;
         transitionQuad2D.SetActive(false);

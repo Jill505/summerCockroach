@@ -18210,6 +18210,8 @@ MonoBehaviour:
   eras: 
   dynaPrefab: {fileID: 8841291091811731393, guid: 5ae930230d7d57d498375a93fc3bf9fc, type: 3}
   hotSprite: {fileID: 1610518389}
+  FoodGenNum: 7
+  FoodGenDur: 3
 --- !u!1001 &961429313
 PrefabInstance:
   m_ObjectHideFlags: 0

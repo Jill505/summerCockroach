@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 public class SpiderEventTrigger : MonoBehaviour
 {
@@ -8,9 +8,9 @@ public class SpiderEventTrigger : MonoBehaviour
     private DoubleHoleSystem doubleHoleSystem;
 
     private GameObject spiderPrefab;
-    private GameObject spiderInstance; // «O¦s¥Í¦¨ªº»jµï¤Ş¥Î
+    private GameObject spiderInstance; // ä¿å­˜ç”Ÿæˆçš„èœ˜è››å¼•ç”¨
 
-    private bool eventStarted = false; //  ¨Æ¥ó¬O§_¤w¶}©l
+    private bool eventStarted = false; //  äº‹ä»¶æ˜¯å¦å·²é–‹å§‹
     [HideInInspector] public bool startChase = false;
 
 
@@ -20,10 +20,10 @@ public class SpiderEventTrigger : MonoBehaviour
     private Scene2DManager.Scene2D sceneData;
     void Start()
     {
-        // ¨ú±o3DÁ­½¸ªº²¾°Ê²Õ¥ó
+        // å–å¾—3DèŸ‘è‚çš„ç§»å‹•çµ„ä»¶
         cockroachMove = GameObject.Find("3DCockroach").GetComponent<CockroachMove>();
         doubleHoleSystem = GameObject.Find("DoubleHoleManager").GetComponent<DoubleHoleSystem>();
-        // ¨ú±o³õ´º¸ê®Æ
+        // å–å¾—å ´æ™¯è³‡æ–™
         sceneData = Scene2DManager.Instance.GetScene(Scene2DDoubleHole.Cave);
         spiderPrefab = Scene2DManager.Instance.Spider2D.gameObject;
     }
@@ -32,24 +32,24 @@ public class SpiderEventTrigger : MonoBehaviour
     {
         if (startChase)
         {
-            cockroachMove.myMoveMode = moveMode.twoDMove; // ¶}©ñª±®a²¾°Ê
+            cockroachMove.myMoveMode = moveMode.twoDMove; // é–‹æ”¾ç©å®¶ç§»å‹•
 
             if (spiderInstance != null)
             {
                 var spiderHurt = spiderInstance.GetComponent<SpiderHurtPlayer>();
                 if (spiderHurt != null)
-                    spiderHurt.isChasing = true; // °l³v¶}©l
+                    spiderHurt.isChasing = true; // è¿½é€é–‹å§‹
             }
-            startChase = false; // Á×§K­«½Æ
+            startChase = false; // é¿å…é‡è¤‡
         }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        // °²³]2DÁ­½¸¦³¤@­ÓTag¥s "Player"
+        // å‡è¨­2DèŸ‘è‚æœ‰ä¸€å€‹Tagå« "Player"
         if (other.CompareTag("Player") && !eventStarted) 
         {
-            // 2DÁ­½¸¶i¤JÄ²µoÂI¡A¸T¤î²¾°Ê
+            // 2DèŸ‘è‚é€²å…¥è§¸ç™¼é»ï¼Œç¦æ­¢ç§»å‹•
             eventStarted = true;
 
             cockroachMove.myMoveMode = moveMode.SpiderEvent;
@@ -70,7 +70,7 @@ public class SpiderEventTrigger : MonoBehaviour
     {
         if (spider != null)
         {
-            // ¬Û¾÷·Æ¦V»jµï¡A1¬í·Æ°Ê¡A°±¯d2¬í
+            // ç›¸æ©Ÿæ»‘å‘èœ˜è››ï¼Œ1ç§’æ»‘å‹•ï¼Œåœç•™2ç§’
             cameraLogic2D = GameObject.Find("2DCamera").GetComponent<CameraLogic2D>();
             cameraLogic2D.SetSpiderTrigger(this);
             cameraLogic2D.MoveCameraToTarget(spider, 3f, 1f);

@@ -163,8 +163,6 @@ public class AllGameManager : MonoBehaviour
         // 顯示結算畫面
         ShowGameResult();
         DemoResult();
-
-
     }
     
     void DemoResult()
