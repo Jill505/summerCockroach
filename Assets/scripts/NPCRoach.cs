@@ -53,31 +53,37 @@ public class NPCRoach : MonoBehaviour
 
         //StartCoroutine(myCoroutineUpdate());
     }
+    bool fixedUpdateAllowCheckClog = false;
 
     private void FixedUpdate()
     {
         hasFemInZone = false;
         hasFoodInZone = false;
+        fixedUpdateAllowCheckClog = false;
     }
     private void Update()
     {
-        if (hasFemInZone)
+        if (!fixedUpdateAllowCheckClog)
         {
-            //Do Track Fem
-            goFem();
-        }
-        else
-        {
-            if (hasFoodInZone)
+            if (hasFemInZone)
             {
-                //Do Track Food
-                goFood();
+                //Do Track Fem
+                goFem();
             }
             else
             {
-                //Do Normal
-                goTarget();
+                if (hasFoodInZone)
+                {
+                    //Do Track Food
+                    goFood();
+                }
+                else
+                {
+                    //Do Normal
+                    goTarget();
+                }
             }
+            fixedUpdateAllowCheckClog = true;
         }
     }
 
