@@ -352,18 +352,32 @@ public class CockroachManager : MonoBehaviour
         }
     }
     GameObject _shield_Obj;
+
+    private float baseHungerDuration;   // 基礎飢餓時間（不含buff）
+    private float finalHungerDuration;
     public void SetHungerDuration(float newDuration)
     {
         if (newDuration > 0)
         {
-            hungerDuration = newDuration;
-            hungerDecayRate = maxHunger / hungerDuration;
-            Debug.Log($"飢餓耗盡時間已設定為: {hungerDuration} 秒");
+            baseHungerDuration = newDuration; // 只存基礎值
+            ApplyHungerBuff();                // 重新計算buff後的值
         }
         else
         {
             Debug.LogWarning("SetHungerDuration: 輸入值必須大於 0");
         }
+    }
+
+    // 套用buff計算最終耗損時間
+    private void ApplyHungerBuff()
+    {
+        float multiplier = 1f + (0.2f * hungerLevel);
+
+        finalHungerDuration = baseHungerDuration * multiplier;
+
+        hungerDecayRate = maxHunger / finalHungerDuration;
+
+        Debug.Log($"飢餓耗盡時間: 基礎{baseHungerDuration} 秒 → 最終 {finalHungerDuration} 秒 (等級 {hungerLevel})");
     }
     [Header("UI系統")]
     public Button dashLevelButt;
@@ -440,6 +454,7 @@ public class CockroachManager : MonoBehaviour
             //hunger level
             case 3:
                 hungerLevel++;
+                ApplyHungerBuff();
                 break;
 
             //shield
