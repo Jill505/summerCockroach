@@ -134,14 +134,14 @@ public class CockroachMove : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftShift) && runAbleTimeCal > 0)
         {
             myCManager.dashing = true;  
-            myRealVelocity = myMaxVelocity * runSpeed;
+            myRealVelocity = (myMaxVelocity * runSpeed) + (myCManager.dashLevel * 1.5f);
             runNotCDCal = runNotCD;
             runAbleTimeCal -= Time.deltaTime;
         }
         else
         {
             myCManager.dashing = false;
-            myRealVelocity = myMaxVelocity;
+            myRealVelocity = myMaxVelocity + (myCManager.dashLevel * 1.2f);
 
             if (HorVelocity > myMaxVelocity)
             {
