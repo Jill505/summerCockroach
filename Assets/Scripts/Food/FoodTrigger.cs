@@ -39,10 +39,11 @@ public class FoodTrigger : MonoBehaviour
     }
     public void heal()
     {
-            cManager.CockroachHealing(healAmount);
-            Debug.Log("回血了，目前血量: " + cManager.Hp);
-            OnDestroy();
-            Destroy(gameObject);
+        cManager.CockroachHealing(healAmount);
+        
+        Debug.Log("回血了，目前血量: " + cManager.Hp);   
+        OnDestroy();
+        Destroy(gameObject);
     }
     void OnDestroy()
     {

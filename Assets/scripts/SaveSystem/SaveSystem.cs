@@ -34,7 +34,7 @@ public class SaveSystem : MonoBehaviour
 
     private void Start()
     {
-        CleanSaveFile();
+        //CleanSaveFile();
         Load();
     }
 }
