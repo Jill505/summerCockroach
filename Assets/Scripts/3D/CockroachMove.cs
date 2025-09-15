@@ -134,14 +134,14 @@ public class CockroachMove : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftShift) && runAbleTimeCal > 0)
         {
             myCManager.dashing = true;  
-            myRealVelocity = (myMaxVelocity * runSpeed) + (myCManager.dashLevel * 1.5f);
+            myRealVelocity = (myMaxVelocity * runSpeed) + (myCManager.basicSpeedLevel * 1.5f);
             runNotCDCal = runNotCD;
             runAbleTimeCal -= Time.deltaTime;
         }
         else
         {
             myCManager.dashing = false;
-            myRealVelocity = myMaxVelocity + (myCManager.dashLevel * 1.2f);
+            myRealVelocity = myMaxVelocity + (myCManager.basicSpeedLevel * 1.2f);
 
             if (HorVelocity > myMaxVelocity)
             {
@@ -150,7 +150,7 @@ public class CockroachMove : MonoBehaviour
             runNotCDCal -= Time.deltaTime;
             if (runNotCDCal < 0)
             {
-                runAbleTimeCal += runRecoverPerSec * Time.deltaTime;
+                runAbleTimeCal += (runRecoverPerSec + (myCManager.dashRecoverLevel * 1.3f)) * Time.deltaTime;
                 if (runAbleTimeCal > runAbleTime)
                 {
                     runAbleTimeCal = runAbleTime;
@@ -169,18 +169,18 @@ public class CockroachMove : MonoBehaviour
         //myRb.linearVelocity = subObjectTransform.eulerAngles;
     }
 
-    float _spp;
-    float _fpp;
+    float _MaxDash;
 
     void Start()
     {
-        _spp = runSpeed;
-        _fpp = myRealVelocity;
+        _MaxDash = runAbleTime;
     }
 
     void Update()
     {
         MakeGravity();
+
+        runAbleTime = _MaxDash + myCManager.dashLevel;
 
         if (myMoveMode == moveMode.AutoCameraMove)
         {

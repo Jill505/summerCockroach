@@ -26,12 +26,19 @@ public class testSpieder : MonoBehaviour
         {
             if (countDown <= 0 && !viewToggle.Is2D())
             {
-                cManager.CockroachDie();
+                //cManager.CockroachDie();
+                cManager.CockroachInjury(1);
+                cManager.shield = 0;
                 countDown = damageCoolDown;
             }
             else
             {
             }
+        }
+
+       if (other.CompareTag("NPCRoach"))
+        {
+
         }
     }
 }

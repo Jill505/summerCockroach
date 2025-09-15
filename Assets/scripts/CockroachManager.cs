@@ -72,7 +72,14 @@ public class CockroachManager : MonoBehaviour
     {
         Debug.Log(" heal");
         Hp += healNum;
-        if (Hp > 2) Hp = 2;
+
+        if (shield >= 1)
+        {
+            if (Hp > 2) Hp = 2;
+        }
+        else { 
+            if(Hp>1) Hp = 1;
+        }
         CockroachBodyPartSwitch();
 
         //Collect Food Stats
@@ -309,6 +316,8 @@ public class CockroachManager : MonoBehaviour
 
         SetHungerDuration(hungerDuration);
 
+
+        _shield_Obj = GameObject.Find("shield");
     }
 
     void Update()
@@ -332,8 +341,17 @@ public class CockroachManager : MonoBehaviour
             //TODO: update system
             CockroachDie();
         }
-    }
 
+        if (shield > 0)
+        {
+            _shield_Obj.SetActive(true);
+        }
+        else
+        {
+            _shield_Obj.SetActive(false);
+        }
+    }
+    GameObject _shield_Obj;
     public void SetHungerDuration(float newDuration)
     {
         if (newDuration > 0)
