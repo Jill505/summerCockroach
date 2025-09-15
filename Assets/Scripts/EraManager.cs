@@ -75,6 +75,10 @@ public class EraManager : MonoBehaviour
     private CameraViewToggle viewToggle;
     private AllGameManager allGameManager;
 
+    [Header("食物生成間隔")]
+    public int FoodGenNum = 7;
+    public int FoodGenDur = 3;
+
     private void Start()
     {
         viewToggle = GameObject.Find("CameraManager").GetComponent<CameraViewToggle>();
@@ -87,6 +91,7 @@ public class EraManager : MonoBehaviour
 
         // 開始定時切換
         eraCoroutine = StartCoroutine(EraRoutine());
+        StartCoroutine(cycleCall());
 
         if (hotSprite != null)
         {
@@ -169,6 +174,17 @@ public class EraManager : MonoBehaviour
                 MEEvent();
                 break;
         }
+    }
+
+    public void CycleSpawnFood()
+    {
+        foodGenManger.SetGenFoodCount(FoodGenNum);
+    }
+    IEnumerator cycleCall()
+    {
+        CycleSpawnFood();
+        yield return new WaitForSeconds(FoodGenDur);
+        StartCoroutine (cycleCall());
     }
 
     void PEEvent()

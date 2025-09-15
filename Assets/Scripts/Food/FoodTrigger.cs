@@ -36,6 +36,10 @@ public class FoodTrigger : MonoBehaviour
         {
             heal();
         }
+        if (other.CompareTag("NPCRoach"))
+        {
+            Destroy(gameObject);
+        }
     }
     public void heal()
     {

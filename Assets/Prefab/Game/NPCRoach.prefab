@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7053327004145363862}
   m_Layer: 0
   m_Name: NPCRoach
-  m_TagString: Untagged
+  m_TagString: NPCRoach
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -195,7 +195,7 @@ GameObject:
   - component: {fileID: 1091758179988651061}
   m_Layer: 0
   m_Name: NPCRoachMesh
-  m_TagString: Untagged
+  m_TagString: NPCRoach
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -346,6 +346,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 924f3aa1cf4569c48bca322bc5d011af, type: 3}
       propertyPath: m_Name
       value: roach
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 924f3aa1cf4569c48bca322bc5d011af, type: 3}
+      propertyPath: m_TagString
+      value: NPCRoach
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

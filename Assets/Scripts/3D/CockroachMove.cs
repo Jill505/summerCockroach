@@ -169,10 +169,13 @@ public class CockroachMove : MonoBehaviour
         //myRb.linearVelocity = subObjectTransform.eulerAngles;
     }
 
+    float _spp;
+    float _fpp;
 
     void Start()
     {
-
+        _spp = runSpeed;
+        _fpp = myRealVelocity;
     }
 
     void Update()
@@ -210,7 +213,7 @@ public class CockroachMove : MonoBehaviour
         {
             StartCoroutine(DelayedStop(delayStopTime));
         }
-        
+
         else
         {
             isInTheHole = true;
@@ -218,8 +221,10 @@ public class CockroachMove : MonoBehaviour
 
         UISync();
 
+        runSpeed = _spp + (myCManager.dashLevel * 2.5f);    
+        myRealVelocity = _fpp + (myCManager.dashLevel * 2);
     }
-    
+
     private IEnumerator DelayedStop(float delayStopTime)
     {
         yield return new WaitForSeconds(delayStopTime);

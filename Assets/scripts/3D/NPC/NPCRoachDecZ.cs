@@ -12,9 +12,12 @@ public class NPCRoachDecZ : MonoBehaviour
     {
         if (other.CompareTag("FemRoach"))
         {
-            //Set it as target;
-            myNPC.hasFemInZone = true;
-            myNPC.targetFemPos = other.transform.position;
+            if (other.gameObject.GetComponent<FemCockraochTrigger3D>().allowBreed)
+            {
+                //Set it as target;
+                myNPC.hasFemInZone = true;
+                myNPC.targetFemPos = other.transform.position;
+            }
         }
 
         if (other.CompareTag("Food"))
@@ -22,6 +25,25 @@ public class NPCRoachDecZ : MonoBehaviour
             //Set it as target
             myNPC.hasFoodInZone = true;
             myNPC.targetFoodPos = other.transform.position;
+        }
+    }
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("FemRoach"))
+        {
+            if (collision.gameObject.GetComponent<FemCockraochTrigger3D>().allowBreed)
+            {
+                //Set it as target;
+                myNPC.hasFemInZone = true;
+                myNPC.targetFemPos = collision.transform.position;
+            }
+        }
+
+        if (collision.gameObject.CompareTag("Food"))
+        {
+            //Set it as target
+            myNPC.hasFoodInZone = true;
+            myNPC.targetFoodPos = collision.gameObject.transform.position;
         }
     }
 }
