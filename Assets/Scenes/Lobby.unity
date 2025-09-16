@@ -4809,7 +4809,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 1788172569}
+  m_TargetGraphic: {fileID: 1828957188}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
