@@ -96,7 +96,12 @@ public class SpiderEventTrigger : MonoBehaviour
             // 相機滑向蜘蛛，1秒滑動，停留2秒
             cameraLogic2D = GameObject.Find("2DCamera").GetComponent<CameraLogic2D>();
             cameraLogic2D.SetSpiderTrigger(this);
-            cameraLogic2D.MoveCameraToTarget(spider, 3f, 0.7f);
+            int rand = Random.Range(0, 2); // 0 或 1
+            if (rand == 0)
+                cameraLogic2D.MoveCameraToTarget(spider, 2.8f, 0.3f);
+            else
+                cameraLogic2D.MoveCameraToTarget(spider, 3f, 0.7f);
+
         }
 
     }

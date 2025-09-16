@@ -16,6 +16,7 @@ public class CameraViewToggle : MonoBehaviour
 
     [Header("蟑螂控制腳本")]
     public CockroachMove cockroachMove;
+    public CockroachManager cockroachManager;
     public CameraLogic2D cameraLogic2D;
     public ParallaxBackground parallaxBackground;
 
@@ -48,6 +49,7 @@ public class CameraViewToggle : MonoBehaviour
         if (transitionQuad3D != null) transitionQuad3D.SetActive(false);
         if (transitionQuad2D != null) transitionQuad2D.SetActive(false);
         allGameManager = GameObject.Find("AllGameManager").GetComponent<AllGameManager>();
+        cockroachManager = GameObject.Find("3DCockroach").GetComponent<CockroachManager>();
     }
 
     private void Start()
@@ -166,6 +168,7 @@ public class CameraViewToggle : MonoBehaviour
         cameraLogic2D.StartSmoothZoom();
         yield return StartCoroutine(AnimateShaderScale(scale, 0f, transitionDuration));
         transitionQuad2D.SetActive(false);
+        cockroachManager.CleanupAllSpiders();
         allGameManager.isTimerRunning = true;
     }
 
@@ -174,6 +177,7 @@ public class CameraViewToggle : MonoBehaviour
         transitionQuad3D.SetActive(true);
         yield return StartCoroutine(AnimateShaderScale(scale, 0f, transitionDuration));
         transitionQuad3D.SetActive(false);
+        cockroachManager.CleanupAllSpiders();
         allGameManager.isTimerRunning = true;
     }
 

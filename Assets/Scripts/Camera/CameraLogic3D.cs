@@ -1,6 +1,6 @@
 using System;
 using System.Collections;
-using Unity.Android.Gradle;
+//using Unity.Android.Gradle;
 using UnityEngine;
 
 public class CameraLogic3D : MonoBehaviour
