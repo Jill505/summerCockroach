@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using Unity.Android.Gradle;
 using UnityEngine;
 
 public class CameraLogic3D : MonoBehaviour
@@ -43,6 +45,24 @@ public class CameraLogic3D : MonoBehaviour
         nowCameraPosition = CameraOffset;
     }
 
+    [Header("shake time")]
+    public float shakeTime = 0.8f;
+    public float shakeVelocity = 0.4f;
+    public void CameraShake()
+    {
+        StartCoroutine(shake(shakeTime, shakeVelocity));
+    }
+    IEnumerator shake(float time, float velocity)
+    {
+        float t = time;
+        while (t > 0)
+        {
+            Vector3 ranSV = new Vector3(UnityEngine.Random.Range((-1* velocity),velocity), UnityEngine.Random.Range((-1 * velocity), velocity), UnityEngine.Random.Range((-1 * velocity), velocity));
+            CameraObject.transform.localPosition += ranSV;
+            t-= Time.deltaTime; 
+            yield return null;
+        }
+    }
 
     private void FixedUpdate()
     {
@@ -99,6 +119,11 @@ public class CameraLogic3D : MonoBehaviour
             //STEP3: 順滑平移攝影機座標至計算好的新位置
 
             //transform.localPosition = PlayerCameraOffset;
+        }
+
+        if (Input.GetKeyDown(KeyCode.F8))
+        {
+            CameraShake();
         }
     }
     public void CockroachInitialize()

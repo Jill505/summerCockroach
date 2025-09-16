@@ -8077,13 +8077,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.08004072, y: -0, z: -0, w: 0.9967916}
-  m_LocalPosition: {x: 0, y: 3.550003, z: -5.880001}
+  m_LocalRotation: {x: 0.07013614, y: -0.48030043, z: 0.03856733, w: 0.8734444}
+  m_LocalPosition: {x: 208.26532, y: 3.550003, z: -255.34961}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2065172943}
-  m_Father: {fileID: 1229442375}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &330585547
 MonoBehaviour:
@@ -28391,6 +28391,8 @@ MonoBehaviour:
   AutoCameraOffset: {x: 0, y: 4.19, z: -6}
   PlayerCameraOffset: {x: 0, y: 1.67, z: -4.63}
   nowCameraPosition: {x: 0, y: 0, z: 0}
+  shakeTime: 0.45
+  shakeVelocity: 0.55
 --- !u!1 &1074705969
 GameObject:
   m_ObjectHideFlags: 0
@@ -32706,7 +32708,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 330585546}
   - {fileID: 1073194380}
   - {fileID: 1772389389}
   m_Father: {fileID: 0}
@@ -44092,6 +44093,8 @@ MonoBehaviour:
   transitionMaterial: {fileID: 2100000, guid: 46acc0bc0f3495a4cbb6d0ba5f336393, type: 2}
   transitionDuration: 1
   scale: 5
+  CameraShakeVelocity: 0.5
+  CameraShakeTime: 1
 --- !u!4 &1713386671
 Transform:
   m_ObjectHideFlags: 0
@@ -55620,6 +55623,7 @@ SceneRoots:
   - {fileID: 1822108689}
   - {fileID: 1606751798}
   - {fileID: 1303094557}
+  - {fileID: 330585546}
   - {fileID: 1229442375}
   - {fileID: 1180208460}
   - {fileID: 835182508}

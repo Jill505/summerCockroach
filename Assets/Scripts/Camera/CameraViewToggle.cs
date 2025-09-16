@@ -32,6 +32,11 @@ public class CameraViewToggle : MonoBehaviour
     //public Transform cockroach2DPos;
     //public Transform cockroach2DStartPoint;
 
+    [Header("Shake Func")]
+    public float CameraShakeVelocity = 0.5f;
+    public float CameraShakeTime = 1f;
+
+
     private AllGameManager allGameManager;
 
 
@@ -48,6 +53,24 @@ public class CameraViewToggle : MonoBehaviour
     private void Start()
     {
         StartCoroutine(Transition());
+    }
+
+    public void CallCameraShake3D()
+    {
+
+    }
+    IEnumerator CameraShake()
+    {
+        float t = CameraShakeTime;
+        
+        while (t > 0)
+        {
+
+            t--;
+            yield return null;
+        }
+        yield return null;
+
     }
 
     private IEnumerator Transition()
