@@ -96,6 +96,7 @@ public class CockroachManager : MonoBehaviour
     {
         if (cDCoroutine == null)
         {
+            CleanupAllSpiders();
             cDCoroutine = StartCoroutine(CockroachDieCoroutine());
         }
         else
@@ -465,6 +466,23 @@ public class CockroachManager : MonoBehaviour
                 break;
         }
         allGameManger.CloseDNASelect();
+    }
+
+    public void CleanupAllSpiders()
+    {
+        if (Scene2DManager.Instance == null) return;
+
+        if (Scene2DManager.Instance.LSpiderweb != null)
+            Scene2DManager.Instance.LSpiderweb.gameObject.SetActive(false);
+
+        if (Scene2DManager.Instance.RSpiderweb != null)
+            Scene2DManager.Instance.RSpiderweb.gameObject.SetActive(false);
+
+        SpiderEatUp[] spiderObjects = GameObject.FindObjectsOfType<SpiderEatUp>();
+        foreach (var spider in spiderObjects)
+        {
+            spider.DestroySelfAndParent();
+        }
     }
 }
 
