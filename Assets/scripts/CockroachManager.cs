@@ -55,6 +55,7 @@ public class CockroachManager : MonoBehaviour
     public GameObject deadCanvas;
     public Coroutine cDCoroutine;
 
+    public string lastDeadVale;
 
     public void GameStart()
     {
@@ -235,10 +236,10 @@ public class CockroachManager : MonoBehaviour
 
     }
 
-    public void CockroachInjury(int injNum)
+    public void CockroachInjury(int injNum, string deadReason)
     {
-        Debug.Log("K inj");
         Hp -= injNum;
+        lastDeadVale = deadReason;
         CockroachBodyPartSwitch();
     }
     public void CockroachBodyPartSwitch()
@@ -325,14 +326,15 @@ public class CockroachManager : MonoBehaviour
 
     void Update()
     {
+        /*
         if (Input.GetKeyDown(KeyCode.K))
         {
-            CockroachInjury(1);
+            CockroachInjury(1, "測試中的自殺");
         }
         if (Input.GetKeyDown(KeyCode.L))
         {
             CockroachHealing(1);
-        }
+        }*/
 
         // 每秒衰減飢餓值
         currentHunger -= hungerDecayRate * Time.deltaTime;

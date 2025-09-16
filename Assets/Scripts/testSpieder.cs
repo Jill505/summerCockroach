@@ -8,6 +8,8 @@ public class testSpieder : MonoBehaviour
     public float countDown = 0f;
     public CockroachManager cManager;
     private CameraViewToggle viewToggle;
+
+    public string deadReason = "這一世，我被飢餓殺死";
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -27,7 +29,7 @@ public class testSpieder : MonoBehaviour
             if (countDown <= 0 && !viewToggle.Is2D())
             {
                 //cManager.CockroachDie();
-                cManager.CockroachInjury(damage);
+                cManager.CockroachInjury(damage, deadReason);
                 cManager.shield = 0;
                 countDown = damageCoolDown;
             }
