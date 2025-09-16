@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 192c1d0f431292c4c99d364a27e4dd96, type: 3}
   m_Name: Achi_0 10
   m_EditorClassIdentifier: 
-  mySprite: {fileID: 0}
-  myName: 
-  myDescription: 
+  mySprite: {fileID: 21300000, guid: 4d4f6690e15b8b64db77174c3fc023ec, type: 3}
+  myName: "\u3010\u8272\u617E\u87D1\u8782\u3011"
+  myDescription: "\u4F60\u9019\u500B\u611B\u60C5\u7684\u9A19\u5B50\uFF01\n\u7D2F\u8A08\u4EA4\u914D\u8D85\u904E20\u96BB\u6BCD\u87D1\u8782\u3002"

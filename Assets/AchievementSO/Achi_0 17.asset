@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 192c1d0f431292c4c99d364a27e4dd96, type: 3}
+  m_Name: Achi_0 17
+  m_EditorClassIdentifier: 
+  mySprite: {fileID: 21300000, guid: 1e4c97ff95bcd2947889abc41c1b8e8c, type: 3}
+  myName: "\u3010\u53F2\u524D\u7684\u8D85\u7D1A\u50B3\u8AAA\u3011"
+  myDescription: "\u60A8\u7D55\u5C0D\u662F\u53E4\u4EE3\u7684\u8D85\u7D1A\u87D1\u8782\uFF0C\u591A\u8667\u6709\u60A8\uFF0C\u87D1\u8782\u624D\u6703\u6D3B\u5230\u73FE\u4EE3\uFF01\n\u5B8C\u6574\u901A\u95DC
+    2 \u6B21\u3002"

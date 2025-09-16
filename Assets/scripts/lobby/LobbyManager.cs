@@ -109,7 +109,7 @@ public class LobbyManager : MonoBehaviour
             obj.transform.GetChild(1).gameObject.GetComponent<UnityEngine.UI.Image>().sprite = achievements[i].mySprite;
 
             //Name
-            obj.transform.GetChild(2).gameObject.GetComponent<Text>().text = achievements[i].name;
+            obj.transform.GetChild(2).gameObject.GetComponent<Text>().text = achievements[i].myName;
 
             //Desc
             obj.transform.GetChild(3).gameObject.GetComponent<Text>().text = achievements[i].myDescription ;
