@@ -46211,7 +46211,7 @@ MonoBehaviour:
   Hp3maxVelocity: 14
   Hp2maxVelocity: 14
   Hp1maxVelocity: 14
-  Hp0maxVelocity: 0
+  Hp0maxVelocity: 14
   myVelocity: 7
   myMaxVelocity: 14
   myRealVelocity: 0
