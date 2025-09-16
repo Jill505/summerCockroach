@@ -260,28 +260,26 @@ public class EraManager : MonoBehaviour
         while (currentEra == Era.MassExtinctionEra)
         {
             while (!allGameManager.isTimerRunning)
-                yield return null;
-            if (hotSprite != null)
+            yield return null;
+            if (viewToggle.Is2D())
             {
-                if (viewToggle.Is2D())
-                {
-                    hotSprite.SetActive(true);
+                hotSprite.SetActive(true);
 
-                    // 開啟顏色/透明度 Coroutine（如果尚未開啟）
-                    if (meColorCoroutine == null)
-                        meColorCoroutine = StartCoroutine(MEColorRoutine());
+                // 開啟顏色/透明度 Coroutine（如果尚未開啟）
+                if (meColorCoroutine == null)
+                    meColorCoroutine = StartCoroutine(MEColorRoutine());
 
-                    if (StayInTime >= eraValue.hotMaxTime)
-                    {
-                        cockroachManager.CockroachDie();
-                        StayInTime = 0f; // 可選：死亡後重置時間
-                    }
-                }
-                else
+                if (StayInTime >= eraValue.hotMaxTime)
                 {
-                    ResetME();
+                    cockroachManager.CockroachDie();
+                    StayInTime = 0f; // 可選：死亡後重置時間
                 }
             }
+            else
+            {
+                ResetME();
+            }
+
 
             yield return null; // 每幀偵測
         }
