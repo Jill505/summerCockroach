@@ -12,7 +12,8 @@ public class SpiderEatUp : MonoBehaviour
 
     public void EatUp()
     {
-        cockroachManager.CockroachDie();
+        //cockroachManager.CockroachDie();
+        cockroachManager.CockroachInjury(2, "這一世，我被蜘蛛殺死了");
         cameraLogic2D.spiderEating = false;
         DestroySelfAndParent();
     }

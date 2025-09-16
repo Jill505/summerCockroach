@@ -62,13 +62,6 @@ public class CockroachManager : MonoBehaviour
         CockroachMoveable = true;
         Hp = 1;
     }
-    public void JudgeCockroachDie()
-    {
-        if (Hp <= 0)
-        {
-            CockroachDie();
-        }
-    }
     public void CockroachHealing(int healNum)
     {
         Debug.Log(" heal");
@@ -344,7 +337,8 @@ public class CockroachManager : MonoBehaviour
         if (currentHunger < 0f)
         {
             //TODO: update system
-            CockroachDie();
+            //CockroachDie();
+            CockroachInjury(1, "這一世，我被飢餓殺死");
         }
 
         if (shield > 0)
