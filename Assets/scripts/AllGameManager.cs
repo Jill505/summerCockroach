@@ -183,9 +183,9 @@ public class AllGameManager : MonoBehaviour
     }
     public void SyncInformationResultCanvas()
     {
-        surTimeShowcase.text = "存活時間\n" + string.Format("{0:00}:{1:00}", gameProcessTime /60, gameProcessTime%60);
-        femCockroachCollectShowcase.text += "母蟑螂收集數\n" + cockroachCollectNum;
-        foodCollectShowcase.text += "食物收集數\n" + foodCollect;
+        surTimeShowcase.text = "存活時間" + "                   " + string.Format("{0:00}:{1:00}", gameProcessTime /60, gameProcessTime%60);
+        femCockroachCollectShowcase.text = "母蟑螂收集數" + "            " + cockroachCollectNum;
+        foodCollectShowcase.text = "食物收集數" + "               " + foodCollect;
     }
 
     public void ResetGame()
