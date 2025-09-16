@@ -61,6 +61,8 @@ public class Cockroach2DMove : MonoBehaviour
             Vector2 rayOrigin = (Vector2)transform.position + Vector2.down * (myCol.size.y * 0.5f - 0.05f);
             RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.down, rayLength, groundLayer);
 
+            Debug.DrawRay(rayOrigin, Vector2.down * rayLength, Color.green);
+
             // 左右翻轉
             Vector3 scale = mainObjectTransform.localScale;
             if (moveX > 0)
@@ -86,6 +88,8 @@ public class Cockroach2DMove : MonoBehaviour
                 Vector2 wallOrigin = (Vector2)transform.position;
                 Vector2 wallDir = moveX > 0 ? Vector2.right : Vector2.left;
                 RaycastHit2D wallHit = Physics2D.Raycast(wallOrigin, wallDir, myCol.size.x * 0.5f + 0.1f, groundLayer);
+
+                Debug.DrawRay(wallOrigin, wallDir * (myCol.size.x * 0.5f + 0.1f), Color.red);
                 if (wallHit.collider != null)
                 {
                     hitWall = true;

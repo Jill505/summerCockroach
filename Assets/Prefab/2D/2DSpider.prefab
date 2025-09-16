@@ -198,10 +198,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 630dff3030be2a741a26d5f1d063d760, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chaseSpeed: 8
+  chaseSpeed: 6
   isChasing: 0
   burstSpeed: 15
-  burstInterval: 1.5
+  burstInterval: 2
   burstDuration: 3
 --- !u!70 &2309636123998265911
 CapsuleCollider2D:

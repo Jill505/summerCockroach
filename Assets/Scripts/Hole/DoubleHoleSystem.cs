@@ -227,9 +227,11 @@ public class DoubleHoleSystem : MonoBehaviour
         {
             if (obj != null)
             {
+                obj.GetComponent<SpiderEventTrigger>()?.EndSpiderEvent();
                 Destroy(obj);
             }
         }
+        
         spawnedSpider.Clear();
     }
 

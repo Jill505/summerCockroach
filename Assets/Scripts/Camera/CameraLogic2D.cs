@@ -44,12 +44,14 @@ public class CameraLogic2D : MonoBehaviour
     private bool SpiderEvent = false;
     public bool spiderEating = false;
     private SpiderEventTrigger spiderTrigger;
+    private AllGameManager allGameManager;
 
 
 
     void Awake()
     {
         playerRB = player.GetComponent<Rigidbody2D>();
+        allGameManager = GameObject.Find("AllGameManager").GetComponent<AllGameManager>();
         // 計算攝影機視野的一半高度與寬度
         camHalfHeight = cam.orthographicSize;
         camHalfWidth = cam.aspect * camHalfHeight;
@@ -190,6 +192,7 @@ public class CameraLogic2D : MonoBehaviour
         if (targetObj == null) yield break;
 
         SpiderEvent = true;
+        allGameManager.isTimerRunning = false;
 
         // 目標與初始設定
         Vector3 targetPos = new Vector3(targetObj.transform.position.x, targetObj.transform.position.y, transform.position.z);
@@ -264,6 +267,7 @@ public class CameraLogic2D : MonoBehaviour
         SpiderEvent = false;
         if (spiderTrigger != null)
             spiderTrigger.startChase = true;
+            allGameManager.isTimerRunning = true;
     }
 
     /// <summary>

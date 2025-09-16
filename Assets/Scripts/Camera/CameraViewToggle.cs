@@ -32,7 +32,9 @@ public class CameraViewToggle : MonoBehaviour
     //public Transform cockroach2DPos;
     //public Transform cockroach2DStartPoint;
 
-    
+    private AllGameManager allGameManager;
+
+
 
     private bool is2D = false;
 
@@ -40,6 +42,7 @@ public class CameraViewToggle : MonoBehaviour
     {
         if (transitionQuad3D != null) transitionQuad3D.SetActive(false);
         if (transitionQuad2D != null) transitionQuad2D.SetActive(false);
+        allGameManager = GameObject.Find("AllGameManager").GetComponent<AllGameManager>();
     }
 
     private void Start()
@@ -57,6 +60,7 @@ public class CameraViewToggle : MonoBehaviour
     public IEnumerator StartViewSwitch(bool is2D)
     {
         cockroachMove.myMoveMode = moveMode.ChangeSceneMoment;
+        allGameManager.isTimerRunning = false;
 
         if (is2D == true)
         {
@@ -113,7 +117,7 @@ public class CameraViewToggle : MonoBehaviour
 
     }
 
-    private void SetTo3DView()
+    public void SetTo3DView()
     {
         is2D = false;
         transitionQuad2D.SetActive(false);
@@ -139,6 +143,7 @@ public class CameraViewToggle : MonoBehaviour
         cameraLogic2D.StartSmoothZoom();
         yield return StartCoroutine(AnimateShaderScale(scale, 0f, transitionDuration));
         transitionQuad2D.SetActive(false);
+        allGameManager.isTimerRunning = true;
     }
 
     public IEnumerator End3DViewTransition()
@@ -146,6 +151,7 @@ public class CameraViewToggle : MonoBehaviour
         transitionQuad3D.SetActive(true);
         yield return StartCoroutine(AnimateShaderScale(scale, 0f, transitionDuration));
         transitionQuad3D.SetActive(false);
+        allGameManager.isTimerRunning = true;
     }
 
 

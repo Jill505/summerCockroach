@@ -24,6 +24,7 @@ public class Scene2DManager : MonoBehaviour
         [HideInInspector] public Transform insPos2;
         [HideInInspector] public EdgeCollider2D spawnSpiderAreaL;
         [HideInInspector] public EdgeCollider2D spawnSpiderAreaR;
+        
         public void Initialize()
         {
             if (parent == null)
@@ -37,6 +38,7 @@ public class Scene2DManager : MonoBehaviour
             insPos2 = parent.Find("insPos2");
             spawnSpiderAreaL = parent.Find("spawnSpiderAreaL")?.GetComponent<EdgeCollider2D>();
             spawnSpiderAreaR = parent.Find("spawnSpiderAreaR")?.GetComponent<EdgeCollider2D>();
+           
 
 
 
@@ -56,6 +58,11 @@ public class Scene2DManager : MonoBehaviour
     public GameObject Food2D;
     public GameObject Spider2D;
     public GameObject Spider2DTrigger;
+    public GameObject LSpiderweb;
+    public GameObject RSpiderweb;
+
+    [Header("掙扎提示")]
+    public GameObject Ftip;
 
     private void Awake()
     {
