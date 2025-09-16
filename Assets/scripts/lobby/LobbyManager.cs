@@ -118,6 +118,53 @@ public class LobbyManager : MonoBehaviour
             obj.transform.GetChild(4).gameObject.SetActive(!SaveSystem.mySaveFile.AchievementUnlock[i]);
         }
     }
+    [Header("Tutor")]
+    public Animator tutorAnimator;
+    public string[] roachSaying;
+    public bool clickClog;
+    public GameObject tutorBg;
+    public Text tutorText;
+    public string tutorTextString = "";
+    public float sayingDur = 0.2f;
+        
+    public void StartTutor()
+    {
+        tutorBg.SetActive(true);
+        tutorAnimator.SetBool("onTotur", true);
+        StartCoroutine(tutorCoroutine());
+    }
+    IEnumerator tutorCoroutine()
+    {
+        yield return null;
+        for (int i = 0; i < roachSaying.Length; i++)
+        {
+            tutorTextString = "";
+            tutorText.text = tutorTextString;
+
+            for (int j = 0; j < roachSaying[i].Length; j++)
+            {
+                tutorTextString += roachSaying[i][j];
+                tutorText.text = tutorTextString;
+                yield return new WaitForSeconds(sayingDur);
+            }
+
+            StartCoroutine(waitPlayerClick());
+            yield return new WaitUntil(() => !clickClog);
+        }
+        tutorAnimator.SetBool("onTotur", false);
+        yield return new WaitForSeconds(1);
+        tutorBg.SetActive(false);
+    }
+    IEnumerator waitPlayerClick()
+    {
+        clickClog = true;
+        while (!Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            yield return null;
+        }
+        clickClog = false;
+        yield return null;
+    }
 }
 
 [System.Serializable]
