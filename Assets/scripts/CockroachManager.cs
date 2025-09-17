@@ -86,6 +86,8 @@ public class CockroachManager : MonoBehaviour
         }
 
     }
+
+
     public void CockroachDie()
     {
         if (cDCoroutine == null)
@@ -200,6 +202,7 @@ public class CockroachManager : MonoBehaviour
 
 
             deadCanvasAnimator.SetTrigger("nextAct");
+            FillHunger();
             //fade
             for (int i = 0; i < deadCanvasFadeHideGroupe.Length; i++)
             {
@@ -377,6 +380,13 @@ public class CockroachManager : MonoBehaviour
         hungerDecayRate = maxHunger / finalHungerDuration;
 
         Debug.Log($"飢餓耗盡時間: 基礎{baseHungerDuration} 秒 → 最終 {finalHungerDuration} 秒 (等級 {hungerLevel})");
+    }
+
+    public void FillHunger()
+    {
+        currentHunger = maxHunger;  // 直接填滿
+        UISync();                   // 更新 UI 顯示
+        Debug.Log("飢餓值已經回滿！");
     }
     [Header("UI系統")]
     public Button dashLevelButt;
