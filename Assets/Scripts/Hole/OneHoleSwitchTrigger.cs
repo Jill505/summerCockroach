@@ -30,13 +30,21 @@ public class OneHoleSwitchTrigger : MonoBehaviour
 
 
     [Header("Scene")]
-    public Scene2DOneHole selectedScene; // 在 Inspector 用下拉選
+    private Scene2DOneHole selectedScene; // 在 Inspector 用下拉選
 
 
     private void Start()
     {
         food = GameObject.Find("AllGameManager").GetComponent<Scene2DManager>().Food2D;
         selectedScene = Scene2DOneHole.TreeHole;
+        //int rand = Random.Range(0, 2); // 0 或 1
+        //if (rand == 0)
+        //    selectedScene = Scene2DOneHole.HalfTreeHole01;
+        //else if(rand == 1)
+        //    selectedScene = Scene2DOneHole.HalfTreeHole02;
+        //else
+        //    selectedScene = Scene2DOneHole.TreeHole;
+
         viewToggle = GameObject.Find("CameraManager").GetComponent<CameraViewToggle>();
         cockroachMove3D = GameObject.Find("3DCockroach").GetComponent<CockroachMove>();
         cockroachMove2D = GameObject.Find("2DCockroach").GetComponent<Cockroach2DMove>();

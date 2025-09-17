@@ -4,6 +4,8 @@
 public enum Scene2DOneHole
 {
     TreeHole,  //樹洞
+    HalfTreeHole01,
+    HalfTreeHole02
 }
 public enum Scene2DDoubleHole
 {
@@ -49,6 +51,8 @@ public class Scene2DManager : MonoBehaviour
     }
     public static Scene2DManager Instance;
 
+    public Scene2D HalfTreeHole01;
+    public Scene2D HalfTreeHole02;
     public Scene2D TreeHole;
     public Scene2D Cave;
     public Scene2D HalfCave01;
@@ -68,6 +72,8 @@ public class Scene2DManager : MonoBehaviour
     {
         Instance = this;
 
+        HalfTreeHole01?.Initialize();
+        HalfTreeHole02?.Initialize();
         TreeHole?.Initialize();
         Cave?.Initialize();
         HalfCave01?.Initialize();
@@ -81,6 +87,10 @@ public class Scene2DManager : MonoBehaviour
         {
             case Scene2DOneHole.TreeHole:
                 return TreeHole;
+            case Scene2DOneHole.HalfTreeHole01:
+                return HalfTreeHole01;
+            case Scene2DOneHole.HalfTreeHole02:
+                return HalfTreeHole02;
         }
         Debug.LogWarning("找不到單洞場景：" + scene);
         return null;
