@@ -52,7 +52,16 @@ public class FemCockraochTracker : MonoBehaviour
         if (aliveRoaches.Length > 0)
         {
             textShowcase.text = "";
-            textShowcase.text += "離你最近的母蟑螂有" + Vector3.Distance(playerPos3D.transform.position, sceneRoaches3D[0].gameObject.transform.position) + "公尺遠！\n";
+            float distance = Vector3.Distance(playerPos3D.transform.position, sceneRoaches3D[0].gameObject.transform.position);
+
+            // 四捨五入
+            int roundedDistance = Mathf.RoundToInt(distance);
+
+            // 直接取整數（無條件捨去）
+            int floorDistance = (int)distance;
+
+            // 顯示
+            textShowcase.text += "離你最近的母蟑螂有 " + roundedDistance + " 公尺遠！\n";
             textShowcase.text += "蟑螂姓名：" + sceneRoaches3D[0].cockroachName + "\n";
             textShowcase.text += "蟑螂敘述：" + sceneRoaches3D[0].Disc;
         }

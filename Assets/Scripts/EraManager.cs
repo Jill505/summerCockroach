@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
 
 public enum Era
 {
@@ -90,6 +91,7 @@ public class EraManager : MonoBehaviour
         TimeAnimator = GameObject.Find("SundialAnimation")?.GetComponent<Animator>();
         meteoriteManager = FindFirstObjectByType<MeteoriteManager>();
         eras = (Era[])System.Enum.GetValues(typeof(Era));
+
         currentEra = eras[0];
 
         // 開始定時切換
