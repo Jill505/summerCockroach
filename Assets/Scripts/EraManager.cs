@@ -67,6 +67,8 @@ public class EraManager : MonoBehaviour
     private Image hotImage;               // hotSprite 的 Image
     private float StayInTime = 0f;     // 計時用
 
+    [Header("動畫")]
+    private Animator TimeAnimator;
 
 
     [Header("引用腳本")]
@@ -85,6 +87,7 @@ public class EraManager : MonoBehaviour
         foodGenManger = GameObject.Find("FoodGenManager").GetComponent<FoodGenManger>();
         cockroachManager = GameObject.Find("3DCockroach").GetComponent<CockroachManager>();
         allGameManager = GameObject.Find("AllGameManager").GetComponent<AllGameManager>();
+        TimeAnimator = GameObject.Find("SundialAnimation")?.GetComponent<Animator>();
         meteoriteManager = FindFirstObjectByType<MeteoriteManager>();
         eras = (Era[])System.Enum.GetValues(typeof(Era));
         currentEra = eras[0];
@@ -189,12 +192,21 @@ public class EraManager : MonoBehaviour
 
     void PEEvent()
     {
+        if (TimeAnimator != null)
+        {
+            TimeAnimator.SetInteger("Era", 0);
+        }
         foodGenManger.SetGenFoodCount(eraValue.PEFood);
         cockroachManager.SetHungerDuration(eraValue.hungerDuration);
     }
 
     void DEEvent()
     {
+        if (TimeAnimator != null)
+        {
+            int currentEraValue = TimeAnimator.GetInteger("Era");
+            TimeAnimator.SetInteger("Era", currentEraValue + 1);
+        }
         foodGenManger.SetGenFoodCount(eraValue.DEFood);
         spawnDyna();
     }
@@ -203,6 +215,11 @@ public class EraManager : MonoBehaviour
     {
         cycleCallMeteorite();
         spawnDyna();
+        if (TimeAnimator != null)
+        {
+            int currentEraValue = TimeAnimator.GetInteger("Era");
+            TimeAnimator.SetInteger("Era", currentEraValue + 1);
+        }
 
         // 開始持續監控視角
         if (meMonitorCoroutine != null) StopCoroutine(meMonitorCoroutine);
