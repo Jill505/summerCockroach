@@ -20,7 +20,8 @@ public class AllGameManager : MonoBehaviour
     public bool GameFinished = false;
 
     public int foodCollect = 0 ;
-    
+    public int fuckNPCCollect = 0;
+
 
     public float pressTime = 2f;
     float pressTimeCal = 0f;
@@ -47,6 +48,7 @@ public class AllGameManager : MonoBehaviour
     public Text surTimeShowcase;
     public Text femCockroachCollectShowcase;
     public Text foodCollectShowcase;
+    public Text fuckNPCShowcase;
 
     private EraManager eraManager;
 
@@ -186,6 +188,7 @@ public class AllGameManager : MonoBehaviour
         surTimeShowcase.text = "存活時間" + "                   " + string.Format("{0:00}:{1:00}", gameProcessTime /60, gameProcessTime%60);
         femCockroachCollectShowcase.text = "母蟑螂收集數" + "            " + cockroachCollectNum;
         foodCollectShowcase.text = "食物收集數" + "               " + foodCollect;
+        fuckNPCShowcase.text = "撞飛同類次數" + "           " + fuckNPCCollect;
     }
 
     public void ResetGame()
