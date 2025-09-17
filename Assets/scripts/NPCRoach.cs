@@ -149,6 +149,7 @@ public class NPCRoach : MonoBehaviour
     }
     private void OnDestroy()
     {
+        if (!gameObject.scene.isLoaded) return;
         Instantiate(burstBlood, transform.position, Quaternion.Euler(0,-90,0));
         nPCRoachManager.nPCRoaches.Remove(this);
     }
