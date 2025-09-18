@@ -20005,6 +20005,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   wallBounceForce: 10
+  jumpForce: 6
 --- !u!50 &878592661
 Rigidbody2D:
   serializedVersion: 5

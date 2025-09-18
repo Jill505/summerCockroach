@@ -70,11 +70,11 @@ public class ParallaxBackground : MonoBehaviour
         public void Initialize()
         {
             if (parent == null) return;
-            trunk1 = parent.Find("trunk1");
-            trunk2 = parent.Find("trunk2");
-            trunk3 = parent.Find("trunk3");
-            treeHole1 = parent.Find("treeHole1");
-            treeHole3 = parent.Find("treeHole3");
+            trunk1 = parent?.Find("trunk1");
+            trunk2 = parent?.Find("trunk2");
+            trunk3 = parent?.Find("trunk3");
+            treeHole1 = parent?.Find("treeHole1");
+            treeHole3 = parent?.Find("treeHole3");
         }
     }
 

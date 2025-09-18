@@ -26,6 +26,7 @@ public class Hole3DTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player") && !viewToggle.Is2D() && isInTheTrigger == false)
         {
+            SoundManager.Play("Transition - Sound Effects");
             isInTheTrigger = true;
             system.EnterFrom3D(pairIndex, side);
         }

@@ -22,6 +22,7 @@ public class Hole2DTrigger : MonoBehaviour
     {
         if (other.GetComponent<Cockroach2DMove>() != null)
         {
+            SoundManager.Play("Transition - Sound Effects");
             system.ExitTo3D(side);
         }
     }

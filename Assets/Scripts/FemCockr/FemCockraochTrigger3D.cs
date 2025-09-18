@@ -57,6 +57,8 @@ public class FemCockraochTrigger3D : MonoBehaviour
         if (other.CompareTag("Player") && !getDNAAlready && coolDownCal<0)
         {
             //Add DNA Number
+            
+            SoundManager.Play("SFX_ReproductiveBehavior_V1");
             allGameManager.DNA++;
             getDNAAlready = true;
 
@@ -76,6 +78,7 @@ public class FemCockraochTrigger3D : MonoBehaviour
         if (other.CompareTag("NPCRoach"))
         {
             coolDownCal = coolDownTime;
+            SoundManager.Play("SFX_ReproductiveBehavior_V1");
         }
 
     }

@@ -19,6 +19,9 @@ public class Cockroach2DMove : MonoBehaviour
     public LayerMask groundLayer;
     public float wallBounceForce = 5f; // 撞牆後給的向上力
 
+    [Header("跳躍設定")]
+    public float jumpForce = 6f; // Space 小跳躍力
+
     private bool beEat = false;  
 
     private void Start()
@@ -62,6 +65,12 @@ public class Cockroach2DMove : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.down, rayLength, groundLayer);
 
             Debug.DrawRay(rayOrigin, Vector2.down * rayLength, Color.green);
+
+            bool isGrounded = hit.collider != null;
+            if (isGrounded && Input.GetKeyDown(KeyCode.Space))
+            {
+                myRb.velocity = new Vector2(myRb.velocity.x, jumpForce);
+            }
 
             // 左右翻轉
             Vector3 scale = mainObjectTransform.localScale;

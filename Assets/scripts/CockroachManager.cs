@@ -94,6 +94,7 @@ public class CockroachManager : MonoBehaviour
         {
             CleanupAllSpiders();
             cDCoroutine = StartCoroutine(CockroachDieCoroutine());
+            SoundManager.Play("SFX_Death_V1");
         }
         else
         {
@@ -132,6 +133,8 @@ public class CockroachManager : MonoBehaviour
 
         //wait animation play ready
         deadCanvasAnimator.SetTrigger("nextAct");
+        SoundManager.Play("SFX_DeathKnell_V1");
+        
 
         leftHealthText.text = "剩餘子代  x" + (allGameManger.allLifeCount);
         Debug.Log(allGameManger.allLifeCount + "bef");
@@ -152,7 +155,8 @@ public class CockroachManager : MonoBehaviour
 
         if (_shouldDie)
         {
-
+            
+            SoundManager.Play("Audio_GameOver_V1");
             allGameManger.GameFail();
 
             StopCoroutine(cDCoroutine);
@@ -176,6 +180,8 @@ public class CockroachManager : MonoBehaviour
         {
             //rev
             //track all the fem roach and return the closest one
+            SoundManager.Play("Crack an Egg Sound Effect");
+            
             float d = Vector3.Distance(transform.position, allGameManger.femCockroachTrackList[0].gameObject.transform.position);
             int t = 0;
             for (int i = 1; i < allGameManger.femCockroachTrackList.Count; i++)

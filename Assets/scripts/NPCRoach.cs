@@ -150,6 +150,7 @@ public class NPCRoach : MonoBehaviour
     private void OnDestroy()
     {
         if (!gameObject.scene.isLoaded) return;
+        SoundManager.Play("SFX_Death_V1");
         allGameManager.fuckNPCCollect++;
         Instantiate(burstBlood, transform.position, Quaternion.Euler(0,-90,0));
         nPCRoachManager.nPCRoaches.Remove(this);

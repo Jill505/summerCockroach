@@ -63,6 +63,7 @@ public class OneHoleSwitchTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        SoundManager.Play("Transition - Sound Effects");
         SwitchTo3D();
     }
 
@@ -70,6 +71,7 @@ public class OneHoleSwitchTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player") && !viewToggle.Is2D())
         {
+            SoundManager.Play("Transition - Sound Effects");
             DesObj();
             isInTheTrigger = true;
             cameraLogic2D.SetCustomBounds(cameraBounds.bounds);

@@ -43,6 +43,7 @@ public class LobbyManager : MonoBehaviour
     {
         if (transitionUI != null) transitionUI.SetActive(true);
 
+        SoundManager.Play("Transition - Sound Effects");
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(levelSort);
         asyncLoad.allowSceneActivation = false;
 
