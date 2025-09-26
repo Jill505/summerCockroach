@@ -4,6 +4,7 @@ using UnityEngine.EventSystems;
 public class RadarHoverState : MonoBehaviour, IPointerExitHandler
 {
     private Animator radarAnim;
+    
 
     private void Start()
     {

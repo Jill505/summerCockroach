@@ -215,6 +215,7 @@ MonoBehaviour:
   damageCoolDown: 2
   countDown: 0
   cManager: {fileID: 0}
+  deadReason: "\u9019\u4E00\u4E16\uFF0C\u88AB\u6050\u9F8D\u5927\u8173\u8173\u8E0F\u6B7B"
 --- !u!1 &8841291091811731393
 GameObject:
   m_ObjectHideFlags: 0
@@ -290,7 +291,6 @@ MonoBehaviour:
   trackTargetRoach: []
   myRb: {fileID: 7776027279160263607}
   mySpeed: 6
-  turnSpeed: 5
 --- !u!54 &7776027279160263607
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -194,6 +194,7 @@ public class EraManager : MonoBehaviour
 
     void PEEvent()
     {
+        Debug.Log("1");
         if (TimeAnimator != null)
         {
             TimeAnimator.SetInteger("Era", 0);
@@ -209,6 +210,7 @@ public class EraManager : MonoBehaviour
             int currentEraValue = TimeAnimator.GetInteger("Era");
             TimeAnimator.SetInteger("Era", currentEraValue + 1);
         }
+        Debug.Log("2");
         foodGenManger.SetGenFoodCount(eraValue.DEFood);
         spawnDyna();
     }
@@ -283,14 +285,13 @@ public class EraManager : MonoBehaviour
             if (viewToggle.Is2D())
             {
                 hotSprite.SetActive(true);
-
                 // 開啟顏色/透明度 Coroutine（如果尚未開啟）
                 if (meColorCoroutine == null)
                     meColorCoroutine = StartCoroutine(MEColorRoutine());
 
                 if (StayInTime >= eraValue.hotMaxTime)
                 {
-                    cockroachManager.CockroachDie();
+                    cockroachManager.CockroachInjury(1, "這一世，在縫隙之中被燒死");
                     StayInTime = 0f; // 可選：死亡後重置時間
                 }
             }

@@ -51,6 +51,7 @@ public class CockroachManager : MonoBehaviour
     public GameObject deadBody;
     public Animator deadCanvasAnimator;
     public Text leftHealthText;
+    public Text deadReasonText;
     public GameObject[] deadCanvasFadeHideGroupe;
     public GameObject deadCanvas;
     public Coroutine cDCoroutine;
@@ -242,6 +243,8 @@ public class CockroachManager : MonoBehaviour
     {
         Hp -= injNum;
         lastDeadVale = deadReason;
+        deadReasonText.text = lastDeadVale;
+
         CockroachBodyPartSwitch();
     }
     public void CockroachBodyPartSwitch()
@@ -347,7 +350,7 @@ public class CockroachManager : MonoBehaviour
         {
             //TODO: update system
             //CockroachDie();
-            CockroachInjury(1, "這一世，我被飢餓殺死");
+            CockroachInjury(1, "這一世，餓死辣");
         }
 
         if (shield > 0)
