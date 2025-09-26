@@ -107,6 +107,7 @@ public class EraManager : MonoBehaviour
 
     private IEnumerator EraRoutine()
     {
+        yield return new WaitUntil(() => AnimationEventReceiver.prepared);
         while (true)
         {
             while (!allGameManager.isTimerRunning)
@@ -115,7 +116,7 @@ public class EraManager : MonoBehaviour
 
             if (eraValue.mode == EraMode.依序輪替)
             {
-                if (currentEra == Era.PrehistoricEra)
+                    if (currentEra == Era.PrehistoricEra)
                 {
                     waitTime = eraValue.intervalPEToDE;
                 }

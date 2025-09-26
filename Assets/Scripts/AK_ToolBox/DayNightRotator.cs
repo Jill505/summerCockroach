@@ -1,24 +1,24 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 
 public class DayNightRotator : MonoBehaviour
 {
     private EraManager eraManager;
-    public RectTransform PE; // ¦­¤W¥b¶ê
-    public RectTransform DE; // ®£Às¥b¶ê
-    public RectTransform ME; // ¤j·Àµ´¥b¶ê
+    public RectTransform PE; // æ—©ä¸ŠåŠåœ“
+    public RectTransform DE; // æé¾åŠåœ“
+    public RectTransform ME; // å¤§æ»…çµ•åŠåœ“
 
     private float PEtoDE_Duration;
     private float DEtoME_Duration;
 
     void Start()
     {
-        // ªì©l¨¤«×
+        // åˆå§‹è§’åº¦
         eraManager = GameObject.Find("AllGameManager").GetComponent<EraManager>();
-        PE.localRotation = Quaternion.Euler(0, 0, 0);     // ¤U
-        DE.localRotation = Quaternion.Euler(0, 0, -180f); // ¤W
-        ME.localRotation = Quaternion.Euler(0, 0, -180f); // ¤W
+        PE.localRotation = Quaternion.Euler(0, 0, 0);     // ä¸‹
+        DE.localRotation = Quaternion.Euler(0, 0, -180f); // ä¸Š
+        ME.localRotation = Quaternion.Euler(0, 0, -180f); // ä¸Š
         PEtoDE_Duration = eraManager.eraValue.intervalPEToDE;
         DEtoME_Duration = eraManager.eraValue.intervalDEToME;
     }
@@ -27,7 +27,7 @@ public class DayNightRotator : MonoBehaviour
     {
         if (AnimationEventReceiver.prepared)
         {
-            AnimationEventReceiver.prepared = false; // ¨¾¤î­«½Æ±Ò°Ê
+            //AnimationEventReceiver.prepared = false; // é˜²æ­¢é‡è¤‡å•Ÿå‹•
             SetAlphaFull();
             StartCoroutine(RotateSequence());
         }
@@ -56,7 +56,7 @@ public class DayNightRotator : MonoBehaviour
             yield return null;
         }
 
-        // ½T«O³Ì²×¨¤«×¥¿½T
+        // ç¢ºä¿æœ€çµ‚è§’åº¦æ­£ç¢º
         first.rotation = Quaternion.Euler(0, 0, endZ1);
         second.rotation = Quaternion.Euler(0, 0, endZ2);
     }
