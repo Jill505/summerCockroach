@@ -195,7 +195,6 @@ public class EraManager : MonoBehaviour
 
     void PEEvent()
     {
-        Debug.Log("1");
         if (TimeAnimator != null)
         {
             TimeAnimator.SetInteger("Era", 0);
@@ -211,7 +210,6 @@ public class EraManager : MonoBehaviour
             int currentEraValue = TimeAnimator.GetInteger("Era");
             TimeAnimator.SetInteger("Era", currentEraValue + 1);
         }
-        Debug.Log("2");
         foodGenManger.SetGenFoodCount(eraValue.DEFood);
         spawnDyna();
     }

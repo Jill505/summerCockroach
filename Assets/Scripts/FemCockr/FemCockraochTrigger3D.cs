@@ -74,6 +74,7 @@ public class FemCockraochTrigger3D : MonoBehaviour
             //TODO: Cockroach Egg plate
             eggNumber++;
             coolDownCal = coolDownTime;
+            allGameManager.AddScore(allGameManager.findFem);
         }
         if (other.CompareTag("NPCRoach"))
         {

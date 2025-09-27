@@ -2,7 +2,7 @@
 
 public class SpiderEventTrigger : MonoBehaviour
 {
-
+    
     private CockroachMove cockroachMove;
     private CameraLogic2D cameraLogic2D;
     private DoubleHoleSystem doubleHoleSystem;
@@ -23,6 +23,7 @@ public class SpiderEventTrigger : MonoBehaviour
         // 取得3D蟑螂的移動組件
         cockroachMove = GameObject.Find("3DCockroach").GetComponent<CockroachMove>();
         doubleHoleSystem = GameObject.Find("DoubleHoleManager").GetComponent<DoubleHoleSystem>();
+        
         // 取得場景資料
         sceneData = Scene2DManager.Instance.GetScene(Scene2DDoubleHole.Cave);
         spiderPrefab = Scene2DManager.Instance.Spider2D.gameObject;
@@ -104,31 +105,5 @@ public class SpiderEventTrigger : MonoBehaviour
 
         }
 
-    }
-
-    public void EndSpiderEvent()
-    {
-        // 刪除蜘蛛
-        if (spiderInstance != null)
-        {
-            Destroy(spiderInstance);
-            spiderInstance = null;
-        }
-
-        // 隱藏右邊蜘蛛網
-        if (Scene2DManager.Instance.RSpiderweb != null)
-            SetSpiderWebActive(Scene2DManager.Instance.RSpiderweb.gameObject, false);
-
-        // 隱藏左邊蜘蛛網
-        if (Scene2DManager.Instance.LSpiderweb != null)
-            SetSpiderWebActive(Scene2DManager.Instance.LSpiderweb.gameObject, false);
-
-        // 開放玩家移動
-        if (cockroachMove != null)
-            cockroachMove.myMoveMode = moveMode.twoDMove;
-
-        // 如果需要，重置事件狀態
-        eventStarted = false;
-        GetComponent<Collider2D>().enabled = true;
     }
 }

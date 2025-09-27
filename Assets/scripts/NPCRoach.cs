@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -36,10 +37,13 @@ public class NPCRoach : MonoBehaviour
     public Vector3 targetFemPos;
     public Vector3 targetFoodPos;
 
-    public GameObject myMesh;
+    public GameObject[] NPC;
+    private System.Random rng;
 
     public float femRoachAdditional = 1.2f;
     public float foodRoachAdditional = 1.2f;
+
+    [HideInInspector] public bool tellDyIamDead = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -55,6 +59,25 @@ public class NPCRoach : MonoBehaviour
         rollTarget();
 
         //StartCoroutine(myCoroutineUpdate());
+
+        for (int i = 0; i < NPC.Length; i++)
+        {
+            if (NPC[i] != null)
+            {
+                NPC[i].SetActive(false);
+            }
+        }
+
+        int seed = Guid.NewGuid().GetHashCode(); // 保證唯一
+        rng = new System.Random(seed);
+
+        int randomIndex = rng.Next(0, NPC.Length); // 用獨立隨機器
+
+        // 啟用那個 GameObject
+        if (NPC[randomIndex] != null)
+        {
+            NPC[randomIndex].SetActive(true);
+        }
     }
     bool fixedUpdateAllowCheckClog = false;
 
@@ -122,11 +145,11 @@ public class NPCRoach : MonoBehaviour
 
     public void rollTarget()
     {
-        int randomPlace = Random.Range(0, foodGenManager.FoodPos.Count);
+        int randomPlace = UnityEngine.Random.Range(0, foodGenManager.FoodPos.Count);
         nextPos = foodGenManager.FoodPos[randomPlace].transform.position;
         Debug.Log("My Next dest is" + foodGenManager.FoodPos[randomPlace].transform.position);
 
-        Invoke("rollTarget", Random.Range(3, 5));
+        Invoke("rollTarget", UnityEngine.Random.Range(3, 5));
     }
 
     public void areaContainFem()
@@ -144,6 +167,8 @@ public class NPCRoach : MonoBehaviour
         if (other.CompareTag("Player") && cockroachManager.dashing == true)
         {
             //KYS
+            allGameManager.fuckNPCCollect++;
+            allGameManager.AddScore(allGameManager.fuckNPCScore);
             Destroy(gameObject);
         }
     }
@@ -151,8 +176,18 @@ public class NPCRoach : MonoBehaviour
     {
         if (!gameObject.scene.isLoaded) return;
         SoundManager.Play("SFX_Death_V1");
-        allGameManager.fuckNPCCollect++;
+        tellDyIamDead = true;
         Instantiate(burstBlood, transform.position, Quaternion.Euler(0,-90,0));
         nPCRoachManager.nPCRoaches.Remove(this);
+    }
+
+    public void DynDestroy()
+    {
+        if (!gameObject.scene.isLoaded) return;
+        SoundManager.Play("SFX_Death_V1");
+        tellDyIamDead = true;
+        Instantiate(burstBlood, transform.position, Quaternion.Euler(0, -90, 0));
+        nPCRoachManager.nPCRoaches.Remove(this);
+        Destroy(gameObject);
     }
 }

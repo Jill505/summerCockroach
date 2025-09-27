@@ -30,7 +30,7 @@ public class CockroachManager : MonoBehaviour
 
     [Header("Hungry Value")]
     private float maxHunger = 100f;     // 飢餓最大值
-    private float currentHunger = 100f;
+    public float currentHunger = 100f;
     public float hungerDuration = 15f; // 從滿值到0所需時間（秒）
 
     public UnityEngine.UI.Image myHungryAmount;
@@ -79,6 +79,7 @@ public class CockroachManager : MonoBehaviour
 
         //Collect Food Stats
         allGameManger.foodCollect++;
+        allGameManger.AddScore(allGameManger.eatFood);
 
         currentHunger += healNum;
         if (currentHunger > maxHunger)
@@ -393,8 +394,8 @@ public class CockroachManager : MonoBehaviour
 
     public void FillHunger()
     {
+        Hp = 1;
         currentHunger = maxHunger;  // 直接填滿
-        UISync();                   // 更新 UI 顯示
         Debug.Log("飢餓值已經回滿！");
     }
     [Header("UI系統")]

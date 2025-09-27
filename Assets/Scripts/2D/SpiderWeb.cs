@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class SpiderWeb : MonoBehaviour
 {
     private CockroachMove cockroachMove;
+    private AllGameManager allGameManager;
 
     [Header("UI 設定")]
     private GameObject spiderWebUI; // 提示用的 Image (UI)
@@ -18,6 +19,7 @@ public class SpiderWeb : MonoBehaviour
     {
         spiderWebUI = Scene2DManager.Instance.Ftip.gameObject;
         cockroachMove = GameObject.Find("3DCockroach").GetComponent<CockroachMove>();
+        allGameManager = GameObject.Find("AllGameManager").GetComponent<AllGameManager>();
         if (spiderWebUI != null)
             spiderWebUI.SetActive(false); // 開始時隱藏提示
     }
@@ -54,6 +56,7 @@ public class SpiderWeb : MonoBehaviour
 
     void ReleasePlayer()
     {
+        allGameManager.AddScore(allGameManager.FTheWeb);
         isTrapped = false;
         cockroachMove.myMoveMode = moveMode.twoDMove; // 恢復移動
 

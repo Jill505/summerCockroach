@@ -3,11 +3,13 @@ using UnityEngine;
 public class SpiderEatUp : MonoBehaviour
 {
     private CockroachManager cockroachManager;
+    private AllGameManager allGameManager;
     private CameraLogic2D cameraLogic2D;
     private void Start()
     {
         cockroachManager = GameObject.Find("3DCockroach").GetComponent<CockroachManager>();
         cameraLogic2D = GameObject.Find("2DCamera").GetComponent<CameraLogic2D>();
+        allGameManager = GameObject.Find("AllGameManager").GetComponent<AllGameManager>();
     }
 
     public void EatUp()
@@ -22,6 +24,7 @@ public class SpiderEatUp : MonoBehaviour
     {
         // 先取得母物件
         GameObject parentObj = transform.parent != null ? transform.parent.gameObject : null;
+        allGameManager.AddScore(allGameManager.OutTheSpiderHole);
 
         // 刪除自己
         Destroy(gameObject);

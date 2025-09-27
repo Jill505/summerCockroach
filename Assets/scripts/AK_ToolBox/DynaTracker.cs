@@ -17,7 +17,43 @@ public class DynaTracker : MonoBehaviour
 
     void Update()
     {
-        //Cal all distance
+        RemoveDeadOrHiddenTargets();
+        TrackClosestTarget();
+    }
+
+    private void RemoveDeadOrHiddenTargets()
+    {
+        // 移除死亡的 NPC
+        for (int i = trackTargetRoach.Count - 1; i >= 0; i--)
+        {
+            GameObject obj = trackTargetRoach[i];
+
+            // 檢查物件是否已被 Destroy
+            if (obj == null)
+            {
+                trackTargetRoach.RemoveAt(i);
+                continue;
+            }
+
+            NPCRoach npc = obj.GetComponent<NPCRoach>();
+            if (npc != null && npc.tellDyIamDead)
+            {
+                trackTargetRoach.RemoveAt(i);
+            }
+        }
+
+        // 移除躲進洞裡的玩家
+        if (mainMoveScript.isInTheHole)
+        {
+            GameObject playerObj = GameObject.FindWithTag("Player");
+            if (playerObj != null)
+            {
+                trackTargetRoach.Remove(playerObj);
+            }
+        }
+    }
+    private void TrackClosestTarget()
+    {
         if (trackTargetRoach.Count > 0 && allowTracking)
         {
             //do sort
@@ -35,20 +71,14 @@ public class DynaTracker : MonoBehaviour
             //自己朝最近的物體移動
             Vector3 dir = (closestObj.transform.position - transform.position);
             dir = dir.normalized;
-            dir = new Vector3(dir.x,0,dir.z);
+            dir = new Vector3(dir.x, 0, dir.z);
             myRb.linearVelocity = dir * mySpeed;
+
+
         }
         else
         {
             myRb.linearVelocity = Vector3.zero;
-        }
-        if (mainMoveScript.isInTheHole == true)
-        {
-            GameObject playerObj = GameObject.FindWithTag("Player");
-            if (playerObj != null)
-            {
-                trackTargetRoach.Remove(playerObj);
-            }
         }
     }
 

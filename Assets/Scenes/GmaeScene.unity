@@ -2061,7 +2061,6 @@ MonoBehaviour:
   damage: 1
   damageCoolDown: 2
   countDown: 0
-  cManager: {fileID: 1229442373}
   deadReason: "\u9019\u4E00\u4E16\uFF0C\u6211\u88AB\u98E2\u9913\u6BBA\u6B7B"
 --- !u!1 &38091497
 GameObject:
@@ -4243,7 +4242,6 @@ MonoBehaviour:
   damage: 1
   damageCoolDown: 2
   countDown: 0
-  cManager: {fileID: 1229442373}
   deadReason: "\u9019\u4E00\u4E16\uFF0C\u6211\u88AB\u98E2\u9913\u6BBA\u6B7B"
 --- !u!1001 &72116519
 PrefabInstance:
@@ -4962,7 +4960,6 @@ MonoBehaviour:
   damage: 1
   damageCoolDown: 2
   countDown: 0
-  cManager: {fileID: 1229442373}
   deadReason: "\u9019\u4E00\u4E16\uFF0C\u6211\u88AB\u98E2\u9913\u6BBA\u6B7B"
 --- !u!1 &90011097
 GameObject:
@@ -7187,7 +7184,6 @@ MonoBehaviour:
   damage: 1
   damageCoolDown: 2
   countDown: 0
-  cManager: {fileID: 1229442373}
   deadReason: "\u9019\u4E00\u4E16\uFF0C\u6211\u88AB\u98E2\u9913\u6BBA\u6B7B"
 --- !u!1 &170667426
 GameObject:
@@ -10476,7 +10472,6 @@ MonoBehaviour:
   damage: 1
   damageCoolDown: 2
   countDown: 0
-  cManager: {fileID: 1229442373}
   deadReason: "\u9019\u4E00\u4E16\uFF0C\u6211\u88AB\u98E2\u9913\u6BBA\u6B7B"
 --- !u!1 &294043480
 GameObject:
@@ -14004,7 +13999,6 @@ MonoBehaviour:
   damage: 1
   damageCoolDown: 2
   countDown: 0
-  cManager: {fileID: 1229442373}
   deadReason: "\u9019\u4E00\u4E16\uFF0C\u6211\u88AB\u98E2\u9913\u6BBA\u6B7B"
 --- !u!1 &358422668
 GameObject:
@@ -26654,7 +26648,6 @@ MonoBehaviour:
   damage: 1
   damageCoolDown: 2
   countDown: 0
-  cManager: {fileID: 1229442373}
   deadReason: "\u9019\u4E00\u4E16\uFF0C\u6211\u88AB\u98E2\u9913\u6BBA\u6B7B"
 --- !u!1001 &678229592
 PrefabInstance:
@@ -29251,7 +29244,6 @@ MonoBehaviour:
   damage: 1
   damageCoolDown: 2
   countDown: 0
-  cManager: {fileID: 1229442373}
   deadReason: "\u9019\u4E00\u4E16\uFF0C\u6211\u88AB\u98E2\u9913\u6BBA\u6B7B"
 --- !u!1 &763507136
 GameObject:
@@ -36930,6 +36922,97 @@ Transform:
   - {fileID: 1572915320}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 59.612, z: 0}
+--- !u!1 &924978079
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 924978080}
+  - component: {fileID: 924978082}
+  - component: {fileID: 924978081}
+  m_Layer: 5
+  m_Name: scoreSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &924978080
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 924978079}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1606751798}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 422.00006, y: -262.99997}
+  m_SizeDelta: {x: 202.1004, y: 75.4684}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!61 &924978081
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 924978079}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 300, y: 100}
+  m_EdgeRadius: 0
+--- !u!222 &924978082
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 924978079}
+  m_CullTransparentMesh: 1
 --- !u!1 &925781169
 GameObject:
   m_ObjectHideFlags: 0
@@ -37854,6 +37937,16 @@ MonoBehaviour:
   gameFailCanvas: {fileID: 1581187331}
   DemoResultCanvas: {fileID: 29896855}
   showGameResultCanvas: {fileID: 305553990}
+  fuckNPCScore: 150
+  eatFood: 100
+  survive30Seconds: 200
+  findFem: 500
+  FTheWeb: 50
+  OutTheSpiderHole: 450
+  worldCanvas3D: {fileID: 1606751797}
+  scoreTextPrefab: {fileID: 1168457453880360153, guid: b5d72beaa111134459571aabee1c580a, type: 3}
+  scoreSpawnArea: {fileID: 924978081}
+  scoreShowcase: {fileID: 1896907783}
   surTimeShowcase: {fileID: 620940095}
   femCockroachCollectShowcase: {fileID: 1152304408}
   foodCollectShowcase: {fileID: 1606634305}
@@ -39725,7 +39818,6 @@ MonoBehaviour:
   damage: 1
   damageCoolDown: 2
   countDown: 0
-  cManager: {fileID: 1229442373}
   deadReason: "\u9019\u4E00\u4E16\uFF0C\u6211\u88AB\u98E2\u9913\u6BBA\u6B7B"
 --- !u!1 &1004811328
 GameObject:
@@ -41676,7 +41768,6 @@ MonoBehaviour:
   damage: 1
   damageCoolDown: 2
   countDown: 0
-  cManager: {fileID: 1229442373}
   deadReason: "\u9019\u4E00\u4E16\uFF0C\u6211\u88AB\u98E2\u9913\u6BBA\u6B7B"
 --- !u!1 &1072524035
 GameObject:
@@ -47251,6 +47342,7 @@ MonoBehaviour:
   dashing: 0
   CockroachMoveable: 1
   onDieImm: 0
+  currentHunger: 100
   hungerDuration: 60
   myHungryAmount: {fileID: 806158270}
   dashLevel: 0
@@ -49989,7 +50081,6 @@ MonoBehaviour:
   damage: 1
   damageCoolDown: 2
   countDown: 0
-  cManager: {fileID: 1229442373}
   deadReason: "\u9019\u4E00\u4E16\uFF0C\u6211\u88AB\u98E2\u9913\u6BBA\u6B7B"
 --- !u!1 &1342884878
 GameObject:
@@ -50381,7 +50472,6 @@ MonoBehaviour:
   damage: 1
   damageCoolDown: 2
   countDown: 0
-  cManager: {fileID: 1229442373}
   deadReason: "\u9019\u4E00\u4E16\uFF0C\u6211\u88AB\u98E2\u9913\u6BBA\u6B7B"
 --- !u!1 &1357420017 stripped
 GameObject:
@@ -50665,7 +50755,6 @@ MonoBehaviour:
   damage: 1
   damageCoolDown: 2
   countDown: 0
-  cManager: {fileID: 1229442373}
   deadReason: "\u9019\u4E00\u4E16\uFF0C\u6211\u88AB\u98E2\u9913\u6BBA\u6B7B"
 --- !u!1 &1378583987
 GameObject:
@@ -52032,11 +52121,11 @@ RectTransform:
   m_Children:
   - {fileID: 1735783169}
   - {fileID: 313552384}
+  - {fileID: 1896907782}
   - {fileID: 1152304406}
   - {fileID: 620940093}
   - {fileID: 1606634307}
   - {fileID: 413540785}
-  - {fileID: 1896907782}
   - {fileID: 885805208}
   - {fileID: 133851037}
   - {fileID: 1643524787}
@@ -55385,7 +55474,6 @@ MonoBehaviour:
   damage: 1
   damageCoolDown: 2
   countDown: 0
-  cManager: {fileID: 1229442373}
   deadReason: "\u9019\u4E00\u4E16\uFF0C\u6211\u88AB\u98E2\u9913\u6BBA\u6B7B"
 --- !u!1 &1512721394
 GameObject:
@@ -58663,6 +58751,7 @@ RectTransform:
   - {fileID: 1378583988}
   - {fileID: 555661013}
   - {fileID: 866865240}
+  - {fileID: 924978080}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -59183,7 +59272,6 @@ MonoBehaviour:
   damage: 1
   damageCoolDown: 2
   countDown: 0
-  cManager: {fileID: 1229442373}
   deadReason: "\u9019\u4E00\u4E16\uFF0C\u6211\u88AB\u98E2\u9913\u6BBA\u6B7B"
 --- !u!1 &1627211254
 GameObject:
@@ -62191,7 +62279,6 @@ MonoBehaviour:
   damage: 1
   damageCoolDown: 2
   countDown: 0
-  cManager: {fileID: 1229442373}
   deadReason: "\u9019\u4E00\u4E16\uFF0C\u6211\u88AB\u98E2\u9913\u6BBA\u6B7B"
 --- !u!1 &1728299431
 GameObject:
@@ -64258,7 +64345,6 @@ MonoBehaviour:
   damage: 1
   damageCoolDown: 2
   countDown: 0
-  cManager: {fileID: 1229442373}
   deadReason: "\u9019\u4E00\u4E16\uFF0C\u6211\u88AB\u98E2\u9913\u6BBA\u6B7B"
 --- !u!1 &1789129836
 GameObject:
@@ -65008,7 +65094,6 @@ MonoBehaviour:
   damage: 1
   damageCoolDown: 2
   countDown: 0
-  cManager: {fileID: 1229442373}
   deadReason: "\u9019\u4E00\u4E16\uFF0C\u6211\u88AB\u98E2\u9913\u6BBA\u6B7B"
 --- !u!1001 &1809127654
 PrefabInstance:
@@ -68223,7 +68308,6 @@ MonoBehaviour:
   damage: 1
   damageCoolDown: 2
   countDown: 0
-  cManager: {fileID: 1229442373}
   deadReason: "\u9019\u4E00\u4E16\uFF0C\u6211\u88AB\u98E2\u9913\u6BBA\u6B7B"
 --- !u!1001 &1886972380
 PrefabInstance:
@@ -68411,7 +68495,7 @@ GameObject:
   - component: {fileID: 1896907784}
   - component: {fileID: 1896907783}
   m_Layer: 5
-  m_Name: GameEndText
+  m_Name: score
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68469,7 +68553,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "==\u904A\u6232\u7D50\u675F=="
+  m_Text: 'score
+
+'
 --- !u!222 &1896907784
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -77551,7 +77637,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3036806349865650352, guid: 767b12909a357a544b77bacb3c4b4ee4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.2
+      value: 33.6
       objectReference: {fileID: 0}
     - target: {fileID: 3036806349865650352, guid: 767b12909a357a544b77bacb3c4b4ee4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -77594,6 +77680,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 767b12909a357a544b77bacb3c4b4ee4, type: 3}
+--- !u!1001 &3681903273699633617
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6073497863872838271, guid: aa54c36edc5073141aaad6d97d688dc4, type: 3}
+      propertyPath: m_Name
+      value: 3DObj_thorns
+      objectReference: {fileID: 0}
+    - target: {fileID: 6846235098024222917, guid: aa54c36edc5073141aaad6d97d688dc4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -59.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6846235098024222917, guid: aa54c36edc5073141aaad6d97d688dc4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 6846235098024222917, guid: aa54c36edc5073141aaad6d97d688dc4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 96.00495
+      objectReference: {fileID: 0}
+    - target: {fileID: 6846235098024222917, guid: aa54c36edc5073141aaad6d97d688dc4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.16124377
+      objectReference: {fileID: 0}
+    - target: {fileID: 6846235098024222917, guid: aa54c36edc5073141aaad6d97d688dc4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -7.030442e-17
+      objectReference: {fileID: 0}
+    - target: {fileID: 6846235098024222917, guid: aa54c36edc5073141aaad6d97d688dc4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.98691463
+      objectReference: {fileID: 0}
+    - target: {fileID: 6846235098024222917, guid: aa54c36edc5073141aaad6d97d688dc4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 7.030442e-17
+      objectReference: {fileID: 0}
+    - target: {fileID: 6846235098024222917, guid: aa54c36edc5073141aaad6d97d688dc4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6846235098024222917, guid: aa54c36edc5073141aaad6d97d688dc4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6846235098024222917, guid: aa54c36edc5073141aaad6d97d688dc4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: aa54c36edc5073141aaad6d97d688dc4, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -77690,3 +77833,4 @@ SceneRoots:
   - {fileID: 998804627}
   - {fileID: 429646794}
   - {fileID: 789581770}
+  - {fileID: 3681903273699633617}

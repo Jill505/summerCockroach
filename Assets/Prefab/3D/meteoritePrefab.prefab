@@ -69,7 +69,6 @@ MonoBehaviour:
   damage: 2
   damageCoolDown: 2
   countDown: 0
-  cManager: {fileID: 0}
   deadReason: "\u9019\u4E00\u4E16\uFF0C\u88AB\u9695\u77F3\u6BBA\u6B7B"
 --- !u!1 &2436155309030272931
 GameObject:
@@ -100,7 +99,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 119.4, y: 191.432, z: 82}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalScale: {x: 0.88619626, y: 0.88619626, z: 0.88619626}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6622229646594524013}

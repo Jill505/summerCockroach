@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using System.Collections;
 
 public class AllGameManager : MonoBehaviour
 {
@@ -19,7 +20,7 @@ public class AllGameManager : MonoBehaviour
 
     public bool GameFinished = false;
 
-    public int foodCollect = 0 ;
+    public int foodCollect = 0;
     public int fuckNPCCollect = 0;
 
 
@@ -33,18 +34,36 @@ public class AllGameManager : MonoBehaviour
 
     [Header("計時設定")]
     public float gameMinutes = 3f; // 可以在 Inspector 設定幾分鐘
-    private float timeRemaining;   
+    private float timeRemaining;
     public bool isTimerRunning = true;
     public float gameProcessTime = 0;
+    private float scoreTimer = 0f;
 
-    [Header("結算畫面")]
+    [Header("Result")]
     public GameObject gameEndCanvas;
     public GameObject gameFailCanvas;
     public GameObject DemoResultCanvas;
     public GameObject showGameResultCanvas;
 
+
+    [Header("Score")]
+    public float fuckNPCScore = 150f;
+    public float eatFood = 100f;
+    public float survive30Seconds = 200f;
+    public float findFem = 500f;
+    public float FTheWeb = 50f;
+    public float OutTheSpiderHole = 450f;
+    private float score = 0f;
+
+    [Header("加分特效")]
+    public Canvas worldCanvas3D;
+    public GameObject scoreTextPrefab; // 你的 Text Prefab
+    public BoxCollider2D scoreSpawnArea;
+
+
+
     [Header("Trackers")]
-    
+    public Text scoreShowcase;
     public Text surTimeShowcase;
     public Text femCockroachCollectShowcase;
     public Text foodCollectShowcase;
@@ -69,10 +88,18 @@ public class AllGameManager : MonoBehaviour
 
         timeRemaining = gameMinutes * 60f;
     }
-    
+
     void Update()
     {
         cockroachCollectProcessShowcase.text = "母蟑螂收集進度：" + cockroachCollectNum + "/" + cockroachCollectTarget;
+
+        scoreTimer += Time.deltaTime;
+
+        if (scoreTimer >= 30f)
+        {
+            AddScore(survive30Seconds); // 加分數
+            scoreTimer = 0f;            // 重置計時器
+        }
 
         if (Input.GetKeyDown(KeyCode.R))
         {
@@ -107,13 +134,12 @@ public class AllGameManager : MonoBehaviour
     public void femCockraochGet()
     {
         cockroachCollectNum++;
-
-        if (cockroachCollectNum >= cockroachCollectTarget)
-        {
-            //過關
-            GameFinished = true;
-            gameEndCanvas.SetActive(true);
-        }
+        //if (cockroachCollectNum >= cockroachCollectTarget)
+        //{
+        //    //過關
+        //    GameFinished = true;
+        //    gameEndCanvas.SetActive(true);
+        //}
     }
 
     public void GameFail()
@@ -168,7 +194,7 @@ public class AllGameManager : MonoBehaviour
 
 
     }
-    
+
     void DemoResult()
     {
         DemoResultCanvas.SetActive(true);
@@ -185,7 +211,8 @@ public class AllGameManager : MonoBehaviour
     }
     public void SyncInformationResultCanvas()
     {
-        surTimeShowcase.text = "存活時間" + "                   " + string.Format("{0:00}:{1:00}", gameProcessTime /60, gameProcessTime%60);
+        scoreShowcase.text = score.ToString();
+        surTimeShowcase.text = "存活時間" + "                   " + string.Format("{0:00}:{1:00}", gameProcessTime / 60, gameProcessTime % 60);
         femCockroachCollectShowcase.text = "母蟑螂收集數" + "            " + cockroachCollectNum;
         foodCollectShowcase.text = "食物收集數" + "               " + foodCollect;
         fuckNPCShowcase.text = "撞飛同類次數" + "           " + fuckNPCCollect;
@@ -214,14 +241,91 @@ public class AllGameManager : MonoBehaviour
         CockroachEvolutionCanvas.SetActive(false);
         Time.timeScale = 1;
     }
+
+    public void AddScore(float add)
+    {
+        score += add;
+
+        Bounds bounds = scoreSpawnArea.bounds;
+
+        // 在 Collider 範圍內隨機生成位置
+        float randomX = UnityEngine.Random.Range(bounds.min.x, bounds.max.x);
+        float randomY = UnityEngine.Random.Range(bounds.min.y, bounds.max.y);
+        Vector3 spawnPos = new Vector3(randomX, randomY, 0f); // 文字 Z 軸可視 Canvas 設定調整
+
+        // 生成 Prefab，掛在 3D Canvas 下
+        GameObject go = Instantiate(scoreTextPrefab, worldCanvas3D.transform);
+
+        // 設定位置
+        go.transform.position = spawnPos;
+
+        // 設定文字內容
+        UnityEngine.UI.Text t = go.GetComponent<UnityEngine.UI.Text>();
+        if (t != null)
+        {
+            t.text = "+" + add.ToString();
+
+            // 如果加分大於 400，放大文字
+            if (add > 400f)
+            {
+                go.GetComponent<RectTransform>().localScale = Vector3.one * 3f; // 放大 2 倍
+            }
+            else
+            {
+                go.GetComponent<RectTransform>().localScale = Vector3.one *2f; // 原本大小
+            }
+
+            // 啟動淡出 Coroutine
+            StartCoroutine(RainbowFadeText(t, 2f));
+        }
+
+    }
+
+    private IEnumerator FadeOutText(UnityEngine.UI.Text text, float duration)
+    {
+        float elapsed = 0f;
+        Color originalColor = text.color;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float alpha = Mathf.Lerp(1f, 0f, elapsed / duration);
+            text.color = new Color(originalColor.r, originalColor.g, originalColor.b, alpha);
+            yield return null;
+        }
+        Destroy(text.gameObject); // 完成後刪除文字
+    }
+    private IEnumerator RainbowFadeText(UnityEngine.UI.Text text, float duration)
+    {
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+
+            // 透明度淡出
+            float alpha = Mathf.Lerp(1f, 0f, elapsed / duration);
+
+            // 彩虹顏色
+            float h = Mathf.Repeat(Time.time * 0.1f, 1f); // H 從 0~1，0.?f 控制變化速度
+            Color color = Color.HSVToRGB(h, 1f, 1f);
+            color.a = alpha;
+            text.color = color;
+
+            yield return null;
+        }
+
+        Destroy(text.gameObject);
+    }
+
 }
 
+    public enum moveMode
+    {
+        AutoCameraMove,
+        PlayerCameraMove,
+        SpiderEvent,
+        twoDMove,
+        ChangeSceneMoment
+    }
 
-public enum moveMode
-{
-    AutoCameraMove,
-    PlayerCameraMove,
-    SpiderEvent,
-    twoDMove,
-    ChangeSceneMoment
-}
