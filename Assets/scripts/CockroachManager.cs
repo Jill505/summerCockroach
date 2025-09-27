@@ -362,6 +362,11 @@ public class CockroachManager : MonoBehaviour
         {
             _shield_Obj.SetActive(false);
         }
+
+        if (shield >= 1)
+        {
+            if (Hp >= 1) Hp = 2;
+        }
     }
     GameObject _shield_Obj;
 
