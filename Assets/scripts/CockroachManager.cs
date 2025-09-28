@@ -103,6 +103,12 @@ public class CockroachManager : MonoBehaviour
         if (cDCoroutine == null)
         {
             CleanupAllSpiders();
+
+            if (FoodTrigger.eatDieCount > 0)
+            {
+                allGameManger.GO_unlockAchievement(3);
+            }
+
             cDCoroutine = StartCoroutine(CockroachDieCoroutine());
             SoundManager.Play("SFX_Death_V1");
         }
@@ -218,6 +224,7 @@ public class CockroachManager : MonoBehaviour
             transform.position = allGameManger.femCockroachTrackList[t].myEggPos.position + debugUpper;
             allGameManger.femCockroachTrackList[t].eggNumber -= 1;
 
+            SaveSystem.mySaveFile.RespawnCal++;
 
             deadCanvasAnimator.SetTrigger("nextAct");
             FillHunger();

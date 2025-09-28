@@ -92,6 +92,9 @@ public class SpiderHurtPlayer : MonoBehaviour
                 hasHurt = true;
                 target = null;
                 cameraLogic2D.SpiderEating(this.gameObject);
+
+                AllGameManager AGM = FindAnyObjectByType<AllGameManager>();
+                AGM.InRoundKilledBySpider++;
             }
         }
     }

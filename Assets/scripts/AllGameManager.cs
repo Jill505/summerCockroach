@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using System.Collections;
+using Unity.Android.Gradle;
 
 public class AllGameManager : MonoBehaviour
 {
@@ -79,6 +80,11 @@ public class AllGameManager : MonoBehaviour
     public int allLifeCount = 0;
     public List<FemCockraochTrigger3D> femCockroachTrackList;
 
+    public Button ReLocateButt;
+
+    public int InRoundKillNpc = 0;
+    public int InRoundKilledBySpider = 0;
+
 
     void Start()
     {
@@ -87,8 +93,63 @@ public class AllGameManager : MonoBehaviour
         cManager = FindFirstObjectByType<CockroachManager>();
 
         timeRemaining = gameMinutes * 60f;
-    }
 
+        InRoundKillNpc = 0;
+        InRoundKilledBySpider = 0;
+    }
+    public void WHATEVERUPDATE()
+    {
+        FoodTrigger.eatDieCount += Time.deltaTime;
+
+        bool _ACHI5UnlockKey = true;
+        foreach (FemCockraochTrigger3D FCT3D in femCockroachTrackList)
+        {
+            if (!FCT3D.getDNAAlready)
+            {
+                _ACHI5UnlockKey = false;
+                break;
+            }
+        }
+        if (_ACHI5UnlockKey) GO_unlockAchievement(4);
+
+        if (SaveSystem.mySaveFile.EnterHoleCount > 5)
+        {
+            GO_unlockAchievement(6);
+        }
+
+        if (SaveSystem.mySaveFile.RespawnCal > 10)
+        {
+            GO_unlockAchievement(7);
+        }
+
+        if (SaveSystem.mySaveFile.FoodCollect > 50)
+        {
+            GO_unlockAchievement(9);
+        }
+
+        if (SaveSystem.mySaveFile.FemRoachBreed > 11)
+        {
+            GO_unlockAchievement(10);
+        }
+
+        if (SaveSystem.mySaveFile.NPCKillNum > 10)
+        {
+            GO_unlockAchievement(11);
+        }
+
+        if (InRoundKilledBySpider > 3)
+        {
+            GO_unlockAchievement(13);
+        }
+        if (SaveSystem.mySaveFile.KillByThornTimes > 5)
+        {
+            GO_unlockAchievement(14);
+        }
+        if (SaveSystem.mySaveFile.EnterHoleCount > 50)
+        {
+            GO_unlockAchievement(15);
+        }
+    }
     void Update()
     {
         cockroachCollectProcessShowcase.text = "母蟑螂收集進度：" + cockroachCollectNum + "/" + cockroachCollectTarget;
@@ -129,6 +190,42 @@ public class AllGameManager : MonoBehaviour
             allLifeCount += femCockroachTrackList[i].eggNumber;
         }
         //Sync all life complete
+
+        //DEBUG: 從未接觸過母蟑螂，無法觸發回到最近的母蟑螂位置
+        int _IDontGiveAFuckAboutItsName = 0;
+        foreach (FemCockraochTrigger3D FCT3D in femCockroachTrackList)
+        {
+            if (FCT3D.getDNAAlready)
+            {
+                _IDontGiveAFuckAboutItsName++;
+            }
+        }
+        if (_IDontGiveAFuckAboutItsName > 0) ReLocateButt.interactable = true;
+        else ReLocateButt.interactable = false;
+
+
+        //I don't give a fuck about any of the coding rules
+        if (gameProcessTime > 120)
+        {
+            GO_unlockAchievement(0);
+        }
+        if (gameProcessTime > 300)
+        {
+            GO_unlockAchievement(1);
+        }
+
+        WHATEVERUPDATE();
+    }
+
+    public void GO_unlockAchievement(int achiSOrt)
+    {
+        if (SaveSystem.mySaveFile.AchievementUnlock[achiSOrt] == false)
+        {
+            //UNLOCK
+            SaveSystem.mySaveFile.AchievementUnlock[achiSOrt] = true;
+            //CALL
+            CallAchiComplete(achievementsSO[achiSOrt].myName, achievementsSO[achiSOrt].mySprite);
+        }
     }
 
     public void femCockraochGet()
@@ -188,6 +285,28 @@ public class AllGameManager : MonoBehaviour
     void TimeUp()
     {
         Debug.Log("時間到！");
+
+
+        bool _ACHI9UnlockKey = true;
+        foreach (FemCockraochTrigger3D FCT3D in femCockroachTrackList)
+        {
+            if (FCT3D.getDNAAlready)
+            {
+                _ACHI9UnlockKey = false;
+                break;
+            }
+        }
+        if (_ACHI9UnlockKey) GO_unlockAchievement(8);
+
+        if (InRoundKillNpc == 0) GO_unlockAchievement(12);
+
+        GO_unlockAchievement(16);
+        SaveSystem.mySaveFile.winCount++;
+        if (SaveSystem.mySaveFile.winCount > 2)
+        {
+            GO_unlockAchievement(17);
+        }
+
         // 顯示結算畫面
         ShowGameResult();
         //DemoResult();
@@ -316,6 +435,48 @@ public class AllGameManager : MonoBehaviour
         Destroy(text.gameObject);
     }
 
+    [Header("成就系統")]
+    public Text achiName;
+    public Image achiImage;
+    public Animator achiAnimator;
+    [Header("Fuck Everything")]
+    public Achievement[] achievementsSO;
+
+    public void CallAchiComplete(string str, Sprite spr)
+    {
+        achiName.text = str;
+        achiImage.sprite = spr;
+        achiAnimator.SetTrigger("showAchi");
+    }
+
+
+    public void ReLocateAtFem()
+    {
+        Debug.Log("回到最近的已觸發母蟑螂");
+        float d = Vector3.Distance(transform.position, femCockroachTrackList[0].gameObject.transform.position);
+        int t = 0;
+        for (int i = 1; i < femCockroachTrackList.Count; i++)
+        {
+            if (femCockroachTrackList[i].eggNumber > 0 && !femCockroachTrackList[i].getDNAAlready)
+            {
+                float nD = Vector3.Distance(transform.position, femCockroachTrackList[i].gameObject.transform.position);
+                if (d > nD)
+                {
+                    d = nD;
+                    t = i;
+                }
+            }
+        }
+
+        //重新定位自己到位置
+        Vector3 debugUpper = new Vector3(0, 4, 2);
+        if (femCockroachTrackList[t].coolDownCal < 15)
+        {
+            femCockroachTrackList[t].coolDownCal = 15f;
+            //已防落地馬上有蛋
+        }
+        transform.position = femCockroachTrackList[t].myEggPos.position + debugUpper;
+    }
 }
 
     public enum moveMode

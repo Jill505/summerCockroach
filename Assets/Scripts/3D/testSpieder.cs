@@ -9,7 +9,10 @@ public class testSpieder : MonoBehaviour
     private CockroachManager cManager;
     private CameraViewToggle viewToggle;
 
+    public DamageType myDamageType;
+
     public string deadReason = "這一世，我被飢餓殺死";
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -32,6 +35,13 @@ public class testSpieder : MonoBehaviour
                 cManager.CockroachInjury(damage, deadReason);
                 cManager.shield = 0;
                 countDown = damageCoolDown;
+
+                switch (myDamageType)
+                {
+                    case DamageType.thorn:
+                        SaveSystem.mySaveFile.KillByThornTimes++;
+                        break;
+                }
             }
             else
             {
@@ -45,4 +55,11 @@ public class testSpieder : MonoBehaviour
                 npc.DynDestroy();
         }
     }
+}
+
+public enum DamageType
+{
+    thorn,
+    dinosaur,
+    spider
 }

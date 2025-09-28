@@ -169,6 +169,8 @@ public class NPCRoach : MonoBehaviour
             //KYS
             allGameManager.fuckNPCCollect++;
             allGameManager.AddScore(allGameManager.fuckNPCScore);
+            SaveSystem.mySaveFile.NPCKillNum++;
+            allGameManager.InRoundKillNpc++;
             Destroy(gameObject);
         }
     }

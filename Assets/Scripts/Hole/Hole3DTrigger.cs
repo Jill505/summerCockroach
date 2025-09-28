@@ -29,6 +29,8 @@ public class Hole3DTrigger : MonoBehaviour
             SoundManager.Play("Transition - Sound Effects");
             isInTheTrigger = true;
             system.EnterFrom3D(pairIndex, side);
+
+            SaveSystem.mySaveFile.EnterHoleCount++;
         }
     }
 

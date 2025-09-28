@@ -64,6 +64,8 @@ public class FemCockraochTrigger3D : MonoBehaviour
 
             //open dna pattern.
             allGameManager.OpenDNASelect();
+
+            SaveSystem.mySaveFile.FemRoachBreed++;
         }
         if (other.CompareTag("Player") && coolDownCal < 0)
         {

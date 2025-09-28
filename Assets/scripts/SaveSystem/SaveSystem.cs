@@ -1,4 +1,5 @@
 using System.IO;
+using Unity.Android.Gradle;
 using UnityEngine;
 
 public class SaveSystem : MonoBehaviour
@@ -47,4 +48,12 @@ public class SaveFile
 
     [Header("Stats")]
     public int FemRoachBreed = 0;
+    public int RespawnCal = 0;
+    public int EnterHoleCount = 0;
+    public int FoodCollect = 0;
+    public int NPCKillNum = 0;
+
+    public int KillByThornTimes = 0;
+
+    public int winCount = 0;
 }
