@@ -152,6 +152,7 @@ public class AllGameManager : MonoBehaviour
 
     void GameTimer()
     {
+        if (AnimationEventReceiver.prepared == false) return; // 暫停時不計時
         if (!isTimerRunning) return; // 暫停時不計時
 
         if (timeRemaining > 0)
@@ -187,12 +188,9 @@ public class AllGameManager : MonoBehaviour
     void TimeUp()
     {
         Debug.Log("時間到！");
-
         // 顯示結算畫面
         ShowGameResult();
-        DemoResult();
-
-
+        //DemoResult();
     }
 
     void DemoResult()

@@ -89,6 +89,15 @@ public class CockroachMove : MonoBehaviour
         float verAngleX = Mathf.Sin(swapAngle);
         float verAngleZ = Mathf.Cos(swapAngle);
 
+        if (HorVelocity > 0.1f) // 有在移動
+        {
+            SoundManager.PlayWalkSound("SFX_Walking on Grass", myCManager.dashing);
+        }
+        else
+        {
+            SoundManager.StopWalkSound();
+        }
+
         if (Input.GetKey(KeyCode.W))
         {
             dampClogZ = true;

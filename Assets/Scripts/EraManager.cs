@@ -283,6 +283,7 @@ public class EraManager : MonoBehaviour
             yield return null;
             if (viewToggle.Is2D())
             {
+                SoundManager.StartCaveHeatWarning("SFX_Fire Burning Sound");
                 hotSprite.SetActive(true);
                 // 開啟顏色/透明度 Coroutine（如果尚未開啟）
                 if (meColorCoroutine == null)
@@ -336,6 +337,7 @@ public class EraManager : MonoBehaviour
 
     public void ResetME()
     {
+        SoundManager.StopCaveHeatWarning();
         StayInTime = 0f;
 
         if (hotImage != null)

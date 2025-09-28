@@ -33,6 +33,11 @@ public class CockroachManager : MonoBehaviour
     public float currentHunger = 100f;
     public float hungerDuration = 15f; // 從滿值到0所需時間（秒）
 
+    public Image hungryAttention; // 設定成 Inspector 拖曳的圖片
+    public Image[] hungryAttentionGroup = new Image[3]; // 三個 UI
+    private Coroutine hungryCoroutine;
+    private Coroutine hungryGroupCoroutine;
+
     public UnityEngine.UI.Image myHungryAmount;
     private float hungerDecayRate;
 
@@ -51,10 +56,13 @@ public class CockroachManager : MonoBehaviour
     public GameObject deadBody;
     public Animator deadCanvasAnimator;
     public Text leftHealthText;
+    public Text eggsUI;
     public Text deadReasonText;
     public GameObject[] deadCanvasFadeHideGroupe;
     public GameObject deadCanvas;
     public Coroutine cDCoroutine;
+
+
 
     public string lastDeadVale;
 
@@ -121,6 +129,8 @@ public class CockroachManager : MonoBehaviour
     }
     public IEnumerator CockroachDieCoroutine()
     {
+        SoundManager.StopCaveHeatWarning();
+        SoundManager.StopHungerWarning();
         onDieImm = true;
         allGameManger.isTimerRunning = true;
         deadCanvas.SetActive(true);
@@ -242,6 +252,7 @@ public class CockroachManager : MonoBehaviour
 
     public void CockroachInjury(int injNum, string deadReason)
     {
+        if(onDieImm == true) return;
         Hp -= injNum;
         lastDeadVale = deadReason;
         deadReasonText.text = lastDeadVale;
@@ -328,7 +339,14 @@ public class CockroachManager : MonoBehaviour
 
 
         _shield_Obj = GameObject.Find("shield");
+        if (hungryAttention != null)
+        {
+            Color c = hungryAttention.color; 
+            c.a = 0f; 
+            hungryAttention.color = c;
+        }
     }
+
 
     void Update()
     {
@@ -354,6 +372,48 @@ public class CockroachManager : MonoBehaviour
             CockroachInjury(1, "這一世，餓死辣");
         }
 
+        if (currentHunger < 45f)
+        {
+            if (hungryCoroutine == null) // 避免重複啟動
+            {
+              hungryCoroutine = StartCoroutine(HungryAttentionBlink());
+              SoundManager.StartHungerWarning("SFX_HungerWarning_V1");
+            }
+            if (hungryGroupCoroutine == null)
+            {
+                hungryGroupCoroutine = StartCoroutine(HungryAttentionGroupBlink());
+            }
+        } 
+        else 
+        { 
+            if (hungryCoroutine != null) 
+            {
+                SoundManager.StopHungerWarning();
+                StopCoroutine(hungryCoroutine); 
+                hungryCoroutine = null;  
+                if (hungryAttention != null) 
+                { 
+                    Color c = hungryAttention.color; 
+                    c.a = 0f; hungryAttention.color = c; 
+                } 
+            }
+            if (hungryGroupCoroutine != null)
+            {
+                StopCoroutine(hungryGroupCoroutine);
+                hungryGroupCoroutine = null;
+
+                foreach (var img in hungryAttentionGroup)
+                {
+                    if (img != null)
+                    {
+                        Color c = img.color;
+                        c = Color.white;
+                        img.color = c;
+                    }
+                }
+            }
+        }
+
         if (shield > 0)
         {
             _shield_Obj.SetActive(true);
@@ -367,11 +427,14 @@ public class CockroachManager : MonoBehaviour
         {
             if (Hp >= 1) Hp = 2;
         }
+
+        eggsUI.text = "X " + (allGameManger.allLifeCount);
     }
     GameObject _shield_Obj;
 
     private float baseHungerDuration;   // 基礎飢餓時間（不含buff）
     private float finalHungerDuration;
+
     public void SetHungerDuration(float newDuration)
     {
         if (newDuration > 0)
@@ -402,6 +465,73 @@ public class CockroachManager : MonoBehaviour
         Hp = 1;
         currentHunger = maxHunger;  // 直接填滿
         Debug.Log("飢餓值已經回滿！");
+    }
+
+    private IEnumerator HungryAttentionBlink()
+    {
+        while (true)
+        {
+            float t = 0f; 
+            while (t < 1f)
+            { 
+                t += Time.deltaTime; 
+                if (hungryAttention != null) 
+                {
+                    Color c = hungryAttention.color; c.a = Mathf.Lerp(0f, 1f, t); 
+                    hungryAttention.color = c; 
+                } 
+                yield return null; 
+            } 
+            t = 0f; while (t < 1f) 
+            { 
+                t += Time.deltaTime; 
+                if (hungryAttention != null) 
+                { 
+                    Color c = hungryAttention.color; 
+                    c.a = Mathf.Lerp(1f, 0f, t); 
+                    hungryAttention.color = c; 
+                } 
+                yield return null; 
+            } 
+        } 
+    }
+    private IEnumerator HungryAttentionGroupBlink()
+    {
+        while (true)
+        {
+            float t = 0f;
+
+            // 白 → 紅
+            while (t < 1f)
+            {
+                t += Time.deltaTime;
+                foreach (var img in hungryAttentionGroup)
+                {
+                    if (img != null)
+                    {
+                        Color targetColor = Color.Lerp(Color.white, Color.red, t);
+                        img.color = targetColor;
+                    }
+                }
+                yield return null;
+            }
+
+            t = 0f;
+            // 紅 → 白
+            while (t < 1f)
+            {
+                t += Time.deltaTime;
+                foreach (var img in hungryAttentionGroup)
+                {
+                    if (img != null)
+                    {
+                        Color targetColor = Color.Lerp(Color.red, Color.white, t);
+                        img.color = targetColor;
+                    }
+                }
+                yield return null;
+            }
+        }
     }
     [Header("UI系統")]
     public Button dashLevelButt;
