@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
+using UnityEngine.Rendering;
 
 public class LobbyManager : MonoBehaviour
 {
@@ -33,10 +34,17 @@ public class LobbyManager : MonoBehaviour
     {
         if (transitionUI != null) transitionUI.SetActive(false);
     }
-
+    [Header("遊戲開始前講話")]
+    public string[] gameStartSpeaking;
+    bool SPEC_LOAD_FLAG;
     public void LoadLevelInfo(int levelSort)
     {
-        StartCoroutine(TransitionAndLoad(levelSort));
+        tutorBg.SetActive(true);
+        tutorAnimator.SetBool("onTotur", true);
+        SPEC_LOAD_FLAG = true;
+        StartCoroutine(tutorCoroutine(gameStartSpeaking));
+
+        //StartCoroutine(TransitionAndLoad(levelSort));
     }
 
     private IEnumerator TransitionAndLoad(int levelSort)
@@ -127,34 +135,54 @@ public class LobbyManager : MonoBehaviour
     public Text tutorText;
     public string tutorTextString = "";
     public float sayingDur = 0.2f;
+
+    public Animator specAnimator_sun;
         
     public void StartTutor()
     {
         tutorBg.SetActive(true);
         tutorAnimator.SetBool("onTotur", true);
-        StartCoroutine(tutorCoroutine());
+        StartCoroutine(tutorCoroutine(roachSaying));
     }
-    IEnumerator tutorCoroutine()
+    IEnumerator tutorCoroutine(string[] args)
     {
         yield return null;
-        for (int i = 0; i < roachSaying.Length; i++)
+        for (int i = 0; i < args.Length; i++)
         {
-            tutorTextString = "";
-            tutorText.text = tutorTextString;
-
-            for (int j = 0; j < roachSaying[i].Length; j++)
+            switch (args[i])
             {
-                tutorTextString += roachSaying[i][j];
-                tutorText.text = tutorTextString;
-                yield return new WaitForSeconds(sayingDur);
-            }
+                case "akComm/ShowImg_sun":
+                    specAnimator_sun.SetTrigger("Next");
+                    break;
 
-            StartCoroutine(waitPlayerClick());
-            yield return new WaitUntil(() => !clickClog);
+                case "akComm/HideImg_sun":
+                    specAnimator_sun.SetTrigger("Next");
+                    break;
+
+                default:
+                    tutorTextString = "";
+                    tutorText.text = tutorTextString;
+
+                    for (int j = 0; j < args[i].Length; j++)
+                    {
+                        tutorTextString += args[i][j];
+                        tutorText.text = tutorTextString;
+                        yield return new WaitForSeconds(sayingDur);
+                    }
+
+                    StartCoroutine(waitPlayerClick());
+                    yield return new WaitUntil(() => !clickClog);
+                    break;
+            }
         }
         tutorAnimator.SetBool("onTotur", false);
         yield return new WaitForSeconds(1);
         tutorBg.SetActive(false);
+
+        if (SPEC_LOAD_FLAG)
+        {
+            StartCoroutine(TransitionAndLoad(1));
+        }
     }
     IEnumerator waitPlayerClick()
     {
