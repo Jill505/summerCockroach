@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
@@ -40,7 +41,12 @@ public class DoubleHolePair
     // 初始化方法：把 enum 轉成字串
     public void InitSelectedScene()
     {
-        enableSpider = Random.Range(0, 2) == 0;
+        int seed = Guid.NewGuid().GetHashCode();
+        System.Random rng = new System.Random(seed);
+
+        // 隨機決定是否啟用蜘蛛
+        bool enableSpider = rng.Next(0, 2) == 0;
+
         if (enableSpider)
         {
             selectedScene = Scene2DDoubleHole.Cave;
@@ -48,7 +54,7 @@ public class DoubleHolePair
         else
         {
             // 隨機選 HalfCave01 或 HalfCave02
-            int rand = Random.Range(0, 2); // 0 或 1
+            int rand = rng.Next(0, 2); // 0 或 1
             if (rand == 0)
                 selectedScene = Scene2DDoubleHole.HalfCave01;
             else
@@ -248,12 +254,21 @@ public class DoubleHoleSystem : MonoBehaviour
             spawnCount = 5;
         }
 
+        // 先建立獨立隨機器
+        int seed = Guid.NewGuid().GetHashCode();
+        System.Random rng = new System.Random(seed);
+
         for (int i = 0; i < spawnCount; i++)
         {
-            int segmentIndex = Random.Range(0, points.Length - 1);
+            // 隨機選擇線段索引
+            int segmentIndex = rng.Next(0, points.Length - 1);
+
             Vector2 worldStart = spawnArea.transform.TransformPoint(points[segmentIndex]);
             Vector2 worldEnd = spawnArea.transform.TransformPoint(points[segmentIndex + 1]);
-            float t = Random.Range(0f, 1f);
+
+            // 隨機 t 值
+            float t = (float)rng.NextDouble(); // 0~1 的浮點數
+
             Vector2 spawnPos2D = Vector2.Lerp(worldStart, worldEnd, t);
             spawnPos2D.y += pair.spawnOffsetY;
 
@@ -287,10 +302,10 @@ public class DoubleHoleSystem : MonoBehaviour
         Vector2[] points = spiderArea.points;
 
         // 固定生成 1 隻
-        int segmentIndex = Random.Range(0, points.Length - 1);
+        int segmentIndex = 1;
         Vector2 worldStart = spiderArea.transform.TransformPoint(points[segmentIndex]);
         Vector2 worldEnd = spiderArea.transform.TransformPoint(points[segmentIndex + 1]);
-        float t = Random.Range(0f, 1f);
+        float t = UnityEngine.Random.Range(0f, 1f);
         Vector2 spawnPos2D = Vector2.Lerp(worldStart, worldEnd, t);
         spawnPos2D.y += pair.spawnOffsetY;
 

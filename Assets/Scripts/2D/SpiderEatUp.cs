@@ -15,6 +15,7 @@ public class SpiderEatUp : MonoBehaviour
     public void EatUp()
     {
         //cockroachManager.CockroachDie();
+        SoundManager.Play("SFX_SpiderCrunchy-bite");
         cockroachManager.CockroachInjury(2, "這一世，我被蜘蛛殺死了");
         cameraLogic2D.spiderEating = false;
         DestroySelfAndParent();
@@ -34,5 +35,9 @@ public class SpiderEatUp : MonoBehaviour
         {
             Destroy(parentObj);
         }
+    }
+    public void SpiderMovingSound()
+    {
+        SoundManager.Play("SFX_SpiderMoving");
     }
 }

@@ -71,4 +71,12 @@ public class Meteorite : MonoBehaviour
             }
         }
     }
+    public void MeteorFlySound()
+    {
+        SoundManager.Play("SFX_meteorFly");
+    }
+    public void MeteorDownSound()
+    {
+        SoundManager.Play("SFX_meteorDown");
+    }
 }

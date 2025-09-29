@@ -29,6 +29,7 @@ public class SpiderWeb : MonoBehaviour
         if (other.CompareTag("Player") && !isTrapped)
         {
             // 玩家被網住
+            SoundManager.Play("SFX_stretch");
             isTrapped = true;
             cockroachMove.myMoveMode = moveMode.SpiderEvent; // 停止移動
             currentPressCount = 0;
@@ -56,6 +57,7 @@ public class SpiderWeb : MonoBehaviour
 
     void ReleasePlayer()
     {
+        SoundManager.Play("SFX_struggleOut");
         allGameManager.AddScore(allGameManager.FTheWeb);
         isTrapped = false;
         cockroachMove.myMoveMode = moveMode.twoDMove; // 恢復移動

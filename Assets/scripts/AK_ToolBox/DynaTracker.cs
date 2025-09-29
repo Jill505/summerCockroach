@@ -107,4 +107,13 @@ public class DynaTracker : MonoBehaviour
     {        
         trackTargetRoach.Remove(other.gameObject);
     }
+
+    public void OnAirSound()
+    {
+        SoundManager.Play("SFX_DianoFootOnAir");
+    }
+    public void DownSound()
+    {
+        SoundManager.Play("SFX_DianorFootDown");
+    }
 }

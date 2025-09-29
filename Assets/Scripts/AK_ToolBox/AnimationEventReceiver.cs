@@ -11,4 +11,13 @@ public class AnimationEventReceiver : MonoBehaviour
     {
         prepared = false;
     }
+    public void UIOpenSound()
+    {
+        SoundManager.Play("SFX_button-ui-sound");
+    }
+    public void ClockSound()
+    {
+        SoundManager.Play("SFX_click-metal-loud");
+    }
+    
 }

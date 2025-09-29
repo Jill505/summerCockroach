@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using System.Collections;
-using Unity.Android.Gradle;
+//using Unity.Android.Gradle;
 
 public class AllGameManager : MonoBehaviour
 {
@@ -81,6 +81,7 @@ public class AllGameManager : MonoBehaviour
     public List<FemCockraochTrigger3D> femCockroachTrackList;
 
     public Button ReLocateButt;
+    private GameObject Cockroach3D;
 
     public int InRoundKillNpc = 0;
     public int InRoundKilledBySpider = 0;
@@ -88,6 +89,8 @@ public class AllGameManager : MonoBehaviour
 
     void Start()
     {
+        BGMManager.Play("BGM_Revival of Africa");
+        Cockroach3D = GameObject.Find("3DCockroach");
         eraManager = GetComponent<EraManager>();
         nowLoadSceneSort = SceneManager.GetActiveScene().buildIndex;
         cManager = FindFirstObjectByType<CockroachManager>();
@@ -337,11 +340,13 @@ public class AllGameManager : MonoBehaviour
 
     public void ResetGame()
     {
+        SoundManager.StopAllSounds();
         SceneManager.LoadScene(nowLoadSceneSort);
     }
 
     public void BackToStartScreen()
     {
+        SoundManager.StopAllSounds();
         SceneManager.LoadScene(0);
     }
 
@@ -475,7 +480,11 @@ public class AllGameManager : MonoBehaviour
             femCockroachTrackList[t].coolDownCal = 15f;
             //已防落地馬上有蛋
         }
-        transform.position = femCockroachTrackList[t].myEggPos.position + debugUpper;
+        Cockroach3D.transform.position = femCockroachTrackList[t].myEggPos.position + debugUpper;
+    }
+    public void ButtonSound()
+    {
+        SoundManager.Play("SFX_Wooden Button Click");
     }
 }
 

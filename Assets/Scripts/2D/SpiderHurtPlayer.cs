@@ -60,6 +60,7 @@ public class SpiderHurtPlayer : MonoBehaviour
         if (isChasing && target != null)
         {
             animator.SetBool("Moving", true);
+            
             Vector3 dir = (target.position - transform.position).normalized;
             transform.position += dir * currentSpeed * Time.deltaTime;
 
@@ -98,4 +99,5 @@ public class SpiderHurtPlayer : MonoBehaviour
             }
         }
     }
+    
 }

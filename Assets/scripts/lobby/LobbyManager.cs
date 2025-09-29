@@ -33,6 +33,7 @@ public class LobbyManager : MonoBehaviour
     private void Start()
     {
         if (transitionUI != null) transitionUI.SetActive(false);
+        BGMManager.Play("BGM_MenuAncient");
     }
     [Header("遊戲開始前講話")]
     public string[] gameStartSpeaking;
@@ -193,6 +194,11 @@ public class LobbyManager : MonoBehaviour
         }
         clickClog = false;
         yield return null;
+    }
+
+    public void ButtonSound()
+    {
+        SoundManager.Play("SFX_Wooden Button Click");
     }
 }
 

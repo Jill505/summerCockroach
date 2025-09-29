@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
@@ -62,6 +63,8 @@ public class CockroachManager : MonoBehaviour
     public GameObject deadCanvas;
     public Coroutine cDCoroutine;
 
+    private GameObject spiderWebUI; //forFixBug
+
 
 
     public string lastDeadVale;
@@ -88,6 +91,7 @@ public class CockroachManager : MonoBehaviour
         //Collect Food Stats
         allGameManger.foodCollect++;
         allGameManger.AddScore(allGameManger.eatFood);
+        SoundManager.Play("SFX_Eat");
 
         currentHunger += healNum;
         if (currentHunger > maxHunger)
@@ -137,6 +141,9 @@ public class CockroachManager : MonoBehaviour
     {
         SoundManager.StopCaveHeatWarning();
         SoundManager.StopHungerWarning();
+        BGMManager.Stop();
+        if (spiderWebUI != null)
+            spiderWebUI.SetActive(false); // fixBug
         onDieImm = true;
         allGameManger.isTimerRunning = true;
         deadCanvas.SetActive(true);
@@ -183,6 +190,7 @@ public class CockroachManager : MonoBehaviour
         {
             //glow
             deadCanvasAnimator.SetTrigger("nextAct");
+            SoundManager.Play("SFX_notification-sound");
             CameraViewToggle cameraViewToggle = GameObject.Find("CameraManager").GetComponent<CameraViewToggle>(); ;
             cameraViewToggle.SetTo3DView();
         }
@@ -346,6 +354,7 @@ public class CockroachManager : MonoBehaviour
 
 
         _shield_Obj = GameObject.Find("shield");
+        spiderWebUI = Scene2DManager.Instance.Ftip.gameObject;
         if (hungryAttention != null)
         {
             Color c = hungryAttention.color; 

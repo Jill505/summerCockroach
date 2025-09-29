@@ -89,7 +89,7 @@ public class CockroachMove : MonoBehaviour
         float verAngleX = Mathf.Sin(swapAngle);
         float verAngleZ = Mathf.Cos(swapAngle);
 
-        if (HorVelocity > 0.1f) // 有在移動
+        if (HorVelocity > 0.1f && viewToggle.is2D == false) // 有在移動
         {
             SoundManager.PlayWalkSound("SFX_Walking on Grass", myCManager.dashing);
         }
@@ -179,9 +179,10 @@ public class CockroachMove : MonoBehaviour
     }
 
     float _MaxDash;
-
+    private CameraViewToggle viewToggle;
     void Start()
     {
+        viewToggle = GameObject.Find("CameraManager").GetComponent<CameraViewToggle>();
         _MaxDash = runAbleTime;
     }
 

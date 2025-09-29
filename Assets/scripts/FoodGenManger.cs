@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using JetBrains.Annotations;
 using NUnit.Framework.Constraints;
 using TMPro;
+using System;
 
 public class FoodGenManger : MonoBehaviour
 {
@@ -18,9 +19,14 @@ public class FoodGenManger : MonoBehaviour
 
     [Header("Cal Variable")]
     public int GenFoodCount;
+
+    // 獨立隨機器
+    private System.Random rng;
     void Start()
     {
         hasFoodSpawn = new bool[FoodPos.Count];
+        int seed = Guid.NewGuid().GetHashCode(); // 保證唯一
+        rng = new System.Random(seed);
     }
 
     void Update()
@@ -50,11 +56,11 @@ public class FoodGenManger : MonoBehaviour
         if (readySpawnPosSort.Count > 0)
         {
             //Do ran spawn
-            int ranIndex= Random.Range(0, readySpawnPosSort.Count);
+            int ranIndex = rng.Next(0, readySpawnPosSort.Count);
+            GameObject obj = Instantiate(FoodPrefab, FoodPos[readySpawnPosSort[ranIndex]].transform.position, Quaternion.identity);
+            hasFoodSpawn[readySpawnPosSort[ranIndex]] = true;
             //Debug.Log(FoodPos[readySpawnPosSort[ranIndex]]);
             //Debug.Log(FoodPos[readySpawnPosSort[ranIndex]].transform.position);
-            GameObject obj =Instantiate(FoodPrefab, FoodPos[readySpawnPosSort[ranIndex]].transform.position, Quaternion.identity);
-            hasFoodSpawn[ranIndex] = true;
             obj.transform.GetChild(0).gameObject.GetComponent<FoodTrigger>().mySort = readySpawnPosSort[ranIndex];
 
         }

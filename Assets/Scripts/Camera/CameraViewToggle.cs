@@ -42,7 +42,7 @@ public class CameraViewToggle : MonoBehaviour
 
 
 
-    private bool is2D = false;
+    public bool is2D = false;
 
     private void Awake()
     {
@@ -50,6 +50,7 @@ public class CameraViewToggle : MonoBehaviour
         if (transitionQuad2D != null) transitionQuad2D.SetActive(false);
         allGameManager = GameObject.Find("AllGameManager").GetComponent<AllGameManager>();
         cockroachManager = GameObject.Find("3DCockroach").GetComponent<CockroachManager>();
+        WindGrass = GameObject.Find("Wind through Long Grass Sound Effect - Gentle Breeze");
     }
 
     private void Start()
@@ -122,6 +123,8 @@ public class CameraViewToggle : MonoBehaviour
 
     private void SetTo2DView()  
     {
+        SoundManager.StopWalkSound();
+        BGMChangeTo2D(true);
         is2D = true;
         transitionQuad3D.SetActive(false);
         camera2D.gameObject.SetActive(true);
@@ -144,6 +147,7 @@ public class CameraViewToggle : MonoBehaviour
 
     public void SetTo3DView()
     {
+        BGMChangeTo2D(false);
         is2D = false;
         transitionQuad2D.SetActive(false);
         camera2D.gameObject.SetActive(false);
@@ -190,6 +194,22 @@ public class CameraViewToggle : MonoBehaviour
     public IEnumerator Camera3DShakeFunction()
     {
         yield return null;
+    }
+
+    private GameObject WindGrass;
+    public void BGMChangeTo2D(bool To2D)
+    {
+        if(To2D == true)
+        {
+            SoundManager.StopWalkSound();
+            BGMManager.Play("BGM_Cave Drainage");
+            WindGrass.SetActive(false);
+        }
+        else
+        {
+            BGMManager.Play("BGM_Revival of Africa");
+            WindGrass.SetActive(true);
+        }
     }
     
 }

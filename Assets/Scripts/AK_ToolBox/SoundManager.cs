@@ -78,6 +78,27 @@ public class SoundManager : MonoBehaviour
         }
     }
 
+    public static void StopAllSounds()
+    {
+        if (instance == null) return;
+
+        // 停掉所有池子裡的 AudioSource
+        foreach (AudioSource source in instance.audioSources)
+        {
+            if (source.isPlaying)
+            {
+                source.Stop();
+            }
+        }
+
+        // 停掉警告音效
+        StopCaveHeatWarning();
+        StopHungerWarning();
+
+        // 停掉行走音效
+        StopWalkSound();
+    }
+
     private AudioSource caveHeatWarningSource;
     private Coroutine caveHeatCoroutine;
     public static void StartCaveHeatWarning(string name, float fadeDuration = 2f)
@@ -151,7 +172,8 @@ public class SoundManager : MonoBehaviour
 
     public static void PlayWalkSound(string name, bool isDashing) 
     { 
-        if (instance == null) return; 
+        
+        if (instance == null) return;
         if (instance.soundDict.TryGetValue(name, out AudioClip clip)) 
         { 
             if (!instance.walkSource.isPlaying) 
