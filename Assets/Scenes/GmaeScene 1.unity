@@ -928,7 +928,6 @@ MonoBehaviour:
   enableFood: 0
   minCount: 1
   maxCount: 3
-  selectedScene: 0
 --- !u!61 &38091500
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1785,6 +1784,7 @@ MonoBehaviour:
   isFollowing: 0
   cockroach2DPos: {fileID: 1764134568}
   viewToggle: {fileID: 0}
+  spiderEating: 0
 --- !u!20 &50217556
 Camera:
   m_ObjectHideFlags: 0
@@ -10119,7 +10119,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000061035156, y: -0.000030517578}
+  m_AnchoredPosition: {x: -0.000061035156, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &508763882
@@ -10735,6 +10735,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   subStatementShowcase: {fileID: 916746480}
   getMat: {fileID: 2100000, guid: f56d4c9b7af79674ab855aa13775f07b, type: 2}
+  coolDownTime: 60
+  coolDownCal: 0
+  getDNAAlready: 0
+  allowBreed: 0
+  eggNumber: 0
+  myEggPos: {fileID: 0}
+  myEgg: {fileID: 0}
 --- !u!65 &557117549
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19115,24 +19122,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcba026559451a64689ef55bc5c3b2cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cManager: {fileID: 0}
   cockroachCollectProcessShowcase: {fileID: 1106530057}
   cockroachCollectTarget: 3
   cockroachCollectNum: 0
   GameFinished: 0
   foodCollect: 0
+  fuckNPCCollect: 0
   pressTime: 2
   nowLoadSceneSort: 0
   timerText: {fileID: 937037571}
   demoResultShowcase: {fileID: 486350327}
   gameMinutes: 1
+  isTimerRunning: 1
   gameProcessTime: 0
   gameEndCanvas: {fileID: 48446024}
   gameFailCanvas: {fileID: 1581187331}
   DemoResultCanvas: {fileID: 29896855}
   showGameResultCanvas: {fileID: 0}
+  fuckNPCScore: 150
+  eatFood: 100
+  survive30Seconds: 200
+  findFem: 500
+  FTheWeb: 50
+  OutTheSpiderHole: 450
+  worldCanvas3D: {fileID: 0}
+  scoreTextPrefab: {fileID: 0}
+  scoreSpawnArea: {fileID: 0}
+  scoreShowcase: {fileID: 0}
   surTimeShowcase: {fileID: 0}
   femCockroachCollectShowcase: {fileID: 0}
   foodCollectShowcase: {fileID: 0}
+  fuckNPCShowcase: {fileID: 0}
+  DNA: 0
+  CockroachEvolutionCanvas: {fileID: 0}
+  allLifeCount: 0
+  femCockroachTrackList: []
+  ReLocateButt: {fileID: 0}
+  InRoundKillNpc: 0
+  InRoundKilledBySpider: 0
+  achiName: {fileID: 0}
+  achiImage: {fileID: 0}
+  achiAnimator: {fileID: 0}
+  achievementsSO: []
 --- !u!4 &950558451
 Transform:
   m_ObjectHideFlags: 0
@@ -19247,6 +19279,8 @@ MonoBehaviour:
     trunk3: {fileID: 0}
     treeHole1: {fileID: 0}
     treeHole3: {fileID: 0}
+  lSpiderWebs: []
+  rSpiderWebs: []
   caveStonecolumnScale: 0.5
   stoneCrevice2Scale: 0.05
   caveStonecolumn2Scale: 0.05
@@ -19257,6 +19291,7 @@ MonoBehaviour:
   trunk3Scale: 0.2
   TreeHole1Scale: 0.05
   TreeHole3Scale: 0.08
+  spiderWebScale: 0.1
 --- !u!114 &950558453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19269,32 +19304,60 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f691230571e9314f95087b644d3b43a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HalfTreeHole01:
+    parent: {fileID: 0}
+    cameraBounds: {fileID: 0}
+    spawnBounds: {fileID: 0}
+    insPos1: {fileID: 0}
+    insPos2: {fileID: 0}
+    spawnSpiderAreaL: {fileID: 0}
+    spawnSpiderAreaR: {fileID: 0}
+  HalfTreeHole02:
+    parent: {fileID: 0}
+    cameraBounds: {fileID: 0}
+    spawnBounds: {fileID: 0}
+    insPos1: {fileID: 0}
+    insPos2: {fileID: 0}
+    spawnSpiderAreaL: {fileID: 0}
+    spawnSpiderAreaR: {fileID: 0}
   TreeHole:
     parent: {fileID: 1775474886}
     cameraBounds: {fileID: 0}
     spawnBounds: {fileID: 0}
     insPos1: {fileID: 0}
     insPos2: {fileID: 0}
+    spawnSpiderAreaL: {fileID: 0}
+    spawnSpiderAreaR: {fileID: 0}
   Cave:
     parent: {fileID: 1206035239}
     cameraBounds: {fileID: 0}
     spawnBounds: {fileID: 0}
     insPos1: {fileID: 0}
     insPos2: {fileID: 0}
+    spawnSpiderAreaL: {fileID: 0}
+    spawnSpiderAreaR: {fileID: 0}
   HalfCave01:
     parent: {fileID: 1057669469}
     cameraBounds: {fileID: 0}
     spawnBounds: {fileID: 0}
     insPos1: {fileID: 0}
     insPos2: {fileID: 0}
+    spawnSpiderAreaL: {fileID: 0}
+    spawnSpiderAreaR: {fileID: 0}
   HalfCave02:
     parent: {fileID: 2037200604}
     cameraBounds: {fileID: 0}
     spawnBounds: {fileID: 0}
     insPos1: {fileID: 0}
     insPos2: {fileID: 0}
+    spawnSpiderAreaL: {fileID: 0}
+    spawnSpiderAreaR: {fileID: 0}
   Food2D: {fileID: 8715384147198252459, guid: 55a1915929fd53949a90c9818b24756c, type: 3}
   Spider2D: {fileID: 6367387676149219478, guid: c5b7f9050fe2dbc4090527da8c934ca3, type: 3}
+  Spider2DTrigger: {fileID: 0}
+  LSpiderweb: {fileID: 0}
+  RSpiderweb: {fileID: 0}
+  Ftip: {fileID: 0}
 --- !u!114 &950558454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19331,9 +19394,12 @@ MonoBehaviour:
     dynaSpawnPt: []
     hitPlayerChanceVar: 4
     spawnMeteoriteDur: 6
+    hotMaxTime: 5
   eras: 
   dynaPrefab: {fileID: 8841291091811731393, guid: 5ae930230d7d57d498375a93fc3bf9fc, type: 3}
   hotSprite: {fileID: 508763880}
+  FoodGenNum: 7
+  FoodGenDur: 3
 --- !u!1 &955352146
 GameObject:
   m_ObjectHideFlags: 0
@@ -21964,6 +22030,8 @@ MonoBehaviour:
   AutoCameraOffset: {x: 0, y: 4.19, z: -6}
   PlayerCameraOffset: {x: 0, y: 1.67, z: -4.63}
   nowCameraPosition: {x: 0, y: 0, z: 0}
+  shakeTime: 0.8
+  shakeVelocity: 0.4
 --- !u!1 &1074705969
 GameObject:
   m_ObjectHideFlags: 0
@@ -26669,6 +26737,7 @@ MonoBehaviour:
   testVelocityXZValue: 0.5
   delayStopTime: 0.5
   myMoveMode: 0
+  isInTheHole: 0
 --- !u!114 &1229442373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26699,8 +26768,57 @@ MonoBehaviour:
   - {fileID: 1594360923}
   dashing: 0
   CockroachMoveable: 1
+  onDieImm: 0
+  currentHunger: 100
   hungerDuration: 60
+  hungryAttention: {fileID: 0}
+  hungryAttentionGroup:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   myHungryAmount: {fileID: 855820109}
+  dashLevel: 0
+  dashLevelMax: 3
+  dashRecoverLevel: 0
+  dashRecoverLevelMax: 3
+  basicSpeedLevel: 0
+  basicSpeedLevelMax: 3
+  hungerLevel: 0
+  hungerLevelMax: 3
+  shield: 0
+  deadBody: {fileID: 0}
+  deadCanvasAnimator: {fileID: 0}
+  leftHealthText: {fileID: 0}
+  eggsUI: {fileID: 0}
+  deadReasonText: {fileID: 0}
+  deadCanvasFadeHideGroupe: []
+  deadCanvas: {fileID: 0}
+  lastDeadVale: 
+  dashLevelButt: {fileID: 0}
+  dashRecoverLevelButt: {fileID: 0}
+  basicSpeedLevelButt: {fileID: 0}
+  hungerLevelButt: {fileID: 0}
+  shieldButt: {fileID: 0}
+  dashLevelImage:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  dashRecoverLevelImage:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  basicSpeedLevelImage:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  hungerLevelImage:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  shieldImage:
+  - {fileID: 0}
+  lightOff: {fileID: 0}
+  lightOn: {fileID: 0}
 --- !u!54 &1229442374
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -28288,6 +28406,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   subStatementShowcase: {fileID: 1066704497}
   getMat: {fileID: 2100000, guid: f56d4c9b7af79674ab855aa13775f07b, type: 2}
+  coolDownTime: 60
+  coolDownCal: 0
+  getDNAAlready: 0
+  allowBreed: 0
+  eggNumber: 0
+  myEggPos: {fileID: 0}
+  myEgg: {fileID: 0}
 --- !u!114 &1357420025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36417,6 +36542,7 @@ MonoBehaviour:
   orthographicSize: 5
   fieldOfView: 60
   cockroachMove: {fileID: 1229442372}
+  cockroachManager: {fileID: 0}
   cameraLogic2D: {fileID: 50217555}
   parallaxBackground: {fileID: 950558452}
   transitionQuad3D: {fileID: 2065172942}
@@ -36424,6 +36550,9 @@ MonoBehaviour:
   transitionMaterial: {fileID: 2100000, guid: 46acc0bc0f3495a4cbb6d0ba5f336393, type: 2}
   transitionDuration: 1
   scale: 5
+  CameraShakeVelocity: 0.5
+  CameraShakeTime: 1
+  is2D: 0
 --- !u!4 &1713386671
 Transform:
   m_ObjectHideFlags: 0
@@ -37450,6 +37579,8 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
+  wallBounceForce: 5
+  jumpForce: 6
 --- !u!61 &1764134567
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -39436,7 +39567,6 @@ MonoBehaviour:
   enableFood: 0
   minCount: 1
   maxCount: 3
-  selectedScene: 1
 --- !u!61 &1850341737
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -40100,6 +40230,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   subStatementShowcase: {fileID: 1064028429}
   getMat: {fileID: 2100000, guid: f56d4c9b7af79674ab855aa13775f07b, type: 2}
+  coolDownTime: 60
+  coolDownCal: 0
+  getDNAAlready: 0
+  allowBreed: 0
+  eggNumber: 0
+  myEggPos: {fileID: 0}
+  myEgg: {fileID: 0}
 --- !u!65 &1884968307
 BoxCollider:
   m_ObjectHideFlags: 0
