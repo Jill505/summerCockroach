@@ -245,6 +245,7 @@ public class AllGameManager : MonoBehaviour
     public void GameFail()
     {
         GameFinished = true;
+        eraManager.GameOver();
         ShowGameResult();
         //gameFailCanvas.SetActive(true);  
     }

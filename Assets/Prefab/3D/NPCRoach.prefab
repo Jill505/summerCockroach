@@ -47,6 +47,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b332c2266bf7ad428d9922329031a99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveMode: 1
+  snakeFrequency: 8
+  snakeAmplitude: 0.5
+  detectDistance: 10
+  socialRange: 3
+  coolDownTime: 5
+  zAmplitude: 0.2
+  zFrequency: 2
   newAllGameManager: {fileID: 0}
   allGameManager: {fileID: 0}
   foodGenManager: {fileID: 0}

@@ -388,7 +388,7 @@ public class CockroachManager : MonoBehaviour
             CockroachInjury(1, "這一世，餓死辣");
         }
 
-        if (currentHunger < 45f)
+        if (currentHunger < 45f && allGameManger.GameFinished == false)
         {
             if (hungryCoroutine == null) // 避免重複啟動
             {

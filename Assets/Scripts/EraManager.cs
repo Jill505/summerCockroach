@@ -70,6 +70,7 @@ public class EraManager : MonoBehaviour
 
     [Header("動畫")]
     private Animator TimeAnimator;
+    private Animator AllUIAnimator;
 
 
     [Header("引用腳本")]
@@ -89,6 +90,7 @@ public class EraManager : MonoBehaviour
         cockroachManager = GameObject.Find("3DCockroach").GetComponent<CockroachManager>();
         allGameManager = GameObject.Find("AllGameManager").GetComponent<AllGameManager>();
         TimeAnimator = GameObject.Find("SundialAnimation")?.GetComponent<Animator>();
+        AllUIAnimator = GameObject.Find("3DUICanvas")?.GetComponent<Animator>();
         meteoriteManager = FindFirstObjectByType<MeteoriteManager>();
         eras = (Era[])System.Enum.GetValues(typeof(Era));
 
@@ -198,6 +200,7 @@ public class EraManager : MonoBehaviour
         if (TimeAnimator != null)
         {
             TimeAnimator.SetInteger("Era", 0);
+            AllUIAnimator.SetInteger("Level", 1);
         }
         foodGenManger.SetGenFoodCount(eraValue.PEFood);
         cockroachManager.SetHungerDuration(eraValue.hungerDuration);
@@ -209,6 +212,7 @@ public class EraManager : MonoBehaviour
         {
             int currentEraValue = TimeAnimator.GetInteger("Era");
             TimeAnimator.SetInteger("Era", currentEraValue + 1);
+            AllUIAnimator.SetInteger("Level", 2);
         }
         foodGenManger.SetGenFoodCount(eraValue.DEFood);
         spawnDyna();
@@ -222,6 +226,7 @@ public class EraManager : MonoBehaviour
         {
             int currentEraValue = TimeAnimator.GetInteger("Era");
             TimeAnimator.SetInteger("Era", currentEraValue + 1);
+            AllUIAnimator.SetInteger("Level", 3);
         }
 
         // 開始持續監控視角
@@ -396,6 +401,32 @@ public class EraManager : MonoBehaviour
         meteoriteManager.SpawnMeteorite(isAim);
 
         Invoke("cycleCallMeteorite", eraValue.spawnMeteoriteDur);
+    }
+
+    public void GameOver()
+    {
+        Debug.Log("遊戲結束：停止時代事件");
+
+        // 停止 EraRoutine
+        if (eraCoroutine != null)
+        {
+            StopCoroutine(eraCoroutine);
+            eraCoroutine = null;
+        }
+
+        // 停止隕石循環
+        CancelInvoke(nameof(cycleCallMeteorite));
+
+        // 停止食物循環
+        StopAllCoroutines();
+
+        // 清除場上時代相關物件
+        ClearEraObjects();
+
+        // 重置大滅絕狀態
+        ResetME();
+
+        
     }
 
 }

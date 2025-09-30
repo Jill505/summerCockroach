@@ -6,6 +6,33 @@ using UnityEngine.Experimental.AI;
 
 public class NPCRoach : MonoBehaviour
 {
+    public enum MoveMode
+    {
+        Straight,
+        Snake,
+        Robot
+    }
+
+    [Header("Roach Move Mode")]
+    public MoveMode moveMode = MoveMode.Snake;
+
+    [Header("Snake Move Settings")]
+    public float snakeFrequency = 8f;   // 扭動速度
+    public float snakeAmplitude = 0.5f; // 扭動幅度
+
+    [Header("Special Behavior")]
+    public float detectDistance = 10f;       // 射線偵測距離
+    public float socialRange = 3f;         // 接近玩家範圍
+    public float coolDownTime = 5f;          // 冷卻時間
+    private bool onSpecialCooldown = false;
+    private bool inTalkRange = false;
+    private Transform playerTarget;           // 玩家 BoxCollider 位置
+
+    [Header("Z Move Settings")]
+    public float zAmplitude = 0.25f;  // 左右偏移距離
+    public float zFrequency = 2f;    // 每段折線持續時間
+
+    private float zStartTime;         // 用來計算折線切換
 
     [Header("Ref Component")]
     public NewAllGameManager newAllGameManager;
@@ -18,6 +45,7 @@ public class NPCRoach : MonoBehaviour
 
     [Header("Ref Objects")]
     public GameObject burstBlood;
+    private GameObject Player;
 
     [Header("Roach Brain Logic")]
     public Coroutine brainLogic;
@@ -53,6 +81,7 @@ public class NPCRoach : MonoBehaviour
         foodGenManager = FindFirstObjectByType<FoodGenManger>();
         cockroachManager = FindFirstObjectByType<CockroachManager>();
         nPCRoachManager = FindFirstObjectByType<NPCRoachManager>();
+        Player = GameObject.Find("3DCockroach");
 
         nPCRoachManager.nPCRoaches.Add(this);
 
@@ -60,6 +89,8 @@ public class NPCRoach : MonoBehaviour
 
         //StartCoroutine(myCoroutineUpdate());
 
+
+        ////////RandomSelectSkin
         for (int i = 0; i < NPC.Length; i++)
         {
             if (NPC[i] != null)
@@ -78,6 +109,19 @@ public class NPCRoach : MonoBehaviour
         {
             NPC[randomIndex].SetActive(true);
         }
+
+        if (randomIndex == 1)
+        {
+            moveMode = MoveMode.Snake;
+        }
+        else if(randomIndex == 2) 
+        {
+            moveMode = MoveMode.Robot;
+        }
+        else
+        {
+            moveMode = MoveMode.Straight;
+        }
     }
     bool fixedUpdateAllowCheckClog = false;
 
@@ -91,7 +135,21 @@ public class NPCRoach : MonoBehaviour
     {
         if (!fixedUpdateAllowCheckClog)
         {
-            if (hasFemInZone)
+            CanTrySpecialBehavior();
+            if(findPlayer == true)
+            {
+                if(moveMode == MoveMode.Snake)
+                {
+                    FollowPlayer();
+                }               
+                else
+                {
+                    ScaredByPlayer();
+                    Vector3 dir = (Player.transform.position - transform.position).normalized;
+                    transform.rotation = Quaternion.LookRotation(dir, Vector3.up);
+                }
+            }
+            else if (hasFemInZone)
             {
                 //Do Track Fem
                 goFem();
@@ -106,7 +164,12 @@ public class NPCRoach : MonoBehaviour
                 else
                 {
                     //Do Normal
-                    goTarget();
+                    if (moveMode == MoveMode.Straight)
+                        goTarget();
+                    else if (moveMode == MoveMode.Snake)
+                        goTargetSnake();
+                    else if (moveMode == MoveMode.Robot)
+                        goTargetZ();
                 }
             }
             fixedUpdateAllowCheckClog = true;
@@ -125,6 +188,62 @@ public class NPCRoach : MonoBehaviour
         rot3 = new Vector3(0, rot3.y, 0);
         transform.localEulerAngles = rot3;
         myRb.linearVelocity = transform.forward * moveSpeed;
+    }
+
+    public void goTargetSnake()
+    {
+        // 前進方向
+        Vector3 dir = (nextPos - transform.position).normalized;
+
+        // 計算左右方向 (用交叉積求出右向量)
+        Vector3 side = Vector3.Cross(Vector3.up, dir).normalized;
+
+        // Sine 波產生左右擺動
+        float sway = Mathf.Sin(Time.time * snakeFrequency) * snakeAmplitude;
+
+        // 最終方向 = 前進方向 + 左右擺動
+        Vector3 swayDir = (dir + side * sway).normalized;
+
+        // 面向這個方向
+        transform.rotation = Quaternion.LookRotation(swayDir, Vector3.up);
+
+        // 推進
+        myRb.linearVelocity = swayDir * moveSpeed;
+    }
+
+    public void goTargetZ()
+    {
+        // 初始化 zStartTime（第一次呼叫時）
+        if (zStartTime == 0f) zStartTime = Time.time;
+
+        // 計算前進方向
+        Vector3 dir = (nextPos - transform.position);
+        float distance = dir.magnitude;
+
+        if (distance < 0.1f)
+        {
+            myRb.linearVelocity = Vector3.zero;
+            return;
+        }
+
+        dir.Normalize();
+
+        // 計算左右方向
+        Vector3 side = Vector3.Cross(Vector3.up, dir).normalized;
+
+        // Z 型折線切換
+        bool goRight = Mathf.FloorToInt((Time.time - zStartTime) * zFrequency) % 2 == 0;
+
+        Vector3 offset = (goRight ? 1 : -1) * side * zAmplitude;
+
+        // 最終方向
+        Vector3 moveDir = (dir + offset).normalized;
+
+        // 面向方向
+        transform.rotation = Quaternion.LookRotation(moveDir, Vector3.up);
+
+        // 移動
+        myRb.linearVelocity = moveDir * moveSpeed;
     }
     public void goFem()
     {
@@ -151,6 +270,106 @@ public class NPCRoach : MonoBehaviour
 
         Invoke("rollTarget", UnityEngine.Random.Range(3, 5));
     }
+
+    private bool findPlayer = false;
+    private void CanTrySpecialBehavior()
+    {
+        if (moveMode == MoveMode.Snake)
+        {
+            if(!onSpecialCooldown)
+            {
+                Ray ray = new Ray(transform.position, transform.forward);
+                if (Physics.Raycast(ray, out RaycastHit hit, detectDistance))
+                {
+                    if (hit.collider.CompareTag("Player"))
+                    {
+                        playerTarget = hit.collider.transform;
+                        findPlayer = true;
+                    }
+                }
+            }
+        }
+
+        if (moveMode == MoveMode.Robot)
+        {
+            if (Vector3.Distance(transform.position, Player.transform.position) <= socialRange)
+            {
+                findPlayer = true;                
+            }
+        }
+
+    }
+
+    private Coroutine scaredRoutine = null;
+
+    private void ScaredByPlayer()
+    {
+        if (scaredRoutine == null)
+        {
+            scaredRoutine = StartCoroutine(ScaredRoutine());
+        }
+    }
+
+    private IEnumerator ScaredRoutine()
+    {
+        myRb.constraints &= ~RigidbodyConstraints.FreezePositionY;
+        while (Vector3.Distance(transform.position, Player.transform.position) <= socialRange)
+        {
+            // 原地跳躍（用 Rigidbody 力量推上去）
+            myRb.AddForce(Vector3.up * 5f, ForceMode.Impulse);
+            
+            SoundManager.Play("SFX_rat-squeaks");
+
+            // 等 5 秒再下一次
+            yield return new WaitForSeconds(5f);
+        }
+
+        // 玩家離開範圍後恢復
+        myRb.constraints |= RigidbodyConstraints.FreezePositionY;
+        scaredRoutine = null;
+        findPlayer = false;
+    }
+
+    private void FollowPlayer()
+    {
+        if (playerTarget == null) return;
+        Vector3 dir = (playerTarget.position - transform.position).normalized;
+        transform.rotation = Quaternion.LookRotation(dir, Vector3.up);
+        myRb.linearVelocity = dir * moveSpeed;
+
+        if (!inTalkRange && Vector3.Distance(transform.position, playerTarget.position) <= socialRange)
+        {
+            StartCoroutine(PlayerAttackRoutine());
+        }
+    }
+    private IEnumerator PlayerAttackRoutine()
+    {
+        inTalkRange = true;
+        myRb.linearVelocity = Vector3.zero;
+        // 發出叫聲兩次
+        string[] clips = { "SFX_talking-nya", "SFX_talking-nya2", "SFX_talking-nya3" };
+
+        // 用 GUID 生成 seed，確保每個蟑螂隨機不同
+        int seed = Guid.NewGuid().GetHashCode();
+        System.Random rng = new System.Random(seed);
+
+        for (int i = 0; i < 4; i++)
+        {
+            int randomIndex = rng.Next(0, clips.Length); // 從 0 到 clips.Length-1 隨機
+            SoundManager.Play(clips[randomIndex]);
+            yield return new WaitForSeconds(0.2f); // 叫聲間隔
+        }
+
+        yield return new WaitForSeconds(1f);
+        playerTarget = null;
+        onSpecialCooldown = true;
+        inTalkRange = false;
+        findPlayer = false;
+        yield return new WaitForSeconds(coolDownTime);
+        onSpecialCooldown = false;
+    }
+
+
 
     public void areaContainFem()
     {
@@ -191,5 +410,17 @@ public class NPCRoach : MonoBehaviour
         Instantiate(burstBlood, transform.position, Quaternion.Euler(0, -90, 0));
         nPCRoachManager.nPCRoaches.Remove(this);
         Destroy(gameObject);
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        // 顯示射線偵測距離
+        Gizmos.color = Color.red;
+        Vector3 forward = transform.forward * detectDistance;
+        Gizmos.DrawLine(transform.position, transform.position + forward);
+
+        // 顯示攻擊範圍球
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, socialRange);
     }
 }
