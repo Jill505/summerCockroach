@@ -475,6 +475,8 @@ public class NPCRoach : MonoBehaviour
             Rigidbody playerRb = other.GetComponent<Rigidbody>();
             if (playerRb != null)
             {
+                cockroachManager.PlayHungryAttentionFadeOnce();
+                cockroachManager.DecreaseHunger(10f);
                 StartCoroutine(KnockbackEntity(playerRb));
             }
 
@@ -509,8 +511,7 @@ public class NPCRoach : MonoBehaviour
     [Obsolete]
     private IEnumerator KnockbackEntity(Rigidbody rb, Action onComplete = null)
     {
-        cockroachManager.PlayHungryAttentionFadeOnce();
-        cockroachManager.DecreaseHunger(10f);
+        
         float knockbackForce = 30f;   // 初始力道
         float duration = 1f;          // 撞擊持續時間
         float elapsed = 0f;
