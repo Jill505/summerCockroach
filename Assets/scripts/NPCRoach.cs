@@ -14,7 +14,7 @@ public class NPCRoach : MonoBehaviour
     }
 
     [Header("Roach Move Mode")]
-    public MoveMode moveMode = MoveMode.Snake;
+    public MoveMode moveMode = MoveMode.Straight;
 
     [Header("Snake Move Settings")]
     public float snakeFrequency = 8f;   // 扭動速度
@@ -23,7 +23,7 @@ public class NPCRoach : MonoBehaviour
     [Header("Special Behavior")]
     public float detectDistance = 10f;       // 射線偵測距離
     public float socialRange = 3f;         // 接近玩家範圍
-    public float coolDownTime = 5f;          // 冷卻時間
+    public float coolDownTime = 3f;          // 冷卻時間
     private bool onSpecialCooldown = false;
     private bool inTalkRange = false;
     private Transform playerTarget;           // 玩家 BoxCollider 位置
@@ -73,6 +73,11 @@ public class NPCRoach : MonoBehaviour
 
     [HideInInspector] public bool tellDyIamDead = false;
 
+    [Header("Mutant Roach")]
+    private bool isMutant = false;
+    private bool isCharging = false;
+    private Transform chargeTarget;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -88,40 +93,53 @@ public class NPCRoach : MonoBehaviour
         rollTarget();
 
         //StartCoroutine(myCoroutineUpdate());
+        if (gameObject.name.Contains("BlueNPCRoach"))
+        {
+            moveSpeed *= 1.5f;   // 速度加快
+            detectDistance = 15f; // 射線偵測距離更遠
+            coolDownTime = 10f;  // 攻擊冷卻時間延長
+            isMutant = true;     // 標記為突變體
+        }
 
 
         ////////RandomSelectSkin
-        for (int i = 0; i < NPC.Length; i++)
+        if(!isMutant)
         {
-            if (NPC[i] != null)
+            for (int i = 0; i < NPC.Length; i++)
             {
-                NPC[i].SetActive(false);
+                if (NPC[i] != null)
+                {
+                    NPC[i].SetActive(false);
+                }
+            }
+
+            int seed = Guid.NewGuid().GetHashCode(); // 保證唯一
+            rng = new System.Random(seed);
+
+            int randomIndex = rng.Next(0, NPC.Length); // 用獨立隨機器
+
+            // 啟用那個 GameObject
+            if (NPC[randomIndex] != null)
+            {
+                NPC[randomIndex].SetActive(true);
+            }
+
+            if (randomIndex == 1)
+            {
+                moveMode = MoveMode.Snake;
+            }
+            else if (randomIndex == 2)
+            {
+                moveMode = MoveMode.Robot;
+            }
+            else
+            {
+                moveMode = MoveMode.Straight;
             }
         }
+        
 
-        int seed = Guid.NewGuid().GetHashCode(); // 保證唯一
-        rng = new System.Random(seed);
-
-        int randomIndex = rng.Next(0, NPC.Length); // 用獨立隨機器
-
-        // 啟用那個 GameObject
-        if (NPC[randomIndex] != null)
-        {
-            NPC[randomIndex].SetActive(true);
-        }
-
-        if (randomIndex == 1)
-        {
-            moveMode = MoveMode.Snake;
-        }
-        else if(randomIndex == 2) 
-        {
-            moveMode = MoveMode.Robot;
-        }
-        else
-        {
-            moveMode = MoveMode.Straight;
-        }
+        
     }
     bool fixedUpdateAllowCheckClog = false;
 
@@ -133,6 +151,13 @@ public class NPCRoach : MonoBehaviour
     }
     private void Update()
     {
+        if (isMutant)
+        {
+            if (!onSpecialCooldown && !isCharging)
+            {
+                TryMutantDetectAndCharge();
+            }
+        }
         if (!fixedUpdateAllowCheckClog)
         {
             CanTrySpecialBehavior();
@@ -369,6 +394,49 @@ public class NPCRoach : MonoBehaviour
         onSpecialCooldown = false;
     }
 
+    private void TryMutantDetectAndCharge()
+    {
+        Ray ray = new Ray(transform.position, transform.forward);
+        if (Physics.Raycast(ray, out RaycastHit hit, detectDistance))
+        {
+            // 撞擊優先目標
+            if (hit.collider.CompareTag("Player") || hit.collider.CompareTag("NPCRoach"))
+            {
+                chargeTarget = hit.collider.transform;
+                StartCoroutine(MutantChargeRoutine());
+            }
+        }
+    }
+
+    private bool hasHitTarget = false; // 紀錄是否已經撞到
+
+    private IEnumerator MutantChargeRoutine()
+    {
+        isCharging = true;
+        hasHitTarget = false; // 每次開始衝刺都重置
+        float chargeDuration = 1.5f; // 最長衝刺時間
+        float elapsed = 0f;
+
+        while (elapsed < chargeDuration && chargeTarget != null && !hasHitTarget)
+        {
+            Vector3 dir = (chargeTarget.position - transform.position).normalized;
+            myRb.linearVelocity = dir * (moveSpeed * 2.5f); // 突刺速度更快
+            transform.rotation = Quaternion.LookRotation(dir, Vector3.up);
+
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        // 停止衝刺
+        myRb.linearVelocity = Vector3.zero;
+        isCharging = false;
+        chargeTarget = null;
+
+        onSpecialCooldown = true;
+        yield return new WaitForSeconds(coolDownTime);
+        onSpecialCooldown = false;
+    }
+
 
 
     public void areaContainFem()
@@ -386,12 +454,92 @@ public class NPCRoach : MonoBehaviour
         if (other.CompareTag("Player") && cockroachManager.dashing == true)
         {
             //KYS
+            FindFirstObjectByType<CockroachManager>().PlayHungryAttentionFadeOnce();
             allGameManager.fuckNPCCollect++;
             allGameManager.AddScore(allGameManager.fuckNPCScore);
             SaveSystem.mySaveFile.NPCKillNum++;
             allGameManager.InRoundKillNpc++;
             Destroy(gameObject);
         }
+    }
+    [Obsolete]
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (!isMutant || !isCharging) return;
+
+        GameObject other = collision.gameObject;
+
+        // 玩家被撞
+        if (other.CompareTag("Player"))
+        {
+            Rigidbody playerRb = other.GetComponent<Rigidbody>();
+            if (playerRb != null)
+            {
+                StartCoroutine(KnockbackEntity(playerRb));
+            }
+
+            // 停止衝刺
+            isCharging = false;
+            chargeTarget = null;
+            onSpecialCooldown = true;
+            StartCoroutine(MutantCooldown());
+        }
+
+        // 其他 NPC 被撞
+        if (other.CompareTag("NPCRoach"))
+        {
+            Rigidbody npcRb = other.GetComponent<Rigidbody>();
+            if (npcRb != null)
+            {
+                StartCoroutine(KnockbackEntity(npcRb, () =>
+                {
+                    // 撞擊結束後死亡
+                    other.GetComponent<NPCRoach>()?.DynDestroy();
+                }));
+            }
+
+            // 停止衝刺
+            isCharging = false;
+            chargeTarget = null;
+            onSpecialCooldown = true;
+            StartCoroutine(MutantCooldown());
+        }
+    }
+
+    [Obsolete]
+    private IEnumerator KnockbackEntity(Rigidbody rb, Action onComplete = null)
+    {
+        cockroachManager.PlayHungryAttentionFadeOnce();
+        cockroachManager.DecreaseHunger(10f);
+        float knockbackForce = 30f;   // 初始力道
+        float duration = 1f;          // 撞擊持續時間
+        float elapsed = 0f;
+
+        // 撞擊方向（只沿 X 軸）
+        Vector3 knockDir = rb.transform.position - transform.position;
+        knockDir.y = 0f;
+        knockDir.z = 0f;
+        knockDir.Normalize();
+
+        while (elapsed < duration)
+        {
+            float t = 1f - (elapsed / duration); // 逐漸減小
+            rb.velocity = knockDir * knockbackForce * t;
+
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        rb.velocity = Vector3.zero;
+
+        // 撞擊結束後回調（NPC 死亡）
+        //onComplete?.Invoke();
+    }
+
+    private IEnumerator MutantCooldown()
+    {
+        yield return new WaitForSeconds(coolDownTime);
+        onSpecialCooldown = false;
     }
     private void OnDestroy()
     {

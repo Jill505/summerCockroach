@@ -145,7 +145,7 @@ public class CockroachManager : MonoBehaviour
         if (spiderWebUI != null)
             spiderWebUI.SetActive(false); // fixBug
         onDieImm = true;
-        allGameManger.isTimerRunning = true;
+        allGameManger.isTimerRunning = false;
         deadCanvas.SetActive(true);
         for (int i = 0; i < deadCanvasFadeHideGroupe.Length; i++)
         {
@@ -251,7 +251,7 @@ public class CockroachManager : MonoBehaviour
             deadCanvas.SetActive(false);
         }
         onDieImm = false;
-        allGameManger.isTimerRunning = false;
+        allGameManger.isTimerRunning = true;
 
         deadCanvas.SetActive(false);
 
@@ -268,6 +268,7 @@ public class CockroachManager : MonoBehaviour
     public void CockroachInjury(int injNum, string deadReason)
     {
         if(onDieImm == true) return;
+        if(allGameManger.GameFinished) return;
         Hp -= injNum;
         lastDeadVale = deadReason;
         deadReasonText.text = lastDeadVale;
@@ -546,6 +547,61 @@ public class CockroachManager : MonoBehaviour
                     }
                 }
                 yield return null;
+            }
+        }
+    }
+
+    public void PlayHungryAttentionFadeOnce()
+    {
+        if (hungryAttention != null)
+        {
+            StartCoroutine(HungryAttentionFadeOnce());
+        }
+    }
+
+    private IEnumerator HungryAttentionFadeOnce()
+    {
+        // 先把透明度設為 1 (完全顯示)
+        Color c = hungryAttention.color;
+        c.a = 1f;
+        hungryAttention.color = c;
+
+        float t = 0f;
+        while (t < 1f)
+        {
+            t += Time.deltaTime;
+            if (hungryAttention != null)
+            {
+                c.a = Mathf.Lerp(1f, 0f, t);  // 從 1 漸變到 0
+                hungryAttention.color = c;
+            }
+            yield return null;
+        }
+    }
+    public void DecreaseHunger(float amount)
+    {
+        if (amount <= 0f)
+        {
+            Debug.LogWarning("DecreaseHunger: 扣除量必須大於 0");
+            return;
+        }
+
+        // 扣除飢餓值
+        currentHunger -= amount;
+
+        // 更新 UI
+        UISync();
+
+        // 飢餓值下限保護
+        if (currentHunger <= 0f)
+        {
+            currentHunger = 0f;
+
+            // 若玩家尚未死亡才觸發
+            if (!onDieImm && !allGameManger.GameFinished)
+            {
+                Debug.Log("飢餓歸零，觸發受傷！");
+                CockroachInjury(1, "餓死了……");
             }
         }
     }

@@ -34,5 +34,10 @@ public class AnimationEventReceiver : MonoBehaviour
     {
         SoundManager.Play("SFX_click-metal-loud");
     }
-    
+
+    public void MeteorSound()
+    {
+        SoundManager.Play("SFX_meteor-impact-sound");
+    }
+
 }

@@ -22,15 +22,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 61b76dd5fbd49ee49b68cf958db8f309, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 26.832
+      value: -197.22708
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 61b76dd5fbd49ee49b68cf958db8f309, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.98
+      value: -0.0000038146973
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 61b76dd5fbd49ee49b68cf958db8f309, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 96.00495
+      value: -21.877508
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 61b76dd5fbd49ee49b68cf958db8f309, type: 3}
       propertyPath: m_LocalRotation.w
@@ -73,7 +73,7 @@ PrefabInstance:
       addedObject: {fileID: 4400940468858179537}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 61b76dd5fbd49ee49b68cf958db8f309, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1126937002947865000}
+      addedObject: {fileID: 8366049409985728689}
   m_SourcePrefab: {fileID: 100100000, guid: 61b76dd5fbd49ee49b68cf958db8f309, type: 3}
 --- !u!1 &6073497863872838271 stripped
 GameObject:
@@ -97,8 +97,8 @@ MonoBehaviour:
   countDown: 0
   myDamageType: 0
   deadReason: "\u9019\u4E00\u4E16\uFF0C\u88AB\u834A\u68D8\u523A\u6B7B"
---- !u!65 &1126937002947865000
-BoxCollider:
+--- !u!64 &8366049409985728689
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -112,9 +112,10 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 8, y: 5, z: 5}
-  m_Center: {x: 1.1735381, y: 4.05273, z: 0.86133856}
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1561048557729855516, guid: 61b76dd5fbd49ee49b68cf958db8f309, type: 3}

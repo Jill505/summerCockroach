@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using System.Collections;
+using static UnityEditor.ShaderData;
 //using Unity.Android.Gradle;
 
 public class AllGameManager : MonoBehaviour
@@ -45,7 +46,9 @@ public class AllGameManager : MonoBehaviour
     public GameObject gameFailCanvas;
     public GameObject DemoResultCanvas;
     public GameObject showGameResultCanvas;
-
+    public Animator showGameResultCanvasAnimator;
+    public GameObject deadCanvas;
+    public Animator deadCanvasAnimator;
 
     [Header("Score")]
     public float fuckNPCScore = 150f;
@@ -250,7 +253,8 @@ public class AllGameManager : MonoBehaviour
         //gameFailCanvas.SetActive(true);  
     }
 
-
+    private bool endingTriggered = false; // 確保只觸發一次
+    private bool pass = false;
     void GameTimer()
     {
         if (AnimationEventReceiver.prepared == false) return; // 暫停時不計時
@@ -264,15 +268,32 @@ public class AllGameManager : MonoBehaviour
 
             // 更新 UI
             UpdateTimerDisplay(timeRemaining);
+            if (timeRemaining <= 8f && endingTriggered == false)
+            {
+                StartCoroutine(TriggerEndingCanvas());
+            }
         }
         else
         {
             // 時間到
             timeRemaining = 0;
             isTimerRunning = false;
+            pass = true;    
             TimeUp();
         }
 
+    }
+    private IEnumerator TriggerEndingCanvas()
+    {
+        // 立即啟用 Canvas
+        if (deadCanvas != null)
+            deadCanvas.SetActive(true);
+
+        // 下一幀再設定 Animator，確保 Canvas 啟用後 Animator 能正確被觸發
+        yield return null;
+        if (deadCanvasAnimator != null)
+            deadCanvasAnimator.SetTrigger("Ending");
+            endingTriggered = true;
     }
     void UpdateTimerDisplay(float timeToDisplay)
     {
@@ -289,8 +310,7 @@ public class AllGameManager : MonoBehaviour
     void TimeUp()
     {
         Debug.Log("時間到！");
-
-
+        GameFinished = true;
         bool _ACHI9UnlockKey = true;
         foreach (FemCockraochTrigger3D FCT3D in femCockroachTrackList)
         {
@@ -326,9 +346,30 @@ public class AllGameManager : MonoBehaviour
     {
         if (showGameResultCanvas != null)
         {
-            SyncInformationResultCanvas();
+            bool makeSoundStop = true;
+            if(makeSoundStop == true)
+            {
+                StartCoroutine(GameResultStopSoundThenPlayEndBgm());
+                makeSoundStop = false;
+            }
+                        SyncInformationResultCanvas();
             showGameResultCanvas.SetActive(true);
+            if(pass == true)
+            {
+                showGameResultCanvasAnimator.SetBool("Pass", true);
+            }
+            
         }
+    }
+    private IEnumerator GameResultStopSoundThenPlayEndBgm()
+    {
+        SoundManager.StopAllSounds();
+        SoundManager.StopCaveHeatWarning();
+        SoundManager.StopHungerWarning();
+        BGMManager.Stop();
+        yield return null;
+        SoundManager.Play("SFX_level-win");
+        BGMManager.Play("BGM_wedding-day-drums");
     }
     public void SyncInformationResultCanvas()
     {

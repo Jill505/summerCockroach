@@ -25,6 +25,33 @@ public class testSpieder : MonoBehaviour
     {
         countDown -= 1 * Time.deltaTime;
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player")) // 先判斷是不是玩家
+        {
+            if (countDown <= 0 && !viewToggle.Is2D())
+            {
+                // 玩家受傷
+                cManager.CockroachInjury(damage, deadReason);
+                cManager.shield = 0;
+                countDown = damageCoolDown;
+
+                switch (myDamageType)
+                {
+                    case DamageType.thorn:
+                        SaveSystem.mySaveFile.KillByThornTimes++;
+                        break;
+                }
+            }
+        }
+        if (collision.gameObject.CompareTag("NPCRoach"))
+        {
+            NPCRoach npc = collision.gameObject.GetComponent<NPCRoach>();
+            if (npc != null)
+                npc.DynDestroy();
+        }
+    }
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "Player")
