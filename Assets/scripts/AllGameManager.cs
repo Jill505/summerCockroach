@@ -494,6 +494,7 @@ public class AllGameManager : MonoBehaviour
         achiName.text = str;
         achiImage.sprite = spr;
         achiAnimator.SetTrigger("showAchi");
+        SaveSystem.Save();
     }
 
 

@@ -277,7 +277,7 @@ public class CockroachManager : MonoBehaviour
     }
     public void CockroachBodyPartSwitch()
     {
-        myCockroachMove.HorVelocity = 0;
+        //myCockroachMove.HorVelocity = 0;
         //for (int i = 0; i < cockroachModels.Length; i++)
         //{
         //    cockroachModels[i].SetActive(false);
@@ -296,7 +296,7 @@ public class CockroachManager : MonoBehaviour
         //{
         //    cockroachModels[Hp].SetActive(true);
         //}
-
+        /*
         switch (Hp)
         {
 
@@ -335,6 +335,12 @@ public class CockroachManager : MonoBehaviour
                 myCockroachMove.HorVelocity = 0;
                 CockroachDie();
                 break;
+        }*/
+        //myCockroachMove.HorVelocity = 33; //刪除座標
+
+        if (Hp < 1)
+        {
+            CockroachDie();
         }
     }
 

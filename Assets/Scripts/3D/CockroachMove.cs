@@ -140,21 +140,23 @@ public class CockroachMove : MonoBehaviour
         }
 
 
+        //if (myCManager.basicSpeedLevel < 1) { myCManager.basicSpeedLevel = 1; }
+
         if (Input.GetKey(KeyCode.LeftShift) && runAbleTimeCal > 0)
         {
             myCManager.dashing = true;  
-            myRealVelocity = (myMaxVelocity * runSpeed) + (myCManager.basicSpeedLevel * 1.5f);
+            myRealVelocity = (myMaxVelocity * runSpeed* ((myCManager.basicSpeedLevel+1) * 1.5f));
             runNotCDCal = runNotCD;
             runAbleTimeCal -= Time.deltaTime;
         }
         else
         {
             myCManager.dashing = false;
-            myRealVelocity = myMaxVelocity + (myCManager.basicSpeedLevel * 1.2f);
+            myRealVelocity = myMaxVelocity* (myCManager.basicSpeedLevel+1)  * 1.2f;
 
             if (HorVelocity > myMaxVelocity)
             {
-                HorVelocity -= myMaxVelocity;
+                HorVelocity = myMaxVelocity;
             }
             runNotCDCal -= Time.deltaTime;
             if (runNotCDCal < 0)
@@ -221,6 +223,7 @@ public class CockroachMove : MonoBehaviour
 
         else if (myMoveMode == moveMode.ChangeSceneMoment)
         {
+            Debug.Log("bb");
             StartCoroutine(DelayedStop(delayStopTime));
         }
 
@@ -238,6 +241,8 @@ public class CockroachMove : MonoBehaviour
     private IEnumerator DelayedStop(float delayStopTime)
     {
         yield return new WaitForSeconds(delayStopTime);
+
+        Debug.Log("aa");
 
         HorVelocity = 0;
         myRb.linearVelocity = Vector3.zero;

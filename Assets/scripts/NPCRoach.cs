@@ -291,7 +291,7 @@ public class NPCRoach : MonoBehaviour
     {
         int randomPlace = UnityEngine.Random.Range(0, foodGenManager.FoodPos.Count);
         nextPos = foodGenManager.FoodPos[randomPlace].transform.position;
-        Debug.Log("My Next dest is" + foodGenManager.FoodPos[randomPlace].transform.position);
+        //Debug.Log("My Next dest is" + foodGenManager.FoodPos[randomPlace].transform.position);
 
         Invoke("rollTarget", UnityEngine.Random.Range(3, 5));
     }
