@@ -6,6 +6,8 @@ public class AnimationEventReceiver : MonoBehaviour
     public GameObject obj1;
     public GameObject obj2;
     public GameObject obj3;
+
+    
     public void ClockIdleAlready()
     {
         prepared = true;
@@ -40,4 +42,5 @@ public class AnimationEventReceiver : MonoBehaviour
         SoundManager.Play("SFX_meteor-impact-sound");
     }
 
+    
 }

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class testSpieder : MonoBehaviour
+public class TestSpieder : MonoBehaviour
 {
     public int damage = 1;
 
@@ -51,6 +51,15 @@ public class testSpieder : MonoBehaviour
             if (npc != null)
                 npc.DynDestroy();
         }
+
+        if (collision.gameObject.CompareTag("Spider"))
+            HandleSpiderHit(collision.gameObject);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Spider"))
+            HandleSpiderHit(other.gameObject);
     }
     private void OnTriggerStay(Collider other)
     {
@@ -81,7 +90,41 @@ public class testSpieder : MonoBehaviour
             if (npc != null)
                 npc.DynDestroy();
         }
+        if (other.gameObject.CompareTag("Spider"))
+            HandleSpiderHit(other.gameObject);
     }
+    private void HandleSpiderHit(GameObject obj)
+    {
+        // 嘗試先找 RedSpiderAI
+        RedSpiderAI spider = obj.GetComponent<RedSpiderAI>();
+
+        // 如果自己沒有，再去父物件找
+        if (spider == null)
+            spider = obj.GetComponentInParent<RedSpiderAI>();
+
+        // 如果父物件沒有，再去子物件找
+        if (spider == null)
+            spider = obj.GetComponentInChildren<RedSpiderAI>();
+
+        // 如果找到就呼叫 MakeDestroy
+        if (spider != null)
+        {
+            spider.MakeDestroy();
+            return;
+        }
+
+        // 如果沒有找到 RedSpiderAI，再找名為 "3DObj_Spider" 的子物件
+        Transform spiderObj = obj.transform.Find("3DObj_Spider");
+        if (spiderObj != null)
+        {
+            RedSpiderAI spiderInChild = spiderObj.GetComponent<RedSpiderAI>();
+            if (spiderInChild != null)
+            {
+                spiderInChild.MakeDestroy();
+            }
+        }
+    }
+
 }
 
 public enum DamageType

@@ -5,6 +5,7 @@ using UnityEngine;
 public class RedSpiderAI : MonoBehaviour
 {
     [Header("References")]
+    private CockroachMove cockroachMove;
     public Transform spider;              // 蜘蛛本體
     public BoxCollider moveRangeBox;      // 定點移動範圍
     public CapsuleCollider centerCapsule; // 中心判定
@@ -32,6 +33,8 @@ public class RedSpiderAI : MonoBehaviour
     private Vector3 currentDirection;
     private bool wasInsideCapsule = true;
     private bool wasInsideBox = true;
+    public GameObject burstBlood;
+
 
     private Coroutine fadeCoroutine;
 
@@ -46,6 +49,7 @@ public class RedSpiderAI : MonoBehaviour
         if (foundPlayer != null)
         {
             player = foundPlayer.transform;
+            cockroachMove = player.GetComponent<CockroachMove>();
             chaseTargets.Add(player.transform);
             Debug.Log($"[RedSpiderAI] 找到玩家物件: {player.name}");
         }
@@ -64,6 +68,10 @@ public class RedSpiderAI : MonoBehaviour
 
     private void Update()
     {
+        if (!canSpiderMove)
+        {
+            return; // 完全停止 AI 更新
+        }
         if (isChasing)
         {
             Chase();
@@ -82,6 +90,10 @@ public class RedSpiderAI : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (!canSpiderMove)
+        {
+            return; //  暫停所有物理與偵測邏輯
+        }
         // 移除已消失目標
         CleanChaseTargets();
 
@@ -105,7 +117,7 @@ public class RedSpiderAI : MonoBehaviour
         {
             if (target == null) continue;
 
-            if (IsInsideCollider(spiderDetection, target.position))
+            if (IsInsideCollider(spiderDetection, target.position) )
             {
                 float dist = Vector3.Distance(spider.position, target.position);
                 if (dist < nearestDist)
@@ -142,7 +154,19 @@ public class RedSpiderAI : MonoBehaviour
 
     private void Chase()
     {
-        if (currentChaseTarget == null) return;
+        if (currentChaseTarget == null)
+        {
+            Debug.Log("[RedSpiderAI] 追擊對象消失或被摧毀，停止追擊並返回起點");
+            StopChasingAndReturn();
+            return;
+        }
+        if (currentChaseTarget == player && cockroachMove != null && cockroachMove.isInTheHole)
+        {
+            Debug.Log("[RedSpiderAI] 玩家進入洞中，蜘蛛停止追擊並返回起點");
+            currentChaseTarget = null;
+            StopChasingAndReturn();
+            return;
+        }
 
         // 旋轉面向目標
         Vector3 dirToTarget = (currentChaseTarget.position - spider.position).normalized;
@@ -196,6 +220,8 @@ public class RedSpiderAI : MonoBehaviour
 
         spider.position += -spider.forward * moveSpeed * Time.deltaTime;
     }
+
+   
     #endregion
 
     #region --- 原本的巡邏邏輯 ---
@@ -403,6 +429,33 @@ public class RedSpiderAI : MonoBehaviour
 
         animControl.speed = targetSpeed;
     }
+
+    [Header("AI 狀態控制")]
+    public bool canSpiderMove = true; //  外部控制蜘蛛移動的開關
+
+    public void SetCanSpiderMove(bool value)
+    {
+        canSpiderMove = value;
+
+        if (!canSpiderMove)
+        {
+            canMove = false;
+            isChasing = false;
+            isReturning = false;
+            animControl.speed = 0f; // 停止動畫
+            Debug.Log("[RedSpiderAI] 蜘蛛暫停行動");
+        }
+        else
+        {
+            animControl.speed = 1f; // 恢復動畫
+            Debug.Log("[RedSpiderAI] 蜘蛛恢復行動");
+        }
+    }
+
+    public bool IsSpiderMovable()
+    {
+        return canSpiderMove;
+    }
     #endregion
 
     #region --- Collider 判斷 ---
@@ -412,4 +465,16 @@ public class RedSpiderAI : MonoBehaviour
         return closest == point;
     }
     #endregion
+
+    public void MakeDestroy()
+    {
+        Destroy(gameObject);
+    }
+
+    private void OnDestroy()
+    {
+        if (!gameObject.scene.isLoaded) return;
+        SoundManager.Play("SFX_Death_V1");
+        Instantiate(burstBlood, transform.position, Quaternion.Euler(0, -90, 0));
+    }
 }

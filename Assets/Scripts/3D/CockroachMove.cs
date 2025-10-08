@@ -241,12 +241,27 @@ public class CockroachMove : MonoBehaviour
     public IEnumerator DelayedStop(float delayStopTime)
     {
         yield return new WaitForSeconds(delayStopTime);
-
-        Debug.Log("aa");
-
         HorVelocity = 0;
         myRb.linearVelocity = Vector3.zero;
-    }   
+    }
+
+    [Header("玩家行動控制")]
+    public bool canMove = true;
+
+    public void SetCanMove(bool value)
+    {
+        canMove = value;
+        if (!canMove)
+        {
+            HorVelocity = 0;
+            myRb.linearVelocity = Vector3.zero;
+        }
+    }
+
+    public bool IsPlayerMovable()
+    {
+        return canMove;
+    }
 
 }
 

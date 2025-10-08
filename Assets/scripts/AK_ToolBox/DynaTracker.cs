@@ -101,6 +101,14 @@ public class DynaTracker : MonoBehaviour
                 trackTargetRoach.Add(other.gameObject);
             }
         }
+        if (other.CompareTag("Spider"))
+        {
+            if (!trackTargetRoach.Contains(other.gameObject))
+            {
+                //register it into the obj zone
+                trackTargetRoach.Add(other.gameObject);
+            }
+        }
     }
 
     private void OnTriggerExit(Collider other)
