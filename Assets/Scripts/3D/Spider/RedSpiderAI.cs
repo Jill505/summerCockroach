@@ -5,38 +5,43 @@ using UnityEngine;
 public class RedSpiderAI : MonoBehaviour
 {
     [Header("References")]
-    private CockroachMove cockroachMove;
-    public Transform spider;              // 蜘蛛本體
-    public BoxCollider moveRangeBox;      // 定點移動範圍
-    public CapsuleCollider centerCapsule; // 中心判定
+    protected CockroachMove cockroachMove; // private → protected
+    public Transform spider;
+    public BoxCollider moveRangeBox;
+    public CapsuleCollider centerCapsule;
     public CapsuleCollider spiderDetection;
-    public Transform startPos;            // 起始位置
+    public Transform startPos;
     public Animator animControl;
-    private Transform player;              // 玩家目標
-    private List<Transform> chaseTargets = new List<Transform>();
+    protected Transform player;           // private → protected
+    protected List<Transform> chaseTargets = new List<Transform>(); // private → protected
 
     [Header("Movement Settings")]
-    public float moveSpeed = 2f;          // 前進速度
-    public float chaseSpeed = 10f;       // 追擊速度
-    public float turnSpeed = 180f;        // 旋轉速度
-    public float idleTime = 8f;           // 停留時間
-    public float fadeDuration = 1.5f;     // 動畫速度變化時間
+    protected float moveSpeed = 13f;          // private → protected
+    protected float chaseSpeed = 20f;       // private → protected
+    protected float turnSpeed = 180f;        // private → protected
+    protected float idleTime = 8f;
+    protected float fadeDuration = 1.5f;
 
-    private bool canMove = false;
-    private bool canCapsuleAction = true;
-    private bool canBoxAction = true;
-    private bool isChasing = false;
-    private bool isReturning = false;
+    protected bool canMove = false;          // private → protected
+    protected bool canCapsuleAction = true;
+    protected bool canBoxAction = true;
+    protected bool isChasing = false;
+    protected bool isReturning = false;
+    protected bool isTurning = false;
 
-    private List<Vector3> capsuleDirections = new List<Vector3>();
-    private Quaternion initialRotation;
-    private Vector3 currentDirection;
-    private bool wasInsideCapsule = true;
-    private bool wasInsideBox = true;
+    protected List<Vector3> capsuleDirections = new List<Vector3>();
+    protected Quaternion initialRotation;
+    protected Vector3 currentDirection;
+    protected bool wasInsideCapsule = true;
+    protected bool wasInsideBox = true;
     public GameObject burstBlood;
 
+    protected Coroutine fadeCoroutine;
 
-    private Coroutine fadeCoroutine;
+    protected Transform currentChaseTarget;
+
+    [Header("AI 狀態控制")]
+    public bool canSpiderMove = true;
 
     private void Start()
     {
@@ -138,9 +143,8 @@ public class RedSpiderAI : MonoBehaviour
         }
     }
 
-    private Transform currentChaseTarget;
 
-    private void StartChasing(Transform target)
+    protected virtual void StartChasing(Transform target)
     {
         currentChaseTarget = target;
         Debug.Log($"[RedSpiderAI] 偵測到目標 {target.name}，進入追擊模式");
@@ -152,7 +156,7 @@ public class RedSpiderAI : MonoBehaviour
         SpeedUpAnimator();
     }
 
-    private void Chase()
+    protected virtual void Chase()
     {
         if (currentChaseTarget == null)
         {
@@ -189,12 +193,12 @@ public class RedSpiderAI : MonoBehaviour
         }
     }
 
-    private void StopChasingAndReturn()
+    protected virtual void StopChasingAndReturn()
     {
         Debug.Log("[RedSpiderAI] 玩家離開視線，返回起始點");
         isChasing = false;
         isReturning = true;
-        SlowDownAnimator();
+        SpeedUpAnimator();
     }
 
     private void ReturnToStart()
@@ -221,17 +225,17 @@ public class RedSpiderAI : MonoBehaviour
         spider.position += -spider.forward * moveSpeed * Time.deltaTime;
     }
 
-   
+
     #endregion
 
     #region --- 原本的巡邏邏輯 ---
-    private void MoveForward()
+    protected virtual void MoveForward()
     {
         SpeedUpAnimator();
         spider.position += currentDirection * moveSpeed * Time.deltaTime;
     }
 
-    private void CheckCapsule()
+    public void CheckCapsule()
     {
         bool inside = IsInsideCollider(centerCapsule, spider.position);
 
@@ -273,6 +277,7 @@ public class RedSpiderAI : MonoBehaviour
 
     private IEnumerator TurnToDirection(Vector3 targetDir)
     {
+        isTurning = true;
         canMove = false;
         SlowDownAnimator();
         yield return new WaitForSeconds(idleTime);
@@ -301,6 +306,7 @@ public class RedSpiderAI : MonoBehaviour
 
         currentDirection = -spider.forward;
         canMove = true;
+        isTurning = false;
         Debug.Log("[RedSpiderAI] 旋轉完成，開始移動");
     }
 
@@ -338,7 +344,7 @@ public class RedSpiderAI : MonoBehaviour
         Debug.Log("[RedSpiderAI] 平滑回正完成");
     }
 
-    private void CheckBox()
+    public void CheckBox()
     {
         bool inside = IsInsideCollider(moveRangeBox, spider.position);
 
@@ -355,6 +361,7 @@ public class RedSpiderAI : MonoBehaviour
     private IEnumerator BoxAction()
     {
         canMove = false;
+        isTurning = true;
         SlowDownAnimator();
         yield return new WaitForSeconds(idleTime);
         SpeedUpAnimator();
@@ -386,6 +393,7 @@ public class RedSpiderAI : MonoBehaviour
 
         currentDirection = -spider.forward;
         canMove = true;
+        isTurning = false;
         canBoxAction = true;
     }
     #endregion
@@ -430,8 +438,7 @@ public class RedSpiderAI : MonoBehaviour
         animControl.speed = targetSpeed;
     }
 
-    [Header("AI 狀態控制")]
-    public bool canSpiderMove = true; //  外部控制蜘蛛移動的開關
+    
 
     public void SetCanSpiderMove(bool value)
     {

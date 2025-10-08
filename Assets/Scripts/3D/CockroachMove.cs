@@ -194,6 +194,11 @@ public class CockroachMove : MonoBehaviour
 
         runAbleTime = _MaxDash + myCManager.dashLevel;
 
+        if (!canMove)
+        {
+            HorVelocity = 0;
+            myRb.linearVelocity = Vector3.zero;
+        }
         if (myMoveMode == moveMode.AutoCameraMove)
         {
             isInTheHole = false;
@@ -250,12 +255,7 @@ public class CockroachMove : MonoBehaviour
 
     public void SetCanMove(bool value)
     {
-        canMove = value;
-        if (!canMove)
-        {
-            HorVelocity = 0;
-            myRb.linearVelocity = Vector3.zero;
-        }
+        canMove = value;    
     }
 
     public bool IsPlayerMovable()

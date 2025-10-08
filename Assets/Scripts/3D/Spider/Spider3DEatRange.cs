@@ -17,23 +17,7 @@ public class Spider3DEatRange : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        TestSpieder spiederScript = other.GetComponent<TestSpieder>();
-        if (spiederScript != null)
-        {
-            // 嘗試取得 RedSpiderAI 並呼叫 MakeDestroy
-            Debug.Log("2");
-            RedSpiderAI spider = GetComponent<RedSpiderAI>();
-            if (spider != null)
-            {
-                Debug.Log("3");
-                Debug.Log("[SpiderCollisionDetector] 碰到 testSpieder，執行 MakeDestroy()");
-                spider.MakeDestroy();
-            }
-            else
-            {
-                Debug.LogWarning("[SpiderCollisionDetector] 找不到 RedSpiderAI 組件！");
-            }
-        }
+        
         if (other.CompareTag("Player"))
         {
             Debug.Log("[RedSpiderAI] 玩家進入捕食範圍");
