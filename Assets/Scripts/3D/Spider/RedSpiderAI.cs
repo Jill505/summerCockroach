@@ -12,6 +12,7 @@ public class RedSpiderAI : MonoBehaviour
     public Transform startPos;            // 起始位置
     public Animator animControl;
     private Transform player;              // 玩家目標
+    private List<Transform> chaseTargets = new List<Transform>();
 
     [Header("Movement Settings")]
     public float moveSpeed = 2f;          // 前進速度
@@ -45,12 +46,17 @@ public class RedSpiderAI : MonoBehaviour
         if (foundPlayer != null)
         {
             player = foundPlayer.transform;
+            chaseTargets.Add(player.transform);
             Debug.Log($"[RedSpiderAI] 找到玩家物件: {player.name}");
         }
         else
         {
             Debug.LogWarning("[RedSpiderAI] 場景中找不到 Tag 為 'Player' 的物件！");
         }
+
+        GameObject[] npcs = GameObject.FindGameObjectsWithTag("NPCRoach");
+        foreach (GameObject npc in npcs)
+            chaseTargets.Add(npc.transform);
 
         Debug.Log("[RedSpiderAI] 初始化完成，開始 Idle");
         StartCoroutine(IdleThenStartMoving());
@@ -60,7 +66,7 @@ public class RedSpiderAI : MonoBehaviour
     {
         if (isChasing)
         {
-            ChasePlayer();
+            Chase();
         }
         else if (isReturning)
         {
@@ -76,35 +82,56 @@ public class RedSpiderAI : MonoBehaviour
 
     private void FixedUpdate()
     {
+        // 移除已消失目標
+        CleanChaseTargets();
+
         if (!isChasing && !isReturning)
         {
             CheckCapsule();
             CheckBox();
         }
 
-        DetectPlayer();
+        DetectTarget();
     }
 
     #region --- 玩家偵測與追擊邏輯 ---
-    private void DetectPlayer()
+    private void DetectTarget()
     {
-        if (player == null) return;
+        Transform nearestTarget = null;
+        float nearestDist = float.MaxValue;
 
-        bool playerInSight = IsInsideCollider(spiderDetection, player.position);
-
-        if (playerInSight && !isChasing)
+        // 找出最近且在偵測範圍內的目標
+        foreach (Transform target in chaseTargets)
         {
-            StartChasing();
+            if (target == null) continue;
+
+            if (IsInsideCollider(spiderDetection, target.position))
+            {
+                float dist = Vector3.Distance(spider.position, target.position);
+                if (dist < nearestDist)
+                {
+                    nearestDist = dist;
+                    nearestTarget = target;
+                }
+            }
         }
-        else if (!playerInSight && isChasing)
+
+        if (nearestTarget != null && !isChasing)
+        {
+            StartChasing(nearestTarget);
+        }
+        else if (nearestTarget == null && isChasing)
         {
             StopChasingAndReturn();
         }
     }
 
-    private void StartChasing()
+    private Transform currentChaseTarget;
+
+    private void StartChasing(Transform target)
     {
-        Debug.Log("[RedSpiderAI] 偵測到玩家，進入追擊模式");
+        currentChaseTarget = target;
+        Debug.Log($"[RedSpiderAI] 偵測到目標 {target.name}，進入追擊模式");
         isChasing = true;
         isReturning = false;
         canMove = false;
@@ -113,17 +140,29 @@ public class RedSpiderAI : MonoBehaviour
         SpeedUpAnimator();
     }
 
-    private void ChasePlayer()
+    private void Chase()
     {
-        if (player == null) return;
+        if (currentChaseTarget == null) return;
 
-        // 旋轉面向玩家
-        Vector3 dirToPlayer = (player.position - spider.position).normalized;
-        Quaternion targetRot = Quaternion.LookRotation(new Vector3(-dirToPlayer.x, 0, -dirToPlayer.z));
+        // 旋轉面向目標
+        Vector3 dirToTarget = (currentChaseTarget.position - spider.position).normalized;
+        Quaternion targetRot = Quaternion.LookRotation(new Vector3(-dirToTarget.x, 0, -dirToTarget.z));
         spider.rotation = Quaternion.RotateTowards(spider.rotation, targetRot, turnSpeed * Time.deltaTime);
 
         // 前進
         spider.position += -spider.forward * chaseSpeed * Time.deltaTime;
+    }
+
+    private void CleanChaseTargets()
+    {
+        for (int i = chaseTargets.Count - 1; i >= 0; i--)
+        {
+            if (chaseTargets[i] == null)
+            {
+                chaseTargets.RemoveAt(i);
+                Debug.Log("[RedSpiderAI] 移除已死亡或消失的目標");
+            }
+        }
     }
 
     private void StopChasingAndReturn()

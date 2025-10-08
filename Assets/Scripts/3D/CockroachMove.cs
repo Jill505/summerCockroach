@@ -238,7 +238,7 @@ public class CockroachMove : MonoBehaviour
         //myRealVelocity = _fpp + (myCManager.dashLevel * 2);
     }
 
-    private IEnumerator DelayedStop(float delayStopTime)
+    public IEnumerator DelayedStop(float delayStopTime)
     {
         yield return new WaitForSeconds(delayStopTime);
 
