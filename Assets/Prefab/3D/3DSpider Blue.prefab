@@ -83,7 +83,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -136,6 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c5842b8110890a429d011d5b4b53cd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spiderEat: {fileID: 2327937534342201067}
   spider: {fileID: 2324834247852540719}
   moveRangeBox: {fileID: 5756504981612012580}
   centerCapsule: {fileID: 4455385179403125717}
@@ -298,6 +299,7 @@ MonoBehaviour:
   animControl: {fileID: 4046364947071521890}
   spiderObject: {fileID: 3520018991513970108}
   beEatnPlayer: {fileID: 7549050102024012212}
+  playerbeEaten: 0
 --- !u!1 &9004296676920975363
 GameObject:
   m_ObjectHideFlags: 0

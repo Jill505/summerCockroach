@@ -9,6 +9,7 @@ public class Spider3DEatRange : MonoBehaviour
     public GameObject beEatnPlayer;
     private GameObject player;
     private CockroachManager cockroachManager;
+    public bool playerbeEaten = false;
 
     private void Start()
     {
@@ -16,11 +17,12 @@ public class Spider3DEatRange : MonoBehaviour
         cockroachManager = player.GetComponent<CockroachManager>();
     }
     private void OnTriggerEnter(Collider other)
-    {
-        
-        if (other.CompareTag("Player"))
+    {      
+        if (other.CompareTag("Player") && cockroachManager.EatingBySpider == false)
         {
             Debug.Log("[RedSpiderAI] 玩家進入捕食範圍");
+            cockroachManager.EatingBySpider = true;
+            playerbeEaten = true;
 
             // 停止玩家移動
             CockroachMove playerMovement = other.GetComponent<CockroachMove>();
@@ -66,7 +68,7 @@ public class Spider3DEatRange : MonoBehaviour
     }
     private IEnumerator eatUp()
     {
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(3f);
         SpiderEat();
     }
     // 播放蜘蛛咬玩家動畫(結尾播放音效，恢復兩者移動，扣血)

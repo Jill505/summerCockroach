@@ -26,6 +26,7 @@ public class CockroachManager : MonoBehaviour
     
 
     [Header("蟑螂操作變數")]
+    public bool EatingBySpider = false;
     public bool CockroachMoveable = false;
     public bool onDieImm = false;
 

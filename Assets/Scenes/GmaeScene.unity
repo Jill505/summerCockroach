@@ -35869,6 +35869,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7a4aa1b09f7db541a152ebc0bf573f3, type: 3}
+--- !u!1001 &759515327
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1055016089040293181, guid: 4a8029f2a5c4449489f2b9e054b88d39, type: 3}
+      propertyPath: m_Name
+      value: 3DSpider Red
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530516525170821788, guid: 4a8029f2a5c4449489f2b9e054b88d39, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -129.57803
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530516525170821788, guid: 4a8029f2a5c4449489f2b9e054b88d39, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0000019073486
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530516525170821788, guid: 4a8029f2a5c4449489f2b9e054b88d39, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 165.759
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530516525170821788, guid: 4a8029f2a5c4449489f2b9e054b88d39, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530516525170821788, guid: 4a8029f2a5c4449489f2b9e054b88d39, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530516525170821788, guid: 4a8029f2a5c4449489f2b9e054b88d39, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530516525170821788, guid: 4a8029f2a5c4449489f2b9e054b88d39, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530516525170821788, guid: 4a8029f2a5c4449489f2b9e054b88d39, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530516525170821788, guid: 4a8029f2a5c4449489f2b9e054b88d39, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530516525170821788, guid: 4a8029f2a5c4449489f2b9e054b88d39, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4a8029f2a5c4449489f2b9e054b88d39, type: 3}
 --- !u!1 &762107675
 GameObject:
   m_ObjectHideFlags: 0
@@ -60641,6 +60698,7 @@ MonoBehaviour:
   - {fileID: 614622448}
   - {fileID: 0}
   dashing: 0
+  EatingBySpider: 0
   CockroachMoveable: 1
   onDieImm: 0
   currentHunger: 100
@@ -98687,6 +98745,71 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 767b12909a357a544b77bacb3c4b4ee4, type: 3}
+--- !u!1001 &8899297046440782958
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1549306782473476911, guid: c16a0fae7bc5ae64d865c6b3ab10875e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -143.34027
+      objectReference: {fileID: 0}
+    - target: {fileID: 1549306782473476911, guid: c16a0fae7bc5ae64d865c6b3ab10875e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1549306782473476911, guid: c16a0fae7bc5ae64d865c6b3ab10875e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 153.08679
+      objectReference: {fileID: 0}
+    - target: {fileID: 1549306782473476911, guid: c16a0fae7bc5ae64d865c6b3ab10875e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1549306782473476911, guid: c16a0fae7bc5ae64d865c6b3ab10875e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1549306782473476911, guid: c16a0fae7bc5ae64d865c6b3ab10875e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1549306782473476911, guid: c16a0fae7bc5ae64d865c6b3ab10875e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1549306782473476911, guid: c16a0fae7bc5ae64d865c6b3ab10875e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1549306782473476911, guid: c16a0fae7bc5ae64d865c6b3ab10875e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1549306782473476911, guid: c16a0fae7bc5ae64d865c6b3ab10875e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2076828156769681110, guid: c16a0fae7bc5ae64d865c6b3ab10875e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3520018991513970108, guid: c16a0fae7bc5ae64d865c6b3ab10875e, type: 3}
+      propertyPath: m_Name
+      value: 3DSpider Blue
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455385179403125717, guid: c16a0fae7bc5ae64d865c6b3ab10875e, type: 3}
+      propertyPath: m_Radius
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c16a0fae7bc5ae64d865c6b3ab10875e, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -98821,3 +98944,5 @@ SceneRoots:
   - {fileID: 60879951}
   - {fileID: 1300541917}
   - {fileID: 697994030}
+  - {fileID: 8899297046440782958}
+  - {fileID: 759515327}

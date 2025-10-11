@@ -32,6 +32,13 @@ public class BlueSpiderAI : RedSpiderAI
             StopChasingAndReturn();
             return;
         }
+        if (!IsInsideCollider(spiderDetection, player.position) && currentChaseTarget == player)
+        {
+            Debug.Log("[RedSpiderAI] 玩家跑走了，蜘蛛停止追擊並返回起點");
+            currentChaseTarget = null;
+            StopChasingAndReturn();
+            return;
+        }
 
         // 旋轉面向目標
         Vector3 dirToTarget = (currentChaseTarget.position - spider.position).normalized;
@@ -92,11 +99,11 @@ public class BlueSpiderAI : RedSpiderAI
 
         spider.position = endPos;
 
-        CheckCapsule();
-        CheckBox();
         SlowDownAnimator();
 
         yield return new WaitForSeconds(jumpInterval);
+
+        
         isJumping = false;
     }
 }

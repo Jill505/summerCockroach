@@ -81,6 +81,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 407c4e0a911989e4c9dd2f59a700d4ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spiderEat: {fileID: 3480313195351641839}
   spider: {fileID: 4958088232710445099}
   moveRangeBox: {fileID: 8698366648464700238}
   centerCapsule: {fileID: 5616331885810465313}
@@ -216,6 +217,7 @@ MonoBehaviour:
   animControl: {fileID: 6008754173928933703}
   spiderObject: {fileID: 1055016089040293181}
   beEatnPlayer: {fileID: 7562774425652253218}
+  playerbeEaten: 0
 --- !u!1 &5084115651530927357
 GameObject:
   m_ObjectHideFlags: 0
