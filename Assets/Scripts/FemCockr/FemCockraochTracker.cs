@@ -72,7 +72,7 @@ public class FemCockraochTracker : MonoBehaviour
     }
     void TextShowcase2D()
     {
-        textShowcase.text = "隕石來臨時，不能待太久，會被燒死的。";
+        textShowcase.text = "隕石來臨時，不能待太久，會被燒死的。\nOxO OxO";
     }
 
 

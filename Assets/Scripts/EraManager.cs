@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
+using static UnityEngine.Rendering.DebugUI;
 
 public enum Era
 {
@@ -296,7 +297,7 @@ public class EraManager : MonoBehaviour
 
                 if (StayInTime >= eraValue.hotMaxTime)
                 {
-                    cockroachManager.CockroachInjury(1, "這一世，在縫隙之中被燒死");
+                    cockroachManager.CockroachInjury(2, "這一世，在縫隙之中被燒死");
                     StayInTime = 0f; // 可選：死亡後重置時間
                 }
             }

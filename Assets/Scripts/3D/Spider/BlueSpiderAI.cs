@@ -39,6 +39,14 @@ public class BlueSpiderAI : RedSpiderAI
         spider.rotation = Quaternion.RotateTowards(spider.rotation, targetRot, turnSpeed * Time.deltaTime);
     }
 
+    protected override void StopChasingAndReturn()
+    {
+        Debug.Log("[BlueSpiderAI] 玩家離開視線，返回起始點");
+        isChasing = false;
+        isReturning = true;
+        SpeedUpAnimator();
+    }
+
     private IEnumerator JumpForward(bool isChase)
     {
         isJumping = true;

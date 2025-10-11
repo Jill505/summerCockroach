@@ -207,8 +207,9 @@ MonoBehaviour:
   moveMode: 0
   snakeFrequency: 8
   snakeAmplitude: 0.5
-  detectDistance: 12.6
-  socialRange: 3.48
+  radius: 1.95
+  detectDistance: 10.58
+  socialRange: 3.83
   coolDownTime: 3
   zAmplitude: 0.2
   zFrequency: 2

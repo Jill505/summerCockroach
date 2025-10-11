@@ -20,7 +20,7 @@ public class RedSpiderAI : MonoBehaviour
     protected float chaseSpeed = 20f;       // private ¡÷ protected
     protected float turnSpeed = 180f;        // private ¡÷ protected
     protected float idleTime = 8f;
-    protected float fadeDuration = 1.5f;
+    protected float fadeDuration = 0.5f;
 
     protected bool canMove = false;          // private ¡÷ protected
     protected bool canCapsuleAction = true;

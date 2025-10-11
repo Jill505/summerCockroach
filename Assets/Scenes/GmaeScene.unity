@@ -46841,7 +46841,7 @@ MonoBehaviour:
     - {fileID: 970407855}
     hitPlayerChanceVar: 4
     spawnMeteoriteDur: 5
-    hotMaxTime: 5
+    hotMaxTime: 15
   eras: 
   dynaPrefab: {fileID: 8841291091811731393, guid: 5ae930230d7d57d498375a93fc3bf9fc, type: 3}
   hotSprite: {fileID: 831165005}
@@ -60611,6 +60611,7 @@ MonoBehaviour:
   delayStopTime: 0.5
   myMoveMode: 0
   isInTheHole: 0
+  canMove: 1
 --- !u!114 &1229442373
 MonoBehaviour:
   m_ObjectHideFlags: 0

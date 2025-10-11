@@ -21,6 +21,7 @@ public class NPCRoach : MonoBehaviour
     public float snakeAmplitude = 0.5f; // 扭動幅度
 
     [Header("Special Behavior")]
+    public float radius = 2.0f;
     public float detectDistance = 10f;       // 射線偵測距離
     public float socialRange = 3f;         // 接近玩家範圍
     public float coolDownTime = 3f;          // 冷卻時間
@@ -304,9 +305,12 @@ public class NPCRoach : MonoBehaviour
             if(!onSpecialCooldown)
             {
                 Ray ray = new Ray(transform.position, transform.forward);
-                if (Physics.Raycast(ray, out RaycastHit hit, detectDistance))
+                RaycastHit hit;
+
+                // 使用 SphereCast 取代 Raycast
+                if (Physics.SphereCast(ray, radius, out hit, detectDistance))
                 {
-                    if (hit.collider.CompareTag("Player"))
+                    if (hit.collider != null && hit.collider.CompareTag("Player"))
                     {
                         playerTarget = hit.collider.transform;
                         findPlayer = true;
@@ -397,9 +401,9 @@ public class NPCRoach : MonoBehaviour
     private void TryMutantDetectAndCharge()
     {
         Ray ray = new Ray(transform.position, transform.forward);
-        if (Physics.Raycast(ray, out RaycastHit hit, detectDistance))
+
+        if (Physics.SphereCast(ray, radius, out RaycastHit hit, detectDistance))
         {
-            // 撞擊優先目標
             if (hit.collider.CompareTag("Player") || hit.collider.CompareTag("NPCRoach"))
             {
                 chargeTarget = hit.collider.transform;
@@ -511,11 +515,13 @@ public class NPCRoach : MonoBehaviour
     [Obsolete]
     private IEnumerator KnockbackEntity(Rigidbody rb, Action onComplete = null)
     {
-        
+           
         float knockbackForce = 30f;   // 初始力道
         float duration = 1f;          // 撞擊持續時間
         float elapsed = 0f;
 
+        if (rb == null)
+            yield break;
         // 撞擊方向（只沿 X 軸）
         Vector3 knockDir = rb.transform.position - transform.position;
         knockDir.y = 0f;
@@ -524,18 +530,26 @@ public class NPCRoach : MonoBehaviour
 
         while (elapsed < duration)
         {
-            float t = 1f - (elapsed / duration); // 逐漸減小
-            rb.velocity = knockDir * knockbackForce * t;
+           if (rb == null || rb.Equals(null))
+           {
+              yield break; // 結束協程，避免MissingReferenceException
+           }
+           float t = 1f - (elapsed / duration); // 逐漸減小
+           rb.velocity = knockDir * knockbackForce * t;
 
-            elapsed += Time.deltaTime;
-            yield return null;
+           elapsed += Time.deltaTime;
+           yield return null;
         }
 
-        rb.velocity = Vector3.zero;
+        if (rb != null && !rb.Equals(null))
+        {
+            rb.velocity = Vector3.zero;
+        }
 
         // 撞擊結束後回調（NPC 死亡）
         //onComplete?.Invoke();
-    }
+
+    }   
 
     private IEnumerator MutantCooldown()
     {
@@ -564,12 +578,29 @@ public class NPCRoach : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         // 顯示射線偵測距離
-        Gizmos.color = Color.red;
+        Gizmos.color = Color.blue;
         Vector3 forward = transform.forward * detectDistance;
         Gizmos.DrawLine(transform.position, transform.position + forward);
 
         // 顯示攻擊範圍球
-        Gizmos.color = Color.yellow;
+        Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, socialRange);
+
+        if (detectDistance <= 0) return;
+
+        Vector3 start = transform.position;
+        Vector3 end = start + transform.forward * detectDistance;
+
+        Gizmos.color = Color.yellow;
+
+        // 起點與終點球
+        Gizmos.DrawWireSphere(start, radius);
+        Gizmos.DrawWireSphere(end, radius);
+
+        // 連接線
+        Gizmos.DrawLine(start + transform.up * radius, end + transform.up * radius);
+        Gizmos.DrawLine(start - transform.up * radius, end - transform.up * radius);
+        Gizmos.DrawLine(start + transform.right * radius, end + transform.right * radius);
+        Gizmos.DrawLine(start - transform.right * radius, end - transform.right * radius);
     }
 }

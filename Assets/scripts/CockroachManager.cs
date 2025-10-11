@@ -180,8 +180,7 @@ public class CockroachManager : MonoBehaviour
 
         if (_shouldDie)
         {
-            
-            SoundManager.Play("Audio_GameOver_V1");
+                        
             allGameManger.GameFail();
 
             StopCoroutine(cDCoroutine);
@@ -393,6 +392,11 @@ public class CockroachManager : MonoBehaviour
             //TODO: update system
             //CockroachDie();
             CockroachInjury(1, "這一世，餓死辣");
+            if(shield >= 1)
+            {
+                FillHunger();
+                shield = 0;
+            }
         }
 
         if (currentHunger < 45f && allGameManger.GameFinished == false)

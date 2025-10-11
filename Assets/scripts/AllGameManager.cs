@@ -368,8 +368,15 @@ public class AllGameManager : MonoBehaviour
         SoundManager.StopHungerWarning();
         BGMManager.Stop();
         yield return null;
-        SoundManager.Play("SFX_level-win");
-        BGMManager.Play("BGM_wedding-day-drums");
+        if(pass == true)
+        {
+            SoundManager.Play("SFX_level-win");
+            BGMManager.Play("BGM_wedding-day-drums");
+        }  
+        else
+        {
+            SoundManager.Play("Audio_GameOver_V1");
+        }
     }
     public void SyncInformationResultCanvas()
     {
