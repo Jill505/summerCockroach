@@ -29,6 +29,16 @@ public class BlueSpiderAI : RedSpiderAI
 
         if (currentChaseTarget == null)
         {
+            StopChasingAndReturn();           
+            return;
+        }
+
+        if (currentChaseTarget == player && cockroachMove != null && cockroachMove.isInTheHole)
+        {
+            Debug.Log("[RedSpiderAI] 玩家進入洞中，蜘蛛停止追擊並返回起點");
+            SoundManager.StopSpiderChaseSound();
+            hasPlayedChaseSound = false;
+            currentChaseTarget = null;
             StopChasingAndReturn();
             return;
         }
@@ -37,6 +47,8 @@ public class BlueSpiderAI : RedSpiderAI
             Debug.Log("[RedSpiderAI] 玩家跑走了，蜘蛛停止追擊並返回起點");
             currentChaseTarget = null;
             StopChasingAndReturn();
+            SoundManager.StopSpiderChaseSound();
+            hasPlayedChaseSound = false;
             return;
         }
 

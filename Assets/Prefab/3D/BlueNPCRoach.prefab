@@ -210,7 +210,7 @@ MonoBehaviour:
   radius: 1.95
   detectDistance: 10.58
   socialRange: 3.83
-  coolDownTime: 3
+  coolDownTime: 2
   zAmplitude: 0.2
   zFrequency: 2
   newAllGameManager: {fileID: 0}

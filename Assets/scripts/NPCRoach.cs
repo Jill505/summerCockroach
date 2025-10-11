@@ -24,7 +24,7 @@ public class NPCRoach : MonoBehaviour
     public float radius = 2.0f;
     public float detectDistance = 10f;       // 射線偵測距離
     public float socialRange = 3f;         // 接近玩家範圍
-    public float coolDownTime = 3f;          // 冷卻時間
+    public float coolDownTime = 1.5f;          // 冷卻時間
     private bool onSpecialCooldown = false;
     private bool inTalkRange = false;
     private Transform playerTarget;           // 玩家 BoxCollider 位置
@@ -479,9 +479,18 @@ public class NPCRoach : MonoBehaviour
             Rigidbody playerRb = other.GetComponent<Rigidbody>();
             if (playerRb != null)
             {
-                cockroachManager.PlayHungryAttentionFadeOnce();
-                cockroachManager.DecreaseHunger(10f);
+                if(cockroachManager.shield >= 0)
+                {
+                    cockroachManager.shield = 0;
+                    SoundManager.Play("SFX_shield-block");
+                }
+                else
+                {
+                    cockroachManager.PlayHungryAttentionFadeOnce();
+                    cockroachManager.DecreaseHunger(10f);
+                }
                 StartCoroutine(KnockbackEntity(playerRb));
+                SoundManager.Play("SFX_hit");
             }
 
             // 停止衝刺
@@ -537,8 +546,8 @@ public class NPCRoach : MonoBehaviour
            float t = 1f - (elapsed / duration); // 逐漸減小
            rb.velocity = knockDir * knockbackForce * t;
 
-           elapsed += Time.deltaTime;
-           yield return null;
+           elapsed += Time.deltaTime;     
+            yield return null;
         }
 
         if (rb != null && !rb.Equals(null))
@@ -568,10 +577,6 @@ public class NPCRoach : MonoBehaviour
     public void DynDestroy()
     {
         if (!gameObject.scene.isLoaded) return;
-        SoundManager.Play("SFX_Death_V1");
-        tellDyIamDead = true;
-        Instantiate(burstBlood, transform.position, Quaternion.Euler(0, -90, 0));
-        nPCRoachManager.nPCRoaches.Remove(this);
         Destroy(gameObject);
     }
 

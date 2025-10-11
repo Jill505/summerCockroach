@@ -35,6 +35,7 @@ public class TestSpieder : MonoBehaviour
                 // ª±®a¨ü¶Ë
                 cManager.CockroachInjury(damage, deadReason);
                 cManager.shield = 0;
+                SoundManager.Play("SFX_shield-block");
                 countDown = damageCoolDown;
 
                 switch (myDamageType)
@@ -70,6 +71,7 @@ public class TestSpieder : MonoBehaviour
                 //cManager.CockroachDie();
                 cManager.CockroachInjury(damage, deadReason);
                 cManager.shield = 0;
+                SoundManager.Play("SFX_shield-block");
                 countDown = damageCoolDown;
 
                 switch (myDamageType)

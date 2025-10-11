@@ -44,6 +44,7 @@ public class RedSpiderAI : MonoBehaviour
     protected Coroutine fadeCoroutine;
 
     protected Transform currentChaseTarget;
+    protected bool hasPlayedChaseSound = false;
 
     [Header("AI 狀態控制")]
     public bool canSpiderMove = true;
@@ -75,6 +76,14 @@ public class RedSpiderAI : MonoBehaviour
         {
             return; // 完全停止 AI 更新
         }
+
+        if (isChasing && currentChaseTarget == player)
+        {
+            if (IsInsideCollider(spiderDetection, player.position) && !hasPlayedChaseSound)
+            {
+                StartCoroutine(PlayChaseSoundOnce());
+            }
+        }
         if (isChasing == true)
         {
             Chase();
@@ -100,8 +109,8 @@ public class RedSpiderAI : MonoBehaviour
         // 移除已消失目標
         CleanChaseTargets();
 
-        if (!canMove)
-            return;
+        //if (!canMove)
+        //    return;
 
         if (!isChasing && !isReturning)
         {
@@ -156,6 +165,8 @@ public class RedSpiderAI : MonoBehaviour
         Vector3 dirToTarget = (currentChaseTarget.position - spider.position).normalized;
         Quaternion targetRot = Quaternion.LookRotation(new Vector3(-dirToTarget.x, 0, -dirToTarget.z));
         spider.rotation = Quaternion.RotateTowards(spider.rotation, targetRot, turnSpeed * Time.deltaTime);
+
+        
         SpeedUpAnimator();
     }
 
@@ -170,6 +181,8 @@ public class RedSpiderAI : MonoBehaviour
         if (currentChaseTarget == player && cockroachMove != null && cockroachMove.isInTheHole)
         {
             Debug.Log("[RedSpiderAI] 玩家進入洞中，蜘蛛停止追擊並返回起點");
+            SoundManager.StopSpiderChaseSound();
+            hasPlayedChaseSound = false;
             currentChaseTarget = null;
             StopChasingAndReturn();
             return;
@@ -177,6 +190,8 @@ public class RedSpiderAI : MonoBehaviour
         if (!IsInsideCollider(spiderDetection, player.position) && currentChaseTarget == player)
         {
             Debug.Log("[RedSpiderAI] 玩家跑走了，蜘蛛停止追擊並返回起點");
+            SoundManager.StopSpiderChaseSound();
+            hasPlayedChaseSound = false;
             currentChaseTarget = null;
             StopChasingAndReturn();
             return;
@@ -208,6 +223,7 @@ public class RedSpiderAI : MonoBehaviour
     protected virtual void StopChasingAndReturn()
     {
         Debug.Log("[RedSpiderAI] 玩家離開視線，返回起始點");
+        
         isChasing = false;
         isReturning = true;
         currentChaseTarget = null;
@@ -476,6 +492,12 @@ public class RedSpiderAI : MonoBehaviour
         animControl.speed = targetSpeed;
     }
 
+    private IEnumerator PlayChaseSoundOnce()
+    {
+        hasPlayedChaseSound = true;
+        SoundManager.PlaySpiderChaseSound("SFX_SpiderMoving");
+        yield return null; // 可加延遲，如果希望稍後才能再播放
+    }
 
 
     public void SetCanSpiderMove(bool value)

@@ -46,6 +46,11 @@ public class SoundManager : MonoBehaviour
         walkSource.playOnAwake = false; 
         walkSource.volume = 1f;
 
+        spiderChaseSource = gameObject.AddComponent<AudioSource>();
+        spiderChaseSource.loop = true;
+        spiderChaseSource.playOnAwake = false;
+        spiderChaseSource.volume = 1f;
+
         AudioClip[] clips = Resources.LoadAll<AudioClip>("Art/Audio/Sounds");
         foreach (AudioClip clip in clips)
         {
@@ -188,7 +193,26 @@ public class SoundManager : MonoBehaviour
     { 
         if (instance == null) return; 
         if (instance.walkSource.isPlaying) instance.walkSource.Stop(); 
-    } 
+    }
+
+    private AudioSource spiderChaseSource;
+    public static void PlaySpiderChaseSound(string name)
+    {
+        if (instance == null) return;
+        if (instance.soundDict.TryGetValue(name, out AudioClip clip))
+        {
+            if (!instance.spiderChaseSource.isPlaying)
+            {
+                instance.spiderChaseSource.clip = clip;
+                instance.spiderChaseSource.Play();
+            }
+        }
+    }
+    public static void StopSpiderChaseSound()
+    {
+        if (instance == null) return;
+        if (instance.spiderChaseSource.isPlaying) instance.spiderChaseSource.Stop();
+    }
     private IEnumerator FadeIn(AudioSource source, float duration) 
     { 
         float timer = 0f; 

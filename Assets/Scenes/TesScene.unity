@@ -29724,6 +29724,7 @@ MonoBehaviour:
   - {fileID: 614622448}
   - {fileID: 1594360923}
   dashing: 0
+  EatingBySpider: 0
   CockroachMoveable: 1
   onDieImm: 0
   currentHunger: 100
@@ -54036,7 +54037,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1235879093848708941, guid: 535135d38e34a0446b4da987dfcfe20b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 127.91
+      value: 105.5
       objectReference: {fileID: 0}
     - target: {fileID: 1235879093848708941, guid: 535135d38e34a0446b4da987dfcfe20b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -54044,7 +54045,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1235879093848708941, guid: 535135d38e34a0446b4da987dfcfe20b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 60.06926
+      value: -5.8
       objectReference: {fileID: 0}
     - target: {fileID: 1235879093848708941, guid: 535135d38e34a0446b4da987dfcfe20b, type: 3}
       propertyPath: m_LocalRotation.w

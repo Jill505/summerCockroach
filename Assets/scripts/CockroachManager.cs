@@ -397,6 +397,7 @@ public class CockroachManager : MonoBehaviour
             {
                 FillHunger();
                 shield = 0;
+                SoundManager.Play("SFX_shield-block");
             }
         }
 
