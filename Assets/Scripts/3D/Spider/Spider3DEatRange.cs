@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem.Controls;
+using static UnityEngine.Rendering.DebugUI;
 
 public class Spider3DEatRange : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class Spider3DEatRange : MonoBehaviour
     private GameObject player;
     private CockroachManager cockroachManager;
     private CockroachMove cockroachMove;
+    private CameraLogic3D cameraLogic;
     public bool playerbeEaten = false;   //forSpiderAnimationSpeedDebug
 
     private void Start()
@@ -17,6 +19,7 @@ public class Spider3DEatRange : MonoBehaviour
         player = GameObject.Find("3DCockroach");
         cockroachManager = player.GetComponent<CockroachManager>();
         cockroachMove = player.GetComponent<CockroachMove>();
+        cameraLogic = GameObject.Find("cameraTracker").GetComponent<CameraLogic3D>();
     }
     private void OnTriggerEnter(Collider other)
     {      
@@ -42,9 +45,10 @@ public class Spider3DEatRange : MonoBehaviour
             }
 
             beEatnPlayer.SetActive(true);
-
+            cameraLogic.StartFocusOn(transform);
             // 播放蜘蛛咬玩家動畫(結尾播放音效，恢復兩者移動，扣血)
             animControl.speed = 1f;
+            
             animControl.SetBool("Eating", true);
             StartCoroutine(eatUp());
 
@@ -67,7 +71,14 @@ public class Spider3DEatRange : MonoBehaviour
     }
     private IEnumerator eatUp()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2f);
+        if (cockroachManager.shield >= 1)
+        {
+            cockroachManager.shield = 0;
+            SoundManager.Play("SFX_shield-block");
+            cameraLogic.CameraShake(0.8f,0.1f);
+        }
+        yield return new WaitForSeconds(1f);
         cockroachManager.PlayHungryAttentionFadeOnce();
         SpiderEat();
     }
@@ -78,6 +89,7 @@ public class Spider3DEatRange : MonoBehaviour
         cockroachManager.CockroachInjury(2, "這一世，我被蜘蛛殺死了");
 
         cockroachMove.SetCanMove(true);
+        cameraLogic.StopFocus();
 
         SkinnedMeshRenderer[] skinnedRenderers = player.GetComponentsInChildren<SkinnedMeshRenderer>();
         foreach (SkinnedMeshRenderer smr in skinnedRenderers)
@@ -88,6 +100,7 @@ public class Spider3DEatRange : MonoBehaviour
         RedSpiderAI spiderAI = spiderObject.GetComponent<RedSpiderAI>();
         spiderAI.SetCanSpiderMove(true);
         beEatnPlayer.SetActive(false);
+        cockroachManager.EatingBySpider = false;
     }
 
 }

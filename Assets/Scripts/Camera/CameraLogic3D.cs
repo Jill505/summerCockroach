@@ -14,6 +14,9 @@ public class CameraLogic3D : MonoBehaviour
     public GameObject my3DCameraReferencePoint;
     public GameObject CameraObject;
 
+
+   
+
     [Header("Auto Camera 參數")]
     public float autoAngleSpeed = 0.2f;
     public Vector3 AutoCameraLookOffset = Vector3.zero;
@@ -43,14 +46,15 @@ public class CameraLogic3D : MonoBehaviour
         CockroachInitialize();
         CameraObject.transform.localPosition = CameraOffset;
         nowCameraPosition = CameraOffset;
+
     }
 
     [Header("shake time")]
     public float shakeTime = 0.8f;
     public float shakeVelocity = 0.4f;
-    public void CameraShake()
+    public void CameraShake(float Time, float Velocity)
     {
-        StartCoroutine(shake(shakeTime, shakeVelocity));
+        StartCoroutine(shake(Time, Velocity));
     }
     IEnumerator shake(float time, float velocity)
     {
@@ -94,14 +98,12 @@ public class CameraLogic3D : MonoBehaviour
 
     private void LateUpdate()
     {
-
         if (isFocusing && focusTarget != null)
         {
             // 將參考點設在 focusTarget 上，並給一個小偏移，讓攝影機可以看得更好
-            Vector3 targetOffset = new Vector3(0f, 1.2f, -2.0f);
-            my3DCameraReferencePoint.transform.position = focusTarget.position + targetOffset;
-
-            CameraObject.transform.position = Vector3.Lerp(CameraObject.transform.position, my3DCameraReferencePoint.transform.position, autoAngleSpeed * Time.deltaTime);
+            Vector3 targetOffset = new Vector3(4f, 5f, -6f);
+            
+            CameraObject.transform.position = Vector3.Lerp(CameraObject.transform.position, focusTarget.position + targetOffset, autoAngleSpeed * Time.deltaTime);
             CameraObject.transform.LookAt(focusTarget.position);
         }
         else
@@ -131,7 +133,7 @@ public class CameraLogic3D : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.F8))
         {
-            CameraShake();
+            CameraShake(shakeTime, shakeVelocity);
         }
     }
     public void CockroachInitialize()
@@ -186,4 +188,6 @@ public class CameraLogic3D : MonoBehaviour
         AutoCameraOffset = savedAutoCameraOffset;
         PlayerCameraOffset = savedPlayerCameraOffset;
     }
+
+
 }

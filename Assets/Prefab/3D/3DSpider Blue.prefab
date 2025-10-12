@@ -143,13 +143,15 @@ MonoBehaviour:
   spiderDetection: {fileID: 6895817905576188763}
   startPos: {fileID: 2781498053921160269}
   animControl: {fileID: 4046364947071521890}
+  moveSpeed: 13
+  chaseSpeed: 20
+  turnSpeed: 180
+  idleTime: 2
   burstBlood: {fileID: 7480275720841413723, guid: 40773aaa3bb15b94fa077b3143737adc, type: 3}
   canSpiderMove: 1
   jumpForce: 5
   patrolJumpInterval: 2
   chaseJumpInterval: 0.5
-  patrolMoveSpeed: 13
-  chaseMoveSpeed: 60
 --- !u!54 &8313238418854446380
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -298,6 +300,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animControl: {fileID: 4046364947071521890}
   spiderObject: {fileID: 3520018991513970108}
+  realCanSeeSpiderObject: {fileID: 7036231848296565165}
   beEatnPlayer: {fileID: 7549050102024012212}
   playerbeEaten: 0
 --- !u!1 &9004296676920975363
@@ -1628,6 +1631,11 @@ Rigidbody:
 --- !u!4 &7009772021991970359 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5cb4e2b076e18494f8d65b9939361868, type: 3}
+  m_PrefabInstance: {fileID: 7407594548944237020}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7036231848296565165 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8689492720387803023, guid: 5cb4e2b076e18494f8d65b9939361868, type: 3}
   m_PrefabInstance: {fileID: 7407594548944237020}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &7549050102024012212 stripped

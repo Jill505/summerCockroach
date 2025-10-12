@@ -11,6 +11,7 @@ public class AllGameManager : MonoBehaviour
 {
     [Header("Ref component")]
     public CockroachManager cManager;
+    private CameraLogic3D cameraLogic;
 
     static public float GravityVariable = 9.81f;
 
@@ -94,6 +95,7 @@ public class AllGameManager : MonoBehaviour
     {
         BGMManager.Play("BGM_Revival of Africa");
         Cockroach3D = GameObject.Find("3DCockroach");
+        cameraLogic = GameObject.Find("cameraTracker").GetComponent<CameraLogic3D>();
         eraManager = GetComponent<EraManager>();
         nowLoadSceneSort = SceneManager.GetActiveScene().buildIndex;
         cManager = FindFirstObjectByType<CockroachManager>();
@@ -294,6 +296,7 @@ public class AllGameManager : MonoBehaviour
         if (deadCanvasAnimator != null)
             deadCanvasAnimator.SetTrigger("Ending");
             endingTriggered = true;
+            cameraLogic.CameraShake(8f, 0.1f);
     }
     void UpdateTimerDisplay(float timeToDisplay)
     {
@@ -367,6 +370,7 @@ public class AllGameManager : MonoBehaviour
         SoundManager.StopCaveHeatWarning();
         SoundManager.StopHungerWarning();
         BGMManager.Stop();
+        eraManager.GameOver();
         yield return null;
         if(pass == true)
         {

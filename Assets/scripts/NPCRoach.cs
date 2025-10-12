@@ -41,6 +41,7 @@ public class NPCRoach : MonoBehaviour
     public FoodGenManger foodGenManager;
     public CockroachManager cockroachManager;
     public NPCRoachManager nPCRoachManager;
+    private CockroachMove cockroachMove;
 
     public Rigidbody myRb;
 
@@ -86,6 +87,7 @@ public class NPCRoach : MonoBehaviour
         allGameManager = FindFirstObjectByType<AllGameManager>();
         foodGenManager = FindFirstObjectByType<FoodGenManger>();
         cockroachManager = FindFirstObjectByType<CockroachManager>();
+        cockroachMove = FindFirstObjectByType<CockroachMove>();
         nPCRoachManager = FindFirstObjectByType<NPCRoachManager>();
         Player = GameObject.Find("3DCockroach");
 
@@ -479,7 +481,7 @@ public class NPCRoach : MonoBehaviour
             Rigidbody playerRb = other.GetComponent<Rigidbody>();
             if (playerRb != null)
             {
-                if(cockroachManager.shield >= 0)
+                if(cockroachManager.shield > 0)
                 {
                     cockroachManager.shield = 0;
                     SoundManager.Play("SFX_shield-block");
@@ -568,7 +570,10 @@ public class NPCRoach : MonoBehaviour
     private void OnDestroy()
     {
         if (!gameObject.scene.isLoaded) return;
-        SoundManager.Play("SFX_Death_V1");
+        if (!cockroachMove.isInTheHole)
+        {
+            SoundManager.Play("SFX_Death_V1");
+        }
         tellDyIamDead = true;
         Instantiate(burstBlood, transform.position, Quaternion.Euler(0,-90,0));
         nPCRoachManager.nPCRoaches.Remove(this);

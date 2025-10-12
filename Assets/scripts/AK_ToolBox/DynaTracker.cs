@@ -118,10 +118,12 @@ public class DynaTracker : MonoBehaviour
 
     public void OnAirSound()
     {
+        if (mainMoveScript.isInTheHole) return;
         SoundManager.Play("SFX_DianoFootOnAir");
     }
     public void DownSound()
     {
+        if (mainMoveScript.isInTheHole) return;
         SoundManager.Play("SFX_DianorFootDown");
     }
 }

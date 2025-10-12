@@ -88,6 +88,10 @@ MonoBehaviour:
   spiderDetection: {fileID: 2703094856538255351}
   startPos: {fileID: 8540259235236731035}
   animControl: {fileID: 6008754173928933703}
+  moveSpeed: 13
+  chaseSpeed: 20
+  turnSpeed: 180
+  idleTime: 2
   burstBlood: {fileID: 7480275720841413723, guid: 40773aaa3bb15b94fa077b3143737adc, type: 3}
   canSpiderMove: 1
 --- !u!54 &1194201362508069803

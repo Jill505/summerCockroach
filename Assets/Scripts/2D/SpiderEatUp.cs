@@ -12,7 +12,16 @@ public class SpiderEatUp : MonoBehaviour
         allGameManager = GameObject.Find("AllGameManager").GetComponent<AllGameManager>();
     }
 
-    public void EatUp()
+    public void HaveShield()
+    {
+        if(cockroachManager.shield >= 1)
+        {
+            cockroachManager.shield = 0;
+            SoundManager.Play("SFX_shield-block");
+        }
+    }
+    
+public void EatUp()
     {
         //cockroachManager.CockroachDie();
         SoundManager.Play("SFX_SpiderCrunchy-bite");

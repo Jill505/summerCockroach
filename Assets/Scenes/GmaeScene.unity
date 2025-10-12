@@ -46759,7 +46759,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67c3aba950a8207458278cbcc3e4d422, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1229442375}
+  player: {fileID: 1764134568}
   doubleHoleBGGroups:
   - parent: {fileID: 646459684}
     CaveStonecolumn: {fileID: 0}
@@ -46959,8 +46959,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eraValue:
     eraInterval: 20
-    intervalPEToDE: 10
-    intervalDEToME: 10
+    intervalPEToDE: 180
+    intervalDEToME: 180
     intervalMEToPE: 270
     mode: 1
     PEFood: 50
@@ -52170,6 +52170,7 @@ MonoBehaviour:
   nowCameraPosition: {x: 0, y: 0, z: 0}
   shakeTime: 0.8
   shakeVelocity: 0.4
+  focusTarget: {fileID: 0}
 --- !u!1 &1073213197
 GameObject:
   m_ObjectHideFlags: 0
@@ -98948,17 +98949,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2076828156769681110, guid: c16a0fae7bc5ae64d865c6b3ab10875e, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3520018991513970108, guid: c16a0fae7bc5ae64d865c6b3ab10875e, type: 3}
       propertyPath: m_Name
       value: 3DSpider Blue
-      objectReference: {fileID: 0}
-    - target: {fileID: 4455385179403125717, guid: c16a0fae7bc5ae64d865c6b3ab10875e, type: 3}
-      propertyPath: m_Radius
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

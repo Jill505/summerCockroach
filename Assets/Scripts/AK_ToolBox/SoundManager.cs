@@ -99,6 +99,7 @@ public class SoundManager : MonoBehaviour
         // 停掉警告音效
         StopCaveHeatWarning();
         StopHungerWarning();
+        StopSpiderChaseSound();
 
         // 停掉行走音效
         StopWalkSound();

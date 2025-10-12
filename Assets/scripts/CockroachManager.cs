@@ -150,6 +150,7 @@ public class CockroachManager : MonoBehaviour
     {
         SoundManager.StopCaveHeatWarning();
         SoundManager.StopHungerWarning();
+        SoundManager.StopSpiderChaseSound();
         BGMManager.Stop();
         if (spiderWebUI != null)
             spiderWebUI.SetActive(false); // fixBug
