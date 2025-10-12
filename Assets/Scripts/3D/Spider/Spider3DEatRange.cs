@@ -9,12 +9,14 @@ public class Spider3DEatRange : MonoBehaviour
     public GameObject beEatnPlayer;
     private GameObject player;
     private CockroachManager cockroachManager;
-    public bool playerbeEaten = false;
+    private CockroachMove cockroachMove;
+    public bool playerbeEaten = false;   //forSpiderAnimationSpeedDebug
 
     private void Start()
     {
         player = GameObject.Find("3DCockroach");
         cockroachManager = player.GetComponent<CockroachManager>();
+        cockroachMove = player.GetComponent<CockroachMove>();
     }
     private void OnTriggerEnter(Collider other)
     {      
@@ -25,11 +27,8 @@ public class Spider3DEatRange : MonoBehaviour
             playerbeEaten = true;
 
             // 停止玩家移動
-            CockroachMove playerMovement = other.GetComponent<CockroachMove>();
-            if (playerMovement != null)
-            {
-                playerMovement.SetCanMove(false);
-            }
+            cockroachMove.SetCanMove(false);
+            
 
             // 停止蜘蛛移動
             RedSpiderAI spiderAI = spiderObject.GetComponent<RedSpiderAI>();
@@ -77,8 +76,7 @@ public class Spider3DEatRange : MonoBehaviour
         SoundManager.Play("SFX_SpiderCrunchy-bite");
         cockroachManager.CockroachInjury(2, "這一世，我被蜘蛛殺死了");
 
-        CockroachMove playerMovement = player.GetComponent<CockroachMove>();
-        playerMovement.SetCanMove(true);
+        cockroachMove.SetCanMove(true);
 
         SkinnedMeshRenderer[] skinnedRenderers = player.GetComponentsInChildren<SkinnedMeshRenderer>();
         foreach (SkinnedMeshRenderer smr in skinnedRenderers)

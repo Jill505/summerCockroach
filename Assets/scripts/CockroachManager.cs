@@ -36,9 +36,17 @@ public class CockroachManager : MonoBehaviour
     public float hungerDuration = 15f; // 從滿值到0所需時間（秒）
 
     public Image hungryAttention; // 設定成 Inspector 拖曳的圖片
+    public Image hurtAttention; //撞到敵人時要讓他觸發用
+    public Image loveAttention; //交配時要持續閃，直到我用bool停止
+
+
     public Image[] hungryAttentionGroup = new Image[3]; // 三個 UI
     private Coroutine hungryCoroutine;
     private Coroutine hungryGroupCoroutine;
+
+    private Coroutine hurtCoroutine;
+    private Coroutine loveCoroutine;
+    public bool isLoving = false; // 控制 loveAttention 是否持續閃爍
 
     public UnityEngine.UI.Image myHungryAmount;
     private float hungerDecayRate;
@@ -368,6 +376,19 @@ public class CockroachManager : MonoBehaviour
             c.a = 0f; 
             hungryAttention.color = c;
         }
+
+        if (hurtAttention != null)
+        {
+            Color c = hurtAttention.color;
+            c.a = 0f;
+            hurtAttention.color = c;
+        }
+        if (loveAttention != null)
+        {
+            Color c = loveAttention.color;
+            c.a = 0f;
+            loveAttention.color = c;
+        }
     }
 
 
@@ -589,6 +610,107 @@ public class CockroachManager : MonoBehaviour
             }
             yield return null;
         }
+    }
+
+    // 撞到敵人時閃爍一次
+    public void PlayHurtAttentionOnce()
+    {
+        if (hurtCoroutine != null)
+        {
+            StopCoroutine(hurtCoroutine);
+        }
+        hurtCoroutine = StartCoroutine(HurtAttentionFadeOnce());
+    }
+
+    private IEnumerator HurtAttentionFadeOnce()
+    {
+        if (hurtAttention == null) yield break;
+
+        Color c = hurtAttention.color;
+        c.a = 1f;
+        hurtAttention.color = c;
+
+        float t = 0f;
+        while (t < 1f)
+        {
+            t += Time.deltaTime;
+            if (hurtAttention != null)
+            {
+                c.a = Mathf.Lerp(1f, 0f, t);
+                hurtAttention.color = c;
+            }
+            yield return null;
+        }
+        hurtCoroutine = null;
+    }
+
+    // 交配期間持續閃爍（直到 isLoving = false）
+    public void StartLoveAttentionBlink()
+    {
+        if (loveCoroutine == null && loveAttention != null)
+        {
+            isLoving = true;
+            loveCoroutine = StartCoroutine(LoveAttentionBlink());
+        }
+    }
+
+    public void StopLoveAttentionBlink()
+    {
+        isLoving = false;
+        if (loveCoroutine != null)
+        {
+            StopCoroutine(loveCoroutine);
+            loveCoroutine = null;
+        }
+        if (loveAttention != null)
+        {
+            Color c = loveAttention.color;
+            c.a = 0f;
+            loveAttention.color = c;
+        }
+    }
+
+    private IEnumerator LoveAttentionBlink()
+    {
+        while (isLoving)
+        {
+            float t = 0f;
+            // 淡入
+            while (t < 1f && isLoving)
+            {
+                t += Time.deltaTime;
+                if (loveAttention != null)
+                {
+                    Color c = loveAttention.color;
+                    c.a = Mathf.Lerp(0f, 1f, t);
+                    loveAttention.color = c;
+                }
+                yield return null;
+            }
+
+            t = 0f;
+            // 淡出
+            while (t < 1f && isLoving)
+            {
+                t += Time.deltaTime;
+                if (loveAttention != null)
+                {
+                    Color c = loveAttention.color;
+                    c.a = Mathf.Lerp(1f, 0f, t);
+                    loveAttention.color = c;
+                }
+                yield return null;
+            }
+        }
+
+        // 離開時確保關閉
+        if (loveAttention != null)
+        {
+            Color c = loveAttention.color;
+            c.a = 0f;
+            loveAttention.color = c;
+        }
+        loveCoroutine = null;
     }
     public void DecreaseHunger(float amount)
     {

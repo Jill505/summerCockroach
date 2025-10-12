@@ -458,7 +458,7 @@ public class NPCRoach : MonoBehaviour
         if (other.CompareTag("Player") && cockroachManager.dashing == true)
         {
             //KYS
-            FindFirstObjectByType<CockroachManager>().PlayHungryAttentionFadeOnce();
+            FindFirstObjectByType<CockroachManager>().PlayHurtAttentionOnce();
             allGameManager.fuckNPCCollect++;
             allGameManager.AddScore(allGameManager.fuckNPCScore);
             SaveSystem.mySaveFile.NPCKillNum++;

@@ -98,86 +98,91 @@ public class CockroachMove : MonoBehaviour
             SoundManager.StopWalkSound();
         }
 
-        if (Input.GetKey(KeyCode.W))
+        if(canMove)
         {
-            dampClogZ = true;
-
-            if (HorVelocity <= myRealVelocity)
+            if (Input.GetKey(KeyCode.W))
             {
-                //HorVelocity += myVelocity * Time.deltaTime;
-                HorVelocity = Mathf.MoveTowards(HorVelocity, myRealVelocity, testVelocityXZValue);
-            }
-        }
-        else if (Input.GetKey(KeyCode.S))
-        {
-            dampClogZ = true;
+                dampClogZ = true;
 
-            if (HorVelocity >= -1 * myRealVelocity)
-            {
-                //HorVelocity -= myVelocity * Time.deltaTime;
-                HorVelocity = Mathf.MoveTowards(HorVelocity, -1 * myRealVelocity, testVelocityXZValue);
-            }
-        }
-        else
-        {
-            if (dampClogZ == true)
-            {
-                dampClogZ = false;
-
-                savedDampValueZ = HorVelocity;
-            }
-            HorVelocity = Mathf.MoveTowards(HorVelocity, 0, stopVelocity * Time.deltaTime);
-            //velocityZ = Mathf.SmoothDamp(savedDampValueZ, 0, ref velocityZ, testVelocityDampValue);
-        }
-        anglesY = 0;
-        if (Input.GetKey(KeyCode.A))
-        {
-            anglesY = -1 *AutoAngleSpeed * Time.deltaTime;
-        }
-        else if (Input.GetKey(KeyCode.D))
-        {
-            anglesY = AutoAngleSpeed * Time.deltaTime;
-        }
-
-
-        //if (myCManager.basicSpeedLevel < 1) { myCManager.basicSpeedLevel = 1; }
-
-        if (Input.GetKey(KeyCode.LeftShift) && runAbleTimeCal > 0)
-        {
-            myCManager.dashing = true;  
-            myRealVelocity = (myMaxVelocity * runSpeed* ((myCManager.basicSpeedLevel+1) * 1.5f));
-            runNotCDCal = runNotCD;
-            runAbleTimeCal -= Time.deltaTime;
-        }
-        else
-        {
-            myCManager.dashing = false;
-            myRealVelocity = myMaxVelocity* (myCManager.basicSpeedLevel+1)  * 1.2f;
-
-            if (HorVelocity > myMaxVelocity)
-            {
-                HorVelocity = myMaxVelocity;
-            }
-            runNotCDCal -= Time.deltaTime;
-            if (runNotCDCal < 0)
-            {
-                runAbleTimeCal += (runRecoverPerSec + (myCManager.dashRecoverLevel * 1.3f)) * Time.deltaTime;
-                if (runAbleTimeCal > runAbleTime)
+                if (HorVelocity <= myRealVelocity)
                 {
-                    runAbleTimeCal = runAbleTime;
+                    //HorVelocity += myVelocity * Time.deltaTime;
+                    HorVelocity = Mathf.MoveTowards(HorVelocity, myRealVelocity, testVelocityXZValue);
                 }
             }
+            else if (Input.GetKey(KeyCode.S))
+            {
+                dampClogZ = true;
+
+                if (HorVelocity >= -1 * myRealVelocity)
+                {
+                    //HorVelocity -= myVelocity * Time.deltaTime;
+                    HorVelocity = Mathf.MoveTowards(HorVelocity, -1 * myRealVelocity, testVelocityXZValue);
+                }
+            }
+            else
+            {
+                if (dampClogZ == true)
+                {
+                    dampClogZ = false;
+
+                    savedDampValueZ = HorVelocity;
+                }
+                HorVelocity = Mathf.MoveTowards(HorVelocity, 0, stopVelocity * Time.deltaTime);
+                //velocityZ = Mathf.SmoothDamp(savedDampValueZ, 0, ref velocityZ, testVelocityDampValue);
+            }
+            anglesY = 0;
+            if (Input.GetKey(KeyCode.A))
+            {
+                anglesY = -1 * AutoAngleSpeed * Time.deltaTime;
+            }
+            else if (Input.GetKey(KeyCode.D))
+            {
+                anglesY = AutoAngleSpeed * Time.deltaTime;
+            }
+
+
+            //if (myCManager.basicSpeedLevel < 1) { myCManager.basicSpeedLevel = 1; }
+
+            if (Input.GetKey(KeyCode.LeftShift) && runAbleTimeCal > 0)
+            {
+                myCManager.dashing = true;
+                myRealVelocity = (myMaxVelocity * runSpeed * ((myCManager.basicSpeedLevel + 1) * 1.5f));
+                runNotCDCal = runNotCD;
+                runAbleTimeCal -= Time.deltaTime;
+            }
+            else
+            {
+                myCManager.dashing = false;
+                myRealVelocity = myMaxVelocity * (myCManager.basicSpeedLevel + 1) * 1.2f;
+
+                if (HorVelocity > myMaxVelocity)
+                {
+                    HorVelocity = myMaxVelocity;
+                }
+                runNotCDCal -= Time.deltaTime;
+                if (runNotCDCal < 0)
+                {
+                    runAbleTimeCal += (runRecoverPerSec + (myCManager.dashRecoverLevel * 1.3f)) * Time.deltaTime;
+                    if (runAbleTimeCal > runAbleTime)
+                    {
+                        runAbleTimeCal = runAbleTime;
+                    }
+                }
+            }
+
+            subObjectTransform.transform.localEulerAngles += new Vector3(0, anglesY, 0);
+
+            //Vector3 lookingDirection = Quaternion.LookRotation(subObjectTransform.position, lookingReferencePoint.position).eulerAngles;
+            Vector3 lookingDirection = subObjectTransform.forward;
+            //lookingDirection.Normalize();
+            //Debug.Log("Player facing: " + lookingDirection);
+
+            myRb.linearVelocity = (lookingDirection * HorVelocity) + GravityVector;
+            //myRb.linearVelocity = subObjectTransform.eulerAngles;
         }
 
-        subObjectTransform.transform.localEulerAngles += new Vector3(0, anglesY, 0);
 
-        //Vector3 lookingDirection = Quaternion.LookRotation(subObjectTransform.position, lookingReferencePoint.position).eulerAngles;
-        Vector3 lookingDirection = subObjectTransform.forward;
-        //lookingDirection.Normalize();
-        //Debug.Log("Player facing: " + lookingDirection);
-
-        myRb.linearVelocity = (lookingDirection * HorVelocity) + GravityVector;
-        //myRb.linearVelocity = subObjectTransform.eulerAngles;
     }
 
     float _MaxDash;
@@ -256,11 +261,6 @@ public class CockroachMove : MonoBehaviour
     public void SetCanMove(bool value)
     {
         canMove = value;    
-    }
-
-    public bool IsPlayerMovable()
-    {
-        return canMove;
     }
 
 }

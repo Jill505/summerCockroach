@@ -5,10 +5,6 @@ public class FemCockraochTrigger3D : MonoBehaviour
     private AllGameManager allGameManager;
     private FemaleCockroachInfo femaleCockroachInfo;
 
-    [Header("3D")]
-    public MeshRenderer subStatementShowcase;
-    public Material getMat;
-
     [Header("Cockroach Breed Variable")]
     public float coolDownTime = 60f;
     public float coolDownCal;
