@@ -68,6 +68,7 @@ public class Spider3DEatRange : MonoBehaviour
     private IEnumerator eatUp()
     {
         yield return new WaitForSeconds(3f);
+        cockroachManager.PlayHungryAttentionFadeOnce();
         SpiderEat();
     }
     // 播放蜘蛛咬玩家動畫(結尾播放音效，恢復兩者移動，扣血)

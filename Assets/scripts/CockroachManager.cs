@@ -678,7 +678,7 @@ public class CockroachManager : MonoBehaviour
             // 淡入
             while (t < 1f && isLoving)
             {
-                t += Time.deltaTime;
+                t += Time.unscaledDeltaTime;
                 if (loveAttention != null)
                 {
                     Color c = loveAttention.color;
@@ -692,7 +692,7 @@ public class CockroachManager : MonoBehaviour
             // 淡出
             while (t < 1f && isLoving)
             {
-                t += Time.deltaTime;
+                t += Time.unscaledDeltaTime;
                 if (loveAttention != null)
                 {
                     Color c = loveAttention.color;
@@ -703,7 +703,6 @@ public class CockroachManager : MonoBehaviour
             }
         }
 
-        // 離開時確保關閉
         if (loveAttention != null)
         {
             Color c = loveAttention.color;

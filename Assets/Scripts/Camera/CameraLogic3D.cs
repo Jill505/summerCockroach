@@ -95,13 +95,21 @@ public class CameraLogic3D : MonoBehaviour
     private void LateUpdate()
     {
 
-        CameraObject.transform.position = Vector3.Lerp(CameraObject.transform.position, my3DCameraReferencePoint.transform.position, autoAngleSpeed * Time.deltaTime);
+        if (isFocusing && focusTarget != null)
+        {
+            // 將參考點設在 focusTarget 上，並給一個小偏移，讓攝影機可以看得更好
+            Vector3 targetOffset = new Vector3(0f, 1.2f, -2.0f);
+            my3DCameraReferencePoint.transform.position = focusTarget.position + targetOffset;
 
-        //transform.localPosition = CameraOffset;
-        //CameraObject.transform.localScale = new Vector3(1, 1, 1);
-        //transform.localPosition = AutoCameraOffset;
-
-        CameraObject.transform.LookAt(myCockroachMeshObject.transform.position + AutoCameraLookOffset);
+            CameraObject.transform.position = Vector3.Lerp(CameraObject.transform.position, my3DCameraReferencePoint.transform.position, autoAngleSpeed * Time.deltaTime);
+            CameraObject.transform.LookAt(focusTarget.position);
+        }
+        else
+        {
+            // 原本的行為（你的既有 LateUpdate 內容）
+            CameraObject.transform.position = Vector3.Lerp(CameraObject.transform.position, my3DCameraReferencePoint.transform.position, autoAngleSpeed * Time.deltaTime);
+            CameraObject.transform.LookAt(myCockroachMeshObject.transform.position + AutoCameraLookOffset);
+        }
     }
     private void Update()
     {
@@ -140,5 +148,42 @@ public class CameraLogic3D : MonoBehaviour
         Vector3 rotatedVector = rotation * inputVector;
         
         return rotatedVector;
+    }
+
+
+    public Transform focusTarget = null; // 臨時焦點
+    private bool isFocusing = false;
+    private Vector3 savedAutoCameraOffset;
+    private Vector3 savedPlayerCameraOffset;
+    private CameraTrackMode savedTrackMode;
+
+
+    // 這個方法由外部呼叫，開始以 target 作為臨時焦點
+    public void StartFocusOn(Transform target)
+    {
+        if (target == null) return;
+        focusTarget = target;
+        isFocusing = true;
+
+        // 儲存原本狀態以便還原
+        savedTrackMode = myTrackMode;
+        savedAutoCameraOffset = AutoCameraOffset;
+        savedPlayerCameraOffset = PlayerCameraOffset;
+
+        // 切入 playerCamera 模式或 autoCamera 都可以，這邊直接切成 autoCamera 讓 camera 以目標位置為參考
+        myTrackMode = CameraTrackMode.autoCamera;
+    }
+
+    // 停止臨時焦點並還原
+    public void StopFocus()
+    {
+        focusTarget = null;
+        isFocusing = false;
+
+        // 還原原本的跟隨模式
+        myTrackMode = savedTrackMode;
+        // 如果需要還原 offset 則可還原（目前我也保留）
+        AutoCameraOffset = savedAutoCameraOffset;
+        PlayerCameraOffset = savedPlayerCameraOffset;
     }
 }

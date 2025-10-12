@@ -171,6 +171,8 @@ MonoBehaviour:
   eggNumber: 0
   myEggPos: {fileID: 6795969814376045506}
   myEgg: {fileID: 7717903002042915834}
+  kissPrefab: {fileID: 3683759598651304666, guid: f30bf35a0f5989a4c85f4aecf4880de3, type: 3}
+  breedDuration: 3
 --- !u!114 &7545394259430377419
 MonoBehaviour:
   m_ObjectHideFlags: 0
