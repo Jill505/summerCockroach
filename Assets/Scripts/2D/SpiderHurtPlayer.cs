@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using Unity.Burst.Intrinsics;
 
 public class SpiderHurtPlayer : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class SpiderHurtPlayer : MonoBehaviour
     private BoxCollider2D boxCollider;
     private Cockroach2DMove cockroach2DMove;
     private CameraLogic2D cameraLogic2D;
+    private AllGameManager AGM;
     private bool hasHurt = false;
 
     public float chaseSpeed = 2f;
@@ -43,6 +45,7 @@ public class SpiderHurtPlayer : MonoBehaviour
     {
         cockroach2DMove = GameObject.Find("2DCockroach").GetComponent<Cockroach2DMove>();
         cameraLogic2D = GameObject.Find("2DCamera").GetComponent<CameraLogic2D>();
+        AGM = FindAnyObjectByType<AllGameManager>();
         boxCollider = GetComponent<BoxCollider2D>();
         if (animator == null)
         {
@@ -84,7 +87,7 @@ public class SpiderHurtPlayer : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (boxCollider != null && !hasHurt)
+        if (boxCollider != null && !hasHurt && AGM.isTimerRunning)
         {
             if (other.CompareTag("Player"))
             {
@@ -94,7 +97,7 @@ public class SpiderHurtPlayer : MonoBehaviour
                 target = null;
                 cameraLogic2D.SpiderEating(this.gameObject);
 
-                AllGameManager AGM = FindAnyObjectByType<AllGameManager>();
+                
                 AGM.InRoundKilledBySpider++;
             }
         }

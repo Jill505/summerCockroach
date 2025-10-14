@@ -278,6 +278,8 @@ public class CockroachManager : MonoBehaviour
     {
         if(onDieImm == true) return;
         if(allGameManger.GameFinished) return;
+        CameraViewToggle cameraViewToggle = GameObject.Find("CameraManager").GetComponent<CameraViewToggle>(); ;
+        if (cameraViewToggle.invincible) return;
         Hp -= injNum;
         lastDeadVale = deadReason;
         deadReasonText.text = lastDeadVale;

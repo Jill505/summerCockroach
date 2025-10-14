@@ -64,7 +64,7 @@ public class CockroachMove : MonoBehaviour
     bool dampClogZ;
 
     [Header("延遲停止設定")]
-    public float delayStopTime = 0.5f;
+    public float delayStopTime = 0f;
 
 
     public moveMode myMoveMode = moveMode.AutoCameraMove;

@@ -178,13 +178,22 @@ public class CameraViewToggle : MonoBehaviour
 
     public IEnumerator End3DViewTransition()
     {
+       
         transitionQuad3D.SetActive(true);
         yield return StartCoroutine(AnimateShaderScale(scale, 0f, transitionDuration));
         transitionQuad3D.SetActive(false);
         cockroachManager.CleanupAllSpiders();
         allGameManager.isTimerRunning = true;
+        StartCoroutine(InvincibleFiveSeconds());
     }
 
+    public bool invincible = false;
+    public IEnumerator InvincibleFiveSeconds()
+    {
+        invincible = true;
+        yield return new WaitForSeconds(5f);
+        invincible = false;
+    }
 
     public bool Is2D()
     {

@@ -78,7 +78,7 @@ public class FemCockraochTrigger3D : MonoBehaviour
         if (other.CompareTag("Player") && coolDownCal < 0)
         {
             //femaleCockroachInfo.finded = true;
-            //allGameManager.femCockraochGet();
+            allGameManager.femCockraochGet();
             //subStatementShowcase.material = getMat;
 
             //TODO: Cockroach Egg plate

@@ -265,7 +265,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (245)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -587,7 +587,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (108)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -743,7 +743,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (91)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -903,7 +903,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (187)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1374,7 +1374,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (179)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -2090,7 +2090,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (143)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -2177,7 +2177,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (166)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -2340,7 +2340,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (97)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -2726,7 +2726,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (186)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -2813,7 +2813,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (20)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -4672,7 +4672,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (100)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -4759,7 +4759,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (113)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -5268,7 +5268,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (217)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -5586,7 +5586,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (44)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -5900,7 +5900,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (220)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -6067,7 +6067,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (255)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -6567,7 +6567,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (240)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -7049,7 +7049,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 79baf749fcb32964b93332dbcfe01385, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1823613755}
   m_SourcePrefab: {fileID: 100100000, guid: 79baf749fcb32964b93332dbcfe01385, type: 3}
 --- !u!4 &121966364 stripped
 Transform:
@@ -7069,7 +7072,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (173)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -7335,7 +7338,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (295)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -7422,7 +7425,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (170)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -7607,7 +7610,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (48)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -7826,7 +7829,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (42)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -8662,7 +8665,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 79baf749fcb32964b93332dbcfe01385, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 568595812}
   m_SourcePrefab: {fileID: 100100000, guid: 79baf749fcb32964b93332dbcfe01385, type: 3}
 --- !u!4 &155445892 stripped
 Transform:
@@ -9015,7 +9021,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (189)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -9214,7 +9220,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (336)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -9301,7 +9307,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (190)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -9564,7 +9570,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (274)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -9738,7 +9744,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (265)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -9825,7 +9831,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (207)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -10305,7 +10311,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (330)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -10500,7 +10506,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (9)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -10656,7 +10662,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (266)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -10935,7 +10941,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 79baf749fcb32964b93332dbcfe01385, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 415261199}
   m_SourcePrefab: {fileID: 100100000, guid: 79baf749fcb32964b93332dbcfe01385, type: 3}
 --- !u!4 &211084979 stripped
 Transform:
@@ -10955,7 +10964,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (3)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -11149,7 +11158,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (334)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -11268,7 +11277,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (107)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -11459,7 +11468,7 @@ Transform:
   m_GameObject: {fileID: 225990476}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 179.7, y: 4.32, z: -263.9}
+  m_LocalPosition: {x: 177.52, y: 4.32, z: -101.6}
   m_LocalScale: {x: 2.9211137, y: 2.9211137, z: 2.9211137}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11737,7 +11746,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (25)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -12609,7 +12618,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 783d049b7a8a06a499932c6fca6abd99, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -239.60745
+      value: -206.6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 783d049b7a8a06a499932c6fca6abd99, type: 3}
       propertyPath: m_LocalPosition.y
@@ -12617,7 +12626,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 783d049b7a8a06a499932c6fca6abd99, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 356
+      value: 394.8
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 783d049b7a8a06a499932c6fca6abd99, type: 3}
       propertyPath: m_LocalRotation.w
@@ -12762,7 +12771,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (136)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -12984,7 +12993,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (49)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -13052,7 +13061,7 @@ Transform:
   m_GameObject: {fileID: 262105097}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 227.70001, y: 1.0999999, z: 82.1}
+  m_LocalPosition: {x: 221.51, y: 1.0999999, z: 82.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13076,7 +13085,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (279)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -13304,7 +13313,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (248)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -13618,7 +13627,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (316)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -13743,7 +13752,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (305)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -13862,7 +13871,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (12)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -14162,7 +14171,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (301)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -14495,7 +14504,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (23)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -14582,7 +14591,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (76)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -14650,7 +14659,7 @@ Transform:
   m_GameObject: {fileID: 299553610}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 291.7, y: 1.0999999, z: -22.4}
+  m_LocalPosition: {x: 284.82, y: 1.0999999, z: -19.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -14669,7 +14678,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (103)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -15255,6 +15264,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &307400201 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 79baf749fcb32964b93332dbcfe01385, type: 3}
+  m_PrefabInstance: {fileID: 1196529036}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &311206116
 GameObject:
   m_ObjectHideFlags: 0
@@ -15268,7 +15282,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (4)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -15336,7 +15350,7 @@ Transform:
   m_GameObject: {fileID: 311206116}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.4, y: 1.0999999, z: 131}
+  m_LocalPosition: {x: 1.4, y: 3.1, z: 131}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15422,6 +15436,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 313552383}
   m_CullTransparentMesh: 1
+--- !u!1 &314532733
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 314532734}
+  m_Layer: 0
+  m_Name: DynasoreSpawnPt (5)
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &314532734
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 314532733}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -553, y: 0, z: -298}
+  m_LocalScale: {x: 36.978233, y: 36.978233, z: 36.978233}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1247163242}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &315519503
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15529,7 +15574,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (116)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -16124,7 +16169,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (322)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -16436,7 +16481,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (62)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -18355,7 +18400,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (121)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -18609,7 +18654,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (152)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -18677,7 +18722,7 @@ Transform:
   m_GameObject: {fileID: 360903642}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -110.29999, y: 1.0999999, z: 262.2}
+  m_LocalPosition: {x: -144.39, y: 1.0999999, z: 210.09}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -18701,7 +18746,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -18788,7 +18833,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (213)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -19168,7 +19213,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (281)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -19347,7 +19392,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (83)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -19434,7 +19479,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (224)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -19948,7 +19993,7 @@ GameObject:
   m_Layer: 0
   m_Name: DynasoreSpawnPt
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -20012,7 +20057,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (21)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -20185,7 +20230,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (28)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -20309,7 +20354,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (135)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -20465,7 +20510,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (315)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -20712,7 +20757,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (253)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -20881,7 +20926,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (229)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -21055,7 +21100,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (133)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -21123,7 +21168,7 @@ Transform:
   m_GameObject: {fileID: 405297828}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 157.79999, y: 1.0999999, z: 213.1}
+  m_LocalPosition: {x: 157.79999, y: 7.79, z: 213.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -21220,7 +21265,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (159)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -21288,7 +21333,7 @@ Transform:
   m_GameObject: {fileID: 408924263}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -96, y: 1.0999999, z: 255}
+  m_LocalPosition: {x: -80.14, y: 1.0999999, z: 284}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -21503,7 +21548,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (286)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -21656,6 +21701,33 @@ RectTransform:
   m_AnchoredPosition: {x: -65.10004, y: -90.50003}
   m_SizeDelta: {x: 394.9705, y: 79.8688}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &415261196 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 79baf749fcb32964b93332dbcfe01385, type: 3}
+  m_PrefabInstance: {fileID: 211084978}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &415261199
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 415261196}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 7436762682218098891, guid: 79baf749fcb32964b93332dbcfe01385, type: 3}
 --- !u!1 &415979931
 GameObject:
   m_ObjectHideFlags: 0
@@ -21669,7 +21741,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (149)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -21737,7 +21809,7 @@ Transform:
   m_GameObject: {fileID: 415979931}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -242.1, y: 1.0999999, z: 103.99999}
+  m_LocalPosition: {x: -242.1, y: 9.7, z: 156.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -21756,7 +21828,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (125)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -21950,7 +22022,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (227)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -22747,7 +22819,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (200)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -22835,7 +22907,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6926307015523682983, guid: 6ffda98913c3b114a9f8bf506235aac9, type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 7734086990372900893, guid: 6ffda98913c3b114a9f8bf506235aac9, type: 3}
       propertyPath: m_LocalScale.x
@@ -23299,7 +23371,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (148)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -23418,7 +23490,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (142)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -23699,7 +23771,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (251)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -23791,7 +23863,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (60)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -23883,7 +23955,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (30)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -23970,7 +24042,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (256)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -24057,7 +24129,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (194)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -24176,7 +24248,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (137)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -24350,7 +24422,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (268)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -24437,7 +24509,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (241)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -25165,7 +25237,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (40)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -25233,7 +25305,7 @@ Transform:
   m_GameObject: {fileID: 496197291}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 234, y: 1.0999999, z: 71.6}
+  m_LocalPosition: {x: 242.01, y: 1.0999999, z: 65.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -25321,7 +25393,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (66)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -25489,7 +25561,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (131)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -25557,7 +25629,7 @@ Transform:
   m_GameObject: {fileID: 518176710}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 177.69998, y: 1.0999999, z: 213.1}
+  m_LocalPosition: {x: 177.69998, y: 7.29, z: 213.67}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -26115,7 +26187,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (111)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -26259,7 +26331,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (96)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -26341,13 +26413,37 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1791485750}
     m_Modifications:
+    - target: {fileID: 502072839138591658, guid: b46ac36d00c2b6d478c4d64fdd3f3360, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 502072839138591658, guid: b46ac36d00c2b6d478c4d64fdd3f3360, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.774
+      objectReference: {fileID: 0}
+    - target: {fileID: 502072839138591658, guid: b46ac36d00c2b6d478c4d64fdd3f3360, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.048
+      objectReference: {fileID: 0}
     - target: {fileID: 5673973937927913951, guid: b46ac36d00c2b6d478c4d64fdd3f3360, type: 3}
       propertyPath: m_Name
       value: RightHole2
       objectReference: {fileID: 0}
     - target: {fileID: 7096856425102386103, guid: b46ac36d00c2b6d478c4d64fdd3f3360, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.35294425
+      objectReference: {fileID: 0}
+    - target: {fileID: 7096856425102386103, guid: b46ac36d00c2b6d478c4d64fdd3f3360, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4.160067
+      objectReference: {fileID: 0}
+    - target: {fileID: 7096856425102386103, guid: b46ac36d00c2b6d478c4d64fdd3f3360, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3.8992724
+      objectReference: {fileID: 0}
+    - target: {fileID: 7096856425102386103, guid: b46ac36d00c2b6d478c4d64fdd3f3360, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.1699994
+      value: -4.05
       objectReference: {fileID: 0}
     - target: {fileID: 7096856425102386103, guid: b46ac36d00c2b6d478c4d64fdd3f3360, type: 3}
       propertyPath: m_LocalPosition.y
@@ -26355,23 +26451,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7096856425102386103, guid: b46ac36d00c2b6d478c4d64fdd3f3360, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.0200001
+      value: -0.67
       objectReference: {fileID: 0}
     - target: {fileID: 7096856425102386103, guid: b46ac36d00c2b6d478c4d64fdd3f3360, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.6823071
+      value: 0.99973273
       objectReference: {fileID: 0}
     - target: {fileID: 7096856425102386103, guid: b46ac36d00c2b6d478c4d64fdd3f3360, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.023123235
+      value: -0.015774887
       objectReference: {fileID: 0}
     - target: {fileID: 7096856425102386103, guid: b46ac36d00c2b6d478c4d64fdd3f3360, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.00000014901161
+      value: -0.016900653
       objectReference: {fileID: 0}
     - target: {fileID: 7096856425102386103, guid: b46ac36d00c2b6d478c4d64fdd3f3360, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.7306999
+      value: -0.00026667715
       objectReference: {fileID: 0}
     - target: {fileID: 7096856425102386103, guid: b46ac36d00c2b6d478c4d64fdd3f3360, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -26383,7 +26479,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7096856425102386103, guid: b46ac36d00c2b6d478c4d64fdd3f3360, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 93.954
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8916047464239570358, guid: b46ac36d00c2b6d478c4d64fdd3f3360, type: 3}
       propertyPath: m_Enabled
@@ -26916,7 +27012,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (124)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -27037,7 +27133,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (89)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -27105,7 +27201,7 @@ Transform:
   m_GameObject: {fileID: 548906464}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -120.79999, y: 1.0999999, z: 272.8}
+  m_LocalPosition: {x: -91.5, y: -25.3, z: 272.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -27238,7 +27334,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (39)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -27374,6 +27470,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3036806349865650352, guid: 767b12909a357a544b77bacb3c4b4ee4, type: 3}
   m_PrefabInstance: {fileID: 559119054}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &559973293
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 559973294}
+  m_Layer: 0
+  m_Name: DynasoreSpawnPt (6)
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &559973294
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 559973293}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -553, y: 0, z: 529.2}
+  m_LocalScale: {x: 36.978233, y: 36.978233, z: 36.978233}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1247163242}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &560160054
 GameObject:
   m_ObjectHideFlags: 0
@@ -27474,7 +27601,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (335)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -27561,7 +27688,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (195)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -27783,6 +27910,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &568595809 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 79baf749fcb32964b93332dbcfe01385, type: 3}
+  m_PrefabInstance: {fileID: 155445891}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &568595812
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 568595809}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 7436762682218098891, guid: 79baf749fcb32964b93332dbcfe01385, type: 3}
 --- !u!1 &570237334
 GameObject:
   m_ObjectHideFlags: 0
@@ -28568,7 +28722,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (31)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -28636,7 +28790,7 @@ Transform:
   m_GameObject: {fileID: 581977322}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.900001, y: 1.0999999, z: -43.799995}
+  m_LocalPosition: {x: -4.900001, y: 1.0999999, z: -37.05}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -28655,7 +28809,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (81)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -28854,7 +29008,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (261)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -29408,22 +29562,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: 3DObj_thorns_V2 (4)
       objectReference: {fileID: 0}
-    - target: {fileID: 6926307015523682983, guid: 6ffda98913c3b114a9f8bf506235aac9, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 7734086990372900893, guid: 6ffda98913c3b114a9f8bf506235aac9, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 7734086990372900893, guid: 6ffda98913c3b114a9f8bf506235aac9, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 7734086990372900893, guid: 6ffda98913c3b114a9f8bf506235aac9, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 7734086990372900893, guid: 6ffda98913c3b114a9f8bf506235aac9, type: 3}
       propertyPath: m_LocalPosition.x
       value: -100.97981
@@ -29463,10 +29601,6 @@ PrefabInstance:
     - target: {fileID: 7734086990372900893, guid: 6ffda98913c3b114a9f8bf506235aac9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7734086990372900893, guid: 6ffda98913c3b114a9f8bf506235aac9, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -29575,7 +29709,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (112)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -29774,7 +29908,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (65)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -29935,7 +30069,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (228)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -30109,7 +30243,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (216)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -30286,7 +30420,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (88)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -30354,7 +30488,7 @@ Transform:
   m_GameObject: {fileID: 609166562}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -126.09999, y: 1.0999999, z: 256.1}
+  m_LocalPosition: {x: -126.09999, y: 1.0999999, z: 227.83}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -30485,7 +30619,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (219)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -31060,7 +31194,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (84)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -31345,7 +31479,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (260)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -31432,7 +31566,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (222)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -31519,7 +31653,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (262)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -32000,7 +32134,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (79)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -32068,7 +32202,7 @@ Transform:
   m_GameObject: {fileID: 650151994}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -165.20001, y: 1.0999999, z: 229}
+  m_LocalPosition: {x: -167.1, y: 2.15, z: 229}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -32087,7 +32221,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (310)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -32174,7 +32308,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (71)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -32261,7 +32395,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (19)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -32329,7 +32463,7 @@ Transform:
   m_GameObject: {fileID: 651484896}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -94.1, y: 164.70001, z: -217.7}
+  m_LocalPosition: {x: -94.1, y: 0.56, z: -217.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -32920,7 +33054,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (139)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -33199,7 +33333,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 783d049b7a8a06a499932c6fca6abd99, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 337.89355
+      value: 427.8
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 783d049b7a8a06a499932c6fca6abd99, type: 3}
       propertyPath: m_LocalRotation.w
@@ -33400,7 +33534,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (264)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -33567,7 +33701,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (155)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -33654,7 +33788,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (273)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -33741,7 +33875,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (134)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -33860,7 +33994,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (132)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -33928,7 +34062,7 @@ Transform:
   m_GameObject: {fileID: 690826641}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 167.4, y: 1.0999999, z: 213.1}
+  m_LocalPosition: {x: 167.4, y: 8.17, z: 213.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -33947,7 +34081,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (232)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -34201,7 +34335,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (285)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -34288,7 +34422,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (105)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -34666,7 +34800,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (218)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -34861,7 +34995,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (307)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -34948,7 +35082,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (333)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -35035,7 +35169,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (277)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -35422,7 +35556,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (221)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -35514,7 +35648,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (8)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -35601,7 +35735,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (61)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -35761,7 +35895,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (54)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -36089,7 +36223,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (223)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -36176,7 +36310,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (102)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -36350,7 +36484,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (309)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -36437,7 +36571,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (73)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -36707,7 +36841,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (118)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -36965,7 +37099,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (323)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -37185,7 +37319,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (243)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -37272,7 +37406,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (181)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -37471,7 +37605,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (250)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -37665,7 +37799,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (46)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -37977,7 +38111,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (203)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -38108,7 +38242,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (313)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -38442,7 +38576,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (123)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -38602,7 +38736,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (150)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -38689,7 +38823,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (140)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -38757,7 +38891,7 @@ Transform:
   m_GameObject: {fileID: 793222348}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -95.399994, y: 1.0999999, z: 262.1}
+  m_LocalPosition: {x: -95.399994, y: 1.0999999, z: 269.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -39040,7 +39174,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (17)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -39203,7 +39337,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (312)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -39290,7 +39424,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (22)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -39358,7 +39492,7 @@ Transform:
   m_GameObject: {fileID: 812601234}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.4, y: 1.0999999, z: -54.3}
+  m_LocalPosition: {x: 1.4, y: 1.0999999, z: -64.72}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -40081,7 +40215,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (197)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -40168,7 +40302,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (109)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -40333,7 +40467,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (115)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -41024,7 +41158,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (202)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -41092,7 +41226,7 @@ Transform:
   m_GameObject: {fileID: 829016200}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -172, y: 1.0999999, z: 273}
+  m_LocalPosition: {x: -195.56, y: 1.0999999, z: 273}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -41299,7 +41433,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6926307015523682983, guid: 6ffda98913c3b114a9f8bf506235aac9, type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 7734086990372900893, guid: 6ffda98913c3b114a9f8bf506235aac9, type: 3}
       propertyPath: m_LocalScale.x
@@ -41488,7 +41622,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (231)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -41918,7 +42052,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (172)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -42199,7 +42333,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (282)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -42686,7 +42820,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (75)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -42838,7 +42972,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (276)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -43157,7 +43291,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (280)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -43244,7 +43378,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (198)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -43923,7 +44057,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (129)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -43991,7 +44125,7 @@ Transform:
   m_GameObject: {fileID: 893927636}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -165.20001, y: 1.0999999, z: 273.09998}
+  m_LocalPosition: {x: -188.28, y: 1.0999999, z: 273.09998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -44323,7 +44457,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (201)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -44410,7 +44544,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (209)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -45176,7 +45310,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (318)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -45301,7 +45435,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (238)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -45688,7 +45822,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (101)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -45775,7 +45909,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (27)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -46126,7 +46260,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (82)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -46213,7 +46347,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (259)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -46866,7 +47000,7 @@ MonoBehaviour:
   trunk3Scale: 0.2
   TreeHole1Scale: 0.05
   TreeHole3Scale: 0.08
-  spiderWebScale: 0.1
+  spiderWebScale: 0
 --- !u!114 &950558453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46971,8 +47105,11 @@ MonoBehaviour:
     - {fileID: 1129952922}
     - {fileID: 1769475032}
     - {fileID: 970407855}
-    hitPlayerChanceVar: 4
-    spawnMeteoriteDur: 5
+    - {fileID: 1347395168}
+    - {fileID: 314532733}
+    - {fileID: 559973293}
+    hitPlayerChanceVar: 8
+    spawnMeteoriteDur: 0.6
     hotMaxTime: 15
   eras: 
   dynaPrefab: {fileID: 8841291091811731393, guid: 5ae930230d7d57d498375a93fc3bf9fc, type: 3}
@@ -46992,7 +47129,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (247)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -47405,7 +47542,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (177)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -47524,7 +47661,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (182)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -47741,7 +47878,7 @@ GameObject:
   m_Layer: 0
   m_Name: DynasoreSpawnPt (3)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -47754,7 +47891,7 @@ Transform:
   m_GameObject: {fileID: 970407855}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 35.8, y: 0, z: 55.4}
   m_LocalScale: {x: 36.978233, y: 36.978233, z: 36.978233}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -48144,7 +48281,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (226)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -48495,7 +48632,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6926307015523682983, guid: 6ffda98913c3b114a9f8bf506235aac9, type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 7734086990372900893, guid: 6ffda98913c3b114a9f8bf506235aac9, type: 3}
       propertyPath: m_LocalScale.x
@@ -48720,7 +48857,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (169)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -48788,7 +48925,7 @@ Transform:
   m_GameObject: {fileID: 995066160}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -99.29999, y: 1.0999999, z: 283.5}
+  m_LocalPosition: {x: -71.2, y: 1.0999999, z: 333.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -48807,7 +48944,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (314)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -48894,7 +49031,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (326)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -49278,7 +49415,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (214)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -49574,7 +49711,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (92)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -49767,7 +49904,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (212)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -49967,7 +50104,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6073497863872838271, guid: aa54c36edc5073141aaad6d97d688dc4, type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 6846235098024222917, guid: aa54c36edc5073141aaad6d97d688dc4, type: 3}
       propertyPath: m_LocalScale.x
@@ -50142,7 +50279,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6926307015523682983, guid: 6ffda98913c3b114a9f8bf506235aac9, type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 7734086990372900893, guid: 6ffda98913c3b114a9f8bf506235aac9, type: 3}
       propertyPath: m_LocalScale.x
@@ -50466,7 +50603,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (271)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -50553,7 +50690,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (270)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -50834,7 +50971,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (191)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -51081,7 +51218,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (324)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -51275,7 +51412,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (68)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -51343,7 +51480,7 @@ Transform:
   m_GameObject: {fileID: 1054471401}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.8000011, y: 1.0999999, z: 43.4}
+  m_LocalPosition: {x: -3.8000011, y: 1.0999999, z: 49.99}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -51362,7 +51499,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (208)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -51645,7 +51782,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (183)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -52016,7 +52153,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (249)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -52382,7 +52519,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (93)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -52469,7 +52606,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (10)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -52556,7 +52693,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (328)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -53127,7 +53264,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (80)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -53195,7 +53332,7 @@ Transform:
   m_GameObject: {fileID: 1082392201}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -130.8, y: 1.0999999, z: 245.6}
+  m_LocalPosition: {x: -130.8, y: 1.0999999, z: 227.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -53478,7 +53615,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (258)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -53565,7 +53702,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (311)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -53869,7 +54006,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (53)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -54825,7 +54962,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (114)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -55073,7 +55210,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (235)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -55228,7 +55365,7 @@ GameObject:
   m_Layer: 0
   m_Name: DynasoreSpawnPt (1)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -55241,7 +55378,7 @@ Transform:
   m_GameObject: {fileID: 1129952922}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -21.41, y: 0, z: 0}
+  m_LocalPosition: {x: 97, y: 0, z: 0}
   m_LocalScale: {x: 36.978233, y: 36.978233, z: 36.978233}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -55421,7 +55558,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (157)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -55489,7 +55626,7 @@ Transform:
   m_GameObject: {fileID: 1134620202}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -86.79999, y: 1.0999999, z: 255}
+  m_LocalPosition: {x: -86.79999, y: 1.0999999, z: 280.65}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -55735,7 +55872,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (205)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -57996,7 +58133,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (47)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -58088,7 +58225,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (246)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -58175,7 +58312,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (164)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -59188,7 +59325,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (206)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -59275,7 +59412,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (165)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -59474,7 +59611,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (308)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -59641,7 +59778,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (269)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -59843,13 +59980,38 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 79baf749fcb32964b93332dbcfe01385, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1196529040}
   m_SourcePrefab: {fileID: 100100000, guid: 79baf749fcb32964b93332dbcfe01385, type: 3}
 --- !u!4 &1196529037 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 79baf749fcb32964b93332dbcfe01385, type: 3}
   m_PrefabInstance: {fileID: 1196529036}
   m_PrefabAsset: {fileID: 0}
+--- !u!64 &1196529040
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 307400201}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 7436762682218098891, guid: 79baf749fcb32964b93332dbcfe01385, type: 3}
 --- !u!1 &1203186354
 GameObject:
   m_ObjectHideFlags: 0
@@ -59863,7 +60025,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (6)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -59931,7 +60093,7 @@ Transform:
   m_GameObject: {fileID: 1203186354}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.8, y: 1.0999999, z: 245.2}
+  m_LocalPosition: {x: -7.8, y: 1.0999999, z: 124.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -60216,7 +60378,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (41)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -60284,7 +60446,7 @@ Transform:
   m_GameObject: {fileID: 1213385695}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 235.1, y: 1.0999999, z: 71.6}
+  m_LocalPosition: {x: 235.618, y: 0.742, z: 71.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -60816,7 +60978,7 @@ MonoBehaviour:
   mouseInputLeast: 0.05
   testVelocityDampValue: 0.2
   testVelocityXZValue: 0.5
-  delayStopTime: 0.5
+  delayStopTime: 0
   myMoveMode: 0
   isInTheHole: 0
   canMove: 1
@@ -60934,7 +61096,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!4 &1229442375
 Transform:
   m_ObjectHideFlags: 0
@@ -61380,6 +61542,9 @@ Transform:
   - {fileID: 1129952923}
   - {fileID: 1769475033}
   - {fileID: 970407856}
+  - {fileID: 1347395169}
+  - {fileID: 314532734}
+  - {fileID: 559973294}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1251102581
@@ -61630,7 +61795,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (199)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -61860,7 +62025,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (230)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -61928,7 +62093,7 @@ Transform:
   m_GameObject: {fileID: 1272784319}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -464.3, y: 1.0999999, z: 304.2}
+  m_LocalPosition: {x: -464.3, y: 1.0999999, z: 293.34}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -62038,7 +62203,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (87)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -62125,7 +62290,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (161)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -62193,7 +62358,7 @@ Transform:
   m_GameObject: {fileID: 1277987839}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -116.600006, y: 1.0999999, z: 272.7}
+  m_LocalPosition: {x: -85.56, y: 1.0999999, z: 272.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -62269,7 +62434,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (33)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -62423,7 +62588,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6926307015523682983, guid: 6ffda98913c3b114a9f8bf506235aac9, type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 7734086990372900893, guid: 6ffda98913c3b114a9f8bf506235aac9, type: 3}
       propertyPath: m_LocalScale.x
@@ -63161,7 +63326,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (156)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -63229,7 +63394,7 @@ Transform:
   m_GameObject: {fileID: 1305478748}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 300.8, y: 1.0999999, z: -11.999998}
+  m_LocalPosition: {x: 313.51, y: 1.0999999, z: -5.12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -63356,7 +63521,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (95)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -63703,7 +63868,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (278)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -63790,7 +63955,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (77)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -64408,7 +64573,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (294)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -64639,7 +64804,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (14)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -64712,6 +64877,37 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 816840836}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1347395168
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1347395169}
+  m_Layer: 0
+  m_Name: DynasoreSpawnPt (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1347395169
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1347395168}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 216, y: 0, z: -298}
+  m_LocalScale: {x: 36.978233, y: 36.978233, z: 36.978233}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1247163242}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1347821496
 GameObject:
@@ -64909,7 +65105,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (24)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -65575,7 +65771,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (64)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -65742,7 +65938,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (38)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -66470,7 +66666,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (15)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -66557,7 +66753,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (16)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -66722,7 +66918,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (252)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -67062,7 +67258,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (329)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -67721,7 +67917,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (57)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -68164,7 +68360,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (5)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -68625,7 +68821,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (32)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -68910,7 +69106,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (204)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -69071,7 +69267,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (29)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -69245,7 +69441,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (138)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -69407,7 +69603,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (153)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -69475,7 +69671,7 @@ Transform:
   m_GameObject: {fileID: 1479408741}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.17643422, z: -0, w: 0.9843125}
-  m_LocalPosition: {x: -366.29755, y: 159.14, z: 68.41428}
+  m_LocalPosition: {x: -211.1, y: 0.81, z: 68.41428}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -69592,7 +69788,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (325)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -70101,7 +70297,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (160)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -70306,7 +70502,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (289)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -70319,7 +70515,7 @@ Transform:
   m_GameObject: {fileID: 1498141789}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -113.6, y: 189.90001, z: -252.4}
+  m_LocalPosition: {x: -113.6, y: 0.55, z: -252.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -70778,7 +70974,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (257)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -71300,7 +71496,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (120)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -71477,7 +71673,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (45)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -71564,7 +71760,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (287)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -71766,7 +71962,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (59)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -71834,7 +72030,7 @@ Transform:
   m_GameObject: {fileID: 1528392280}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.5, y: 1.0999999, z: 32.9}
+  m_LocalPosition: {x: 2.5, y: 1.0999999, z: 40.33}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -72096,7 +72292,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (331)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -72241,7 +72437,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 79baf749fcb32964b93332dbcfe01385, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1723457354}
   m_SourcePrefab: {fileID: 100100000, guid: 79baf749fcb32964b93332dbcfe01385, type: 3}
 --- !u!4 &1538430586 stripped
 Transform:
@@ -73094,7 +73293,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (225)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -73186,7 +73385,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (284)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -73358,7 +73557,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (297)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -73699,7 +73898,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (51)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -73786,7 +73985,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (188)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -73873,7 +74072,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (283)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -73960,7 +74159,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (302)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -74476,7 +74675,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (327)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -74639,7 +74838,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6926307015523682983, guid: 6ffda98913c3b114a9f8bf506235aac9, type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 7734086990372900893, guid: 6ffda98913c3b114a9f8bf506235aac9, type: 3}
       propertyPath: m_LocalScale.x
@@ -74720,7 +74919,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (141)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -75378,7 +75577,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (117)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -75497,7 +75696,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (254)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -75584,7 +75783,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (69)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -75671,7 +75870,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (292)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -76018,7 +76217,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (300)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -76106,7 +76305,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6926307015523682983, guid: 6ffda98913c3b114a9f8bf506235aac9, type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 7734086990372900893, guid: 6ffda98913c3b114a9f8bf506235aac9, type: 3}
       propertyPath: m_LocalScale.x
@@ -76192,7 +76391,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (175)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -76354,7 +76553,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (244)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -76533,7 +76732,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (94)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -77247,7 +77446,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (1)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -77334,7 +77533,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (321)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -77421,7 +77620,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (13)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -77694,7 +77893,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (43)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -78281,7 +78480,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (67)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -78446,7 +78645,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1681012424
 Transform:
   m_ObjectHideFlags: 0
@@ -78478,7 +78677,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (237)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -78961,7 +79160,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (86)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -79048,7 +79247,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (106)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -79213,7 +79412,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (34)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -79373,7 +79572,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (55)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -79460,7 +79659,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (52)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -79638,7 +79837,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6926307015523682983, guid: 6ffda98913c3b114a9f8bf506235aac9, type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 7734086990372900893, guid: 6ffda98913c3b114a9f8bf506235aac9, type: 3}
       propertyPath: m_LocalScale.x
@@ -79746,7 +79945,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (299)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -79865,6 +80064,7 @@ MonoBehaviour:
   CameraShakeVelocity: 0.5
   CameraShakeTime: 1
   is2D: 0
+  invincible: 0
 --- !u!4 &1713386671
 Transform:
   m_ObjectHideFlags: 0
@@ -79959,7 +80159,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (296)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -80155,7 +80355,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6926307015523682983, guid: 6ffda98913c3b114a9f8bf506235aac9, type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 7734086990372900893, guid: 6ffda98913c3b114a9f8bf506235aac9, type: 3}
       propertyPath: m_LocalScale.x
@@ -80223,6 +80423,33 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7734086990372900893, guid: 6ffda98913c3b114a9f8bf506235aac9, type: 3}
   m_PrefabInstance: {fileID: 1723404173}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1723457351 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 79baf749fcb32964b93332dbcfe01385, type: 3}
+  m_PrefabInstance: {fileID: 1538430585}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1723457354
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1723457351}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 7436762682218098891, guid: 79baf749fcb32964b93332dbcfe01385, type: 3}
 --- !u!1001 &1725485813
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -80929,7 +81156,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (233)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -81293,7 +81520,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (211)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -81629,7 +81856,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (104)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -81847,7 +82074,7 @@ GameObject:
   m_Layer: 0
   m_Name: DynasoreSpawnPt (2)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -81860,7 +82087,7 @@ Transform:
   m_GameObject: {fileID: 1769475032}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -72, y: 0, z: 0}
   m_LocalScale: {x: 36.978233, y: 36.978233, z: 36.978233}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -82106,7 +82333,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (275)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -82193,7 +82420,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (70)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -82280,7 +82507,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (72)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -82999,7 +83226,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (37)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -83333,7 +83560,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (215)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -83420,7 +83647,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (158)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -83671,7 +83898,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (304)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -83758,7 +83985,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (18)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -84165,6 +84392,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1823613752 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 79baf749fcb32964b93332dbcfe01385, type: 3}
+  m_PrefabInstance: {fileID: 121175180}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1823613755
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1823613752}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 7436762682218098891, guid: 79baf749fcb32964b93332dbcfe01385, type: 3}
 --- !u!1 &1825519441
 GameObject:
   m_ObjectHideFlags: 0
@@ -84352,7 +84606,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (178)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -84587,7 +84841,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (36)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -84706,7 +84960,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (78)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -84774,7 +85028,7 @@ Transform:
   m_GameObject: {fileID: 1840623324}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -101.399994, y: 1.0999999, z: 244.6}
+  m_LocalPosition: {x: -108.29, y: 1.0999999, z: 244.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -84793,7 +85047,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (319)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -85201,7 +85455,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (332)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -85380,7 +85634,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (168)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -85448,7 +85702,7 @@ Transform:
   m_GameObject: {fileID: 1857927742}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -89.69998, y: 1.0999999, z: 283.5}
+  m_LocalPosition: {x: -88.29, y: 1.0999999, z: 271.44}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -85554,7 +85808,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (298)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -85641,7 +85895,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (288)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -85654,7 +85908,7 @@ Transform:
   m_GameObject: {fileID: 1861384579}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -71.7, y: 160.1, z: -217.7}
+  m_LocalPosition: {x: -71.7, y: 0.5999775, z: -217.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -85957,7 +86211,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (306)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -86126,7 +86380,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (126)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -86250,7 +86504,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (110)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -86424,7 +86678,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (272)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -86589,7 +86843,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (130)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -86657,7 +86911,7 @@ Transform:
   m_GameObject: {fileID: 1877990135}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -176.20001, y: 1.0999999, z: 273.09998}
+  m_LocalPosition: {x: -226, y: 1.0999999, z: 284.39}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -86676,7 +86930,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (267)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -86744,7 +86998,7 @@ Transform:
   m_GameObject: {fileID: 1878510557}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -464.3, y: 1.0999999, z: 310.1}
+  m_LocalPosition: {x: -464.3, y: 1.0999999, z: 363.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -87005,7 +87259,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (236)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -87092,7 +87346,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (167)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -87782,7 +88036,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (50)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -87850,7 +88104,7 @@ Transform:
   m_GameObject: {fileID: 1900234398}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 228.8, y: 1.0999999, z: 82.1}
+  m_LocalPosition: {x: 227.07, y: 1.0999999, z: 84.08}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -87992,7 +88246,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (196)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -88270,7 +88524,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (192)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -88357,7 +88611,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (185)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -88553,7 +88807,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (176)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -88640,7 +88894,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (7)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -88708,7 +88962,7 @@ Transform:
   m_GameObject: {fileID: 1916642810}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -163.8, y: 1.0999999, z: -38.9}
+  m_LocalPosition: {x: -163.8, y: 1.0999999, z: 145.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -89448,7 +89702,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (210)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -89613,7 +89867,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (2)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -89681,7 +89935,7 @@ Transform:
   m_GameObject: {fileID: 1931316370}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 23.6, y: 1.0999999, z: 113}
+  m_LocalPosition: {x: -6.2, y: 1.0999999, z: 113}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -89882,7 +90136,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (74)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -89969,7 +90223,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (184)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -90223,7 +90477,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (90)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -90720,7 +90974,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (234)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -90882,7 +91136,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (26)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -91301,7 +91555,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6926307015523682983, guid: 6ffda98913c3b114a9f8bf506235aac9, type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 7734086990372900893, guid: 6ffda98913c3b114a9f8bf506235aac9, type: 3}
       propertyPath: m_LocalScale.x
@@ -91579,7 +91833,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (128)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -92116,7 +92370,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (174)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -92203,7 +92457,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (56)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -92781,7 +93035,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (293)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -92868,7 +93122,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (242)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -93097,7 +93351,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (193)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -93184,7 +93438,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (151)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -93252,7 +93506,7 @@ Transform:
   m_GameObject: {fileID: 2001814368}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -99.29999, y: 1.0999999, z: 244.5}
+  m_LocalPosition: {x: -117.96, y: 1.0999999, z: 225.71}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -93632,7 +93886,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (320)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -93756,7 +94010,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (303)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -93843,7 +94097,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (85)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -93911,7 +94165,7 @@ Transform:
   m_GameObject: {fileID: 2016257248}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 299.7, y: 1.0999999, z: -11.9}
+  m_LocalPosition: {x: 297.1, y: 1.0999999, z: -13.99}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -94006,7 +94260,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (119)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -94354,7 +94608,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (263)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -95000,7 +95254,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (35)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -95862,7 +96116,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (122)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -96032,7 +96286,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (63)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -96682,7 +96936,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (239)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -96750,7 +97004,7 @@ Transform:
   m_GameObject: {fileID: 2100944103}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -458, y: 1.0999999, z: 315}
+  m_LocalPosition: {x: -476.99, y: 1.0999999, z: 320.88}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -96847,7 +97101,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (11)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -97007,7 +97261,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (98)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -97279,7 +97533,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (99)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -97552,7 +97806,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (291)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -97639,7 +97893,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (127)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -97707,7 +97961,7 @@ Transform:
   m_GameObject: {fileID: 2128494505}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 143, y: 1.0999999, z: 202.6}
+  m_LocalPosition: {x: 151.45, y: 7.62, z: 202.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -98043,7 +98297,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (180)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -98130,7 +98384,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (58)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -98365,7 +98619,7 @@ GameObject:
   m_Layer: 0
   m_Name: FoodGenRefPt (317)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -98654,7 +98908,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6073497863872838271, guid: aa54c36edc5073141aaad6d97d688dc4, type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 6846235098024222917, guid: aa54c36edc5073141aaad6d97d688dc4, type: 3}
       propertyPath: m_LocalScale.x

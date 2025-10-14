@@ -12,6 +12,7 @@ public class AllGameManager : MonoBehaviour
     [Header("Ref component")]
     public CockroachManager cManager;
     private CameraLogic3D cameraLogic;
+    private CockroachClimb cockroachFootReferenceSpace;
 
     static public float GravityVariable = 9.81f;
 
@@ -96,6 +97,7 @@ public class AllGameManager : MonoBehaviour
         BGMManager.Play("BGM_Revival of Africa");
         Cockroach3D = GameObject.Find("3DCockroach");
         cameraLogic = GameObject.Find("cameraTracker").GetComponent<CameraLogic3D>();
+        cockroachFootReferenceSpace = GameObject.Find("cockroachFootReferenceSpace").GetComponent<CockroachClimb>();
         eraManager = GetComponent<EraManager>();
         nowLoadSceneSort = SceneManager.GetActiveScene().buildIndex;
         cManager = FindFirstObjectByType<CockroachManager>();
@@ -508,7 +510,7 @@ public class AllGameManager : MonoBehaviour
         SaveSystem.Save();
     }
 
-
+    
     public void ReLocateAtFem()
     {
         Debug.Log("回到最近的已觸發母蟑螂");
@@ -534,6 +536,7 @@ public class AllGameManager : MonoBehaviour
             femCockroachTrackList[t].coolDownCal = 15f;
             //已防落地馬上有蛋
         }
+        cockroachFootReferenceSpace.targetRotation = new Vector3(0, 0, 0);
         Cockroach3D.transform.position = femCockroachTrackList[t].myEggPos.position + debugUpper;
     }
     public void ButtonSound()

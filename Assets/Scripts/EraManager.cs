@@ -244,6 +244,17 @@ public class EraManager : MonoBehaviour
             GameObject newDyna = Instantiate(dynaPrefab, eraValue.dynaSpawnPt[i].transform.position, Quaternion.identity);
             spawnedDynas.Add(newDyna); 
         }
+        //StartCoroutine(slowlySpawnDyna());
+    }
+
+    IEnumerator slowlySpawnDyna()
+    {
+        for (int i = 0; i < eraValue.dynaSpawnPt.Length; i++)
+        {
+            GameObject newDyna = Instantiate(dynaPrefab, eraValue.dynaSpawnPt[i].transform.position, Quaternion.identity);
+            spawnedDynas.Add(newDyna);
+            yield return new WaitForSeconds(0.5f);
+        }
     }
 
     public void ClearAllDyna()
