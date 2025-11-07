@@ -74,10 +74,7 @@ public class FemCockraochTrigger3D : MonoBehaviour
         {
             //Add DNA Number           
             SoundManager.Play("SFX_ReproductiveBehavior_V1");           
-        }
-        if (other.CompareTag("Player") && coolDownCal < 0)
-        {
-            //femaleCockroachInfo.finded = true;
+            
             allGameManager.femCockraochGet();
             //subStatementShowcase.material = getMat;
 
@@ -187,6 +184,7 @@ public class FemCockraochTrigger3D : MonoBehaviour
         allGameManager.DNA++;
         getDNAAlready = true;
         eggNumber++;
+        femaleCockroachInfo.finded = true;
         //open dna pattern.
 
         SaveSystem.mySaveFile.FemRoachBreed++;

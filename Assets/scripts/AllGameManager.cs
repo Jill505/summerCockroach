@@ -408,6 +408,13 @@ public class AllGameManager : MonoBehaviour
 
     public void OpenDNASelect()
     {
+        // 檢查所有 Buff 是否已滿
+        if (cManager.IsAllBuffsFull())
+        {
+            // 若都滿了，直接關閉視窗並播放提示音效或特效
+            CloseDNASelect();
+            return;
+        }
         CockroachEvolutionCanvas.SetActive(true);
         cManager.RenderPlayerBuffs();
         Time.timeScale = 0.0000001f;

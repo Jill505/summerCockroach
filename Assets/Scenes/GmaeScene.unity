@@ -7312,8 +7312,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7545394259430377419, guid: 01fc822632dad3d4fa8a6e213eff2366, type: 3}
+      propertyPath: Disc
+      value: "\u4F4F\u5728\u5145\u6EFF\u5371\u96AA\u834A\u68D8\u6797\u6DF1\u8655\uFF0C\u5916\u8868\u9177\u9177\u7684\u50B2\u5B0C\u5C11\u5973\uFF0C\u8AB0\u9760\u592A\u8FD1\u5979\u5C31\u7528\u523A\u8349\u4E1F\u4F60\u3002"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7545394259430377419, guid: 01fc822632dad3d4fa8a6e213eff2366, type: 3}
       propertyPath: finded
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7545394259430377419, guid: 01fc822632dad3d4fa8a6e213eff2366, type: 3}
+      propertyPath: cockroachName
+      value: "\u523A\u5B50"
       objectReference: {fileID: 0}
     - target: {fileID: 7886002931750849660, guid: 01fc822632dad3d4fa8a6e213eff2366, type: 3}
       propertyPath: m_Name
@@ -10093,8 +10101,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7545394259430377419, guid: 01fc822632dad3d4fa8a6e213eff2366, type: 3}
+      propertyPath: Disc
+      value: "\u4F4F\u5728\u4E00\u500B\u5C71\u4E18\u9802\u5CF0\uFF0C\u71B1\u611B\u81EA\u7531\u7684\u5192\u96AA\u5BB6\uFF0C\u7E3D\u662F\u80CC\u8457\u5C0F\u5305\u5305\u51FA\u9580\u8AAA\u8981\u300C\u770B\u66F4\u9060\u7684\u5929\u7A7A\u300D\u3002"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7545394259430377419, guid: 01fc822632dad3d4fa8a6e213eff2366, type: 3}
       propertyPath: finded
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7545394259430377419, guid: 01fc822632dad3d4fa8a6e213eff2366, type: 3}
+      propertyPath: cockroachName
+      value: "\u5DBA\u5DBA"
       objectReference: {fileID: 0}
     - target: {fileID: 7886002931750849660, guid: 01fc822632dad3d4fa8a6e213eff2366, type: 3}
       propertyPath: m_Name
@@ -12580,8 +12596,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7545394259430377419, guid: 01fc822632dad3d4fa8a6e213eff2366, type: 3}
+      propertyPath: Disc
+      value: "\u4F4F\u5728\u5927\u77F3\u982D\u548C\u4E00\u9846\u6A39\u7684\u65C1\u908A\uFF0C\u5929\u771F\u6D6A\u6F2B\uFF0C\u5E38\u5E38\u5C0D\u8457\u6A39\u8B1B\u8A71\uFF0C\u8AAA\u90A3\u662F\u5979\u7684\u7537\u53CB\u300C\u6A39\u5148\u751F\u300D\u3002"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7545394259430377419, guid: 01fc822632dad3d4fa8a6e213eff2366, type: 3}
       propertyPath: finded
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7545394259430377419, guid: 01fc822632dad3d4fa8a6e213eff2366, type: 3}
+      propertyPath: cockroachName
+      value: "\u5C0F\u8373"
       objectReference: {fileID: 0}
     - target: {fileID: 7886002931750849660, guid: 01fc822632dad3d4fa8a6e213eff2366, type: 3}
       propertyPath: m_Name
@@ -13522,8 +13546,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7545394259430377419, guid: 01fc822632dad3d4fa8a6e213eff2366, type: 3}
+      propertyPath: Disc
+      value: "\u4F4F\u5728\u5927\u9752\u82D4\u77F3\u982D\u548C\u5C71\u4E18\u7684\u4E2D\u5FC3\u4F4D\u7F6E\uFF0C\u611B\u4E7E\u6DE8\u7684\u602A\u87D1\u8782\uFF0C\u6BCF\u5929\u64E6\u9752\u82D4\u64E6\u5230\u767C\u4EAE\uFF0C\u5805\u6301\u8981\u300C\u7DA0\u5F97\u5747\u52FB\u300D\u3002"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7545394259430377419, guid: 01fc822632dad3d4fa8a6e213eff2366, type: 3}
       propertyPath: finded
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7545394259430377419, guid: 01fc822632dad3d4fa8a6e213eff2366, type: 3}
+      propertyPath: cockroachName
+      value: "\u4E18\u8389"
       objectReference: {fileID: 0}
     - target: {fileID: 7886002931750849660, guid: 01fc822632dad3d4fa8a6e213eff2366, type: 3}
       propertyPath: m_Name
@@ -15148,6 +15180,10 @@ PrefabInstance:
     - target: {fileID: 7366593005169579718, guid: 01fc822632dad3d4fa8a6e213eff2366, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7545394259430377419, guid: 01fc822632dad3d4fa8a6e213eff2366, type: 3}
+      propertyPath: Disc
+      value: "\u662F\u500B\u4E09\u516B\uFF0C\u4F4F\u5728\u82B1\u82B1\u5730\u5E36\uFF0C\u7D81\u8457\u8FAE\u5B50\u7684\u53EF\u611B\u5C0F\u87D1\u8782"
       objectReference: {fileID: 0}
     - target: {fileID: 7545394259430377419, guid: 01fc822632dad3d4fa8a6e213eff2366, type: 3}
       propertyPath: finded
@@ -17550,8 +17586,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7545394259430377419, guid: 01fc822632dad3d4fa8a6e213eff2366, type: 3}
+      propertyPath: Disc
+      value: "\u4F4F\u5728\u6050\u9F8D\u9AA8\u982D\u65C1\uFF0C\u81EA\u7A31\u53E4\u751F\u7269\u5B78\u5BB6\uFF0C\u611B\u8B1B\u6050\u9F8D\u51B7\u7B11\u8A71\uFF0C\u7D50\u679C\u6C92\u4EBA\u7B11\u3002"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7545394259430377419, guid: 01fc822632dad3d4fa8a6e213eff2366, type: 3}
       propertyPath: finded
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7545394259430377419, guid: 01fc822632dad3d4fa8a6e213eff2366, type: 3}
+      propertyPath: cockroachName
+      value: "\u9AA8\u59B9"
       objectReference: {fileID: 0}
     - target: {fileID: 7886002931750849660, guid: 01fc822632dad3d4fa8a6e213eff2366, type: 3}
       propertyPath: m_Name
@@ -25136,8 +25180,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7545394259430377419, guid: 01fc822632dad3d4fa8a6e213eff2366, type: 3}
+      propertyPath: Disc
+      value: "\u4F4F\u5728\u4E00\u5806\u5C0F\u77F3\u982D\u7684\u5730\u5E36\u65C1\uFF0C\u6709\u9EDE\u6587\u9752\u6C23\u606F\uFF0C\u6536\u96C6\u5404\u7A2E\u5947\u5F62\u602A\u72C0\u7684\u5C0F\u77F3\u982D\u7576\u300C\u85DD\u8853\u6536\u85CF\u300D\u3002"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7545394259430377419, guid: 01fc822632dad3d4fa8a6e213eff2366, type: 3}
       propertyPath: finded
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7545394259430377419, guid: 01fc822632dad3d4fa8a6e213eff2366, type: 3}
+      propertyPath: cockroachName
+      value: "\u77F3\u9999"
       objectReference: {fileID: 0}
     - target: {fileID: 7886002931750849660, guid: 01fc822632dad3d4fa8a6e213eff2366, type: 3}
       propertyPath: m_Name
@@ -38578,8 +38630,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7545394259430377419, guid: 01fc822632dad3d4fa8a6e213eff2366, type: 3}
+      propertyPath: Disc
+      value: "\u4F4F\u5728\u908A\u908A\u5169\u68F5\u6A39\u4E2D\u9593\uFF0C\u559C\u6B61\u958B\u8DB4\uFF0C\u5E38\u5E38\u9080\u8ACB\u87FB\u65CF\u548C\u8718\u86DB\u4F86\u958B\u300C\u591C\u6A39\u6D3E\u5C0D\u300D\u3002"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7545394259430377419, guid: 01fc822632dad3d4fa8a6e213eff2366, type: 3}
       propertyPath: finded
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7545394259430377419, guid: 01fc822632dad3d4fa8a6e213eff2366, type: 3}
+      propertyPath: cockroachName
+      value: "\u6A39\u59AE"
       objectReference: {fileID: 0}
     - target: {fileID: 7886002931750849660, guid: 01fc822632dad3d4fa8a6e213eff2366, type: 3}
       propertyPath: m_Name
@@ -48366,7 +48426,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 86, y: 54}
+  m_AnchoredPosition: {x: 78, y: 54}
   m_SizeDelta: {x: 46, y: 108}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &880154478
@@ -58104,8 +58164,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7545394259430377419, guid: 01fc822632dad3d4fa8a6e213eff2366, type: 3}
+      propertyPath: Disc
+      value: "\u4F4F\u5728\u4E2D\u5FC3\u5927\u77F3\u982D\u7684\u9802\u5CF0\u4E0A\uFF0C\u81EA\u8A8D\u662F\u87D1\u8782\u754C\u7684\u5973\u738B\uFF0C\u6BCF\u5929\u90FD\u5728\u9802\u7AEF\u8A13\u7DF4\u98DB\u884C\u59FF\u52E2\u3002"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7545394259430377419, guid: 01fc822632dad3d4fa8a6e213eff2366, type: 3}
       propertyPath: finded
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7545394259430377419, guid: 01fc822632dad3d4fa8a6e213eff2366, type: 3}
+      propertyPath: cockroachName
+      value: "\u5CF0\u59D0"
       objectReference: {fileID: 0}
     - target: {fileID: 7886002931750849660, guid: 01fc822632dad3d4fa8a6e213eff2366, type: 3}
       propertyPath: m_Name
@@ -70241,8 +70309,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7545394259430377419, guid: 01fc822632dad3d4fa8a6e213eff2366, type: 3}
+      propertyPath: Disc
+      value: "\u4F4F\u5728\u65B9\u5F62\u5927\u77F3\u982D\u65C1\uFF0C\u4E00\u677F\u4E00\u773C\u7684\u7406\u6027\u6D3E\u87D1\u8782\uFF0C\u51E1\u4E8B\u90FD\u8981\u5C0D\u9F4A\u6210
+        90 \u5EA6\u89D2\u624D\u5B89\u5FC3\u3002"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7545394259430377419, guid: 01fc822632dad3d4fa8a6e213eff2366, type: 3}
       propertyPath: finded
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7545394259430377419, guid: 01fc822632dad3d4fa8a6e213eff2366, type: 3}
+      propertyPath: cockroachName
+      value: "\u65B9\u65B9"
       objectReference: {fileID: 0}
     - target: {fileID: 7886002931750849660, guid: 01fc822632dad3d4fa8a6e213eff2366, type: 3}
       propertyPath: m_Name
@@ -75715,6 +75792,94 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1433205984
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1433205985}
+  - component: {fileID: 1433205988}
+  - component: {fileID: 1433205987}
+  - component: {fileID: 1433205986}
+  m_Layer: 5
+  m_Name: windows (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1433205985
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1433205984}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.15722, y: 1.5692492, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1523642907}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 31, y: 136}
+  m_SizeDelta: {x: 451, y: 257}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1433205986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1433205984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60df0fa69f2f6d84299871733e81d846, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1433205987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1433205984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: f3eeaf887b042ca46bebd476c162c77c, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1433205988
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1433205984}
+  m_CullTransparentMesh: 1
 --- !u!1 &1434308756
 GameObject:
   m_ObjectHideFlags: 0
@@ -80865,6 +81030,7 @@ RectTransform:
   m_Children:
   - {fileID: 1578714051}
   - {fileID: 253137583}
+  - {fileID: 1433205985}
   m_Father: {fileID: 555661013}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -88479,8 +88645,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7545394259430377419, guid: 01fc822632dad3d4fa8a6e213eff2366, type: 3}
+      propertyPath: Disc
+      value: "\u4F4F\u5728\u908A\u908A\u8349\u53E2\uFF0C\u908A\u7DE3\u4E2D\u7684\u908A\u7DE3\u4EBA\uFF0C\u5E38\u62B1\u6028\u81EA\u5DF1\u88AB\u5287\u60C5\u5FD8\u8A18\uFF0C\u5176\u5BE6\u8D85\u6709\u5B58\u5728\u611F\u3002"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7545394259430377419, guid: 01fc822632dad3d4fa8a6e213eff2366, type: 3}
       propertyPath: finded
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7545394259430377419, guid: 01fc822632dad3d4fa8a6e213eff2366, type: 3}
+      propertyPath: cockroachName
+      value: "\u908A\u908A\u5B50"
       objectReference: {fileID: 0}
     - target: {fileID: 7886002931750849660, guid: 01fc822632dad3d4fa8a6e213eff2366, type: 3}
       propertyPath: m_Name
@@ -90707,8 +90881,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7545394259430377419, guid: 01fc822632dad3d4fa8a6e213eff2366, type: 3}
+      propertyPath: Disc
+      value: "\u4F4F\u5728\u908A\u7DE3\u8349\u53E2\u88CF\u982D\uFF0C\u8D85\u81BD\u5C0F\uFF0C\u98A8\u5439\u8349\u52D5\u5C31\u5C16\u53EB\uFF0C\u4F46\u8DD1\u5F97\u6BD4\u8AB0\u90FD\u5FEB\u3002"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7545394259430377419, guid: 01fc822632dad3d4fa8a6e213eff2366, type: 3}
       propertyPath: finded
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7545394259430377419, guid: 01fc822632dad3d4fa8a6e213eff2366, type: 3}
+      propertyPath: cockroachName
+      value: "\u8349\u54AA"
       objectReference: {fileID: 0}
     - target: {fileID: 7886002931750849660, guid: 01fc822632dad3d4fa8a6e213eff2366, type: 3}
       propertyPath: m_Name
@@ -98881,8 +99063,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7545394259430377419, guid: 01fc822632dad3d4fa8a6e213eff2366, type: 3}
+      propertyPath: Disc
+      value: "\u4F4F\u5728\u504F\u9AD8\u5713\u5713\u7684\u5927\u77F3\u982D\u4E0A\uFF0C\u7E3D\u662F\u611B\u5728\u9AD8\u8655\u5F35\u671B\u516B\u5366\u6700\u65B0\u6D88\u606F\uFF0C\u81EA\u7A31\u300C\u98A8\u7684\u5973\u4EBA\u300D\u3002"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7545394259430377419, guid: 01fc822632dad3d4fa8a6e213eff2366, type: 3}
       propertyPath: finded
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7545394259430377419, guid: 01fc822632dad3d4fa8a6e213eff2366, type: 3}
+      propertyPath: cockroachName
+      value: "\u5713\u59EC"
       objectReference: {fileID: 0}
     - target: {fileID: 7886002931750849660, guid: 01fc822632dad3d4fa8a6e213eff2366, type: 3}
       propertyPath: m_Name
@@ -107123,8 +107313,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7545394259430377419, guid: 01fc822632dad3d4fa8a6e213eff2366, type: 3}
+      propertyPath: Disc
+      value: "\u4F4F\u5728\u4E2D\u5FC3\u5927\u77F3\u982D\u65C1\u908A\u7684\u9752\u82D4\u5927\u77F3\u982D\u4E0A\uFF0C\u5168\u8EAB\u6563\u767C\u6DE1\u6DE1\u9752\u8349\u9999\uFF0C\u8B1B\u8A71\u6162\u541E\u541E\uFF0C\u662F\u87D1\u8782\u754C\u7684\u7642\u7652\u7CFB\u4EE3\u8868\u3002"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7545394259430377419, guid: 01fc822632dad3d4fa8a6e213eff2366, type: 3}
       propertyPath: finded
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7545394259430377419, guid: 01fc822632dad3d4fa8a6e213eff2366, type: 3}
+      propertyPath: cockroachName
+      value: "\u82D4\u82D4"
       objectReference: {fileID: 0}
     - target: {fileID: 7886002931750849660, guid: 01fc822632dad3d4fa8a6e213eff2366, type: 3}
       propertyPath: m_Name

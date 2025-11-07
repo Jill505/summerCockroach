@@ -216,12 +216,14 @@ public class CockroachManager : MonoBehaviour
             //rev
             //track all the fem roach and return the closest one
             SoundManager.Play("Crack an Egg Sound Effect");
-            
-            float d = Vector3.Distance(transform.position, allGameManger.femCockroachTrackList[0].gameObject.transform.position);
-            int t = 0;
+
+            //float d = Vector3.Distance(transform.position, allGameManger.femCockroachTrackList[0].gameObject.transform.position);
+            //int t = 0;
+            float d = Mathf.Infinity;
+            int t = -1;
             for (int i = 1; i < allGameManger.femCockroachTrackList.Count; i++)
             {
-                if (allGameManger.femCockroachTrackList[i].eggNumber > 0)
+                if (allGameManger.femCockroachTrackList[i].eggNumber > 0 && allGameManger.femCockroachTrackList[i].getDNAAlready)
                 {
                     float nD = Vector3.Distance(transform.position, allGameManger.femCockroachTrackList[i].gameObject.transform.position);
                     if (d > nD)
@@ -240,6 +242,7 @@ public class CockroachManager : MonoBehaviour
             }
             transform.position = allGameManger.femCockroachTrackList[t].myEggPos.position + debugUpper;
             allGameManger.femCockroachTrackList[t].eggNumber -= 1;
+            allGameManger.femCockroachTrackList.RemoveAt(t);
 
             SaveSystem.mySaveFile.RespawnCal++;
 
@@ -825,6 +828,25 @@ public class CockroachManager : MonoBehaviour
                 break;
         }
         allGameManger.CloseDNASelect();
+    }
+
+    // 檢查所有 Buff 是否都達到上限
+    public bool IsAllBuffsFull()
+    {
+        bool dashFull = dashLevel >= dashLevelMax;
+        bool dashRecoverFull = dashRecoverLevel >= dashRecoverLevelMax;
+        bool basicSpeedFull = basicSpeedLevel >= basicSpeedLevelMax;
+        bool hungerFull = hungerLevel >= hungerLevelMax;
+        bool shieldFull = shield >= shieldImage.Length; // shield 通常只有一格
+
+        if (dashFull && dashRecoverFull && basicSpeedFull && hungerFull && shieldFull)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     public void CleanupAllSpiders()
