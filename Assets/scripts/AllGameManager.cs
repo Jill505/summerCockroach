@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using System.Collections;
-using static UnityEditor.ShaderData;
+//using static UnityEditor.ShaderData;
 //using Unity.Android.Gradle;
 
 public class AllGameManager : MonoBehaviour
