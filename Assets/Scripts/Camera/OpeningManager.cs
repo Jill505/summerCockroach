@@ -36,6 +36,6 @@ public class OpeningManager : MonoBehaviour
         AnimationEventReceiver.prepared = true;
 
         // Timeline 結束後再執行原本的入場 Transition
-        StartCoroutine(cameraViewToggle.StartCoroutineFromOutside());
+        //StartCoroutine(cameraViewToggle.StartCoroutineFromOutside());
     }
 }
