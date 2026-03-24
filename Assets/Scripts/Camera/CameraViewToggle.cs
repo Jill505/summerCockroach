@@ -55,7 +55,7 @@ public class CameraViewToggle : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(Transition());
+
     }
 
     public void CallCameraShake3D()
@@ -74,6 +74,11 @@ public class CameraViewToggle : MonoBehaviour
         }
         yield return null;
 
+    }
+
+    public IEnumerator StartCoroutineFromOutside()
+    {
+        yield return StartCoroutine(Transition());
     }
 
     private IEnumerator Transition()

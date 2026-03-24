@@ -15,7 +15,8 @@ public class CameraLogic3D : MonoBehaviour
     public GameObject CameraObject;
 
 
-   
+    public bool overriddenByTimeline = false;
+
 
     [Header("Auto Camera 參數")]
     public float autoAngleSpeed = 0.2f;
@@ -70,6 +71,8 @@ public class CameraLogic3D : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (overriddenByTimeline) return;
+
         if (myTrackMode == CameraTrackMode.autoCamera)
         {
             //myCameraTrackerObject.transform.SetParent(myCockroachMeshObject.transform, false);
@@ -98,6 +101,7 @@ public class CameraLogic3D : MonoBehaviour
 
     private void LateUpdate()
     {
+        if (overriddenByTimeline) return;
         if (isFocusing && focusTarget != null)
         {
             // 將參考點設在 focusTarget 上，並給一個小偏移，讓攝影機可以看得更好
@@ -115,6 +119,7 @@ public class CameraLogic3D : MonoBehaviour
     }
     private void Update()
     {
+        if (overriddenByTimeline) return;
         if (myTrackMode == CameraTrackMode.playerCamera)
         {
             float mouseXInput = Input.GetAxis("Mouse X");

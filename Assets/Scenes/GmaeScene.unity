@@ -16871,6 +16871,7 @@ GameObject:
   - component: {fileID: 330585545}
   - component: {fileID: 330585544}
   - component: {fileID: 330585547}
+  - component: {fileID: 330585548}
   m_Layer: 0
   m_Name: 3DCamera
   m_TagString: MainCamera
@@ -16945,14 +16946,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.08004072, y: -0, z: -0, w: 0.9967916}
+  m_LocalRotation: {x: 0.08004072, y: 0, z: 0, w: 0.9967916}
   m_LocalPosition: {x: 0, y: 3.550003, z: -5.880001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2065172943}
   m_Father: {fileID: 1229442375}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.3039051, y: 0.000003403449, z: -0.0000002643214}
 --- !u!114 &330585547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16997,6 +16998,28 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!95 &330585548
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330585543}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &331419912
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17969,7 +17992,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9224311748722eb4a990389da4cb76fb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.007
+      value: 0.007001877
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9224311748722eb4a990389da4cb76fb, type: 3}
       propertyPath: m_LocalPosition.y
@@ -17977,7 +18000,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9224311748722eb4a990389da4cb76fb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.86
+      value: -1.8599887
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9224311748722eb4a990389da4cb76fb, type: 3}
       propertyPath: m_LocalRotation.w
@@ -17985,15 +18008,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9224311748722eb4a990389da4cb76fb, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9224311748722eb4a990389da4cb76fb, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9224311748722eb4a990389da4cb76fb, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9224311748722eb4a990389da4cb76fb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -52330,6 +52353,8 @@ GameObject:
   - component: {fileID: 950558452}
   - component: {fileID: 950558453}
   - component: {fileID: 950558455}
+  - component: {fileID: 950558456}
+  - component: {fileID: 950558457}
   m_Layer: 0
   m_Name: AllGameManager
   m_TagString: Untagged
@@ -52663,6 +52688,42 @@ MonoBehaviour:
   hotSprite: {fileID: 831165005}
   FoodGenNum: 7
   FoodGenDur: 3
+--- !u!320 &950558456
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950558449}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: e4d85f99440f67846bdc9538e70dec3f, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: 4346522216110076966, guid: e4d85f99440f67846bdc9538e70dec3f, type: 2}
+    value: {fileID: 330585548}
+  m_ExposedReferences:
+    m_References: []
+--- !u!114 &950558457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950558449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34eadf6fcdf3a70448a21d080081581f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timelineDirector: {fileID: 950558456}
+  cockroachMove: {fileID: 1229442372}
+  allGameManager: {fileID: 950558450}
+  cameraLogic3D: {fileID: 1073194382}
+  cameraViewToggle: {fileID: 1713386670}
 --- !u!1 &953002539
 GameObject:
   m_ObjectHideFlags: 0
@@ -58698,6 +58759,7 @@ MonoBehaviour:
   myCockroachManagerObject: {fileID: 1229442371}
   my3DCameraReferencePoint: {fileID: 1600599022}
   CameraObject: {fileID: 330585543}
+  overriddenByTimeline: 0
   autoAngleSpeed: 8.6
   AutoCameraLookOffset: {x: 0, y: 2.71, z: 0}
   mouseInputLeast: 0.05
@@ -68523,7 +68585,7 @@ Transform:
   m_GameObject: {fileID: 1229442371}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.48184636, z: -0, w: 0.8762557}
-  m_LocalPosition: {x: 334, y: 0, z: -298}
+  m_LocalPosition: {x: 14.5, y: 0, z: -226.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
