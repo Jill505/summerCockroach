@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -76,15 +77,18 @@ public class OneHoleSwitchTrigger : MonoBehaviour
             isInTheTrigger = true;
             cameraLogic2D.SetCustomBounds(cameraBounds.bounds);
             StartPos3D = transform.GetChild(0);
-            StartCoroutine(viewToggle.StartViewSwitch(false)); //切換到2D
-
-            if (enableFood)
-            {
-                SpawnRandomFoodOnPath();
-            }
-    
             cockroachMove2D.transform.position = StartPos2D.position;
+
+            StartCoroutine(EnterRoutine()); // 改成 Coroutine
         }
+    }
+
+    private IEnumerator EnterRoutine()
+    {
+        yield return StartCoroutine(viewToggle.StartViewSwitch(false));
+
+        if (enableFood)
+            SpawnRandomFoodOnPath();
     }
 
     private void OnTriggerExit(Collider other)

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -149,9 +150,8 @@ public class DoubleHoleSystem : MonoBehaviour
         if (cockroachMove2D == null) return;
         if (viewToggle.Is2D()) return;
 
-        lastEnterSide = side; // ✅ 紀錄進來的方向
+        lastEnterSide = side;
 
-        // 取得對應 Pair 的場景名稱
         var pair = pairs[pairIndex];
         if (pair == null) return;
 
@@ -169,27 +169,30 @@ public class DoubleHoleSystem : MonoBehaviour
             }
         }
 
-        Transform spawn = null;
-        if (side == HoleSide.Left)
-            spawn = leftInsideSpawn2D;
-        else
-            spawn = rightInsideSpawn2D;
-
+        Transform spawn = (side == HoleSide.Left) ? leftInsideSpawn2D : rightInsideSpawn2D;
         if (spawn == null) return;
-        DesObj();
+
+        DesObj(); // 清除舊物件，時機不變
 
         cameraLogic2D.SetCustomBounds(cameraBounds.bounds);
-        StartCoroutine(viewToggle.StartViewSwitch(false));
-
         cockroachMove2D.transform.position = spawn.position;
         currentPairIndex = pairIndex;
 
+        // 改成 Coroutine，等轉場結束後再生成物件
+        StartCoroutine(EnterFrom3DRoutine(pair));
+    }
+
+    private IEnumerator EnterFrom3DRoutine(DoubleHolePair pair)
+    {
+        // 等轉場動畫跑完
+        yield return StartCoroutine(viewToggle.StartViewSwitch(false));
+
+        // 轉場結束，2D 畫面已出現，這時才生成物件
         if (pair.enableFood)
-            SpawnRandomFoodOnPath(pair); // 傳入該 Pair 的資料
+            SpawnRandomFoodOnPath(pair);
 
         if (pair.enableSpider)
             SpawnRandomSpiderOnPath(pair);
-
     }
 
     // —— 2D → 3D —— 

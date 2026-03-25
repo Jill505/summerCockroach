@@ -174,10 +174,10 @@ public class CameraViewToggle : MonoBehaviour
     public IEnumerator End2DViewTransition()
     {
         transitionQuad2D.SetActive(true);
+        cockroachManager.CleanupAllSpiders();
         cameraLogic2D.StartSmoothZoom();
         yield return StartCoroutine(AnimateShaderScale(scale, 0f, transitionDuration));
         transitionQuad2D.SetActive(false);
-        cockroachManager.CleanupAllSpiders();
         allGameManager.isTimerRunning = true;
     }
 
@@ -185,9 +185,9 @@ public class CameraViewToggle : MonoBehaviour
     {
        
         transitionQuad3D.SetActive(true);
+        cockroachManager.CleanupAllSpiders();
         yield return StartCoroutine(AnimateShaderScale(scale, 0f, transitionDuration));
         transitionQuad3D.SetActive(false);
-        cockroachManager.CleanupAllSpiders();
         allGameManager.isTimerRunning = true;
         StartCoroutine(InvincibleFiveSeconds());
     }
