@@ -52417,7 +52417,7 @@ MonoBehaviour:
   nowLoadSceneSort: 0
   timerText: {fileID: 937037571}
   demoResultShowcase: {fileID: 486350327}
-  gameMinutes: 9
+  gameMinutes: 6
   isTimerRunning: 1
   gameProcessTime: 0
   gameEndCanvas: {fileID: 48446024}
@@ -52697,8 +52697,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eraValue:
     eraInterval: 20
-    intervalPEToDE: 240
-    intervalDEToME: 180
+    intervalPEToDE: 120
+    intervalDEToME: 120
     intervalMEToPE: 120
     mode: 1
     PEFood: 50
